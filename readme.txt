@@ -1,7 +1,7 @@
 === Reponsive Menu ===
 Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/
-Tags: cookies, responsive, menu, responsive menu
+Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
 Stable tag: 1.0
@@ -30,6 +30,8 @@ This is a Highly Customisable Responsive Menu Plugin enabling you to change the 
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. Much better than those select drop-down menu's you see.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
+<br />
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install.
 <br />
 
 == Installation ==
