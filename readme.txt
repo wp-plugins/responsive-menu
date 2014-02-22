@@ -1,6 +1,6 @@
 === Reponsive Menu ===
-Contributors: peter.featherstone, networkintellect
-Donate link: http://www.networkintellect.com/
+Contributors: peter.featherstone
+Donate link: http://www.peterfeatherstone.com/
 Tags: cookies, responsive, menu, responsive menu
 Requires at least: 3.0.1
 Tested up to: 3.8.1
@@ -12,7 +12,7 @@ This is a Highly Customisable Reponsive Menu Created By Peter Featherstone @ Net
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin enabling you to change the banner: 
+This is a Highly Customisable Responsive Menu Plugin enabling you to change the menu: 
 <br />
 <ul>
 <li> - Title</li>
@@ -27,7 +27,7 @@ This is a Highly Customisable Responsive Menu Plugin enabling you to change the 
 <li> - Background Colour</li>
 <li> - Plus more...</li>
 </ul>
-The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigateable. Much better than those select drop-down menu's you see.
+The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. Much better than those select drop-down menu's you see.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br />
