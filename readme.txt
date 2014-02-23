@@ -60,7 +60,7 @@ Alternatively:
 
 == Changelog ==
 
-= 1.0 (Jan 22nd Feb 2014) =
+= 1.0 (22nd Feb 2014) =
 
 * Initial Version Released
 
