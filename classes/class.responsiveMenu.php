@@ -486,7 +486,7 @@ class ResponsiveMenu {
 
             #responsive-menu #responsiveSearchInput
             {
-                width: 68%;
+                width: 66%;
                 padding: 5px 1%;
                 vertical-align: text-bottom;
             }
