@@ -19,7 +19,8 @@ class ResponsiveMenu {
                     'responsiveMenuTitle' => 'Menu Title',
                     'responsiveMenuLineColour' => '#000000',
                     'responsiveMenuBackgroundColour' => '#FFFFFF',
-                    'responsiveMenuButtonTitle' => 'menu'
+                    'responsiveMenuButtonTitle' => 'menu',
+                    'responsiveMenuBackgroundTransparent' => false
             ) ) );    
         
     }
@@ -91,7 +92,7 @@ class ResponsiveMenu {
 
             <div class="responsiveMenuTitle">Viewport Meta Tag Check</div> 
 
-                <?php print_r( self::checkViewPortTag() );
+            <?php 
                 if( self::checkViewPortTag() ) :
                     echo "<span style='color: green;'>Viewport Meta Tag Found - " . self::checkViewPortTag() . "</span>";
                 else :
@@ -205,7 +206,19 @@ class ResponsiveMenu {
                 class="colourPicker" 
                 value="<?php echo stripslashes( $options['responsiveMenuBackgroundColour'] ); ?>" 
             />
+
+            <div class="responsiveMenuTitle">Menu Background Transparent</div> 
             
+            <div class="responsiveMenuDescription">Tick this if you would like a transparent background</div>
+            
+            <input 
+                type="checkbox" 
+                name="responsiveMenuBackgroundTransparent" 
+                id="responsiveMenuBackgroundTransparent"
+                value="checked"
+                <?php echo $options['responsiveMenuBackgroundTransparent'] == 'checked' ? ' checked="checked" ' : ''; ?>
+            />
+
             <br /><br />
             
             <input type="submit" class="button button-primary" name="responsiveMenuSubmit" value="Update Responsive Menu Options" />
@@ -228,15 +241,15 @@ class ResponsiveMenu {
                     
                     'reponsiveMenuMenu' => $_POST['reponsiveMenuMenu'],
                     'responsiveMenuBreakpoint' => intval( $_POST['responsiveMenuBreakpoint'] ),
-     
-                                   'reponsiveMenuDepth' => intval( $_POST['reponsiveMenuDepth'] ),
+                    'reponsiveMenuDepth' => intval( $_POST['reponsiveMenuDepth'] ),
                     'responsiveMenuTop' => intval( $_POST['responsiveMenuTop'] ),
                     'responsiveMenuRight' => intval( $_POST['responsiveMenuRight'] ),
                     'responsiveMenuCss' => stripslashes( strip_tags( trim( $_POST['responsiveMenuCss'] ) ) ),
                     'responsiveMenuTitle' => stripslashes( strip_tags( trim( $_POST['responsiveMenuTitle'] ) ) ),
                     'responsiveMenuLineColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuLineColour'] ) ) ),
                     'responsiveMenuBackgroundColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundColour'] ) ) ),
-                    'responsiveMenuButtonTitle' => stripslashes( strip_tags( trim( $_POST['responsiveMenuButtonTitle'] ) ) )
+                    'responsiveMenuButtonTitle' => stripslashes( strip_tags( trim( $_POST['responsiveMenuButtonTitle'] ) ) ),
+                    'responsiveMenuBackgroundTransparent' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundTransparent'] ) ) )
             ) ) );    
    
             return true;
@@ -448,8 +461,12 @@ class ResponsiveMenu {
                 position: absolute;
                 right: {$options['responsiveMenuRight']}%;
                 top: {$options['responsiveMenuTop']}px;
-                color: {$options['responsiveMenuLineColour']};
-                background: {$options['responsiveMenuBackgroundColour']};
+                color: {$options['responsiveMenuLineColour']};";
+                
+                if( !$options['responsiveMenuBackgroundTransparent'] ) 
+                    $css .= "background: {$options['responsiveMenuBackgroundColour']};";
+                
+                $css .= "
                 padding: 5px;
                 border-radius: 5px;
                 z-index: 9999;
