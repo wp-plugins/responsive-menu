@@ -1,6 +1,6 @@
 === Reponsive Menu ===
 Contributors: peter.featherstone
-Donate link: http://www.peterfeatherstone.com/
+Donate link: http://www.peterfeatherstone.com/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
@@ -25,13 +25,12 @@ This is a Highly Customisable Responsive Menu Plugin enabling you to change the 
 <li> - Right Percentage Location</li>
 <li> - Line & Text Colour</li>
 <li> - Background Colour</li>
-<li> - Background Transparency</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. Much better than those select drop-down menu's you see.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
-<br /><br />
+<br />
 It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install.
 <br />
 
@@ -60,10 +59,6 @@ Alternatively:
 3. Example Front End Expanded Menu
 
 == Changelog ==
-
-= 1.1 (24th Feb 2014) =
-
-* Added transparency option for menu background
 
 = 1.0 (22nd Feb 2014) =
 
