@@ -1,6 +1,6 @@
 === Reponsive Menu ===
 Contributors: peter.featherstone
-Donate link: http://www.peterfeatherstone.com/
+Donate link: http://www.peterfeatherstone.com/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
