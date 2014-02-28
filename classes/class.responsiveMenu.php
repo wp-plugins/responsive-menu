@@ -502,6 +502,7 @@ class ResponsiveMenu {
                 width: 68%;
                 padding: 5px 1%;
                 vertical-align: text-bottom;
+                -webkit-appearance: none;
             }
 
             #responsive-menu #responsiveSearchSubmit
@@ -514,6 +515,7 @@ class ResponsiveMenu {
                 margin-right: 2%;
                 float: right;
                 cursor: pointer;
+                -webkit-appearance: none;
             }
 
             #responsive-menu #responsiveSearchSubmit:hover
