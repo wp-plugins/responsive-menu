@@ -13,7 +13,7 @@ class ResponsiveMenu {
                     'reponsiveMenuMenu' => '',
                     'responsiveMenuBreakpoint' => 400,
                     'reponsiveMenuDepth' => 2,
-                    'responsiveMenuTop' => 20 ,
+                    'responsiveMenuTop' => 10 ,
                     'responsiveMenuRight' => 5,
                     'responsiveMenuCss' =>  '',
                     'responsiveMenuTitle' => 'Menu Title',
