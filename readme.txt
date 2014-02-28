@@ -12,10 +12,10 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin enabling you to change the menu: 
+This is a Highly Customisable Responsive Menu Plugin enabling you to change the: 
 <br />
 <ul>
-<li> - Title</li>
+<li> - Menu Title</li>
 <li> - Button Title</li>
 <li> - Menu To Responsify</li>
 <li> - Media Query Breakpoint Width</li>
