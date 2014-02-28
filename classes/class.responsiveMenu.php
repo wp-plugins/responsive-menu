@@ -1,5 +1,24 @@
 <?php
 
+/*
+    Main Class for Responsive Menu
+ 
+    Copyright 2014  Peter Featherstone <peter.featherstone@networkintellect.com>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License, version 2, as 
+    published by the Free Software Foundation.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*/
+
 namespace PeterFeatherstone\ResponsiveMenu;
 
 class ResponsiveMenu {
@@ -21,6 +40,7 @@ class ResponsiveMenu {
                     'responsiveMenuBackgroundColour' => '#000000',
                     'responsiveMenuButtonTitle' => '',
                     'responsiveMenuBackgroundTransparent' => 'checked'
+                    
             ) ) );    
         
     }
@@ -609,7 +629,7 @@ $css .= "   }
     
     private function checkViewPortTag() {
 
-        $metaTags = get_meta_tags( get_bloginfo( 'url' )  );
+        $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
         
         if( $metaTags['viewport'] ) return $metaTags['viewport'];
                           
