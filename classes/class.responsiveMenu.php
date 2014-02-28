@@ -120,19 +120,31 @@ class ResponsiveMenu {
             <input type="text" name="responsiveMenuButtonTitle" value="<?php echo $options['responsiveMenuButtonTitle']; ?>" />
             
             <div class="responsiveMenuTitle">Choose Menu To Responsify</div> 
-            
+
             <div class="responsiveMenuDescription">This is the menu that will be used responsively.</div>
 
             <select name="reponsiveMenuMenu">
 
-                <?php foreach( get_registered_nav_menus() as $key => $val ) : ?>
+                <?php 
+                /* Old Way of Grabbing Menus 
+                foreach( get_registered_nav_menus() as $key => $val ) : ?>
 
                     <option value="<?php echo $key; ?>"<?php echo $key == $options['reponsiveMenuMenu'] ? 'selected="selected">' : '>'; ?>
                         <?php echo $val; ?>
                     </option>
 
-                <?php endforeach; ?>
+                <?php endforeach; */ ?>
 
+                <?php 
+                
+                foreach( get_terms( 'nav_menu' ) as $menu ) : ?>
+
+                    <option value="<?php echo $menu->slug; ?>"<?php echo $menu->slug == $options['reponsiveMenuMenu'] ? 'selected="selected">' : '>'; ?>
+                        <?php echo $menu->name; ?>
+                    </option>
+
+                <?php endforeach;  ?>
+                
             </select>
 
             <div class="responsiveMenuTitle">Menu Breakpoint</div> 
@@ -342,7 +354,8 @@ class ResponsiveMenu {
                 </div>';
 						
         $html .= wp_nav_menu( array( 
-            'theme_location' => $options['reponsiveMenuMenu'], 
+            //'theme_location' => $options['reponsiveMenuMenu'], 
+            'menu' => $options['reponsiveMenuMenu'], 
             'echo' => false, 
             'menu_class' => 'responsive-menu' ) );
 		
@@ -524,7 +537,6 @@ class ResponsiveMenu {
                 display: block;
                 overflow: hidden;
                 white-space: nowrap;
-                 height: 20px;
             }
 
             #responsive-menu .responsive-menu li li a
