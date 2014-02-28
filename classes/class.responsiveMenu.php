@@ -17,10 +17,10 @@ class ResponsiveMenu {
                     'responsiveMenuRight' => 5,
                     'responsiveMenuCss' =>  '',
                     'responsiveMenuTitle' => 'Menu Title',
-                    'responsiveMenuLineColour' => '#000000',
-                    'responsiveMenuBackgroundColour' => '#FFFFFF',
-                    'responsiveMenuButtonTitle' => 'menu',
-                    'responsiveMenuBackgroundTransparent' => false
+                    'responsiveMenuLineColour' => '#FFFFFF',
+                    'responsiveMenuBackgroundColour' => '#000000',
+                    'responsiveMenuButtonTitle' => '',
+                    'responsiveMenuBackgroundTransparent' => 'checked'
             ) ) );    
         
     }
