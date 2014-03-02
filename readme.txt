@@ -65,7 +65,7 @@ Alternatively:
 
 == Changelog ==
 
-= 1.3.1 (3rd Mar 2014) =
+= 1.4 (3rd Mar 2014) =
 
 * Fixed bug where the menu wouldn't retract on re-size
 
