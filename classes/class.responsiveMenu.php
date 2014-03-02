@@ -411,7 +411,8 @@ class ResponsiveMenu {
                 }
 
                 // Close Responive Menu If Browser Width Goes Above {$options['responsiveMenuBreakpoint']}px
-                $( document ).resize(function() { ";
+                    
+                $( window ).resize(function() { ";
                 
                $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).innerHeight() + getHeightOfIOSToolbars ); " : "";
 
