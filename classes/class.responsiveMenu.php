@@ -176,7 +176,7 @@ class ResponsiveMenu {
 
             <div class="responsiveMenuTitle">Menu Image</div> 
             
-            <div class="responsiveMenuDescription">This is the image that sits next to the responsive menu title</div>
+            <div class="responsiveMenuDescription">This is the image that sits next to the responsive menu title and needs to be 32px x 32 px</div>
             
             <input type="text" id="responsiveMenuImage" name="responsiveMenuImage" value="<?php echo $options['responsiveMenuImage']; ?>" />
             <input type="button" id="responsiveMenuImageButton" value="Upload Image" class="button" />
