@@ -404,7 +404,7 @@ class ResponsiveMenu {
                     
                 $( window ).resize(function() { ";
                 
-               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
+               $js .= isset( $options['responsiveMenuFixed'] ) && $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
 
                $js .= "if( $( document ).width() > {$options['responsiveMenuBreakpoint']} ) { 
 
