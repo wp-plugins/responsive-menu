@@ -4,7 +4,7 @@ Donate link: http://www.peterfeatherstone.com/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,10 @@ Alternatively:
 3. Example Front End Expanded Menu
 
 == Changelog ==
+
+= 1.3.1 (3rd Mar 2014) =
+
+* Fixed bug where the menu wouldn't retract on re-size
 
 = 1.3 (3rd Mar 2014) =
 

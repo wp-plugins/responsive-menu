@@ -313,7 +313,7 @@ class ResponsiveMenu {
             
             <div class="responsiveMenuDescription">Enter your preferred font name below, if empty your default site font will be used.</div>
             
-            <input type="text" name="responsiveMenuFont" value="<?php echo $options['responsiveMenuFont']; ?>" />
+            <input type="text" name="responsiveMenuFont" value="<?php echo isset( $options['responsiveMenuFont'] ) ? $options['responsiveMenuFont'] : ''; ?>" />
             
             <br /><br />
             
@@ -411,7 +411,8 @@ class ResponsiveMenu {
                 }
 
                 // Close Responive Menu If Browser Width Goes Above {$options['responsiveMenuBreakpoint']}px
-                $( document ).resize(function() { ";
+                    
+                $( window ).resize(function() { ";
                 
                $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).innerHeight() + getHeightOfIOSToolbars ); " : "";
 
@@ -496,7 +497,7 @@ class ResponsiveMenu {
                 height: 32px;
                 width: 32px;
                 overflow: hidden;
-                margin-right: 15px;
+                margin-right: 5px;
             }
 
             #responsive-menu .responsiveMenuImage
@@ -589,6 +590,7 @@ class ResponsiveMenu {
                 text-align: center;
                 cursor: pointer; 
                 width: 50px;
+                font-size: 13px;
                 display: none;";
                 
                 $css .= $options['responsiveMenuFixed'] == 'fixed' ? "position: fixed;" : "position: absolute;";
@@ -676,14 +678,14 @@ class ResponsiveMenu {
             
             #click-menu .threeLines
             {
-                width: 43px;
+                width: 33px;
                 height: 33px;
                 margin: auto;
             }
 
             #click-menu .threeLines .line
             {
-                height: 7px;
+                height: 5px;
                 margin-bottom: 6px;
                 background: {$options['responsiveMenuLineColour']};
                 width: 100%;
