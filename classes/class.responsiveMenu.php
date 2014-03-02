@@ -19,8 +19,6 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-namespace PeterFeatherstone\ResponsiveMenu;
-
 class ResponsiveMenu {
     
     static function install() {
@@ -54,7 +52,7 @@ class ResponsiveMenu {
                 'Responsive Menu', 
                 'manage_options', 
                 'responsive-menu', 
-                array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'adminPage' ), 
+                array( 'ResponsiveMenu', 'adminPage' ), 
                 RM_IMAGES . 'icon.png' 
                 );
             
