@@ -57,7 +57,7 @@ Alternatively:
 
 = Why do I get a "Parse error: syntax error, unexpected T_STRING in /wp-content/plugins/responsive-menu/classes/class.responsiveMenu.php on line 22 error? =
 
-- The Responsive Menu plugin uses Namespaces, which are only available in PHP versions 5.3 and above, please ask your hosting provider to upgrade your PHP version on the server to remove this error.
+- The Responsive Menu plugin used to use Namespaces, which are only available in PHP versions 5.3 and above, please ask your hosting provider to upgrade your PHP version on the server or delete the plugin completely and re-install to remove this error.
 
 == Screenshots ==
 
@@ -73,6 +73,7 @@ Alternatively:
 
 * Improved menu sliding animation.
 * Fixed bug where the menu wouldn't retract on re-size.
+* Removed the use of namespaces to support pre PHP 5.3 systems.
 
 = 1.3 (3rd Mar 2014) =
 

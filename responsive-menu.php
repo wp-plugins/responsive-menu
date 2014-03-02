@@ -52,14 +52,14 @@ add_action('wp_enqueue_scripts', 'jQuery');
    2. Installation
    =================== */
 
-register_activation_hook( __FILE__, array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'install' ) );
+register_activation_hook( __FILE__, array( 'ResponsiveMenu', 'install' ) );
 
 /* ====================
    3. Admin Menu Registrations
    =================== */
 
 /* 3.1 Main Menu ============= */
-add_action( 'admin_menu', array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'menus' ) );
+add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
 
 /* ====================
    4. Display
@@ -68,7 +68,7 @@ add_action( 'admin_menu', array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMe
 /* 4.1 Display Responsive Menu on Site ============= */
 if( !is_admin() ) :
 
-    add_action( 'wp_head', array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'displayMenu' ) );
+    add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) );
 
 endif;
 
