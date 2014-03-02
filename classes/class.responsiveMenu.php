@@ -589,6 +589,7 @@ class ResponsiveMenu {
                 text-align: center;
                 cursor: pointer; 
                 width: 50px;
+                font-size: 13px;
                 display: none;";
                 
                 $css .= $options['responsiveMenuFixed'] == 'fixed' ? "position: fixed;" : "position: absolute;";
@@ -676,7 +677,7 @@ class ResponsiveMenu {
             
             #click-menu .threeLines
             {
-                width: 43px;
+                width: 33px;
                 height: 33px;
                 margin: auto;
             }
