@@ -55,6 +55,10 @@ Alternatively:
 
 == Frequently Asked Questions ==
 
+= Why do I get a "Parse error: syntax error, unexpected T_STRING in /wp-content/plugins/responsive-menu/classes/class.responsiveMenu.php on line 22 error? =
+
+- The Responsive Menu plugin uses Namespaces, which are only available in PHP versions 5.3 and above, please ask your hosting provider to upgrade your PHP version on the server to remove this error.
+
 == Screenshots ==
 
 1. Fully customisable Admin Screen
