@@ -327,6 +327,10 @@ class ResponsiveMenu {
     
     private static function validate() {
         
+        $responsiveMenuImage = isset( $_POST['responsiveMenuImage'] ) ? $_POST['responsiveMenuImage'] : '';
+        $responsiveMenuFixed = isset( $_POST['responsiveMenuFixed'] ) ? $_POST['responsiveMenuFixed'] : '';
+        $responsiveMenuBackgroundTransparent = isset( $_POST['responsiveMenuBackgroundTransparent'] ) ? $_POST['responsiveMenuBackgroundTransparent'] : '';
+        
         if( isset( $_POST['responsiveMenuSubmit'] ) ) :
             
            update_option( 'responsive_menu_options', 
@@ -343,10 +347,10 @@ class ResponsiveMenu {
                     'responsiveMenuLineColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuLineColour'] ) ) ),
                     'responsiveMenuBackgroundColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundColour'] ) ) ),
                     'responsiveMenuButtonTitle' => stripslashes( strip_tags( trim( $_POST['responsiveMenuButtonTitle'] ) ) ),
-                    'responsiveMenuBackgroundTransparent' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundTransparent'] ) ) ),
+                    'responsiveMenuBackgroundTransparent' => stripslashes( strip_tags( trim( $responsiveMenuBackgroundTransparent ) ) ),
                     'responsiveMenuFont' => stripslashes( strip_tags( trim( $_POST['responsiveMenuFont'] ) ) ),
-                    'responsiveMenuFixed' => stripslashes( strip_tags( trim( $_POST['responsiveMenuFixed'] ) ) ),
-                    'responsiveMenuImage' => stripslashes( strip_tags( trim( $_POST['responsiveMenuImage'] ) ) )
+                    'responsiveMenuFixed' => stripslashes( strip_tags( trim( $responsiveMenuFixed ) ) ),
+                    'responsiveMenuImage' => stripslashes( strip_tags( trim( $responsiveMenuImage ) ) )
             ) ) );    
    
             return true;
@@ -437,7 +441,7 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
         
-        $html .= isset( $options['responsiveMenuImage'] ) ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
+        $html .= isset( $options['responsiveMenuImage'] ) && !empty( $options['responsiveMenuImage'] ) ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['responsiveMenuTitle'] . '</a></div>';
 						
