@@ -383,9 +383,11 @@ class ResponsiveMenu {
 
             $( '#click-menu' ).click( function() { 
 
-                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
+                height = "; $js .= isset( $options['responsiveMenuFixed'] ) && $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
                         
-             $js .= "if( !isOpen ) {
+             $js .= "
+                 
+                if( !isOpen ) {
                 
                       $( '#responsive-menu' ).css( 'height', height ); 
                       $( '#responsive-menu' ).stop().animate( { left: \"0\" }, 500 ); 
@@ -435,7 +437,7 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
         
-        $html .= $options['responsiveMenuImage'] ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
+        $html .= isset( $options['responsiveMenuImage'] ) ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['responsiveMenuTitle'] . '</a></div>';
 						
