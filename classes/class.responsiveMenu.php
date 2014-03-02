@@ -313,7 +313,7 @@ class ResponsiveMenu {
             
             <div class="responsiveMenuDescription">Enter your preferred font name below, if empty your default site font will be used.</div>
             
-            <input type="text" name="responsiveMenuFont" value="<?php echo $options['responsiveMenuFont']; ?>" />
+            <input type="text" name="responsiveMenuFont" value="<?php echo isset( $options['responsiveMenuFont'] ) ? $options['responsiveMenuFont'] : ''; ?>" />
             
             <br /><br />
             
