@@ -67,14 +67,15 @@ Alternatively:
 
 = 1.4 (3rd Mar 2014) =
 
-* Fixed bug where the menu wouldn't retract on re-size
+* Improved menu sliding animation.
+* Fixed bug where the menu wouldn't retract on re-size.
 
 = 1.3 (3rd Mar 2014) =
 
 * Added ability to upload image for menu title.
 * Added ability to switch between fixed and non-fixed positioning.
 * Added ability to change menu font.
-* Minor updates
+* Minor updates.
 
 = 1.2 (28th Feb 2014) =
 
