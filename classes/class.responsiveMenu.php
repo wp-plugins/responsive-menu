@@ -42,7 +42,7 @@ class ResponsiveMenu {
                     'responsiveMenuBackgroundTransparent' => 'checked',
                     'responsiveMenuFont' => '',
                     'responsiveMenuFixed' => '',
-                    'responsiveMenuImage' => 'responsiveMenuImage'
+                    'responsiveMenuImage' => ''
                     
             ) ) );    
         
