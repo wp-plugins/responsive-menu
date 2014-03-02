@@ -382,22 +382,15 @@ class ResponsiveMenu {
                 // Toggle Responsive Menu Once Button Clicked
                 
                 isOpen = false;
-                
-                getHeightOfIOSToolbars = function() {
-            
-                    var tH = ( window.orientation === 0 ? screen.height : screen.width) -  getIOSWindowHeight();
-                    return tH > 1 ? tH : 0;
-
-                };
 
             $( '#click-menu' ).click( function() { 
 
-                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight();" : "$( document ).height();";
+                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
                         
              $js .= "if( !isOpen ) {
                 
                       $( '#responsive-menu' ).css( 'display', 'block' );
-                      $( '#responsive-menu' ).css( 'height', height + getHeightOfIOSToolbars ); 
+                      $( '#responsive-menu' ).css( 'height', height ); 
                       $( '#responsive-menu' ).stop().animate( { left: \"0\" }, 500 ); 
                       isOpen = true;
 
@@ -414,7 +407,7 @@ class ResponsiveMenu {
                     
                 $( window ).resize(function() { ";
                 
-               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).innerHeight() + getHeightOfIOSToolbars ); " : "";
+               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
 
                $js .= "if( $( document ).width() > {$options['responsiveMenuBreakpoint']} ) { 
 
@@ -514,7 +507,6 @@ class ResponsiveMenu {
         $css .= " 
                 width: 75%; 
                 top: 0px; 
-                bottom: 0px;
                 left: -5000px; 
                 background: #43494C;												  
                 z-index: 9999;  
