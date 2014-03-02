@@ -496,7 +496,7 @@ class ResponsiveMenu {
                 height: 32px;
                 width: 32px;
                 overflow: hidden;
-                margin-right: 15px;
+                margin-right: 5px;
             }
 
             #responsive-menu .responsiveMenuImage
