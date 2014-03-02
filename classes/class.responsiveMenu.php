@@ -683,7 +683,7 @@ class ResponsiveMenu {
 
             #click-menu .threeLines .line
             {
-                height: 7px;
+                height: 5px;
                 margin-bottom: 6px;
                 background: {$options['responsiveMenuLineColour']};
                 width: 100%;
