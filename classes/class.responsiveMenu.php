@@ -19,8 +19,6 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-namespace PeterFeatherstone\ResponsiveMenu;
-
 class ResponsiveMenu {
     
     static function install() {
@@ -42,7 +40,7 @@ class ResponsiveMenu {
                     'responsiveMenuBackgroundTransparent' => 'checked',
                     'responsiveMenuFont' => '',
                     'responsiveMenuFixed' => '',
-                    'responsiveMenuImage' => 'responsiveMenuImage'
+                    'responsiveMenuImage' => ''
                     
             ) ) );    
         
@@ -54,7 +52,7 @@ class ResponsiveMenu {
                 'Responsive Menu', 
                 'manage_options', 
                 'responsive-menu', 
-                array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'adminPage' ), 
+                array( 'ResponsiveMenu', 'adminPage' ), 
                 RM_IMAGES . 'icon.png' 
                 );
             
@@ -382,30 +380,20 @@ class ResponsiveMenu {
                 // Toggle Responsive Menu Once Button Clicked
                 
                 isOpen = false;
-                
-                getHeightOfIOSToolbars = function() {
-            
-                    var tH = ( window.orientation === 0 ? screen.height : screen.width) -  getIOSWindowHeight();
-                    return tH > 1 ? tH : 0;
-
-                };
 
             $( '#click-menu' ).click( function() { 
 
-                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight();" : "$( document ).height();";
+                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
                         
              $js .= "if( !isOpen ) {
                 
-                      $( '#responsive-menu' ).css( 'display', 'block' );
-                      $( '#responsive-menu' ).css( 'height', height + getHeightOfIOSToolbars ); 
+                      $( '#responsive-menu' ).css( 'height', height ); 
                       $( '#responsive-menu' ).stop().animate( { left: \"0\" }, 500 ); 
                       isOpen = true;
 
                 } else {
                 
-                      $( '#responsive-menu' ).stop().animate( { left: \"20\" }, 500 );
-                      $( '#responsive-menu' ).animate( { left: \"-5000\" }, 4000 );
-                      $( '#responsive-menu' ).stop().css( 'display', 'none' );
+                      $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500 );
                       isOpen = false;
                       
                 }
@@ -414,14 +402,13 @@ class ResponsiveMenu {
                     
                 $( window ).resize(function() { ";
                 
-               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).innerHeight() + getHeightOfIOSToolbars ); " : "";
+               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
 
                $js .= "if( $( document ).width() > {$options['responsiveMenuBreakpoint']} ) { 
 
-                        if( $( '#responsive-menu' ).css( 'left' ) != '-5000px' ) {
+                        if( $( '#responsive-menu' ).css( 'left' ) != '-1000px' ) {
 
-                            $( '#responsive-menu' ).animate( { left: \"-5000\" }, 700 );  
-                            $( '#responsive-menu' ).css( 'display', 'none' ); 
+                            $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500 );  
 
                         }
 
@@ -448,9 +435,9 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
         
-        $html .= $options['responsiveMenuImage'] ? '<div class="responsiveMenuImageContainer"><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></div>' : '';
+        $html .= $options['responsiveMenuImage'] ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
 
-        $html .= $options['responsiveMenuTitle'] . '</div>';
+        $html .= '<a href="' . get_site_url() . ' ">' . $options['responsiveMenuTitle'] . '</a></div>';
 						
         $html .= wp_nav_menu( array( 
             'menu' => $options['reponsiveMenuMenu'], 
@@ -514,14 +501,13 @@ class ResponsiveMenu {
         $css .= " 
                 width: 75%; 
                 top: 0px; 
-                bottom: 0px;
-                left: -5000px; 
+                left: -1000px; 
                 background: #43494C;												  
                 z-index: 9999;  
                 box-shadow: 0px 1px 8px #333333; 
-                font-size: 13px;												  
-                color: white; 
-                display: none;";
+                font-size: 13px;
+                max-width: 999px;
+                color: white;";
         
         $css .= !empty( $options['responsiveMenuFont'] ) ? 'font-family: "' . $options['responsiveMenuFont'] . '";' : '';
                 
@@ -622,9 +608,10 @@ class ResponsiveMenu {
 
             #responsive-menu #responsiveSearchInput
             {
-                width: 93%;
-                padding: 5px 0px 5px 1%;
+                width: 91%;
+                padding: 5px 0px 5px 3%;
                 -webkit-appearance: none;
+                border-radius: 2px;
             }
   
             #responsive-menu .responsive-menu,
