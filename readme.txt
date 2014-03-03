@@ -69,13 +69,13 @@ Alternatively:
 
 == Changelog ==
 
-= 1.4 (3rd Mar 2014) =
+= 1.4 (2nd Mar 2014) =
 
 * Improved menu sliding animation.
 * Fixed bug where the menu wouldn't retract on re-size.
 * Removed the use of namespaces to support pre PHP 5.3 systems.
 
-= 1.3 (3rd Mar 2014) =
+= 1.3 (1st Mar 2014) =
 
 * Added ability to upload image for menu title.
 * Added ability to switch between fixed and non-fixed positioning.
@@ -84,7 +84,7 @@ Alternatively:
 
 = 1.2 (28th Feb 2014) =
 
-* Added support to include all site menus, thanks alkahf for pointing this out.
+* Added support to include all site menus.
 
 = 1.1 (25th Feb 2014) =
 
