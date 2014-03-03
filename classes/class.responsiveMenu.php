@@ -19,6 +19,8 @@
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+namespace PeterFeatherstone\ResponsiveMenu;
+
 class ResponsiveMenu {
     
     static function install() {
@@ -40,7 +42,7 @@ class ResponsiveMenu {
                     'responsiveMenuBackgroundTransparent' => 'checked',
                     'responsiveMenuFont' => '',
                     'responsiveMenuFixed' => '',
-                    'responsiveMenuImage' => ''
+                    'responsiveMenuImage' => 'responsiveMenuImage'
                     
             ) ) );    
         
@@ -52,7 +54,7 @@ class ResponsiveMenu {
                 'Responsive Menu', 
                 'manage_options', 
                 'responsive-menu', 
-                array( 'ResponsiveMenu', 'adminPage' ), 
+                array( '\PeterFeatherstone\ResponsiveMenu\ResponsiveMenu', 'adminPage' ), 
                 RM_IMAGES . 'icon.png' 
                 );
             
@@ -327,10 +329,6 @@ class ResponsiveMenu {
     
     private static function validate() {
         
-        $responsiveMenuImage = isset( $_POST['responsiveMenuImage'] ) ? $_POST['responsiveMenuImage'] : '';
-        $responsiveMenuFixed = isset( $_POST['responsiveMenuFixed'] ) ? $_POST['responsiveMenuFixed'] : '';
-        $responsiveMenuBackgroundTransparent = isset( $_POST['responsiveMenuBackgroundTransparent'] ) ? $_POST['responsiveMenuBackgroundTransparent'] : '';
-        
         if( isset( $_POST['responsiveMenuSubmit'] ) ) :
             
            update_option( 'responsive_menu_options', 
@@ -347,10 +345,10 @@ class ResponsiveMenu {
                     'responsiveMenuLineColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuLineColour'] ) ) ),
                     'responsiveMenuBackgroundColour' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundColour'] ) ) ),
                     'responsiveMenuButtonTitle' => stripslashes( strip_tags( trim( $_POST['responsiveMenuButtonTitle'] ) ) ),
-                    'responsiveMenuBackgroundTransparent' => stripslashes( strip_tags( trim( $responsiveMenuBackgroundTransparent ) ) ),
+                    'responsiveMenuBackgroundTransparent' => stripslashes( strip_tags( trim( $_POST['responsiveMenuBackgroundTransparent'] ) ) ),
                     'responsiveMenuFont' => stripslashes( strip_tags( trim( $_POST['responsiveMenuFont'] ) ) ),
-                    'responsiveMenuFixed' => stripslashes( strip_tags( trim( $responsiveMenuFixed ) ) ),
-                    'responsiveMenuImage' => stripslashes( strip_tags( trim( $responsiveMenuImage ) ) )
+                    'responsiveMenuFixed' => stripslashes( strip_tags( trim( $_POST['responsiveMenuFixed'] ) ) ),
+                    'responsiveMenuImage' => stripslashes( strip_tags( trim( $_POST['responsiveMenuImage'] ) ) )
             ) ) );    
    
             return true;
@@ -387,19 +385,23 @@ class ResponsiveMenu {
 
             $( '#click-menu' ).click( function() { 
 
-                height = "; $js .= isset( $options['responsiveMenuFixed'] ) && $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
+                height = "; $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( window ).innerHeight() + 100;" : "$( document ).height();";
                         
-             $js .= "
-                 
-                if( !isOpen ) {
+             $js .= "if( !isOpen ) {
                 
                       $( '#responsive-menu' ).css( 'height', height ); 
+                      $( '#responsive-menu' ).css( 'display', 'block' ); 
                       $( '#responsive-menu' ).stop().animate( { left: \"0\" }, 500 ); 
                       isOpen = true;
 
                 } else {
                 
-                      $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500 );
+                        $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500, function() { 
+                      
+                            $( '#responsive-menu' ).css( 'display', 'none' );  
+
+                        } );
+                      
                       isOpen = false;
                       
                 }
@@ -408,13 +410,17 @@ class ResponsiveMenu {
                     
                 $( window ).resize(function() { ";
                 
-               $js .= isset( $options['responsiveMenuFixed'] ) && $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
+               $js .= $options['responsiveMenuFixed'] == 'fixed' ? "$( '#responsive-menu' ).css( 'height', $( window ).height() ); " : "";
 
                $js .= "if( $( document ).width() > {$options['responsiveMenuBreakpoint']} ) { 
 
                         if( $( '#responsive-menu' ).css( 'left' ) != '-1000px' ) {
 
-                            $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500 );  
+                        $( '#responsive-menu' ).animate( { left: \"-1000\" }, 500, function() { 
+                      
+                            $( '#responsive-menu' ).css( 'display', 'none' );  
+
+                        } );
 
                         }
 
@@ -441,7 +447,7 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
         
-        $html .= isset( $options['responsiveMenuImage'] ) && !empty( $options['responsiveMenuImage'] ) ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
+        $html .= $options['responsiveMenuImage'] ? '<div class="responsiveMenuImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['responsiveMenuImage'] . '" class="responsiveMenuImage" /></a></div>' : '';
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['responsiveMenuTitle'] . '</a></div>';
 						
@@ -513,6 +519,7 @@ class ResponsiveMenu {
                 box-shadow: 0px 1px 8px #333333; 
                 font-size: 13px;
                 max-width: 999px;
+                display: none;
                 color: white;";
         
         $css .= !empty( $options['responsiveMenuFont'] ) ? 'font-family: "' . $options['responsiveMenuFont'] . '";' : '';
