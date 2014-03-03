@@ -458,9 +458,11 @@ class ResponsiveMenu {
 
                     <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
 
-                </form>
+                </form>';
+        
+       $html .= $options['responsiveMenuFixed'] == 'fixed' ? '<div style="height: 110px;"></div>' : '';
             
-            </div>';
+          $html .= '</div>';
         
         $html .= '<div id="click-menu"> 
                             
