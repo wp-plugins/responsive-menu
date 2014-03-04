@@ -4,7 +4,7 @@ Donate link: http://www.peterfeatherstone.com/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,9 +25,15 @@ This is a Highly Customisable Responsive Menu Plugin enabling you to change the:
 <li> - Top Location</li>
 <li> - Right Percentage Location</li>
 <li> - Line & Text Colour</li>
-<li> - Background Colour</li>
+<li> - Menu Button Background Colour</li>
 <li> - Absolute and Fixed Positioning</li>
 <li> - Menu Font</li>
+<li> - Menu Title Colour</li>
+<li> - Menu Title Hover Colour</li>
+<li> - Menu Text Colour</li>
+<li> - Menu Text Hover Colour</li>
+<li> - Menu Background Colour</li>
+<li> - Menu Link Background Hover Colour</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. Much better than those select drop-down menu's you see.
@@ -68,6 +74,16 @@ Alternatively:
 3. Example Front End Expanded Menu
 
 == Changelog ==
+
+= 1.5 (4th Mar 2014) =
+
+* Added Menu Title Colour Customisation Option
+* Added Menu Title Hover Colour Customisation Option
+* Added Menu Text Colour Customisation Option
+* Added Menu Text Hover Colour Customisation Option
+* Added Menu Background Colour Customisation Option
+* Added Menu Link Background Hover Colour Customisation Option
+* Minor code improvements
 
 = 1.4 (2nd Mar 2014) =
 
