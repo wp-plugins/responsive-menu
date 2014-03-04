@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 26 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -36,11 +36,11 @@ This is a Highly Customisable Responsive Menu Plugin enabling you to change the:
 <li> - Menu Link Background Hover Colour</li>
 <li> - Plus more...</li>
 </ul>
-The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. Much better than those select drop-down menu's you see.
+The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 26 customisable options, you can get it to look exactly as you want it too.
 <br /><br />
 It adds no extra HTTP requests to your site and the code added is extremely small (only a little jQuery and CSS).
 <br />
@@ -75,6 +75,12 @@ Alternatively:
 
 == Changelog ==
 
+= 1.6 (5th Mar 2014) =
+
+* Added Animation Options Section
+* Added Choice Of Slide Animation (Overlay or Push)
+* Minor Code Improvements
+
 = 1.5 (4th Mar 2014) =
 
 * Added Menu Title Colour Customisation Option
@@ -83,7 +89,7 @@ Alternatively:
 * Added Menu Text Hover Colour Customisation Option
 * Added Menu Background Colour Customisation Option
 * Added Menu Link Background Hover Colour Customisation Option
-* Minor code improvements
+* Minor Code Improvements
 
 = 1.4 (2nd Mar 2014) =
 
