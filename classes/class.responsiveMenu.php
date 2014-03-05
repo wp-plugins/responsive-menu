@@ -51,7 +51,13 @@ class ResponsiveMenu {
                 'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
                 'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
                 'RMAnim' => 'overlay',
-                'RMPushCSS' => ''
+                'RMPushCSS' => '',
+                'RMTitleBkg' => '#43494C',
+                'RMFontSize' => 13,
+                'RMTitleSize' => 14,
+                'RMBtnSize' => 13,
+                'RMCurBkg' => $options['responsiveMenuBackgroundColour'],
+                'RMCurCol' => $options['responsiveMenuMainTextColour']
             )));
 
         else :
@@ -80,7 +86,13 @@ class ResponsiveMenu {
                 'RMTextColHov' => '#FFFFFF',
                 'RMTitleColHov' => '#FFFFFF',
                 'RMAnim' => 'overlay',
-                'RMPushCSS' => ''
+                'RMPushCSS' => '',
+                'RMTitleBkg' => '#43494C',
+                'RMFontSize' => 13,
+                'RMTitleSize' => 14,
+                'RMBtnSize' => 13,
+                'RMCurBkg' => '#43494C',
+                'RMCurCol' => '#FFFFFF'
             )));
 
         endif;
@@ -101,6 +113,7 @@ class ResponsiveMenu {
         endif;
 
         $options = unserialize(get_option('RMOptions'));
+        
         ?>
 
         <style>
@@ -224,7 +237,7 @@ class ResponsiveMenu {
 
                             <h4>Menu Image</h4> 
 
-                            <h5>This is the image that sits next to the responsive menu title and needs to be 32px x 32 px</h5>
+                            <h5>This is the image that sits next to the responsive menu title. The best size is 32px x 32px</h5>
 
                             <input type="text" id="RMImage" name="RMImage" value="<?php echo isset($options['RMImage']) ? $options['RMImage'] : ''; ?>" />
                             <input type="button" id="RMImageButton" value="Upload Image" class="button" />
@@ -469,7 +482,46 @@ class ResponsiveMenu {
                         />
                 </td>
                 <td>
+                    <h4>Title Background Colour</h4> 
 
+                    <h5>This is the background colour of the expanded menu title</h5>
+
+                    <input 
+                        type="text" 
+                        name="RMTitleBkg" 
+                        id="RMTitleBkg" 
+                        class="colourPicker" 
+                        value="<?php echo isset( $options['RMTitleBkg'] ) ? $options['RMTitleBkg'] : ''; ?>" 
+                        />
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    <h4>Current Page Background Colour</h4> 
+
+                    <h5>This is the background colour of the current page</h5>
+
+                    <input 
+                        type="text" 
+                        name="RMCurBkg" 
+                        id="RMCurBkg" 
+                        class="colourPicker" 
+                        value="<?php echo isset($options['RMCurBkg']) ? $options['RMCurBkg'] : ''; ?>" 
+                        />
+                </td>
+                <td>
+                    <h4>Current Page Text Colour</h4> 
+
+                    <h5>This is the text colour of the current page</h5>
+
+                    <input 
+                        type="text" 
+                        name="RMCurCol" 
+                        id="RMCurCol" 
+                        class="colourPicker" 
+                        value="<?php echo isset($options['RMCurCol']) ? $options['RMCurCol'] : ''; ?>" 
+                        />
                 </td>
             </tr>
         </table>
@@ -515,7 +567,31 @@ class ResponsiveMenu {
                     <input type="text" name="RMFont" value="<?php echo isset($options['RMFont']) ? $options['RMFont'] : ''; ?>" />
 
                 </td>
-                <td></td>
+                <td>                    
+                    <h4>Font Size</h4> 
+
+                    <h5>Enter a font size in pixels below.</h5>
+
+                    <input type="text" name="RMFontSize" class="numberInput" value="<?php echo isset($options['RMFontSize']) ? $options['RMFontSize'] : ''; ?>" />px
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+               <h4>Click Button Font Size</h4> 
+
+                    <h5>Enter a click button font size in pixels below.</h5>
+
+                    <input type="text" name="RMBtnSize" class="numberInput" value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" />px
+
+                </td>
+                <td>                    
+                    <h4>Title Font Size</h4> 
+
+                    <h5>Enter a title font size in pixels below.</h5>
+
+                    <input type="text" name="RMTitleSize" class="numberInput" value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" />px
+                </td>
             </tr>
         </table>
 
@@ -590,7 +666,13 @@ class ResponsiveMenu {
             $RMTitleColHov = isset($_POST['RMTitleColHov']) ? $_POST['RMTitleColHov'] : '#FFFFFF';
             $RMAnim = isset($_POST['RMAnim']) ? $_POST['RMAnim'] : 'overlay';
             $RMPushCSS = isset($_POST['RMPushCSS']) ? $_POST['RMPushCSS'] : '';
-
+            $RMTitleBkg = isset($_POST['RMTitleBkg']) ? $_POST['RMTitleBkg'] : '#43494C';
+            $RMFontSize = isset($_POST['RMFontSize']) ? $_POST['RMFontSize'] : 13;
+            $RMTitleSize = isset($_POST['RMTitleSize']) ? $_POST['RMTitleSize'] : 14;
+            $RMBtnSize = isset($_POST['RMBtnSize']) ? $_POST['RMBtnSize'] : 13;
+            $RMCurBkg = isset($_POST['RMCurBkg']) ? $_POST['RMCurBkg'] : $RMBkg;
+            $RMCurCol = isset($_POST['RMCurCol']) ? $_POST['RMCurCol'] : $RMTextCol;
+                    
             // Update Submitted Options 
             update_option('RMOptions',
                     // Serialize For Database
@@ -619,7 +701,13 @@ class ResponsiveMenu {
                 'RMTextColHov' => self::filterInput($RMTextColHov),
                 'RMTitleColHov' => self::filterInput($RMTitleColHov),
                 'RMAnim' => self::filterInput($RMAnim),
-                'RMPushCSS' => self::filterInput($RMPushCSS)
+                'RMPushCSS' => self::filterInput($RMPushCSS),
+                'RMTitleBkg' => self::filterInput( $RMTitleBkg ),
+                'RMFontSize' => intval( $RMFontSize ),
+                'RMTitleSize' => intval( $RMTitleSize ),
+                'RMBtnSize' => intval( $RMBtnSize ),
+                'RMCurBkg' => self::filterInput( $RMCurBkg ),
+                'RMCurCol' => self::filterInput( $RMCurCol )
             )));
 
             return true;
@@ -740,7 +828,7 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
 
-        $html .= $options['RMImage'] ? '<div class="RMImageContainer"><a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" /></a></div>' : '';
+        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" /></a>' : '';
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
 
@@ -795,7 +883,15 @@ class ResponsiveMenu {
         $clickBkg = empty($options['RMBkgTran']) ? "background: {$options['RMClickBkg']};" : '';
         $borCol = empty($options['RMBorCol']) ? "#3C3C3C" : $options['RMBorCol'];
         $breakpoint = empty($options['RMBreak']) ? "400" : $options['RMBreak'];
-
+        $titleBkg = empty($options['RMTitleBkg']) ? "#43494C" : $options['RMTitleBkg'];
+        
+        $fontSize = empty($options['RMFontSize']) ? 13 : $options['RMFontSize'];
+        $titleSize = empty($options['RMTitleSize']) ? 14 : $options['RMTitleSize'];                        
+        $btnSize = empty($options['RMBtnSize']) ? 13 : $options['RMBtnSize'];
+        
+        $curBkg = empty($options['RMCurBkg']) ? $options['RMBkg'] : $options['RMCurBkg'];
+        $curCol = empty($options['RMCurCol']) ? $options['RMTextCol'] : $options['RMCurCol'];
+        
         $css = "
 
         <style>
@@ -812,7 +908,7 @@ class ResponsiveMenu {
                 left: $width%;
             }
 
-       #responsive-menu								
+            #responsive-menu								
             { 
                 position: $position;
                 $overflowy
@@ -823,23 +919,15 @@ class ResponsiveMenu {
                 background: $mainBkg;
                 z-index: 9999;  
                 box-shadow: 0px 1px 8px #333333; 
-                font-size: 13px;
+                font-size: {$fontSize}px !important;
                 max-width: 999px;
                 display: none;
-            }
-            
-            #responsive-menu .RMImageContainer
-            {
-                height: 32px;
-                width: 32px;
-                overflow: hidden;
-                margin-right: 5px;
             }
 
             #responsive-menu .RMImage
             {
-                width: 100%;
                 vertical-align: sub;
+                margin-right: 10px;
             }
 
             #responsive-menu input {
@@ -849,10 +937,10 @@ class ResponsiveMenu {
             #responsive-menu #responsive-menu-title			
             {
                 width: 95%; 
-                font-size: 14px; 
+                font-size: {$titleSize}px !important; 
                 padding: 20px 0px 20px 5%;
                 margin-left: 0px;
-                line-height: 32px;
+                background: $titleBkg !important;
             }
       
             #responsive-menu #responsive-menu-title,
@@ -884,6 +972,12 @@ class ResponsiveMenu {
                 margin: 0px;
             }
                         
+            #responsive-menu .responsive-menu li.current_page_item a
+            {
+                background: $curBkg !important;
+                color: $curCol !important;
+            }
+                    
             #responsive-menu  .responsive-menu ul
             {
                 margin-left: 0px !important;
@@ -918,7 +1012,7 @@ class ResponsiveMenu {
                 text-align: center;
                 cursor: pointer; 
                 width: 50px;
-                font-size: 13px;
+                font-size: {$btnSize}px !important;
                 display: none;
                 position: $position;
                 right: $right%;
