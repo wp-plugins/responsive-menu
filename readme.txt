@@ -34,6 +34,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 26 customisable optio
 <li> - Menu Text Hover Colour</li>
 <li> - Menu Background Colour</li>
 <li> - Menu Link Background Hover Colour</li>
+<li> - Choose Overlay or Push Animations</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.

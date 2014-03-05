@@ -46,7 +46,6 @@ function jQuery(){
 }
 
 add_action('wp_enqueue_scripts', 'jQuery');
-//wp_enqueue_script( 'jquery' );
 
 /* ====================
    2. Installation
