@@ -332,7 +332,7 @@ class ResponsiveMenu {
             </tr></table>
         <hr />
 
-        <h3>Style Settings</h3>
+        <h3>Colour Settings</h3>
 
         <table>
             <tr>
@@ -472,6 +472,13 @@ class ResponsiveMenu {
 
                 </td>
             </tr>
+        </table>
+        
+        <hr />
+        
+        <h3>Style Settings</h3>
+        
+        <table>
             <tr>
                 <td>
                     <h4>Menu Background Transparent</h4> 
