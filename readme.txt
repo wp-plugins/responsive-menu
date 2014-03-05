@@ -30,10 +30,14 @@ This is a Highly Customisable Responsive Menu Plugin, with 26 customisable optio
 <li> - Menu Font</li>
 <li> - Menu Title Colour</li>
 <li> - Menu Title Hover Colour</li>
+<li> - Menu Title Background Colour</li>
 <li> - Menu Text Colour</li>
 <li> - Menu Text Hover Colour</li>
 <li> - Menu Background Colour</li>
 <li> - Menu Link Background Hover Colour</li>
+<li> - Menu Text Size</li>
+<li> - Menu Button Text Size</li>
+<li> - Menu Links Text Size</li>
 <li> - Choose Overlay or Push Animations</li>
 <li> - Plus more...</li>
 </ul>
@@ -80,6 +84,11 @@ Alternatively:
 
 * Added Animation Options Section
 * Added Choice Of Slide Animation (Overlay or Push)
+* Added Menu Title Background Colour Customisation Option
+* Added Menu Title Font Size Customisation Option
+* Added Click Menu Title Font Size Customisation Option
+* Added Menu Links Font Size Customisation Option
+* Removed Image Size Restriction
 * Minor Code Improvements
 
 = 1.5 (4th Mar 2014) =
