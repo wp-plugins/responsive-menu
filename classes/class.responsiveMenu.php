@@ -936,10 +936,10 @@ class ResponsiveMenu {
             
             #responsive-menu #responsive-menu-title			
             {
-                width: 95%; 
+                width: 95% !important; 
                 font-size: {$titleSize}px !important; 
-                padding: 20px 0px 20px 5%;
-                margin-left: 0px;
+                padding: 20px 0px 20px 5% !important;
+                margin-left: 0px !important;
                 background: $titleBkg !important;
             }
       
@@ -966,10 +966,10 @@ class ResponsiveMenu {
             
             #responsive-menu .responsive-menu			
             { 
-                float: left;  
-                width: 100%; 
-                list-style-type: none;
-                margin: 0px;
+                float: left !important;  
+                width: 100% !important; 
+                list-style-type: none !important;
+                margin: 0px !important;
             }
                         
             #responsive-menu .responsive-menu li.current_page_item a
@@ -1026,30 +1026,30 @@ class ResponsiveMenu {
 
             #responsive-menu #responsiveSearch
             {
-                display: block;
-                width: 95%;
-                padding-left: 5%;
+                display: block !important;
+                width: 95% !important;
+                padding-left: 5% !important;
                 border-top: 1px solid $borCol !important; 
-                clear: both;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                height: 40px;
-                line-height: 40px;
+                clear: both !important;
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+                height: 40px !important;
+                line-height: 40px !important;
             }
 
             #responsive-menu #responsiveSearchInput
             {
-                width: 91%;
-                padding: 5px 0px 5px 3%;
-                -webkit-appearance: none;
-                border-radius: 2px;
+                width: 91% !important;
+                padding: 5px 0px 5px 3% !important;
+                -webkit-appearance: none !important;
+                border-radius: 2px !important;
             }
   
             #responsive-menu .responsive-menu,
             #responsive-menu div,
             #responsive-menu .responsive-menu li
             {
-                width: 100%;
+                width: 100% !important;
                 float: left !important;
                 margin-left: 0px !important;
             }
@@ -1070,7 +1070,7 @@ class ResponsiveMenu {
             
             #responsive-menu .responsive-menu li li li li
             {
-                display: none;
+                display: none!important;
             }
             
             #responsive-menu .responsive-menu li a:hover
@@ -1083,17 +1083,17 @@ class ResponsiveMenu {
             
             #click-menu .threeLines
             {
-                width: 33px;
-                height: 33px;
-                margin: auto;
+                width: 33px !important;
+                height: 33px !important;
+                margin: auto !important;
             }
 
             #click-menu .threeLines .line
             {
-                height: 5px;
-                margin-bottom: 6px;
-                background: $clickCol;
-                width: 100%;
+                height: 5px !important;
+                margin-bottom: 6px !important;
+                background: $clickCol !important;
+                width: 100% !important;
             }
 
             @media only screen and ( min-width : 0px ) and ( max-width : {$breakpoint}px ) { 
