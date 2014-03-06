@@ -56,8 +56,9 @@ class ResponsiveMenu {
                 'RMFontSize' => 13,
                 'RMTitleSize' => 14,
                 'RMBtnSize' => 13,
-                'RMCurBkg' => $options['responsiveMenuBackgroundColour'],
-                'RMCurCol' => $options['responsiveMenuMainTextColour']
+                'RMCurBkg' => $options['responsiveMenuMainBackground'],
+                'RMCurCol' => $options['responsiveMenuMainTextColour'],
+                'RMAnimSpd' => 0.5
             )));
 
         else :
@@ -92,7 +93,8 @@ class ResponsiveMenu {
                 'RMTitleSize' => 14,
                 'RMBtnSize' => 13,
                 'RMCurBkg' => '#43494C',
-                'RMCurCol' => '#FFFFFF'
+                'RMCurCol' => '#FFFFFF',
+                'RMAnimSpd' => 0.5
             )));
 
         endif;
@@ -145,7 +147,33 @@ class ResponsiveMenu {
                 width: 48%;
                 padding-right: 2%;
             }
+            
+            .default
+            {
+                font-size: 8px;
+                font-style: italic;
+            }
 
+            .error
+            {
+                color: red;
+            }
+            
+            .success
+            {
+                color: green;
+            }
+            
+            @media only screen and ( min-width : 0px ) and ( max-width : 600px ) { 
+
+                table, table td, table tr
+                {
+                    width: 100%;
+                    display: block;
+                }
+                
+            }
+            
         </style>
 
         <script>
@@ -206,16 +234,18 @@ class ResponsiveMenu {
 
                 <h3>Initial Checks</h3>
 
-                <h4>Viewport Meta Tag Check</h4> 
+                <h4>Viewport Meta Tag Check<?php if ( $portTag = self::checkViewPortTag() ) : ?><span class='success'> - Below Viewport Meta Tag Found</span><?php else : $portTag = null; endif; ?></h4> 
 
                 <?php
-                if (self::checkViewPortTag()) :
-                    echo "<span style='color: green;'>Viewport Meta Tag Found - " . self::checkViewPortTag() . "</span>";
+                if ( $portTag ) :
+                    echo "&lt;meta name='viewport' content='" . self::checkViewPortTag() . "' /&gt;";
                 else :
-                    echo "<span style='color: red;'>Viewport Meta Tag Not Found</span>";
+                    echo "<span class='error'>Viewport Meta Tag Not Found</span>";
                 endif;
                 ?>
 
+                <h4>Recommended</h4>
+                &lt;meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /&gt;
                 <br /><br />
 
                 <hr />
@@ -315,7 +345,7 @@ class ResponsiveMenu {
                 <td>
                     <h4>Menu Width</h4> 
 
-                    <h5>This is the width the menu takes up across the page once expanded.</h5>
+                    <h5>This is the width the menu takes up across the page once expanded. <span class="default">default: 75</span></h5>
 
                     <input class="numberInput" type="text" name="RMWidth" value="<?php echo isset($options['RMWidth']) ? $options['RMWidth'] : ''; ?>" />%
 
@@ -570,7 +600,7 @@ class ResponsiveMenu {
                 <td>                    
                     <h4>Font Size</h4> 
 
-                    <h5>Enter a font size in pixels below.</h5>
+                    <h5>Enter a font size in pixels below. <span class='default'>default: 13</span></h5>
 
                     <input type="text" name="RMFontSize" class="numberInput" value="<?php echo isset($options['RMFontSize']) ? $options['RMFontSize'] : ''; ?>" />px
                 </td>
@@ -580,7 +610,7 @@ class ResponsiveMenu {
                 <td>
                <h4>Click Button Font Size</h4> 
 
-                    <h5>Enter a click button font size in pixels below.</h5>
+                    <h5>Enter a click button font size in pixels below. <span class='default'>default: 13</span></h5>
 
                     <input type="text" name="RMBtnSize" class="numberInput" value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" />px
 
@@ -588,7 +618,7 @@ class ResponsiveMenu {
                 <td>                    
                     <h4>Title Font Size</h4> 
 
-                    <h5>Enter a title font size in pixels below.</h5>
+                    <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
 
                     <input type="text" name="RMTitleSize" class="numberInput" value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" />px
                 </td>
@@ -599,6 +629,13 @@ class ResponsiveMenu {
 
         <h3>Animation Settings</h3>
 
+        <?php if( $options['RMAnim'] == 'push' && $portTag != 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' ) : ?>
+
+            <span class='error'>Warning: The Push Animation requires you to place the following meta tag in your site header:</span><br />
+            <span class='success'>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;</span>
+        
+        <?php endif; ?>
+        
         <table>
             <tr>
                 <td>
@@ -622,6 +659,20 @@ class ResponsiveMenu {
                     <h5>This is the css ID or class of the wrapper you want to push when using the push animation (e.g - #pushWrapper, .pushContainer)</h5>
 
                     <input type="text" name="RMPushCSS" value="<?php echo isset($options['RMPushCSS']) ? $options['RMPushCSS'] : ''; ?>" />
+
+                </td>
+            </tr>
+                        <tr>
+                <td>
+
+                    <h4>Animation Speed</h4> 
+
+                    <h5>Enter a speed in seconds below of the slide animation. <span class="default">default: 0.5</span></h5>
+
+                    <input type="text" name="RMAnimSpd" class="numberInput" value="<?php echo isset($options['RMAnimSpd']) ? $options['RMAnimSpd'] : ''; ?>" />s
+
+                </td>
+                <td>
 
                 </td>
             </tr>
@@ -667,11 +718,13 @@ class ResponsiveMenu {
             $RMAnim = isset($_POST['RMAnim']) ? $_POST['RMAnim'] : 'overlay';
             $RMPushCSS = isset($_POST['RMPushCSS']) ? $_POST['RMPushCSS'] : '';
             $RMTitleBkg = isset($_POST['RMTitleBkg']) ? $_POST['RMTitleBkg'] : '#43494C';
+            $RMFont =  isset($_POST['RMFont']) ? $_POST['RMFont'] : '';
             $RMFontSize = isset($_POST['RMFontSize']) ? $_POST['RMFontSize'] : 13;
             $RMTitleSize = isset($_POST['RMTitleSize']) ? $_POST['RMTitleSize'] : 14;
             $RMBtnSize = isset($_POST['RMBtnSize']) ? $_POST['RMBtnSize'] : 13;
             $RMCurBkg = isset($_POST['RMCurBkg']) ? $_POST['RMCurBkg'] : $RMBkg;
             $RMCurCol = isset($_POST['RMCurCol']) ? $_POST['RMCurCol'] : $RMTextCol;
+            $RMAnimSpd = isset($_POST['RMAnimSpd']) ? $_POST['RMAnimSpd'] : 0.5;
                     
             // Update Submitted Options 
             update_option('RMOptions',
@@ -707,7 +760,8 @@ class ResponsiveMenu {
                 'RMTitleSize' => intval( $RMTitleSize ),
                 'RMBtnSize' => intval( $RMBtnSize ),
                 'RMCurBkg' => self::filterInput( $RMCurBkg ),
-                'RMCurCol' => self::filterInput( $RMCurCol )
+                'RMCurCol' => self::filterInput( $RMCurCol ),
+                'RMAnimSpd' => floatval( $RMAnimSpd )    
             )));
 
             return true;
@@ -723,9 +777,15 @@ class ResponsiveMenu {
 
         echo self::getJavascript();
         echo self::getCSS();
-        echo self::getHTML();
+        
     }
 
+    static function displayMenuHtml() {
+        
+        echo self::getHTML();
+        
+    }
+    
     static function getJavascript() {
 
         $options = unserialize(get_option('RMOptions'));
@@ -744,6 +804,8 @@ class ResponsiveMenu {
         $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
         $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
+        $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000; 
+        
         $js = "
         <script>
 
@@ -764,7 +826,7 @@ class ResponsiveMenu {
                       $slideOver
                           
                       $( '#responsive-menu' ).css( 'display', 'block' ); 
-                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, 500, 'linear' ); 
+                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear' ); 
 
                       isOpen = true;
 
@@ -772,7 +834,7 @@ class ResponsiveMenu {
 
                         $slideBack
                         
-                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, 500, 'linear', function() { 
+                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, $speed, 'linear', function() { 
                       
                             $slideRemove
                             $slideOverCssRemove
@@ -796,7 +858,7 @@ class ResponsiveMenu {
 
                         $slideBack
                             
-                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, 500, 'linear', function() { 
+                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, $speed, 'linear', function() { 
                         
                             $slideRemove
                             $slideOverCssRemove                      
@@ -874,7 +936,7 @@ class ResponsiveMenu {
         $width = empty($options['RMWidth']) ? '75' : $options['RMWidth'];
         $mainBkg = empty($options['RMBkg']) ? "#43494C" : $options['RMBkg'];
         $mainBkgH = empty($options['RMBkgHov']) ? "#3C3C3C" : $options['RMBkgHov'];
-        $font = empty($options['RMFont']) ? '' : 'font-family: "' . $options['RMFont'] . '";';
+        $font = empty($options['RMFont']) ? '' : 'font-family: "' . $options['RMFont'] . '" !important;';
         $titleCol = empty($options['RMTitleCol']) ? '#FFFFFF' : $options['RMTitleCol'];
         $titleColH = empty($options['RMTitleColHov']) ? '#FFFFFF' : $options['RMTitleColHov'];
         $txtCol = empty($options['RMTextCol']) ? "#FFFFFF" : $options['RMTextCol'];
@@ -900,6 +962,7 @@ class ResponsiveMenu {
             {
                 width: 100% !important;
                 overflow-x: hidden !important;
+                height: 100% !important;
             }
 
             .RMPushSlide
@@ -926,10 +989,11 @@ class ResponsiveMenu {
 
             #responsive-menu .RMImage
             {
-                vertical-align: sub;
+                vertical-align: middle;
                 margin-right: 10px;
             }
 
+            #responsive-menu,
             #responsive-menu input {
                 $font
             }      
