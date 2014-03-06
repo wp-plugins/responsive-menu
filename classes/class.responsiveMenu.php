@@ -22,10 +22,10 @@ class ResponsiveMenu {
 
     static function install() {
 
+        add_option( 'RMVer', '1.6' );
+        
         if (get_option('responsive_menu_options')) :
 
-            add_option( 'RMVer', '1.6' );
-        
             // Migrate Old Data 
             $options = unserialize(get_option('responsive_menu_options'));
 
