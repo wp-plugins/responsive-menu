@@ -46,7 +46,7 @@ The plugin creates a nice three-lined menu button that users can click to bring 
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 26 customisable options, you can get it to look exactly as you want it too.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 31 customisable options, you can get it to look exactly as you want it to.
 <br /><br />
 It adds no extra HTTP requests to your site and the code added is extremely small (only a little jQuery and CSS).
 <br />
@@ -77,7 +77,7 @@ Alternatively:
 
 = Why have all my options disappeared when upgrading to 1.6 =
 
-When upgrading to 1.6, you may need to de-activate and then re-activate the plug-in again to get your options to re-appear. 
+- When upgrading to 1.6, you may need to de-activate and then re-activate the plug-in again to get your options to re-appear. 
 
 Don't worry none of your settings will be lost and will not happen in future releases.
 
