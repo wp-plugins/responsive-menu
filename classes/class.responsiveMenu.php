@@ -1112,6 +1112,7 @@ class ResponsiveMenu {
                 width: 100% !important;
                 float: left !important;
                 margin-left: 0px !important;
+                padding-left: 0px !important;
             }
 
             #responsive-menu .responsive-menu li li a
