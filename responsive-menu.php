@@ -4,7 +4,7 @@
 Plugin Name: Responsive Menu
 Plugin URI: http://www.peterfeatherstone.com/responsive-menu/
 Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone @ Network Intellect.
-Version: 1.5
+Version: 1.6
 Author: Peter Featherstone
 Author URI: http://www.peterfeatherstone.com/responsive-menu/
 License: GPL2
