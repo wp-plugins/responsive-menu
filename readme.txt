@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 26 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 31 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -39,6 +39,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 26 customisable optio
 <li> - Menu Button Text Size</li>
 <li> - Menu Links Text Size</li>
 <li> - Choose Overlay or Push Animations</li>
+<li> - Slide Animation Speed</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -70,6 +71,10 @@ Alternatively:
 
 - The Responsive Menu plugin used to use Namespaces, which are only available in PHP versions 5.3 and above, please ask your hosting provider to upgrade your PHP version on the server or delete the plugin completely and re-install to remove this error.
 
+= Why does my site go weird when using the Push animation =
+
+- You need to add the following meta tag to your site header: &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;
+
 == Screenshots ==
 
 1. Fully customisable Admin Screen
@@ -80,9 +85,10 @@ Alternatively:
 
 == Changelog ==
 
-= 1.6 (5th Mar 2014) =
+= 1.6 (6th Mar 2014) =
 
 * Added Animation Options Section
+* Added Animation Speed Customisation Option
 * Added Choice Of Slide Animation (Overlay or Push)
 * Added Menu Title Background Colour Customisation Option
 * Added Menu Title Font Size Customisation Option
