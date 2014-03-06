@@ -77,7 +77,7 @@ Alternatively:
 
 = Why have all my options disappeared when upgrading to 1.6 =
 
-When upgrading to 1.6, you will need to de-active and then re-active the plugin again to get your options to re-appear. Don't worry none of your settings will be lost. This will not happen in future releases.
+When upgrading to 1.6, you will need to de-activate and then re-activate the plugin again to get your options to re-appear. Don't worry none of your settings will be lost and will not happen in future releases.
 
 == Screenshots ==
 
@@ -138,4 +138,4 @@ When upgrading to 1.6, you will need to de-active and then re-active the plugin 
 
 == Upgrade Notice ==
 
-When upgrading to 1.6, you will need to de-active and then re-active the plugin again to get your options to re-appear. Don't worry none of your settings will be lost. This will not happen in future releases.
+When upgrading to 1.6, you will need to de-activate and then re-activate the plugin again to get your options to re-appear. Don't worry none of your settings will be lost and will not happen in future releases.
