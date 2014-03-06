@@ -68,6 +68,7 @@ add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
 if( !is_admin() ) :
 
     add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) );
+    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
 
 endif;
 
