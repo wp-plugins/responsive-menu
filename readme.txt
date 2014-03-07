@@ -46,7 +46,7 @@ The plugin creates a nice three-lined menu button that users can click to bring 
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 31 customisable options, you can get it to look exactly as you want it to.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 31 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
 <br /><br />
 It adds no extra HTTP requests to your site and the code added is extremely small (only a little jQuery and CSS).
 <br />
