@@ -890,7 +890,7 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
 
-        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" /></a>' : '';
+        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
 
@@ -951,8 +951,8 @@ class ResponsiveMenu {
         $titleSize = empty($options['RMTitleSize']) ? 14 : $options['RMTitleSize'];                        
         $btnSize = empty($options['RMBtnSize']) ? 13 : $options['RMBtnSize'];
         
-        $curBkg = empty($options['RMCurBkg']) ? $options['RMBkg'] : $options['RMCurBkg'];
-        $curCol = empty($options['RMCurCol']) ? $options['RMTextCol'] : $options['RMCurCol'];
+        $curBkg = empty($options['RMCurBkg']) ? $mainBkg : $options['RMCurBkg'];
+        $curCol = empty($options['RMCurCol']) ? $txtCol : $options['RMCurCol'];
         
         $css = "
 
@@ -1141,8 +1141,8 @@ class ResponsiveMenu {
             {       
                 background: $mainBkgH !important;
                 color: $txtColH !important;
-                list-style-type: none !important
-                text-decoration: none !important;;
+                list-style-type: none !important;
+                text-decoration: none !important;
             }
             
             #click-menu .threeLines
