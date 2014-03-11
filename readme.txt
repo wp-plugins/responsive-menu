@@ -55,7 +55,10 @@ On the current development list for the next update are the following:
 <ul>
 <li>Option to remove the search bar</li>
 <li>Text alignment option</li>
-<li>Hover transition speed option </li>
+<li>Hover transition speed option</li>
+<li>Click to expand sub-menu options</li>
+<li>Changes to line height values</li>
+<li>Change to jQuery function call to avoid conflict</li>
 </ul>
 If you would like to see any other options added to the plugin then please email me or place them as a support request.
 <br />
