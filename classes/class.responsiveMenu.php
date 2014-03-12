@@ -1000,7 +1000,7 @@ class ResponsiveMenu {
             ";
         
     /* Added 1.7 */
-    if ( $options['RMExpand'] ) : 
+    if ( !$options['RMExpand'] ) : 
 
         $js .= " 
             
