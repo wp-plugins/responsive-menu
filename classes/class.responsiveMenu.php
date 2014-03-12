@@ -22,46 +22,7 @@ class ResponsiveMenu {
 
     static function install() {
 
-        if (get_option('responsive_menu_options')) :
-
-            // Migrate Old Data 
-            $options = unserialize(get_option('responsive_menu_options'));
-
-            add_option('RMOptions', serialize(array(
-                'RM' => $options['reponsiveMenuMenu'],
-                'RMBreak' => $options['responsiveMenuBreakpoint'],
-                'RMDepth' => $options['reponsiveMenuDepth'],
-                'RMTop' => $options['responsiveMenuTop'],
-                'RMRight' => $options['responsiveMenuRight'],
-                'RMCss' => $options['responsiveMenuCss'],
-                'RMTitle' => $options['responsiveMenuTitle'],
-                'RMLineCol' => $options['responsiveMenuLineColour'],
-                'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
-                'RMClickTitle' => $options['responsiveMenuButtonTitle'],
-                'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
-                'RMFont' => $options['responsiveMenuFont'],
-                'RMPos' => $options['responsiveMenuFixed'],
-                'RMImage' => $options['responsiveMenuImage'],
-                'RMWidth' => $options['responsiveMenuWidth'],
-                'RMBkg' => $options['responsiveMenuMainBackground'],
-                'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
-                'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
-                'RMTextCol' => $options['responsiveMenuMainTextColour'],
-                'RMBorCol' => $options['responsiveMenuMainBorderColour'],
-                'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
-                'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
-                'RMAnim' => 'overlay',
-                'RMPushCSS' => '',
-                'RMTitleBkg' => '#43494C',
-                'RMFontSize' => 13,
-                'RMTitleSize' => 14,
-                'RMBtnSize' => 13,
-                'RMCurBkg' => $options['responsiveMenuMainBackground'],
-                'RMCurCol' => $options['responsiveMenuMainTextColour'],
-                'RMAnimSpd' => 0.5
-            )));
-
-        else :
+        add_option( 'RMVer', '1.6' );
 
             add_option('RMOptions', serialize(array(
                 'RM' => '',
@@ -97,7 +58,6 @@ class ResponsiveMenu {
                 'RMAnimSpd' => 0.5
             )));
 
-        endif;
     }
 
     static function menus() {
@@ -108,6 +68,49 @@ class ResponsiveMenu {
 
     public static function adminPage() {
 
+            if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
+
+            add_option( 'RMVer', '1.6' );
+            
+            // Migrate Old Data 
+            $options = unserialize(get_option('responsive_menu_options'));
+
+                add_option('RMOptions', serialize(array(
+                    'RM' => $options['reponsiveMenuMenu'],
+                    'RMBreak' => $options['responsiveMenuBreakpoint'],
+                    'RMDepth' => $options['reponsiveMenuDepth'],
+                    'RMTop' => $options['responsiveMenuTop'],
+                    'RMRight' => $options['responsiveMenuRight'],
+                    'RMCss' => $options['responsiveMenuCss'],
+                    'RMTitle' => $options['responsiveMenuTitle'],
+                    'RMLineCol' => $options['responsiveMenuLineColour'],
+                    'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
+                    'RMClickTitle' => $options['responsiveMenuButtonTitle'],
+                    'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
+                    'RMFont' => $options['responsiveMenuFont'],
+                    'RMPos' => $options['responsiveMenuFixed'],
+                    'RMImage' => $options['responsiveMenuImage'],
+                    'RMWidth' => $options['responsiveMenuWidth'],
+                    'RMBkg' => $options['responsiveMenuMainBackground'],
+                    'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
+                    'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
+                    'RMTextCol' => $options['responsiveMenuMainTextColour'],
+                    'RMBorCol' => $options['responsiveMenuMainBorderColour'],
+                    'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
+                    'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
+                    'RMAnim' => 'overlay',
+                    'RMPushCSS' => '',
+                    'RMTitleBkg' => '#43494C',
+                    'RMFontSize' => 13,
+                    'RMTitleSize' => 14,
+                    'RMBtnSize' => 13,
+                    'RMCurBkg' => $options['responsiveMenuMainBackground'],
+                    'RMCurCol' => $options['responsiveMenuMainTextColour'],
+                    'RMAnimSpd' => 0.5
+                )));
+            
+            endif;
+            
         if (isset($_POST['RMSubmit'])) :
 
             $validated = self::validate();
@@ -786,6 +789,21 @@ class ResponsiveMenu {
         
     }
     
+    
+    static function Colorpicker(){ 
+    
+        wp_enqueue_media();
+        wp_enqueue_style( 'wp-color-picker');
+        wp_enqueue_script( 'wp-color-picker');
+
+    }
+    
+    static function jQuery() { 
+    
+        wp_enqueue_script( 'jquery' );
+  
+    }
+    
     static function getJavascript() {
 
         $options = unserialize(get_option('RMOptions'));
@@ -891,6 +909,7 @@ class ResponsiveMenu {
                 <div id="responsive-menu-title">';
 
         $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
+
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
 
@@ -1116,6 +1135,7 @@ class ResponsiveMenu {
                 width: 100% !important;
                 float: left !important;
                 margin-left: 0px !important;
+                padding-left: 0px !important;
             }
 
             #responsive-menu .responsive-menu li li a
