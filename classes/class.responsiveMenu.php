@@ -844,11 +844,15 @@ class ResponsiveMenu {
                       $slideOver
                           
                       $( '#responsive-menu' ).css( 'display', 'block' ); 
-                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear' ); 
+                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear', function() { 
+                          
+                        $setHeight
+    
+                      } ); 
 
                       isOpen = true;
                       
-                      $setHeight
+                      
 
                 } else {
 
