@@ -1145,9 +1145,11 @@ class ResponsiveMenu {
                 right: 0px !important;
                 position: absolute !important;
                 border: 1px solid $borCol !important;
-                padding: 11px 10px !important;
+                padding: 12px 10px !important;
                 color: $txtCol !important;
                 background: $mainBkg !important;
+                height: 20px !important;
+                line-height: 20px !important;
             }
             
             #responsive-menu .appendLink:hover
