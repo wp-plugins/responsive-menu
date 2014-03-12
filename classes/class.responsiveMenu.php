@@ -22,46 +22,7 @@ class ResponsiveMenu {
 
     static function install() {
 
-        if (get_option('responsive_menu_options')) :
-
-            // Migrate Old Data 
-            $options = unserialize(get_option('responsive_menu_options'));
-
-            add_option('RMOptions', serialize(array(
-                'RM' => $options['reponsiveMenuMenu'],
-                'RMBreak' => $options['responsiveMenuBreakpoint'],
-                'RMDepth' => $options['reponsiveMenuDepth'],
-                'RMTop' => $options['responsiveMenuTop'],
-                'RMRight' => $options['responsiveMenuRight'],
-                'RMCss' => $options['responsiveMenuCss'],
-                'RMTitle' => $options['responsiveMenuTitle'],
-                'RMLineCol' => $options['responsiveMenuLineColour'],
-                'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
-                'RMClickTitle' => $options['responsiveMenuButtonTitle'],
-                'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
-                'RMFont' => $options['responsiveMenuFont'],
-                'RMPos' => $options['responsiveMenuFixed'],
-                'RMImage' => $options['responsiveMenuImage'],
-                'RMWidth' => $options['responsiveMenuWidth'],
-                'RMBkg' => $options['responsiveMenuMainBackground'],
-                'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
-                'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
-                'RMTextCol' => $options['responsiveMenuMainTextColour'],
-                'RMBorCol' => $options['responsiveMenuMainBorderColour'],
-                'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
-                'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
-                'RMAnim' => 'overlay',
-                'RMPushCSS' => '',
-                'RMTitleBkg' => '#43494C',
-                'RMFontSize' => 13,
-                'RMTitleSize' => 14,
-                'RMBtnSize' => 13,
-                'RMCurBkg' => $options['responsiveMenuMainBackground'],
-                'RMCurCol' => $options['responsiveMenuMainTextColour'],
-                'RMAnimSpd' => 0.5
-            )));
-
-        else :
+        add_option( 'RMVer', '1.6' );
 
             add_option('RMOptions', serialize(array(
                 'RM' => '',
@@ -97,7 +58,6 @@ class ResponsiveMenu {
                 'RMAnimSpd' => 0.5
             )));
 
-        endif;
     }
 
     static function menus() {
@@ -108,6 +68,49 @@ class ResponsiveMenu {
 
     public static function adminPage() {
 
+            if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
+
+            add_option( 'RMVer', '1.6' );
+            
+            // Migrate Old Data 
+            $options = unserialize(get_option('responsive_menu_options'));
+
+                add_option('RMOptions', serialize(array(
+                    'RM' => $options['reponsiveMenuMenu'],
+                    'RMBreak' => $options['responsiveMenuBreakpoint'],
+                    'RMDepth' => $options['reponsiveMenuDepth'],
+                    'RMTop' => $options['responsiveMenuTop'],
+                    'RMRight' => $options['responsiveMenuRight'],
+                    'RMCss' => $options['responsiveMenuCss'],
+                    'RMTitle' => $options['responsiveMenuTitle'],
+                    'RMLineCol' => $options['responsiveMenuLineColour'],
+                    'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
+                    'RMClickTitle' => $options['responsiveMenuButtonTitle'],
+                    'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
+                    'RMFont' => $options['responsiveMenuFont'],
+                    'RMPos' => $options['responsiveMenuFixed'],
+                    'RMImage' => $options['responsiveMenuImage'],
+                    'RMWidth' => $options['responsiveMenuWidth'],
+                    'RMBkg' => $options['responsiveMenuMainBackground'],
+                    'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
+                    'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
+                    'RMTextCol' => $options['responsiveMenuMainTextColour'],
+                    'RMBorCol' => $options['responsiveMenuMainBorderColour'],
+                    'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
+                    'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
+                    'RMAnim' => 'overlay',
+                    'RMPushCSS' => '',
+                    'RMTitleBkg' => '#43494C',
+                    'RMFontSize' => 13,
+                    'RMTitleSize' => 14,
+                    'RMBtnSize' => 13,
+                    'RMCurBkg' => $options['responsiveMenuMainBackground'],
+                    'RMCurCol' => $options['responsiveMenuMainTextColour'],
+                    'RMAnimSpd' => 0.5
+                )));
+            
+            endif;
+            
         if (isset($_POST['RMSubmit'])) :
 
             $validated = self::validate();
@@ -786,6 +789,7 @@ class ResponsiveMenu {
         
     }
     
+    
     static function getJavascript() {
 
         $options = unserialize(get_option('RMOptions'));
@@ -892,6 +896,7 @@ class ResponsiveMenu {
 
         $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
 
+
         $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
 
         $html .= wp_nav_menu(array(
@@ -951,8 +956,8 @@ class ResponsiveMenu {
         $titleSize = empty($options['RMTitleSize']) ? 14 : $options['RMTitleSize'];                        
         $btnSize = empty($options['RMBtnSize']) ? 13 : $options['RMBtnSize'];
         
-        $curBkg = empty($options['RMCurBkg']) ? $mainBkg : $options['RMCurBkg'];
-        $curCol = empty($options['RMCurCol']) ? $txtCol : $options['RMCurCol'];
+        $curBkg = empty($options['RMCurBkg']) ? $options['RMBkg'] : $options['RMCurBkg'];
+        $curCol = empty($options['RMCurCol']) ? $options['RMTextCol'] : $options['RMCurCol'];
         
         $css = "
 
@@ -1116,6 +1121,7 @@ class ResponsiveMenu {
                 width: 100% !important;
                 float: left !important;
                 margin-left: 0px !important;
+                padding-left: 0px !important;
             }
 
             #responsive-menu .responsive-menu li li a
@@ -1141,8 +1147,8 @@ class ResponsiveMenu {
             {       
                 background: $mainBkgH !important;
                 color: $txtColH !important;
-                list-style-type: none !important;
-                text-decoration: none !important;
+                list-style-type: none !important
+                text-decoration: none !important;;
             }
             
             #click-menu .threeLines
