@@ -847,6 +847,8 @@ class ResponsiveMenu {
                       $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear' ); 
 
                       isOpen = true;
+                      
+                      $setHeight
 
                 } else {
 
