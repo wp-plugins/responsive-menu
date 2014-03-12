@@ -790,6 +790,20 @@ class ResponsiveMenu {
     }
     
     
+    static function Colorpicker(){ 
+    
+        wp_enqueue_media();
+        wp_enqueue_style( 'wp-color-picker');
+        wp_enqueue_script( 'wp-color-picker');
+
+    }
+    
+    static function jQuery() { 
+    
+        wp_enqueue_script( 'jquery' );
+  
+    }
+    
     static function getJavascript() {
 
         $options = unserialize(get_option('RMOptions'));
