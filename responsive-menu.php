@@ -39,13 +39,7 @@ define( 'RM_IMAGES', plugin_dir_url( __FILE__ ) . 'imgs/' );
 define( 'RM_JS', plugin_dir_url( __FILE__ ) . 'js/' );
 
 /* 1.3 Make Sure We Have jQuery ============= */
-function jQuery(){ 
-    
-  wp_enqueue_script( 'jquery' );
-  
-}
-
-add_action('wp_enqueue_scripts', 'jQuery');
+add_action('wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
 
 /* ====================
    2. Installation
@@ -75,14 +69,6 @@ endif;
 /* 4.2 Add Colour Picker to Admin Pages ============= */
 if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' ) :
 
-    function Colorpicker(){ 
-    
-        wp_enqueue_media();
-        wp_enqueue_style( 'wp-color-picker');
-        wp_enqueue_script( 'wp-color-picker');
-
-    }
-
-    add_action('admin_enqueue_scripts', 'Colorpicker');
+    add_action('admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
 
 endif;
