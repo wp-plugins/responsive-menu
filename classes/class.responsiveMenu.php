@@ -1287,6 +1287,7 @@ class ResponsiveMenu {
                 padding: 5px 0px 5px 3% !important;
                 -webkit-appearance: none !important;
                 border-radius: 2px !important;
+                border: 1px solid $borCol !important;
             }
   
             #responsive-menu .responsive-menu,
