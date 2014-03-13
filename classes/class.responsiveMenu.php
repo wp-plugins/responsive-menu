@@ -272,11 +272,23 @@ class ResponsiveMenu {
 
                 <h3>Initial Checks</h3>
 
-                <h4>Viewport Meta Tag Check<?php if ( $portTag = self::checkViewPortTag() ) : ?><span class='success'> - Below Viewport Meta Tag Found</span><?php else : $portTag = null; endif; ?></h4> 
+                <h4>Viewport Meta Tag Check
+                    
+                    <?php if ( $portTag = self::checkViewPortTag() ) : ?>
+                    
+                    <span class='success'> - Below Viewport Meta Tag Found</span>
+                    
+                    <?php else : 
+                        
+                        $portTag = null; 
+                    
+                    endif; ?>
+                    
+                </h4> 
 
                 <?php
                 if ( $portTag ) :
-                    echo "&lt;meta name='viewport' content='" . self::checkViewPortTag() . "' /&gt;";
+                    echo "&lt;meta name='viewport' content='" . $portTag . "' /&gt;";
                 else :
                     echo "<span class='error'>Viewport Meta Tag Not Found</span>";
                 endif;
