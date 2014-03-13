@@ -22,9 +22,10 @@ class ResponsiveMenu {
 
     static function install() {
 
-        update_option( 'RMVer', '1.7' );
+        update_option( 'RMVer', RM_V );
 
-            add_option('RMOptions', serialize(array(
+            add_option( 'RMOptions', serialize( array(
+                
                 'RM' => '',
                 'RMBreak' => 400,
                 'RMDepth' => 2,
@@ -63,14 +64,25 @@ class ResponsiveMenu {
                 'RMTranSpd' => 1,
                 'RMTxtAlign' => 'left',
                 'RMSearch' => false,
-                'RMExpand' => false
+                'RMExpand' => false,
+                'RMLinkHeight' => 20
+                
             )));
 
     }
 
     static function menus() {
 
-        add_menu_page( 'Responsive Menu', 'Responsive Menu', 'manage_options', 'responsive-menu', array('ResponsiveMenu', 'adminPage'), RM_IMAGES . 'icon.png' );
+        add_menu_page( 
+                
+                'Responsive Menu', 
+                'Responsive Menu', 
+                'manage_options', 
+                'responsive-menu', 
+                array('ResponsiveMenu', 'adminPage'), 
+                RM_IMAGES . 'icon.png' 
+                
+                );
 
     }
 
@@ -78,7 +90,7 @@ class ResponsiveMenu {
 
             if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
 
-            update_option( 'RMVer', '1.7' );
+            update_option( 'RMVer', RM_V );
             
             // Migrate Old Data 
             $options = unserialize(get_option('responsive_menu_options'));
@@ -122,11 +134,17 @@ class ResponsiveMenu {
                     'RMTranSpd' => 1,
                     'RMTxtAlign' => 'left',
                     'RMSearch' => false,
-                    'RMExpand' => false
+                    'RMExpand' => false,
+                    'RMLinkHeight' => 20
+                    
                 )));
             
+                else :
+                    
+                    update_option( 'RMVer', RM_V );
+                
             endif;
-       
+            
         if (isset($_POST['RMSubmit'])) :
 
             $validated = self::validate();
@@ -671,12 +689,14 @@ class ResponsiveMenu {
                     <input type="text" name="RMBtnSize" class="numberInput" value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" />px
 
                 </td>
-                <td>                    
+                <td>  
+                    
                     <h4>Title Font Size</h4> 
 
                     <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
 
                     <input type="text" name="RMTitleSize" class="numberInput" value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" />px
+                    
                 </td>
             </tr>
             
@@ -696,9 +716,20 @@ class ResponsiveMenu {
                     </select>
 
                 </td>
-                
+               
                 <td>                    
 
+                    <h4>Link Heights</h4> 
+
+                    <h5>Enter a link height size in pixels below. <span class='default'>default: 19</span></h5>
+
+                    <input 
+                        type="text" 
+                        name="RMLinkHeight" 
+                        class="numberInput" 
+                        value="<?php echo isset($options['RMLinkHeight']) ? $options['RMLinkHeight'] : ''; ?>" 
+                        />px
+                    
                 </td>
             </tr>
             
@@ -818,6 +849,7 @@ class ResponsiveMenu {
             $RMTxtAlign = isset($_POST['RMTxtAlign']) ? $_POST['RMTxtAlign'] : 'left';
             $RMSearch = isset($_POST['RMSearch']) ? $_POST['RMSearch'] : false;
             $RMExpand = isset($_POST['RMExpand']) ? $_POST['RMExpand'] : false;
+            $RMLinkHeight = isset($_POST['RMLinkHeight']) ? $_POST['RMLinkHeight'] : 20;
                     
             // Update Submitted Options 
             update_option('RMOptions',
@@ -862,7 +894,8 @@ class ResponsiveMenu {
                 'RMTranSpd' => floatval( $RMTranSpd ),
                 'RMTxtAlign' => self::filterInput( $RMTxtAlign ),
                 'RMSearch' => self::filterInput( $RMSearch ),
-                'RMExpand' => self::filterInput( $RMExpand )    
+                'RMExpand' => self::filterInput( $RMExpand ),    
+                'RMLinkHeight' => intval( $RMLinkHeight )  
                     
             )));
 
@@ -1106,7 +1139,9 @@ class ResponsiveMenu {
         $linkPadding = $options['RMTxtAlign'] == 'right' ? '12px 5% 12px 0px' : '12px 0px 12px 5%';
         $titlePadding = $options['RMTxtAlign'] == 'right' ? '20px 5% 20px 0px' : '20px 0px 20px 5%';
         $paddingAlign = $align == 'center' ? 'left' : $align;
-                
+        $height = empty( $options['RMLinkHeight'] ) ? 19 : $options['RMLinkHeight'];
+        $subBtnAlign =   $align == 'right' ? 'left' : 'right';
+        
         $css = "
 
         <style>
@@ -1142,14 +1177,14 @@ class ResponsiveMenu {
 
             #responsive-menu .appendLink
             {
-                right: 0px !important;
+                $subBtnAlign: 0px !important;
                 position: absolute !important;
                 border: 1px solid $borCol !important;
                 padding: 12px 10px !important;
                 color: $txtCol !important;
                 background: $mainBkg !important;
-                height: 20px !important;
-                line-height: 20px !important;
+                height: {$height}px !important;
+                line-height: {$height}px !important;
             }
             
             #responsive-menu .appendLink:hover
@@ -1242,8 +1277,8 @@ class ResponsiveMenu {
                 padding: $linkPadding !important;
                 width: 95% !important;
                 display: block !important;
-                height: 20px !important;
-                line-height: 20px !important;
+                height: {$height}px !important;
+                line-height: {$height}px !important;
                 overflow: hidden !important;
                 white-space: nowrap !important;
                 color: $txtCol !important;
@@ -1272,7 +1307,7 @@ class ResponsiveMenu {
             {
                 display: block !important;
                 width: 95% !important;
-                padding-left: 5% !important;
+                padding-$paddingAlign: 5% !important;
                 border-top: 1px solid $borCol !important; 
                 clear: both !important;
                 padding-top: 10px !important;
@@ -1352,8 +1387,28 @@ class ResponsiveMenu {
 ";
 
         $css .= $options['RMCss'] ? $options['RMCss'] . " { display: none !important; } " : '';
-        $css .= $options['RMDepth'] == 1 ? " #responsive-menu .responsive-menu li li { display: none; } " : '';
-        $css .= $options['RMDepth'] == 2 ? " #responsive-menu .responsive-menu li li li { display: none; } " : '';
+
+        if( $options['RMDepth'] == 1 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li .appendLink,
+                #responsive-menu .responsive-menu li li { display: none; }
+
+            ";
+
+        endif;
+        
+        if( $options['RMDepth'] == 2 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li li .appendLink,
+                #responsive-menu .responsive-menu li li li { display: none; }
+
+            ";
+
+        endif;
 
 
         $css .= " }";
