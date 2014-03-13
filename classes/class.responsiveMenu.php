@@ -1407,6 +1407,7 @@ class ResponsiveMenu {
                 color: $titleColH !important;
             }
    
+            #responsive-menu .appendLink,
             #responsive-menu .responsive-menu li a,
             #responsive-menu #responsive-menu-title a
             {
