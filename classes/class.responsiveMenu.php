@@ -88,9 +88,9 @@ class ResponsiveMenu {
 
     public static function adminPage() {
 
-            if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
+        if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
 
-            update_option( 'RMVer', RM_V );
+            add_option( 'RMVer', RM_V );
             
             // Migrate Old Data 
             $options = unserialize(get_option('responsive_menu_options'));
@@ -139,11 +139,11 @@ class ResponsiveMenu {
                     
                 )));
             
-                else :
+        else :
                     
-                    update_option( 'RMVer', RM_V );
+            update_option( 'RMVer', RM_V );
                 
-            endif;
+        endif;
             
         if (isset($_POST['RMSubmit'])) :
 
