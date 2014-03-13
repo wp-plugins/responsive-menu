@@ -1229,6 +1229,8 @@ class ResponsiveMenu {
 
                     }
 
+                    $setHeight
+    
                 } );
                 ";
 
