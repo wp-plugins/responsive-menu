@@ -58,6 +58,9 @@ It adds no extra HTTP requests to your site and the code added is extremely smal
 <br /><br />
 On the current development list for the next update are the following:
 <br />
+<ul>
+<li> - Various language translations</li>
+</ul>
 If you would like to see any other options added to the plugin then please email me or place them as a support request.
 <br />
 
