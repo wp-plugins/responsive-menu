@@ -74,9 +74,9 @@ Alternatively:
 
 1. Login to your WordPress admin area
 2. Search for `Responsive Menu`
-3. Install `Responsive Menu`
-4. Activate the plugin through the 'Plugins' menu in WordPress or when asked during installation
-5. Set your options from the Responsive Menu menu
+3. Click install `Responsive Menu`
+4. Activate through the `Plugins` menu in WordPress or when asked during installation
+5. Set your options from the Responsive Menu admin area
 
 == Frequently Asked Questions ==
 
