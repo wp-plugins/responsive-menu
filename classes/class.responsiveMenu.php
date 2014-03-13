@@ -1217,7 +1217,17 @@ class ResponsiveMenu {
                 
                 $( '.appendLink' ).on( 'click', function() { 
                 
-                    $( this ).nextAll( 'ul.sub-menu' ).toggle( ); 
+                    $( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+
+                    if( $( this ).html() == '▼' ) {
+
+                        $( this ).html( '&#9650;' ); 
+
+                    } else {
+
+                        $( this ).html( '&#9660;' );
+
+                    }
 
                 } );
                 ";
