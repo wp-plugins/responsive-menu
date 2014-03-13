@@ -719,9 +719,9 @@ class ResponsiveMenu {
                
                 <td>                    
 
-                    <h4>Link Heights</h4> 
+                    <h4>Links Height</h4> 
 
-                    <h5>Enter a link height size in pixels below. <span class='default'>default: 19</span></h5>
+                    <h5>Enter a link height size in pixels below. <span class='default'>default: 20</span></h5>
 
                     <input 
                         type="text" 
