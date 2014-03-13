@@ -1,4 +1,4 @@
-=== Reponsive Menu ===
+=== Responsive Menu ===
 Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
@@ -58,22 +58,25 @@ It adds no extra HTTP requests to your site and the code added is extremely smal
 <br /><br />
 On the current development list for the next update are the following:
 <br />
+<ul>
+<li> - Various language translations</li>
+</ul>
 If you would like to see any other options added to the plugin then please email me or place them as a support request.
 <br />
 
 == Installation ==
 
 1. Upload `responsive-menu` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Set your options from the Responsive Menu menu
+2. Activate the plugin through the `Plugins` menu in WordPress
+3. Set your options from the Responsive Menu admin area
 
 Alternatively:
 
 1. Login to your WordPress admin area
 2. Search for `Responsive Menu`
-3. Install `Responsive Menu`
-4. Activate the plugin through the 'Plugins' menu in WordPress or when asked during installation
-5. Set your options from the Responsive Menu menu
+3. Click install `Responsive Menu`
+4. Activate through the `Plugins` menu in WordPress or when asked during installation
+5. Set your options from the Responsive Menu admin area
 
 == Frequently Asked Questions ==
 
