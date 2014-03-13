@@ -264,7 +264,9 @@ class ResponsiveMenu {
 
                 <?php if (isset($validated)) : ?>
 
-                    <div id="message" class="updated below-h2 cookieBannerSuccess"><p>Your Responsive Menu Options have been updated.</p></div>
+                    <div id="message" class="updated below-h2 cookieBannerSuccess">
+                        <p>Your Responsive Menu Options have been updated.</p>
+                    </div>
 
                 <?php endif; ?>
 
@@ -276,7 +278,7 @@ class ResponsiveMenu {
                     
                     <?php if ( $portTag = self::checkViewPortTag() ) : ?>
                     
-                    <span class='success'> - Below Viewport Meta Tag Found</span>
+                        <span class='success'> - Below Viewport Meta Tag Found</span>
                     
                     <?php else : 
                         
@@ -295,7 +297,9 @@ class ResponsiveMenu {
                 ?>
 
                 <h4>Recommended</h4>
+                
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /&gt;
+                
                 <br /><br />
 
                 <hr />
@@ -303,6 +307,7 @@ class ResponsiveMenu {
                 <h3>Menu Settings</h3>
 
                 <table>
+                    
                     <tr>
                         <td>
 
@@ -310,7 +315,11 @@ class ResponsiveMenu {
 
                             <h5>This is the title at the top of the responsive menu</h5>
 
-                            <input type="text" name="RMTitle" value="<?php echo isset($options['RMTitle']) ? $options['RMTitle'] : ''; ?>" />
+                            <input 
+                                type="text" 
+                                name="RMTitle" 
+                                value="<?php echo isset($options['RMTitle']) ? $options['RMTitle'] : ''; ?>" 
+                                />
 
                         </td>
                         <td>
@@ -319,19 +328,39 @@ class ResponsiveMenu {
 
                             <h5>This is the image that sits next to the responsive menu title. The best size is 32px x 32px</h5>
 
-                            <input type="text" id="RMImage" name="RMImage" value="<?php echo isset($options['RMImage']) ? $options['RMImage'] : ''; ?>" />
-                            <input type="button" id="RMImageButton" value="Upload Image" class="button" />
+                            <input 
+                                type="text" 
+                                id="RMImage" 
+                                name="RMImage" 
+                                value="<?php echo isset($options['RMImage']) ? $options['RMImage'] : ''; ?>" 
+                                />
+                            
+                            <input 
+                                type="button" 
+                                id="RMImageButton" 
+                                value="Upload Image" 
+                                class="button" 
+                                />
 
                         </td>
+                    </tr>
+                    
                     <tr>
                         <td>
+                            
                             <h4>Menu Button Title</h4> 
 
                             <h5>This is the title under the 3 lines of the menu button</h5>
 
-                            <input type="text" name="RMClickTitle" value="<?php echo isset($options['RMClickTitle']) ? $options['RMClickTitle'] : ''; ?>" />
+                            <input 
+                                type="text" 
+                                name="RMClickTitle" 
+                                value="<?php echo isset($options['RMClickTitle']) ? $options['RMClickTitle'] : ''; ?>" 
+                                />
+                            
                         </td>
                         <td>
+                            
                             <h4>Choose Menu To Responsify</h4> 
 
                             <h5>This is the menu that will be used responsively.</h5>
@@ -342,40 +371,58 @@ class ResponsiveMenu {
 
                                     <?php foreach (get_terms('nav_menu') as $menu) : ?>
 
-                                        <option value="<?php echo $menu->slug; ?>"<?php echo $menu->slug == $options['RM'] ? 'selected="selected">' : '>'; ?>
-                                        <?php echo $menu->name; ?>
-                                    </option>
+                                        <option 
+                                            value="<?php echo $menu->slug; ?>"
+                                            <?php echo $menu->slug == $options['RM'] ? 'selected="selected">' : '>'; ?>
+                                            <?php echo $menu->name; ?>
+                                        </option>
 
                                 <?php endforeach; ?>
 
                             </select>
 
-                        <?php else : ?>
+                            <?php else : ?>
 
-                            <span style="color: red;">You haven't set up any site menus yet.</span>
+                                <span style="color: red;">You haven't set up any site menus yet.</span>
 
-                        <?php endif; ?>
-                    </td>
+                            <?php endif; ?>
+                            
+                        </td>
                 </tr>
+                
                 <tr>
                     <td>
+                        
                         <h4>Menu Breakpoint</h4> 
 
                         <h5>This is the point where the responsive menu will be visible in px width of the browser</h5>
 
-                        <input class="numberInput" type="text" name="RMBreak" value="<?php echo isset($options['RMBreak']) ? $options['RMBreak'] : ''; ?>" />px
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMBreak" 
+                            value="<?php echo isset($options['RMBreak']) ? $options['RMBreak'] : ''; ?>" 
+                            />px
 
                     </td>
                     <td>
+                        
                         <h4>CSS of Menu To Hide</h4> 
 
                         <h5>This is the CSS of the menu you want to hide once the responsive menu shows - e.g #primary-nav, .menu</h5>
 
-                        <input type="text" name="RMCss" value="<?php echo isset($options['RMCss']) ? $options['RMCss'] : ''; ?>" />
+                        <input 
+                            type="text" 
+                            name="RMCss" 
+                            value="<?php echo isset($options['RMCss']) ? $options['RMCss'] : ''; ?>" 
+                            />
+                        
                     </td>
                 </tr>
+                
                 <tr>
                     <td>
+                        
                         <h4>Menu Depth</h4> 
 
                         <h5>This is how deep into your menu tree will be visible (max 3)</h5>
@@ -384,24 +431,32 @@ class ResponsiveMenu {
 
                             <?php for ($i = 1; $i < 4; $i++) : ?>
 
-                                <option value="<?php echo $i; ?>"<?php echo $i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
-                                <?php echo $i; ?>
-                            </option>
+                                <option 
+                                    value="<?php echo $i; ?>"
+                                    <?php echo $i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
+                                    <?php echo $i; ?>
+                                </option>
 
-                        <?php endfor; ?>
+                            <?php endfor; ?>
 
-                    </select>
-                </td>
-                <td>
-                    <h4>Menu Width</h4> 
+                        </select>
+                        
+                    </td>
+                    <td>
+                    
+                        <h4>Menu Width</h4> 
 
-                    <h5>This is the width the menu takes up across the page once expanded. <span class="default">default: 75</span></h5>
+                        <h5>This is the width the menu takes up across the page once expanded. <span class="default">default: 75</span></h5>
 
-                    <input class="numberInput" type="text" name="RMWidth" value="<?php echo isset($options['RMWidth']) ? $options['RMWidth'] : ''; ?>" />%
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMWidth" 
+                            value="<?php echo isset($options['RMWidth']) ? $options['RMWidth'] : ''; ?>" 
+                            />%
 
-                </td>
-                </tr>
-                
+                    </td>
+                </tr>                
                 <tr>
                     <td>
                         
@@ -417,401 +472,507 @@ class ResponsiveMenu {
                         <?php echo $options['RMSearch'] == 'search' ? ' checked="checked" ' : ''; ?>
                         />
                     
-                </td>
-                <td>
+                    </td>
+                    <td>
                     
                         <h4>Auto Expand Sub-Menus</h4> 
 
                         <h5>Tick if you would like sub-menus to be automatically expanded</h5>
 
-                    <input 
-                        type="checkbox" 
-                        name="RMExpand" 
-                        id="RMExpand"
-                        value="expand"
-                        <?php echo $options['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
-                        />
+                        <input 
+                            type="checkbox" 
+                            name="RMExpand" 
+                            id="RMExpand"
+                            value="expand"
+                            <?php echo $options['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                            />
 
-                </td>
+                    </td>                
+                </tr>                
+            </table>
                 
+            <hr />
+                
+            <h3>Location Settings</h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <h4>Top</h4> 
+
+                        <h5>This is the distance from the top of the page in px that the menu will be displayed</h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMTop" 
+                            value="<?php echo isset($options['RMTop']) ? $options['RMTop'] : ''; ?>" 
+                            />px
+
+                    </td>
+                    <td>
+
+                        <h4>Right</h4> 
+
+                        <h5>This is the distance from the right of the page in percentage that the menu will be displayed</h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMRight" 
+                            value="<?php echo isset($options['RMRight']) ? $options['RMRight'] : ''; ?>" 
+                            />%
+
+                    </td>
+                </tr>
+            </table>
+
+            <hr />
+
+            <h3>Colour Settings</h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <h4>Menu Line & Text Colour</h4> 
+
+                        <h5>This is the colour of the 3 lines and text for the menu button</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMLineCol" 
+                            id="RMLineCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMLineCol']) ? $options['RMLineCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Menu Button Background Colour</h4> 
+
+                        <h5>This is the background colour of the 3 lines container</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMClickBkg" 
+                            id="RMClickBkg" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMClickBkg']) ? $options['RMClickBkg'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4>Menu Background Colour</h4> 
+
+                        <h5>This is the background colour of the expanded menu</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMBkg" 
+                            id="RMBkg" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMBkg']) ? $options['RMBkg'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Menu Background Hover Colour</h4> 
+
+                        <h5>This is the hover background colour of the expanded menu</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMBkgHov" 
+                            id="RMBkgHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMBkgHov']) ? $options['RMBkgHov'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+
+                        <h4>Menu Title Colour</h4> 
+
+                        <h5>This is the text colour of the expanded menu title</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTitleCol" 
+                            id="RMTitleCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMTitleCol']) ? $options['RMTitleCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Menu Title Hover Colour</h4> 
+
+                        <h5>This is the hover colour of the expanded menu title</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTitleColHov" 
+                            id="RMTitleColHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMTitleColHov']) ? $options['RMTitleColHov'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4>Menu Text Colour</h4> 
+
+                        <h5>This is the text colour of the expanded menu links</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTextCol" 
+                            id="RMTextCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMTextCol']) ? $options['RMTextCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Menu Text Hover Colour</h4> 
+
+                        <h5>This is the text hover colour of the expanded menu links</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTextColHov" 
+                            id="RMTextColHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMTextColHov']) ? $options['RMTextColHov'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4>Menu Link Border Colour</h4> 
+
+                        <h5>This is the border colour of the expanded menu titles</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMBorCol" 
+                            id="RMBorCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMBorCol']) ? $options['RMBorCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Title Background Colour</h4> 
+
+                        <h5>This is the background colour of the expanded menu title</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTitleBkg" 
+                            id="RMTitleBkg" 
+                            class="colourPicker" 
+                            value="<?php echo isset( $options['RMTitleBkg'] ) ? $options['RMTitleBkg'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4>Current Page Background Colour</h4> 
+
+                        <h5>This is the background colour of the current page</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMCurBkg" 
+                            id="RMCurBkg" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMCurBkg']) ? $options['RMCurBkg'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Current Page Text Colour</h4> 
+
+                        <h5>This is the text colour of the current page</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMCurCol" 
+                            id="RMCurCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($options['RMCurCol']) ? $options['RMCurCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+            </table>
+
+            <hr />
+        
+            <h3>Style Settings</h3>
+        
+            <table>
+                <tr>
+                    <td>
+
+                        <h4>Menu Background Transparent</h4> 
+
+                        <h5>Tick this if you would like a transparent background</h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMBkgTran" 
+                            id="RMBkgTran"
+                            value="checked"
+                            <?php echo $options['RMBkgTran'] == 'checked' ? ' checked="checked" ' : ''; ?>
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4>Fixed Positioning</h4> 
+
+                        <h5>Tick this if you would like the menu button to remain in the same place when scrolling.</h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMPos" 
+                            id="RMPos"
+                            value="fixed"
+                            <?php echo $options['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
+                            />
+
+                    </td>
                 </tr>
                 
-                </table>
-        <hr />
+                <tr>
+                    <td>
+
+                        <h4>Font</h4> 
+
+                        <h5>Enter a font name below, if empty your default site font will be used.</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMFont" 
+                            value="<?php echo isset($options['RMFont']) ? $options['RMFont'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>    
+
+                        <h4>Font Size</h4> 
+
+                        <h5>Enter a font size in pixels below. <span class='default'>default: 13</span></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMFontSize" 
+                            class="numberInput" 
+                            value="<?php echo isset($options['RMFontSize']) ? $options['RMFontSize'] : ''; ?>" 
+                            />px
+
+                    </td>
+                </tr>  
                 
-        <h3>Location Settings</h3>
+                <tr>
+                    <td>
 
-        <table>
-            <tr>
-                <td>
-                    <h4>Top</h4> 
+                        <h4>Click Button Font Size</h4> 
 
-                    <h5>This is the distance from the top of the page in px that the menu will be displayed</h5>
+                        <h5>Enter a click button font size in pixels below. <span class='default'>default: 13</span></h5>
 
-                    <input class="numberInput" type="text" name="RMTop" value="<?php echo isset($options['RMTop']) ? $options['RMTop'] : ''; ?>" />px
-                </td>
-                <td>
+                        <input 
+                            type="text" 
+                            name="RMBtnSize" 
+                            class="numberInput" 
+                            value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" 
+                            />px
 
-                    <h4>Right</h4> 
+                    </td>
+                    <td>  
 
-                    <h5>This is the distance from the right of the page in percentage that the menu will be displayed</h5>
+                        <h4>Title Font Size</h4> 
 
-                    <input class="numberInput" type="text" name="RMRight" value="<?php echo isset($options['RMRight']) ? $options['RMRight'] : ''; ?>" />%
+                        <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
 
-                </td>
-            </tr></table>
-        <hr />
+                        <input 
+                            type="text" 
+                            name="RMTitleSize" 
+                            class="numberInput" 
+                            value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" 
+                            />px
 
-        <h3>Colour Settings</h3>
+                    </td>
+                </tr>    
 
-        <table>
-            <tr>
-                <td>
+                <tr>
+                    <td>
 
-                    <h4>Menu Line & Text Colour</h4> 
+                        <h4>Text Alignment</h4> 
 
-                    <h5>This is the colour of the 3 lines and text for the menu button</h5>
+                        <h5>Enter a text alignment option below <span class='default'>default: left</span></h5>
 
-                    <input 
-                        type="text" 
-                        name="RMLineCol" 
-                        id="RMLineCol" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMLineCol']) ? $options['RMLineCol'] : ''; ?>" 
-                        />
-                </td>
-                <td>
-                    <h4>Menu Button Background Colour</h4> 
+                        <select name="RMTxtAlign">
 
-                    <h5>This is the background colour of the 3 lines container</h5>
+                            <option 
+                                value="left"
+                                <?php echo 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                Left
+                            </option>
+                            <option 
+                                value="center"
+                                <?php echo 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                Centre
+                            </option>  
+                            <option 
+                                value="right"
+                                <?php echo 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                Right
+                            </option> 
 
-                    <input 
-                        type="text" 
-                        name="RMClickBkg" 
-                        id="RMClickBkg" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMClickBkg']) ? $options['RMClickBkg'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-            <tr>
-                <td>
+                        </select>
 
-                    <h4>Menu Background Colour</h4> 
+                    </td>               
+                    <td>                    
 
-                    <h5>This is the background colour of the expanded menu</h5>
+                        <h4>Links Height</h4> 
 
-                    <input 
-                        type="text" 
-                        name="RMBkg" 
-                        id="RMBkg" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMBkg']) ? $options['RMBkg'] : ''; ?>" 
-                        />
-                </td>
-                <td>
-                    <h4>Menu Background Hover Colour</h4> 
+                        <h5>Enter a link height size in pixels below. <span class='default'>default: 20</span></h5>
 
-                    <h5>This is the hover background colour of the expanded menu</h5>
+                        <input 
+                            type="text" 
+                            name="RMLinkHeight" 
+                            class="numberInput" 
+                            value="<?php echo isset($options['RMLinkHeight']) ? $options['RMLinkHeight'] : ''; ?>" 
+                            />px
 
-                    <input 
-                        type="text" 
-                        name="RMBkgHov" 
-                        id="RMBkgHov" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMBkgHov']) ? $options['RMBkgHov'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-            <tr>
+                    </td>
+                </tr>
 
-                <td>
-
-                    <h4>Menu Title Colour</h4> 
-
-                    <h5>This is the text colour of the expanded menu title</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMTitleCol" 
-                        id="RMTitleCol" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMTitleCol']) ? $options['RMTitleCol'] : ''; ?>" 
-                        />
-                </td>
-
-                <td>
-
-                    <h4>Menu Title Hover Colour</h4> 
-
-                    <h5>This is the hover colour of the expanded menu title</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMTitleColHov" 
-                        id="RMTitleColHov" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMTitleColHov']) ? $options['RMTitleColHov'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <h4>Menu Text Colour</h4> 
-
-                    <h5>This is the text colour of the expanded menu links</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMTextCol" 
-                        id="RMTextCol" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMTextCol']) ? $options['RMTextCol'] : ''; ?>" 
-                        />
-                </td>
-                <td>
-                    <h4>Menu Text Hover Colour</h4> 
-
-                    <h5>This is the text hover colour of the expanded menu links</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMTextColHov" 
-                        id="RMTextColHov" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMTextColHov']) ? $options['RMTextColHov'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <h4>Menu Link Border Colour</h4> 
-
-                    <h5>This is the border colour of the expanded menu titles</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMBorCol" 
-                        id="RMBorCol" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMBorCol']) ? $options['RMBorCol'] : ''; ?>" 
-                        />
-                </td>
-                <td>
-                    <h4>Title Background Colour</h4> 
-
-                    <h5>This is the background colour of the expanded menu title</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMTitleBkg" 
-                        id="RMTitleBkg" 
-                        class="colourPicker" 
-                        value="<?php echo isset( $options['RMTitleBkg'] ) ? $options['RMTitleBkg'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <h4>Current Page Background Colour</h4> 
-
-                    <h5>This is the background colour of the current page</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMCurBkg" 
-                        id="RMCurBkg" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMCurBkg']) ? $options['RMCurBkg'] : ''; ?>" 
-                        />
-                </td>
-                <td>
-                    <h4>Current Page Text Colour</h4> 
-
-                    <h5>This is the text colour of the current page</h5>
-
-                    <input 
-                        type="text" 
-                        name="RMCurCol" 
-                        id="RMCurCol" 
-                        class="colourPicker" 
-                        value="<?php echo isset($options['RMCurCol']) ? $options['RMCurCol'] : ''; ?>" 
-                        />
-                </td>
-            </tr>
-        </table>
-        
-        <hr />
-        
-        <h3>Style Settings</h3>
-        
-        <table>
-            <tr>
-                <td>
-                    <h4>Menu Background Transparent</h4> 
-
-                    <h5>Tick this if you would like a transparent background</h5>
-
-                    <input 
-                        type="checkbox" 
-                        name="RMBkgTran" 
-                        id="RMBkgTran"
-                        value="checked"
-                        <?php echo $options['RMBkgTran'] == 'checked' ? ' checked="checked" ' : ''; ?>
-                        />
-                </td><td>
-                    <h4>Fixed Positioning</h4> 
-
-                    <h5>Tick this if you would like the menu button to remain in the same place when scrolling.</h5>
-
-                    <input 
-                        type="checkbox" 
-                        name="RMPos" 
-                        id="RMPos"
-                        value="fixed"
-                        <?php echo $options['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
-                        />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <h4>Font</h4> 
-
-                    <h5>Enter a font name below, if empty your default site font will be used.</h5>
-
-                    <input type="text" name="RMFont" value="<?php echo isset($options['RMFont']) ? $options['RMFont'] : ''; ?>" />
-
-                </td>
-                <td>                    
-                    <h4>Font Size</h4> 
-
-                    <h5>Enter a font size in pixels below. <span class='default'>default: 13</span></h5>
-
-                    <input type="text" name="RMFontSize" class="numberInput" value="<?php echo isset($options['RMFontSize']) ? $options['RMFontSize'] : ''; ?>" />px
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-               <h4>Click Button Font Size</h4> 
-
-                    <h5>Enter a click button font size in pixels below. <span class='default'>default: 13</span></h5>
-
-                    <input type="text" name="RMBtnSize" class="numberInput" value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" />px
-
-                </td>
-                <td>  
-                    
-                    <h4>Title Font Size</h4> 
-
-                    <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
-
-                    <input type="text" name="RMTitleSize" class="numberInput" value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" />px
-                    
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
-                    
-                    <h4>Text Alignment</h4> 
-
-                    <h5>Enter a text alignment option below <span class='default'>default: left</span></h5>
-
-                    <select name="RMTxtAlign">
-
-                        <option value="left"<?php echo 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Left</option>
-                        <option value="center"<?php echo 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Centre</option>  
-                        <option value="right"<?php echo 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Right</option> 
-
-                    </select>
-
-                </td>
-               
-                <td>                    
-
-                    <h4>Links Height</h4> 
-
-                    <h5>Enter a link height size in pixels below. <span class='default'>default: 20</span></h5>
-
-                    <input 
-                        type="text" 
-                        name="RMLinkHeight" 
-                        class="numberInput" 
-                        value="<?php echo isset($options['RMLinkHeight']) ? $options['RMLinkHeight'] : ''; ?>" 
-                        />px
-                    
-                </td>
-            </tr>
-            
-        </table>
+            </table>
 
         <hr />        
-
 
         <h3>Animation Settings</h3>
 
         <?php if( $options['RMAnim'] == 'push' && $portTag != 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' ) : ?>
 
-            <span class='error'>Warning: The Push Animation requires you to place the following meta tag in your site header:</span><br />
-            <span class='success'>&lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;</span>
+            <span class='error'>
+                Warning: The Push Animation requires you to place the following meta tag in your site header:
+            </span>
+        
+            <br />
+            
+            <span class='success'>
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;
+            </span>
         
         <?php endif; ?>
         
-        <table>
-            <tr>
-                <td>
+                <table>
+                    <tr>
+                        <td>
 
-                    <h4>Slide Animation</h4> 
+                            <h4>Slide Animation</h4> 
 
-                    <h5>Choose the type of animation applied to the menu</h5>
+                            <h5>Choose the type of animation applied to the menu</h5>
 
-                    <select name="RMAnim">
+                            <select name="RMAnim">
 
-                        <option value="overlay"<?php echo 'overlay' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>Overlay</option>
-                        <option value="push"<?php echo 'push' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>Push</option>      
+                                <option 
+                                    value="overlay"
+                                    <?php echo 'overlay' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>
+                                    Overlay
+                                </option>
+                                <option 
+                                    value="push"
+                                    <?php echo 'push' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>
+                                    Push
+                                </option>      
 
-                    </select>
+                            </select>
 
-                </td>
-                <td>
+                        </td>
+                        <td>
 
-                    <h4>Page Wrappers CSS</h4> 
+                            <h4>Page Wrappers CSS</h4> 
 
-                    <h5>This is the css ID or class of the wrapper you want to push when using the push animation (e.g - #pushWrapper, .pushContainer)</h5>
+                            <h5>This is the CSS of the wrapper you want to push when using the push animation (e.g - #pushWrapper)</h5>
 
-                    <input type="text" name="RMPushCSS" value="<?php echo isset($options['RMPushCSS']) ? $options['RMPushCSS'] : ''; ?>" />
+                            <input 
+                                type="text" 
+                                name="RMPushCSS" 
+                                value="<?php echo isset($options['RMPushCSS']) ? $options['RMPushCSS'] : ''; ?>" 
+                                />
 
-                </td>
-            </tr>
-                        <tr>
-                <td>
+                        </td>
+                    </tr>
+                       
+                    <tr>
+                        <td>
 
-                    <h4>Animation Speed</h4> 
+                            <h4>Animation Speed</h4> 
 
-                    <h5>Enter a speed in seconds below of the slide animation. <span class="default">default: 0.5</span></h5>
+                            <h5>Enter a speed in seconds below of the slide animation. <span class="default">default: 0.5</span></h5>
 
-                    <input type="text" name="RMAnimSpd" class="numberInput" value="<?php echo isset($options['RMAnimSpd']) ? $options['RMAnimSpd'] : ''; ?>" />s
+                            <input 
+                                type="text" 
+                                name="RMAnimSpd" 
+                                class="numberInput" 
+                                value="<?php echo isset($options['RMAnimSpd']) ? $options['RMAnimSpd'] : ''; ?>" 
+                                />s
 
-                </td>
-                <td>
+                        </td>
+                        <td>
+
+                            <h4>Transition Speed</h4> 
+
+                            <h5>Enter a speed in seconds below of the hover transition effect. <span class="default">default: 1</span></h5>
+
+                            <input 
+                                type="text" 
+                                name="RMTranSpd" 
+                                class="numberInput" 
+                                value="<?php echo isset($options['RMTranSpd']) ? $options['RMTranSpd'] : ''; ?>" 
+                                />s
                     
-                    <h4>Transition Speed</h4> 
-
-                    <h5>Enter a speed in seconds below of the hover transition effect. <span class="default">default: 1</span></h5>
-
-                    <input type="text" name="RMTranSpd" class="numberInput" value="<?php echo isset($options['RMTranSpd']) ? $options['RMTranSpd'] : ''; ?>" />s
-                </td>
-            </tr>
-        </table>
+                        </td>
+                    </tr>
+                    
+                </table>
  
-        <br /><br />
+                <br /><br />
 
-        <input type="submit" class="button button-primary" name="RMSubmit" value="Update Responsive Menu Options" />
+                <input 
+                    type="submit" 
+                    class="button button-primary" 
+                    name="RMSubmit" 
+                    value="Update Responsive Menu Options" 
+                    />
 
-        </form>
+            </form>
 
         </div>
 
