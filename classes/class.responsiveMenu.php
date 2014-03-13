@@ -1185,6 +1185,7 @@ class ResponsiveMenu {
                 background: $mainBkg !important;
                 height: {$height}px !important;
                 line-height: {$height}px !important;
+                border-right: 0px !important;
             }
             
             #responsive-menu .appendLink:hover
