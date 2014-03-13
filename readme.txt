@@ -1,10 +1,10 @@
 === Reponsive Menu ===
 Contributors: peter.featherstone
-Donate link: http://www.peterfeatherstone.com/responsive-menu/
+Donate link: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 1.6
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 31 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 36 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -40,23 +40,24 @@ This is a Highly Customisable Responsive Menu Plugin, with 31 customisable optio
 <li> - Menu Links Text Size</li>
 <li> - Choose Overlay or Push Animations</li>
 <li> - Slide Animation Speed</li>
+<li> - Ability to auto expand/hide sub-menus</li>
+<li> - Inclusion/Exclusion of Search Box</li>
+<li> - Transition speed</li>
+<li> - Slide Animation Speed</li>
+<li> - Menu Link Heights</li>
+<li> - Text Alignment</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 31 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 36 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
 <br /><br />
 It adds no extra HTTP requests to your site and the code added is extremely small (only a little jQuery and CSS).
 <br /><br />
 On the current development list for the next update are the following:
 <br />
-<ul>
-<li>Option to remove the search bar</li>
-<li>Text alignment option</li>
-<li>Hover transition speed option </li>
-</ul>
 If you would like to see any other options added to the plugin then please email me or place them as a support request.
 <br />
 
@@ -101,6 +102,17 @@ This will not be required for most people.
 3. Example Front End Expanded Menu
 
 == Changelog ==
+
+= 1.7 (13th Mar 2014) =
+
+* Ability to auto expand/hide sub-menus
+* Inclusion/Exclusion of Search Box
+* Transition speed
+* Slide Animation Speed
+* Menu Link Heights
+* Text Alignment
+* Removed potential jQuery conflicts
+* Minor Code Improvements
 
 = 1.6 (6th Mar 2014) =
 

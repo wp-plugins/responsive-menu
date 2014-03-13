@@ -22,48 +22,10 @@ class ResponsiveMenu {
 
     static function install() {
 
-        if (get_option('responsive_menu_options')) :
+        update_option( 'RMVer', RM_V );
 
-            // Migrate Old Data 
-            $options = unserialize(get_option('responsive_menu_options'));
-
-            add_option('RMOptions', serialize(array(
-                'RM' => $options['reponsiveMenuMenu'],
-                'RMBreak' => $options['responsiveMenuBreakpoint'],
-                'RMDepth' => $options['reponsiveMenuDepth'],
-                'RMTop' => $options['responsiveMenuTop'],
-                'RMRight' => $options['responsiveMenuRight'],
-                'RMCss' => $options['responsiveMenuCss'],
-                'RMTitle' => $options['responsiveMenuTitle'],
-                'RMLineCol' => $options['responsiveMenuLineColour'],
-                'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
-                'RMClickTitle' => $options['responsiveMenuButtonTitle'],
-                'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
-                'RMFont' => $options['responsiveMenuFont'],
-                'RMPos' => $options['responsiveMenuFixed'],
-                'RMImage' => $options['responsiveMenuImage'],
-                'RMWidth' => $options['responsiveMenuWidth'],
-                'RMBkg' => $options['responsiveMenuMainBackground'],
-                'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
-                'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
-                'RMTextCol' => $options['responsiveMenuMainTextColour'],
-                'RMBorCol' => $options['responsiveMenuMainBorderColour'],
-                'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
-                'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
-                'RMAnim' => 'overlay',
-                'RMPushCSS' => '',
-                'RMTitleBkg' => '#43494C',
-                'RMFontSize' => 13,
-                'RMTitleSize' => 14,
-                'RMBtnSize' => 13,
-                'RMCurBkg' => $options['responsiveMenuMainBackground'],
-                'RMCurCol' => $options['responsiveMenuMainTextColour'],
-                'RMAnimSpd' => 0.5
-            )));
-
-        else :
-
-            add_option('RMOptions', serialize(array(
+            add_option( 'RMOptions', serialize( array(
+                
                 'RM' => '',
                 'RMBreak' => 400,
                 'RMDepth' => 2,
@@ -86,6 +48,8 @@ class ResponsiveMenu {
                 'RMBorCol' => '#3C3C3C',
                 'RMTextColHov' => '#FFFFFF',
                 'RMTitleColHov' => '#FFFFFF',
+                
+                /* Added in 1.6 */
                 'RMAnim' => 'overlay',
                 'RMPushCSS' => '',
                 'RMTitleBkg' => '#43494C',
@@ -94,20 +58,93 @@ class ResponsiveMenu {
                 'RMBtnSize' => 13,
                 'RMCurBkg' => '#43494C',
                 'RMCurCol' => '#FFFFFF',
-                'RMAnimSpd' => 0.5
+                'RMAnimSpd' => 0.5,
+                
+                /* Added in 1.7 */
+                'RMTranSpd' => 1,
+                'RMTxtAlign' => 'left',
+                'RMSearch' => false,
+                'RMExpand' => false,
+                'RMLinkHeight' => 20
+                
             )));
 
-        endif;
     }
 
     static function menus() {
 
-        add_menu_page( 'Responsive Menu', 'Responsive Menu', 'manage_options', 'responsive-menu', array('ResponsiveMenu', 'adminPage'), RM_IMAGES . 'icon.png' );
+        add_menu_page( 
+                
+                'Responsive Menu', 
+                'Responsive Menu', 
+                'manage_options', 
+                'responsive-menu', 
+                array('ResponsiveMenu', 'adminPage'), 
+                RM_IMAGES . 'icon.png' 
+                
+                );
 
     }
 
     public static function adminPage() {
 
+            if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
+
+            update_option( 'RMVer', RM_V );
+            
+            // Migrate Old Data 
+            $options = unserialize(get_option('responsive_menu_options'));
+
+                add_option('RMOptions', serialize(array(
+                    'RM' => $options['reponsiveMenuMenu'],
+                    'RMBreak' => $options['responsiveMenuBreakpoint'],
+                    'RMDepth' => $options['reponsiveMenuDepth'],
+                    'RMTop' => $options['responsiveMenuTop'],
+                    'RMRight' => $options['responsiveMenuRight'],
+                    'RMCss' => $options['responsiveMenuCss'],
+                    'RMTitle' => $options['responsiveMenuTitle'],
+                    'RMLineCol' => $options['responsiveMenuLineColour'],
+                    'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
+                    'RMClickTitle' => $options['responsiveMenuButtonTitle'],
+                    'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
+                    'RMFont' => $options['responsiveMenuFont'],
+                    'RMPos' => $options['responsiveMenuFixed'],
+                    'RMImage' => $options['responsiveMenuImage'],
+                    'RMWidth' => $options['responsiveMenuWidth'],
+                    'RMBkg' => $options['responsiveMenuMainBackground'],
+                    'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
+                    'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
+                    'RMTextCol' => $options['responsiveMenuMainTextColour'],
+                    'RMBorCol' => $options['responsiveMenuMainBorderColour'],
+                    'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
+                    'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
+                    
+                    /* Added in 1.6 */
+                    'RMAnim' => 'overlay',
+                    'RMPushCSS' => '',
+                    'RMTitleBkg' => '#43494C',
+                    'RMFontSize' => 13,
+                    'RMTitleSize' => 14,
+                    'RMBtnSize' => 13,
+                    'RMCurBkg' => $options['responsiveMenuMainBackground'],
+                    'RMCurCol' => $options['responsiveMenuMainTextColour'],
+                    'RMAnimSpd' => 0.5,
+                    
+                    /* Added in 1.7 */
+                    'RMTranSpd' => 1,
+                    'RMTxtAlign' => 'left',
+                    'RMSearch' => false,
+                    'RMExpand' => false,
+                    'RMLinkHeight' => 20
+                    
+                )));
+            
+                else :
+                    
+                    update_option( 'RMVer', RM_V );
+                
+            endif;
+            
         if (isset($_POST['RMSubmit'])) :
 
             $validated = self::validate();
@@ -115,7 +152,7 @@ class ResponsiveMenu {
         endif;
 
         $options = unserialize(get_option('RMOptions'));
-        
+             
         ?>
 
         <style>
@@ -349,9 +386,46 @@ class ResponsiveMenu {
 
                     <input class="numberInput" type="text" name="RMWidth" value="<?php echo isset($options['RMWidth']) ? $options['RMWidth'] : ''; ?>" />%
 
-                </td></tr></table>
-        <hr />
+                </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        
+                        <h4>Remove Search Box</h4> 
 
+                        <h5>Tick if you would like to remove the search box</h5>
+
+                    <input 
+                        type="checkbox" 
+                        name="RMSearch" 
+                        id="RMSearch"
+                        value="search"
+                        <?php echo $options['RMSearch'] == 'search' ? ' checked="checked" ' : ''; ?>
+                        />
+                    
+                </td>
+                <td>
+                    
+                        <h4>Auto Expand Sub-Menus</h4> 
+
+                        <h5>Tick if you would like sub-menus to be automatically expanded</h5>
+
+                    <input 
+                        type="checkbox" 
+                        name="RMExpand" 
+                        id="RMExpand"
+                        value="expand"
+                        <?php echo $options['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                        />
+
+                </td>
+                
+                </tr>
+                
+                </table>
+        <hr />
+                
         <h3>Location Settings</h3>
 
         <table>
@@ -615,17 +689,54 @@ class ResponsiveMenu {
                     <input type="text" name="RMBtnSize" class="numberInput" value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" />px
 
                 </td>
-                <td>                    
+                <td>  
+                    
                     <h4>Title Font Size</h4> 
 
                     <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
 
                     <input type="text" name="RMTitleSize" class="numberInput" value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" />px
+                    
                 </td>
             </tr>
+            
+            <tr>
+                <td>
+                    
+                    <h4>Text Alignment</h4> 
+
+                    <h5>Enter a text alignment option below <span class='default'>default: left</span></h5>
+
+                    <select name="RMTxtAlign">
+
+                        <option value="left"<?php echo 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Left</option>
+                        <option value="center"<?php echo 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Centre</option>  
+                        <option value="right"<?php echo 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>Right</option> 
+
+                    </select>
+
+                </td>
+               
+                <td>                    
+
+                    <h4>Link Heights</h4> 
+
+                    <h5>Enter a link height size in pixels below. <span class='default'>default: 19</span></h5>
+
+                    <input 
+                        type="text" 
+                        name="RMLinkHeight" 
+                        class="numberInput" 
+                        value="<?php echo isset($options['RMLinkHeight']) ? $options['RMLinkHeight'] : ''; ?>" 
+                        />px
+                    
+                </td>
+            </tr>
+            
         </table>
 
-        <hr />
+        <hr />        
+
 
         <h3>Animation Settings</h3>
 
@@ -673,11 +784,16 @@ class ResponsiveMenu {
 
                 </td>
                 <td>
+                    
+                    <h4>Transition Speed</h4> 
 
+                    <h5>Enter a speed in seconds below of the hover transition effect. <span class="default">default: 1</span></h5>
+
+                    <input type="text" name="RMTranSpd" class="numberInput" value="<?php echo isset($options['RMTranSpd']) ? $options['RMTranSpd'] : ''; ?>" />s
                 </td>
             </tr>
         </table>
-
+ 
         <br /><br />
 
         <input type="submit" class="button button-primary" name="RMSubmit" value="Update Responsive Menu Options" />
@@ -715,6 +831,8 @@ class ResponsiveMenu {
             $RMBorCol = isset($_POST['RMBorCol']) ? $_POST['RMBorCol'] : '#3C3C3C';
             $RMTextColHov = isset($_POST['RMTextColHov']) ? $_POST['RMTextColHov'] : '#FFFFFF';
             $RMTitleColHov = isset($_POST['RMTitleColHov']) ? $_POST['RMTitleColHov'] : '#FFFFFF';
+            
+            /* Added in 1.6 */
             $RMAnim = isset($_POST['RMAnim']) ? $_POST['RMAnim'] : 'overlay';
             $RMPushCSS = isset($_POST['RMPushCSS']) ? $_POST['RMPushCSS'] : '';
             $RMTitleBkg = isset($_POST['RMTitleBkg']) ? $_POST['RMTitleBkg'] : '#43494C';
@@ -725,6 +843,13 @@ class ResponsiveMenu {
             $RMCurBkg = isset($_POST['RMCurBkg']) ? $_POST['RMCurBkg'] : $RMBkg;
             $RMCurCol = isset($_POST['RMCurCol']) ? $_POST['RMCurCol'] : $RMTextCol;
             $RMAnimSpd = isset($_POST['RMAnimSpd']) ? $_POST['RMAnimSpd'] : 0.5;
+            
+            /* Added in 1.7 */
+            $RMTranSpd = isset($_POST['RMTranSpd']) ? $_POST['RMTranSpd'] : 1;
+            $RMTxtAlign = isset($_POST['RMTxtAlign']) ? $_POST['RMTxtAlign'] : 'left';
+            $RMSearch = isset($_POST['RMSearch']) ? $_POST['RMSearch'] : false;
+            $RMExpand = isset($_POST['RMExpand']) ? $_POST['RMExpand'] : false;
+            $RMLinkHeight = isset($_POST['RMLinkHeight']) ? $_POST['RMLinkHeight'] : 20;
                     
             // Update Submitted Options 
             update_option('RMOptions',
@@ -753,6 +878,8 @@ class ResponsiveMenu {
                 'RMBorCol' => self::filterInput($RMBorCol),
                 'RMTextColHov' => self::filterInput($RMTextColHov),
                 'RMTitleColHov' => self::filterInput($RMTitleColHov),
+                        
+                /* Added in 1.6 */
                 'RMAnim' => self::filterInput($RMAnim),
                 'RMPushCSS' => self::filterInput($RMPushCSS),
                 'RMTitleBkg' => self::filterInput( $RMTitleBkg ),
@@ -761,7 +888,15 @@ class ResponsiveMenu {
                 'RMBtnSize' => intval( $RMBtnSize ),
                 'RMCurBkg' => self::filterInput( $RMCurBkg ),
                 'RMCurCol' => self::filterInput( $RMCurCol ),
-                'RMAnimSpd' => floatval( $RMAnimSpd )    
+                'RMAnimSpd' => floatval( $RMAnimSpd ),
+                        
+                /* Added in 1.7 */
+                'RMTranSpd' => floatval( $RMTranSpd ),
+                'RMTxtAlign' => self::filterInput( $RMTxtAlign ),
+                'RMSearch' => self::filterInput( $RMSearch ),
+                'RMExpand' => self::filterInput( $RMExpand ),    
+                'RMLinkHeight' => intval( $RMLinkHeight )  
+                    
             )));
 
             return true;
@@ -777,9 +912,30 @@ class ResponsiveMenu {
 
         echo self::getJavascript();
         echo self::getCSS();
-        echo self::getHTML();
+        
     }
 
+    static function displayMenuHtml() {
+        
+        echo self::getHTML();
+        
+    }
+    
+    
+    static function Colorpicker(){ 
+    
+        wp_enqueue_media();
+        wp_enqueue_style( 'wp-color-picker');
+        wp_enqueue_script( 'wp-color-picker');
+
+    }
+    
+    static function jQuery() { 
+    
+        wp_enqueue_script( 'jquery' );
+  
+    }
+    
     static function getJavascript() {
 
         $options = unserialize(get_option('RMOptions'));
@@ -820,9 +976,15 @@ class ResponsiveMenu {
                       $slideOver
                           
                       $( '#responsive-menu' ).css( 'display', 'block' ); 
-                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear' ); 
+                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear', function() { 
+                          
+                        $setHeight
+    
+                      } ); 
 
                       isOpen = true;
+                      
+                      
 
                 } else {
 
@@ -868,9 +1030,27 @@ class ResponsiveMenu {
 
                 });
 
-            });
+            ";
         
-        </script>";
+    /* Added 1.7 */
+    if ( !$options['RMExpand'] ) : 
+
+        $js .= " 
+            
+                clickLink = '<span class=\"appendLink\">&#9660;</span>';
+                $( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' ); 
+                $( '#responsive-menu .responsive-menu .menu-item-has-children' ).prepend( clickLink );
+                
+                $( '.appendLink' ).on( 'click', function() { 
+                
+                    $( this ).nextAll( 'ul.sub-menu' ).toggle( ); 
+
+                } );
+                ";
+
+    endif;
+    
+        $js .= "}); </script>";
 
         echo $js;
     }
@@ -884,7 +1064,8 @@ class ResponsiveMenu {
 			
                 <div id="responsive-menu-title">';
 
-        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" /></a>' : '';
+        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
+
 
         $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
 
@@ -893,13 +1074,17 @@ class ResponsiveMenu {
             'echo' => false,
             'menu_class' => 'responsive-menu'));
 
-        $html .= '<form action="/" id="responsiveSearch" method="get" role="search">
+        if( !$options['RMSearch'] ) : 
+            
+            $html .= '<form action="/" id="responsiveSearch" method="get" role="search">
 
-                    <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
+                        <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
 
-                </form>
+                    </form>';
+        
+        endif;
                 
-        </div>';
+        $html .= '</div>';
 
         $html .= '<div id="click-menu"> 
                             
@@ -945,8 +1130,17 @@ class ResponsiveMenu {
         $titleSize = empty($options['RMTitleSize']) ? 14 : $options['RMTitleSize'];                        
         $btnSize = empty($options['RMBtnSize']) ? 13 : $options['RMBtnSize'];
         
-        $curBkg = empty($options['RMCurBkg']) ? $options['RMBkg'] : $options['RMCurBkg'];
-        $curCol = empty($options['RMCurCol']) ? $options['RMTextCol'] : $options['RMCurCol'];
+        $curBkg = empty($options['RMCurBkg']) ? $mainBkg : $options['RMCurBkg'];
+        $curCol = empty($options['RMCurCol']) ? $txtCol : $options['RMCurCol'];
+        
+        /* Added 1.7 */
+        $trans = empty( $options['RMTranSpd'] ) ? 1 : $options['RMTranSpd'];
+        $align = empty( $options['RMTxtAlign'] ) ? 'left' : $options['RMTxtAlign'];
+        $linkPadding = $options['RMTxtAlign'] == 'right' ? '12px 5% 12px 0px' : '12px 0px 12px 5%';
+        $titlePadding = $options['RMTxtAlign'] == 'right' ? '20px 5% 20px 0px' : '20px 0px 20px 5%';
+        $paddingAlign = $align == 'center' ? 'left' : $align;
+        $height = empty( $options['RMLinkHeight'] ) ? 19 : $options['RMLinkHeight'];
+        $subBtnAlign =   $align == 'right' ? 'left' : 'right';
         
         $css = "
 
@@ -981,6 +1175,33 @@ class ResponsiveMenu {
                 display: none;
             }
 
+            #responsive-menu .appendLink
+            {
+                $subBtnAlign: 0px !important;
+                position: absolute !important;
+                border: 1px solid $borCol !important;
+                padding: 12px 10px !important;
+                color: $txtCol !important;
+                background: $mainBkg !important;
+                height: {$height}px !important;
+                line-height: {$height}px !important;
+            }
+            
+            #responsive-menu .appendLink:hover
+            {
+                cursor: pointer;
+                background: $mainBkgH !important;
+                color: $txtColH !important;
+            }
+
+            #responsive-menu .responsive-menu, 
+            #responsive-menu div, 
+            #responsive-menu .responsive-menu li,
+            #responsive-menu
+            {
+                text-align: $align !important;
+            }
+                    
             #responsive-menu .RMImage
             {
                 vertical-align: middle;
@@ -996,7 +1217,7 @@ class ResponsiveMenu {
             {
                 width: 95% !important; 
                 font-size: {$titleSize}px !important; 
-                padding: 20px 0px 20px 5% !important;
+                padding: $titlePadding !important;
                 margin-left: 0px !important;
                 background: $titleBkg !important;
             }
@@ -1015,10 +1236,10 @@ class ResponsiveMenu {
             #responsive-menu #responsive-menu-title a
             {
 
-                transition: 1s all;
-                -webkit-transition: 1s all;
-                -moz-transition: 1s all;
-                -o-transition: 1s all;
+                transition: {$trans}s all;
+                -webkit-transition: {$trans}s all;
+                -moz-transition: {$trans}s all;
+                -o-transition: {$trans}s all;
 
             }
             
@@ -1053,11 +1274,11 @@ class ResponsiveMenu {
 
             #responsive-menu .responsive-menu li a	
             { 
-                padding: 12px 0px 12px 5% !important;
+                padding: $linkPadding !important;
                 width: 95% !important;
                 display: block !important;
-                height: 20px !important;
-                line-height: 20px !important;
+                height: {$height}px !important;
+                line-height: {$height}px !important;
                 overflow: hidden !important;
                 white-space: nowrap !important;
                 color: $txtCol !important;
@@ -1086,7 +1307,7 @@ class ResponsiveMenu {
             {
                 display: block !important;
                 width: 95% !important;
-                padding-left: 5% !important;
+                padding-$paddingAlign: 5% !important;
                 border-top: 1px solid $borCol !important; 
                 clear: both !important;
                 padding-top: 10px !important;
@@ -1101,6 +1322,7 @@ class ResponsiveMenu {
                 padding: 5px 0px 5px 3% !important;
                 -webkit-appearance: none !important;
                 border-radius: 2px !important;
+                border: 1px solid $borCol !important;
             }
   
             #responsive-menu .responsive-menu,
@@ -1110,18 +1332,19 @@ class ResponsiveMenu {
                 width: 100% !important;
                 float: left !important;
                 margin-left: 0px !important;
+                padding-left: 0px !important;
             }
 
             #responsive-menu .responsive-menu li li a
             {
-                padding-left: 10% !important;
+                padding-$paddingAlign: 10% !important;
                 width: 90% !important;
                 overflow: hidden !important;
             }
  
             #responsive-menu .responsive-menu li li li a
             {
-                padding-left: 15% !important;
+                padding-$paddingAlign: 15% !important;
                 width: 85% !important;
                 overflow: hidden !important;
             }
@@ -1135,8 +1358,8 @@ class ResponsiveMenu {
             {       
                 background: $mainBkgH !important;
                 color: $txtColH !important;
-                list-style-type: none !important
-                text-decoration: none !important;;
+                list-style-type: none !important;
+                text-decoration: none !important;
             }
             
             #click-menu .threeLines
@@ -1164,11 +1387,31 @@ class ResponsiveMenu {
 ";
 
         $css .= $options['RMCss'] ? $options['RMCss'] . " { display: none !important; } " : '';
-        $css .= $options['RMDepth'] == 1 ? " #responsive-menu .responsive-menu li li { display: none; } " : '';
-        $css .= $options['RMDepth'] == 2 ? " #responsive-menu .responsive-menu li li li { display: none; } " : '';
+
+        if( $options['RMDepth'] == 1 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li .appendLink,
+                #responsive-menu .responsive-menu li li { display: none; }
+
+            ";
+
+        endif;
+        
+        if( $options['RMDepth'] == 2 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li li .appendLink,
+                #responsive-menu .responsive-menu li li li { display: none; }
+
+            ";
+
+        endif;
 
 
-        $css .= "   }";
+        $css .= " }";
 
         $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: relative !important; left: 0px; } " : '';
 

@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: Responsive Menu
-Plugin URI: http://www.peterfeatherstone.com/responsive-menu/
+Plugin URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone @ Network Intellect.
-Version: 1.6
+Version: 1.7
 Author: Peter Featherstone
-Author URI: http://www.peterfeatherstone.com/responsive-menu/
+Author URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 License: GPL2
 Tags: responsive, menu, responsive menu
 
@@ -37,15 +37,10 @@ require_once( 'classes/class.responsiveMenu.php' );
 /* 1.2 Define Our Plugin Constants ============= */
 define( 'RM_IMAGES', plugin_dir_url( __FILE__ ) . 'imgs/' );
 define( 'RM_JS', plugin_dir_url( __FILE__ ) . 'js/' );
+define( 'RM_V', 1.7 );
 
 /* 1.3 Make Sure We Have jQuery ============= */
-function jQuery(){ 
-    
-  wp_enqueue_script( 'jquery' );
-  
-}
-
-add_action('wp_enqueue_scripts', 'jQuery');
+add_action('wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
 
 /* ====================
    2. Installation
@@ -68,20 +63,13 @@ add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
 if( !is_admin() ) :
 
     add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) );
+    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
 
 endif;
 
 /* 4.2 Add Colour Picker to Admin Pages ============= */
 if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' ) :
 
-    function Colorpicker(){ 
-    
-        wp_enqueue_media();
-        wp_enqueue_style( 'wp-color-picker');
-        wp_enqueue_script( 'wp-color-picker');
-
-    }
-
-    add_action('admin_enqueue_scripts', 'Colorpicker');
+    add_action('admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
 
 endif;
