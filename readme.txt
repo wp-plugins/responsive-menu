@@ -67,8 +67,8 @@ If you would like to see any other options added to the plugin then please email
 == Installation ==
 
 1. Upload `responsive-menu` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Set your options from the Responsive Menu menu
+2. Activate the plugin through the `Plugins` menu in WordPress
+3. Set your options from the Responsive Menu admin area
 
 Alternatively:
 
