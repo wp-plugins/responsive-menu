@@ -93,9 +93,10 @@ class ResponsiveMenu {
             add_option( 'RMVer', RM_V );
             
             // Migrate Old Data 
-            $options = unserialize(get_option('responsive_menu_options'));
+            $options = unserialize( get_option( 'responsive_menu_options' ) );
 
-                add_option('RMOptions', serialize(array(
+                add_option( 'RMOptions', serialize( array(
+                    
                     'RM' => $options['reponsiveMenuMenu'],
                     'RMBreak' => $options['responsiveMenuBreakpoint'],
                     'RMDepth' => $options['reponsiveMenuDepth'],
