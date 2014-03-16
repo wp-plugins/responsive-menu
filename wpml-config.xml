@@ -1,0 +1,9 @@
+<wpml-config>
+    <admin-texts>
+        <key name="RMOptions">
+            <key name="RM" />
+            <key name="RMClickTitle" />
+            <key name="RMTitle" />
+        </key>
+    </admin-texts>
+</wpml-config>
