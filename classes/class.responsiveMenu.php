@@ -2,7 +2,7 @@
 /*
   Main Class for Responsive Menu
 
-  Copyright 2014  Peter Featherstone <hello@peterfeatherstone.com>
+  Copyright 2014  Peter Featherstone <peter.featherstone@networkintellect.com>
 
   This program is free software; you can redistribute it and/or modify
   it under the terms of the GNU General Public License, version 2, as
@@ -24,7 +24,7 @@ class ResponsiveMenu {
 
         update_option( 'RMVer', RM_V );
 
-            add_option( 'RMOptions', serialize( array(
+            add_option( 'RMOptions', array(
                 
                 'RM' => '',
                 'RMBreak' => 400,
@@ -67,7 +67,7 @@ class ResponsiveMenu {
                 'RMExpand' => false,
                 'RMLinkHeight' => 20
                 
-            )));
+            ) );
 
     }
 
@@ -79,7 +79,7 @@ class ResponsiveMenu {
                 'Responsive Menu', 
                 'manage_options', 
                 'responsive-menu', 
-                array('ResponsiveMenu', 'adminPage'), 
+                array( 'ResponsiveMenu', 'adminPage' ), 
                 RM_IMAGES . 'icon.png' 
                 
                 );
@@ -87,15 +87,15 @@ class ResponsiveMenu {
     }
 
     public static function adminPage() {
-
-        if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
+            
+         if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
 
             add_option( 'RMVer', RM_V );
             
             // Migrate Old Data 
             $options = unserialize( get_option( 'responsive_menu_options' ) );
 
-                add_option( 'RMOptions', serialize( array(
+                add_option( 'RMOptions', array(
                     
                     'RM' => $options['reponsiveMenuMenu'],
                     'RMBreak' => $options['responsiveMenuBreakpoint'],
@@ -138,22 +138,22 @@ class ResponsiveMenu {
                     'RMExpand' => false,
                     'RMLinkHeight' => 20
                     
-                )));
+                ) );
             
         else :
                     
             update_option( 'RMVer', RM_V );
                 
         endif;
-            
-        if (isset($_POST['RMSubmit'])) :
+        
+        if ( isset( $_POST['RMSubmit'] ) ) :
 
             $validated = self::validate();
 
         endif;
 
-        $options = unserialize(get_option('RMOptions'));
-             
+        $options = self::getOptions();
+        
         ?>
 
         <style>
@@ -433,7 +433,7 @@ class ResponsiveMenu {
 
                                 <option 
                                     value="<?php echo $i; ?>"
-                                    <?php echo $i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
+                                    <?php echo isset( $options['RMDepth'] ) &&$i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
                                     <?php echo $i; ?>
                                 </option>
 
@@ -469,7 +469,7 @@ class ResponsiveMenu {
                         name="RMSearch" 
                         id="RMSearch"
                         value="search"
-                        <?php echo $options['RMSearch'] == 'search' ? ' checked="checked" ' : ''; ?>
+                        <?php echo isset( $options['RMSearch'] ) && $options['RMSearch'] == 'search' ? ' checked="checked" ' : ''; ?>
                         />
                     
                     </td>
@@ -484,7 +484,7 @@ class ResponsiveMenu {
                             name="RMExpand" 
                             id="RMExpand"
                             value="expand"
-                            <?php echo $options['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                            <?php echo isset( $options['RMExpand'] ) && $options['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
                             />
 
                     </td>                
@@ -838,17 +838,17 @@ class ResponsiveMenu {
 
                             <option 
                                 value="left"
-                                <?php echo 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                <?php echo isset($options['RMTxtAlign']) && 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
                                 Left
                             </option>
                             <option 
                                 value="center"
-                                <?php echo 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                <?php echo isset($options['RMTxtAlign']) && 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
                                 Centre
                             </option>  
                             <option 
                                 value="right"
-                                <?php echo 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
+                                <?php echo isset($options['RMTxtAlign']) && 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
                                 Right
                             </option> 
 
@@ -1025,10 +1025,7 @@ class ResponsiveMenu {
             $RMExpand = isset($_POST['RMExpand']) ? $_POST['RMExpand'] : false;
             $RMLinkHeight = isset($_POST['RMLinkHeight']) ? $_POST['RMLinkHeight'] : 20;
                     
-            // Update Submitted Options 
-            update_option('RMOptions',
-                    // Serialize For Database
-                    serialize(array(
+            $optionsArray = array(
                 // Filter Input Correctly
                 'RM' => self::filterInput($RM),
                 'RMBreak' => intval($RMBreak),
@@ -1071,7 +1068,12 @@ class ResponsiveMenu {
                 'RMExpand' => self::filterInput( $RMExpand ),    
                 'RMLinkHeight' => intval( $RMLinkHeight )  
                     
-            )));
+            );
+            
+            // Update Submitted Options 
+            update_option( 'RMOptions',
+                    // Serialize For Database
+                    $optionsArray );
 
             return true;
 
@@ -1112,7 +1114,7 @@ class ResponsiveMenu {
     
     static function getJavascript() {
 
-        $options = unserialize(get_option('RMOptions'));
+        $options = self::getOptions();
 
         $setHeight = $options['RMPos'] == 'fixed' ? '' : " $( '#responsive-menu' ).css( 'height', $( document ).height() ); ";
         $breakpoint = empty($options['RMBreak']) ? "400" : $options['RMBreak'];
@@ -1243,7 +1245,7 @@ class ResponsiveMenu {
 
     static function getHTML() {
 
-        $options = unserialize(get_option('RMOptions'));
+        $options = self::getOptions();
 
         $html = '
             <div id="responsive-menu">
@@ -1290,7 +1292,7 @@ class ResponsiveMenu {
 
     static function getCSS() {
 
-        $options = unserialize(get_option('RMOptions'));
+        $options = self::getOptions();
 
         $position = $options['RMPos'] == 'fixed' ? 'fixed' : 'absolute';
         $overflowy = $options['RMPos'] == 'fixed' ? 'overflow-y: auto;' : '';
@@ -1619,6 +1621,14 @@ class ResponsiveMenu {
     private static function filterInput($input) {
 
         return stripslashes(strip_tags(trim($input)));
+        
+    }
+    
+    private static function getOptions() {
+        
+        $options = !is_array( get_option( 'RMOptions' ) ) ? serialize( get_option( 'RMOptions' ) ) : get_option( 'RMOptions' );
+        
+        return $options;
         
     }
 
