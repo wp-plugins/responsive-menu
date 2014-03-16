@@ -1626,8 +1626,8 @@ class ResponsiveMenu {
     
     private static function getOptions() {
         
-        $options = !is_array( get_option( 'RMOptions' ) ) ? serialize( get_option( 'RMOptions' ) ) : get_option( 'RMOptions' );
-        
+        $options = !is_array( get_option( 'RMOptions' ) ) ? unserialize( get_option( 'RMOptions' ) ) :  get_option( 'RMOptions' );
+
         return $options;
         
     }
