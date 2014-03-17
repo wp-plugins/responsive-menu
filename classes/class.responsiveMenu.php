@@ -1415,10 +1415,12 @@ class ResponsiveMenu {
             #responsive-menu #responsive-menu-title a
             {
                 color: $titleCol !important;
+                text-decoration: none !important;
             }
             
             #responsive-menu #responsive-menu-title a:hover {
                 color: $titleColH !important;
+                text-decoration: none !important;
             }
    
             #responsive-menu .appendLink,
@@ -1616,6 +1618,7 @@ class ResponsiveMenu {
 
         if ($metaTags['viewport'])
             return $metaTags['viewport'];
+        
     }
 
     private static function filterInput($input) {
