@@ -32,7 +32,7 @@ class ResponsiveMenu {
                 'RMTop' => 10,
                 'RMRight' => 5,
                 'RMCss' => '',
-                'RMTitle' => 'Menu Title',
+                'RMTitle' => __( 'Menu Title', 'responsive-menu' ),
                 'RMLineCol' => '#FFFFFF',
                 'RMClickBkg' => '#000000',
                 'RMClickTitle' => '',
@@ -75,8 +75,8 @@ class ResponsiveMenu {
 
         add_menu_page( 
                 
-                'Responsive Menu', 
-                'Responsive Menu', 
+                __( 'Responsive Menu', 'responsive-menu' ), 
+                __( 'Responsive Menu', 'responsive-menu' ), 
                 'manage_options', 
                 'responsive-menu', 
                 array( 'ResponsiveMenu', 'adminPage' ), 
@@ -234,9 +234,9 @@ class ResponsiveMenu {
 
                     //Extend the wp.media object
                     custom_uploader = wp.media.frames.file_frame = wp.media({
-                        title: 'Choose Image',
+                        title: <?php _e( 'Choose Image', 'responsive-menu' ); ?>,
                         button: {
-                            text: 'Choose Image'
+                            text: <?php _e( 'Choose Image', 'responsive-menu' ); ?>
                         },
                         multiple: false
                     });
@@ -260,25 +260,25 @@ class ResponsiveMenu {
 
             <form action="" method="post">
 
-                <h2>Responsive Menu Options</h2>
+                <h2><?php echo __( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
-                <?php if (isset($validated)) : ?>
+                <?php if ( isset( $validated ) ) : ?>
 
                     <div id="message" class="updated below-h2 cookieBannerSuccess">
-                        <p>Your Responsive Menu Options have been updated.</p>
+                        <p><?php _e( 'Your Responsive Menu Options have been updated', 'responsive-menu' ); ?>.</p>
                     </div>
 
                 <?php endif; ?>
 
                 <hr />
 
-                <h3>Initial Checks</h3>
+                <h3><?php _e( 'Initial Checks', 'responsive-menu' ); ?></h3>
 
-                <h4>Viewport Meta Tag Check
+                <h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>
                     
                     <?php if ( $portTag = self::checkViewPortTag() ) : ?>
                     
-                        <span class='success'> - Below Viewport Meta Tag Found</span>
+                        <span class='success'> - <?php _e( 'Below Viewport Meta Tag Found', 'responsive-menu' ); ?></span>
                     
                     <?php else : 
                         
@@ -292,11 +292,11 @@ class ResponsiveMenu {
                 if ( $portTag ) :
                     echo "&lt;meta name='viewport' content='" . $portTag . "' /&gt;";
                 else :
-                    echo "<span class='error'>Viewport Meta Tag Not Found</span>";
+                    echo "<span class='error'>" . __( 'Viewport Meta Tag Not Found', 'responsive-menu' ) . "</span>";
                 endif;
                 ?>
 
-                <h4>Recommended</h4>
+                <h4><?php _e( 'Recommended', 'responsive-menu' ); ?></h4>
                 
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /&gt;
                 
@@ -304,16 +304,16 @@ class ResponsiveMenu {
 
                 <hr />
 
-                <h3>Menu Settings</h3>
+                <h3><?php _e( 'Menu Settings', 'responsive-menu' ); ?></h3>
 
                 <table>
                     
                     <tr>
                         <td>
 
-                            <h4>Menu Title</h4> 
+                            <h4><?php _e( 'Menu Title', 'responsive-menu' ); ?></h4> 
 
-                            <h5>This is the title at the top of the responsive menu</h5>
+                            <h5><?php _e( 'This is the title at the top of the responsive menu', 'responsive-menu' ); ?></h5>
 
                             <input 
                                 type="text" 
@@ -324,9 +324,9 @@ class ResponsiveMenu {
                         </td>
                         <td>
 
-                            <h4>Menu Image</h4> 
+                            <h4><?php _e( 'Menu Image', 'responsive-menu' ); ?></h4> 
 
-                            <h5>This is the image that sits next to the responsive menu title. The best size is 32px x 32px</h5>
+                            <h5><?php _e( 'This is the image that sits next to the responsive menu title. The best size is 32px x 32px', 'responsive-menu' ); ?></h5>
 
                             <input 
                                 type="text" 
@@ -348,9 +348,9 @@ class ResponsiveMenu {
                     <tr>
                         <td>
                             
-                            <h4>Menu Button Title</h4> 
+                            <h4><?php _e( 'Menu Button Title', 'responsive-menu' ); ?></h4> 
 
-                            <h5>This is the title under the 3 lines of the menu button</h5>
+                            <h5><?php _e( 'This is the title under the 3 lines of the menu button', 'responsive-menu' ); ?></h5>
 
                             <input 
                                 type="text" 
@@ -361,9 +361,9 @@ class ResponsiveMenu {
                         </td>
                         <td>
                             
-                            <h4>Choose Menu To Responsify</h4> 
+                            <h4><?php _e( 'Choose Menu To Responsify', 'responsive-menu' ); ?></h4> 
 
-                            <h5>This is the menu that will be used responsively.</h5>
+                            <h5><?php _e( 'This is the menu that will be used responsively', 'responsive-menu' ); ?>.</h5>
 
                             <?php if (count(get_terms('nav_menu')) > 0) : ?>
 
@@ -383,7 +383,7 @@ class ResponsiveMenu {
 
                             <?php else : ?>
 
-                                <span style="color: red;">You haven't set up any site menus yet.</span>
+                                <span style="color: red;"><?php _e( "You haven't set up any site menus yet", "responsive-menu" ); ?>.</span>
 
                             <?php endif; ?>
                             
@@ -393,9 +393,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
                         
-                        <h4>Menu Breakpoint</h4> 
+                        <h4><?php _e( 'Menu Breakpoint', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the point where the responsive menu will be visible in px width of the browser</h5>
+                        <h5><?php _e( 'This is the point where the responsive menu will be visible in px width of the browser', 'responsive-menu' ); ?></h5>
 
                         <input 
                             class="numberInput" 
@@ -407,9 +407,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
                         
-                        <h4>CSS of Menu To Hide</h4> 
+                        <h4><?php _e( 'CSS of Menu To Hide', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the CSS of the menu you want to hide once the responsive menu shows - e.g #primary-nav, .menu</h5>
+                        <h5><?php _e( 'This is the CSS of the menu you want to hide once the responsive menu shows', 'responsive-menu' ); ?> - e.g #primary-nav, .menu</h5>
 
                         <input 
                             type="text" 
@@ -423,9 +423,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
                         
-                        <h4>Menu Depth</h4> 
+                        <h4><?php _e( 'Menu Depth', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is how deep into your menu tree will be visible (max 3)</h5>
+                        <h5><?php _e( 'This is how deep into your menu tree will be visible (max 3)', 'responsive-menu' ); ?></h5>
 
                         <select name="RMDepth">
 
@@ -444,9 +444,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
                     
-                        <h4>Menu Width</h4> 
+                        <h4><?php _e( 'Menu Width', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the width the menu takes up across the page once expanded. <span class="default">default: 75</span></h5>
+                        <h5><?php _e( 'This is the width the menu takes up across the page once expanded', 'responsive-menu' ); ?>. <span class="default"><?php _e( 'default', 'responsive-menu' ); ?>: 75</span></h5>
 
                         <input 
                             class="numberInput" 
@@ -460,9 +460,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
                         
-                        <h4>Remove Search Box</h4> 
+                        <h4><?php _e( 'Remove Search Box', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Tick if you would like to remove the search box</h5>
+                        <h5><?php _e( 'Tick if you would like to remove the search box', 'responsive-menu' ); ?></h5>
 
                     <input 
                         type="checkbox" 
@@ -475,9 +475,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
                     
-                        <h4>Auto Expand Sub-Menus</h4> 
+                        <h4><?php _e( 'Auto Expand Sub-Menus', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Tick if you would like sub-menus to be automatically expanded</h5>
+                        <h5><?php _e( 'Tick if you would like sub-menus to be automatically expanded', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="checkbox" 
@@ -493,15 +493,15 @@ class ResponsiveMenu {
                 
             <hr />
                 
-            <h3>Location Settings</h3>
+            <h3><?php _e( 'Location Settings', 'responsive-menu' ); ?></h3>
 
             <table>
                 <tr>
                     <td>
 
-                        <h4>Top</h4> 
+                        <h4><?php _e( 'Top', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the distance from the top of the page in px that the menu will be displayed</h5>
+                        <h5><?php _e( 'This is the distance from the top of the page in px that the menu will be displayed', 'responsive-menu' ); ?></h5>
 
                         <input 
                             class="numberInput" 
@@ -513,9 +513,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Right</h4> 
+                        <h4><?php _e( 'Right', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the distance from the right of the page in percentage that the menu will be displayed</h5>
+                        <h5><?php _e( 'This is the distance from the right of the page in percentage that the menu will be displayed', 'responsive-menu' ); ?></h5>
 
                         <input 
                             class="numberInput" 
@@ -530,15 +530,15 @@ class ResponsiveMenu {
 
             <hr />
 
-            <h3>Colour Settings</h3>
+            <h3><?php _e( 'Colour Settings', 'responsive-menu' ); ?></h3>
 
             <table>
                 <tr>
                     <td>
 
-                        <h4>Menu Line & Text Colour</h4> 
+                        <h4><?php _e( 'Menu Line & Text Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the colour of the 3 lines and text for the menu button</h5>
+                        <h5><?php _e( 'This is the colour of the 3 lines and text for the menu button', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -551,9 +551,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Menu Button Background Colour</h4> 
+                        <h4><?php _e( 'Menu Button Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the background colour of the 3 lines container</h5>
+                        <h5><?php _e( 'This is the background colour of the 3 lines container', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -568,9 +568,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Menu Background Colour</h4> 
+                        <h4><?php _e( 'Menu Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the background colour of the expanded menu</h5>
+                        <h5><?php _e( 'This is the background colour of the expanded menu', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -583,9 +583,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Menu Background Hover Colour</h4> 
+                        <h4><?php _e( 'Menu Background Hover Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the hover background colour of the expanded menu</h5>
+                        <h5><?php _e( 'This is the hover background colour of the expanded menu', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -601,9 +601,9 @@ class ResponsiveMenu {
 
                     <td>
 
-                        <h4>Menu Title Colour</h4> 
+                        <h4><?php _e( 'Menu Title Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the text colour of the expanded menu title</h5>
+                        <h5><?php _e( 'This is the text colour of the expanded menu title', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -616,9 +616,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Menu Title Hover Colour</h4> 
+                        <h4><?php _e( 'Menu Title Hover Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the hover colour of the expanded menu title</h5>
+                        <h5><?php _e( 'This is the hover colour of the expanded menu title', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -633,9 +633,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Menu Text Colour</h4> 
+                        <h4><?php _e( 'Menu Text Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the text colour of the expanded menu links</h5>
+                        <h5><?php _e( 'This is the text colour of the expanded menu links', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -648,9 +648,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Menu Text Hover Colour</h4> 
+                        <h4><?php _e( 'Menu Text Hover Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the text hover colour of the expanded menu links</h5>
+                        <h5><?php _e( 'This is the text hover colour of the expanded menu links', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -665,9 +665,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Menu Link Border Colour</h4> 
+                        <h4><?php _e( 'Menu Link Border Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the border colour of the expanded menu titles</h5>
+                        <h5><?php _e( 'This is the border colour of the expanded menu titles', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -680,9 +680,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Title Background Colour</h4> 
+                        <h4><?php _e( 'Title Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the background colour of the expanded menu title</h5>
+                        <h5><?php _e( 'This is the background colour of the expanded menu title', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -697,9 +697,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Current Page Background Colour</h4> 
+                        <h4><?php _e( 'Current Page Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the background colour of the current page</h5>
+                        <h5><?php _e( 'This is the background colour of the current page', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -712,9 +712,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Current Page Text Colour</h4> 
+                        <h4><?php _e( 'Current Page Text Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5>This is the text colour of the current page</h5>
+                        <h5><?php _e( 'This is the text colour of the current page', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -730,15 +730,15 @@ class ResponsiveMenu {
 
             <hr />
         
-            <h3>Style Settings</h3>
+            <h3><?php _e( 'Style Settings', 'responsive-menu' ); ?></h3>
         
             <table>
                 <tr>
                     <td>
 
-                        <h4>Menu Background Transparent</h4> 
+                        <h4><?php _e( 'Menu Background Transparent', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Tick this if you would like a transparent background</h5>
+                        <h5><?php _e( 'Tick this if you would like a transparent background', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="checkbox" 
@@ -751,9 +751,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4>Fixed Positioning</h4> 
+                        <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Tick this if you would like the menu button to remain in the same place when scrolling.</h5>
+                        <h5><?php _e( 'Tick this if you would like the menu button to remain in the same place when scrolling', 'responsive-menu' ); ?>.</h5>
 
                         <input 
                             type="checkbox" 
@@ -769,9 +769,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Font</h4> 
+                        <h4><?php _e( 'Font', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a font name below, if empty your default site font will be used.</h5>
+                        <h5><?php _e( 'Enter a font name below, if empty your default site font will be used', 'responsive-menu' ); ?>.</h5>
 
                         <input 
                             type="text" 
@@ -782,9 +782,9 @@ class ResponsiveMenu {
                     </td>
                     <td>    
 
-                        <h4>Font Size</h4> 
+                        <h4><?php _e( 'Font Size', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a font size in pixels below. <span class='default'>default: 13</span></h5>
+                        <h5><?php _e( 'Enter a font size in pixels below', 'responsive-menu' ); ?>. <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: 13</span></h5>
 
                         <input 
                             type="text" 
@@ -799,9 +799,9 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Click Button Font Size</h4> 
+                        <h4><?php _e( 'Click Button Font Size', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a click button font size in pixels below. <span class='default'>default: 13</span></h5>
+                        <h5><?php _e( 'Enter a click button font size in pixels below', 'responsive-menu' ); ?>. <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: 13</span></h5>
 
                         <input 
                             type="text" 
@@ -813,9 +813,9 @@ class ResponsiveMenu {
                     </td>
                     <td>  
 
-                        <h4>Title Font Size</h4> 
+                        <h4><?php _e( 'Title Font Size', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a title font size in pixels below. <span class='default'>default: 14</span></h5>
+                        <h5><?php _e( 'Enter a title font size in pixels below', 'responsive-menu' ); ?>. <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: 14</span></h5>
 
                         <input 
                             type="text" 
@@ -830,26 +830,26 @@ class ResponsiveMenu {
                 <tr>
                     <td>
 
-                        <h4>Text Alignment</h4> 
+                        <h4><?php _e( 'Text Alignment', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a text alignment option below <span class='default'>default: left</span></h5>
+                        <h5><?php _e( 'Enter a text alignment option below', 'responsive-menu' ); ?> <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: <?php _e( 'left', 'responsive-menu' ); ?></span></h5>
 
                         <select name="RMTxtAlign">
 
                             <option 
                                 value="left"
                                 <?php echo isset($options['RMTxtAlign']) && 'overlay' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
-                                Left
+                                <?php _e( 'Left', 'responsive-menu' ); ?>
                             </option>
                             <option 
                                 value="center"
                                 <?php echo isset($options['RMTxtAlign']) && 'center' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
-                                Centre
+                                <?php _e( 'Centre', 'responsive-menu' ); ?>
                             </option>  
                             <option 
                                 value="right"
                                 <?php echo isset($options['RMTxtAlign']) && 'right' == $options['RMTxtAlign'] ? ' selected="selected " ' : ''; ?>>
-                                Right
+                                <?php _e( 'Right', 'responsive-menu' ); ?>
                             </option> 
 
                         </select>
@@ -857,9 +857,9 @@ class ResponsiveMenu {
                     </td>               
                     <td>                    
 
-                        <h4>Links Height</h4> 
+                        <h4><?php _e( 'Links Height', 'responsive-menu' ); ?></h4> 
 
-                        <h5>Enter a link height size in pixels below. <span class='default'>default: 20</span></h5>
+                        <h5><?php _e( 'Enter a link height size in pixels below', 'responsive-menu' ); ?>. <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: 20</span></h5>
 
                         <input 
                             type="text" 
@@ -875,12 +875,12 @@ class ResponsiveMenu {
 
         <hr />        
 
-        <h3>Animation Settings</h3>
+        <h3><?php _e( 'Animation Settings', 'responsive-menu' ); ?></h3>
 
         <?php if( $options['RMAnim'] == 'push' && $portTag != 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' ) : ?>
 
             <span class='error'>
-                Warning: The Push Animation requires you to place the following meta tag in your site header:
+                <?php _e( 'Warning: The Push Animation requires you to place the following meta tag in your site header', 'responsive-menu' ); ?>:
             </span>
         
             <br />
@@ -895,21 +895,21 @@ class ResponsiveMenu {
                     <tr>
                         <td>
 
-                            <h4>Slide Animation</h4> 
+                            <h4><?php _e( 'Slide Animation', 'responsive-menu' ); ?></h4> 
 
-                            <h5>Choose the type of animation applied to the menu</h5>
+                            <h5><?php _e( 'Choose the type of animation applied to the menu', 'responsive-menu' ); ?></h5>
 
                             <select name="RMAnim">
 
                                 <option 
                                     value="overlay"
                                     <?php echo 'overlay' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>
-                                    Overlay
+                                    <?php _e( 'Overlay', 'responsive-menu' ); ?>
                                 </option>
                                 <option 
                                     value="push"
                                     <?php echo 'push' == $options['RMAnim'] ? ' selected="selected " ' : ''; ?>>
-                                    Push
+                                    <?php _e( 'Push', 'responsive-menu' ); ?>
                                 </option>      
 
                             </select>
@@ -917,9 +917,9 @@ class ResponsiveMenu {
                         </td>
                         <td>
 
-                            <h4>Page Wrappers CSS</h4> 
+                            <h4><?php _e( 'Page Wrappers CSS', 'responsive-menu' ); ?></h4> 
 
-                            <h5>This is the CSS of the wrapper you want to push when using the push animation (e.g - #pushWrapper)</h5>
+                            <h5><?php _e( 'This is the CSS of the wrapper you want to push when using the push animation', 'responsive-menu' ); ?> (e.g - #pushWrapper)</h5>
 
                             <input 
                                 type="text" 
@@ -933,9 +933,9 @@ class ResponsiveMenu {
                     <tr>
                         <td>
 
-                            <h4>Animation Speed</h4> 
+                            <h4><?php _e( 'Animation Speed', 'responsive-menu' ); ?></h4> 
 
-                            <h5>Enter a speed in seconds below of the slide animation. <span class="default">default: 0.5</span></h5>
+                            <h5><?php _e( 'Enter a speed in seconds below of the slide animation', 'responsive-menu' ); ?>. <span class="default"><?php _e( 'default', 'responsive-menu' ); ?>: 0.5</span></h5>
 
                             <input 
                                 type="text" 
@@ -947,9 +947,9 @@ class ResponsiveMenu {
                         </td>
                         <td>
 
-                            <h4>Transition Speed</h4> 
+                            <h4><?php _e( 'Transition Speed', 'responsive-menu' ); ?></h4> 
 
-                            <h5>Enter a speed in seconds below of the hover transition effect. <span class="default">default: 1</span></h5>
+                            <h5><?php _e( 'Enter a speed in seconds below of the hover transition effect', 'responsive-menu' ); ?>. <span class="default"><?php _e( 'default', 'responsive-menu' ); ?>: 1</span></h5>
 
                             <input 
                                 type="text" 
@@ -969,7 +969,7 @@ class ResponsiveMenu {
                     type="submit" 
                     class="button button-primary" 
                     name="RMSubmit" 
-                    value="Update Responsive Menu Options" 
+                    value="<?php _e( 'Update Responsive Menu Options', 'responsive-menu' ); ?>"
                     />
 
             </form>
