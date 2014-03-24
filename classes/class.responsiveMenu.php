@@ -20,6 +20,9 @@
 
 class ResponsiveMenu {
 
+    private static $success = null;
+    private static $error = null;
+    
     static function install() {
 
         update_option( 'RMVer', RM_V );
@@ -268,12 +271,18 @@ class ResponsiveMenu {
 
                 <h2><?php _e( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
-                <?php if ( isset( $validated ) ) : ?>
+                <?php if ( isset( self::$success ) ) : ?>
 
                     <div id="message" class="updated below-h2 cookieBannerSuccess">
-                        <p><?php _e( 'Your Responsive Menu Options have been updated', 'responsive-menu' ); ?>.</p>
+                        <p><?php echo self::$success; ?>.</p>
                     </div>
-
+                
+                <?php elseif( isset( self::$error ) ) : ?>
+                
+                    <div id="message" class="error below-h2 cookieBannerSuccess">
+                        <p><?php echo self::$error; ?>.</p>
+                    </div>
+                
                 <?php endif; ?>
 
                 <hr />
@@ -1106,9 +1115,7 @@ class ResponsiveMenu {
             );
             
             // Update Submitted Options 
-            update_option( 'RMOptions',
-                    // Serialize For Database
-                    $optionsArray );
+            update_option( 'RMOptions', $optionsArray );
 
             /* Create Css & JS Files If Required */
             if( $RMExternal == 'external' ) :
@@ -1116,22 +1123,34 @@ class ResponsiveMenu {
                 $css = self::getCSS( 'strip_tags' );
             
                 $file = fopen( RM_PATH . 'css/responsive-menu.css', 'w' );
-                fwrite( $file, $css );
+                $cssFile = fwrite( $file, $css );
                 fclose( $file );
                 
                 $js = self::getJavascript( 'strip_tags' );
              
                 $file = fopen( RM_PATH . 'js/responsive-menu.js', 'w' );
-                fwrite( $file, $js  );
+                $jsFile = fwrite( $file, $js  );
                 fclose( $file );
                 
-            endif;
+                if( $cssFile === false || $jsFile === false ) :
+                    
+                    self::$error = __( 'There was a problem writing the CSS and JS files, please check the plugin js and css folder/file permissions', 'responsive-menu');
+                
+                else :
+                    
+                    self::$success = __( 'Your Responsive Menu Options and CSS/JS files have been updated successfully', 'responsive-menu' );
+                
+                endif;
+                
+            else :
             
-            return true;
+                self::$success = __( 'Your Responsive Menu Options have been updated', 'responsive-menu' );
+            
+            endif;
 
         else :
 
-            return false;
+                self::$error = __( 'There was an error updating the plugin options', 'responsive-menu');
 
         endif;
     }
