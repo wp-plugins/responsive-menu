@@ -75,10 +75,10 @@ if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' )
 
 endif;
 
-function internationalise() {
+function internationaliseResponsiveMenu() {
     
     load_plugin_textdomain( 'responsive-menu', false, basename( dirname( __FILE__) ) );
  
 }
 
-add_action( 'plugins_loaded', 'myplugin_init' );
+add_action( 'plugins_loaded', 'internationaliseResponsiveMenu' );
