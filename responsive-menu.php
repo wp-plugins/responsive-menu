@@ -77,7 +77,7 @@ endif;
 
 function internationaliseResponsiveMenu() {
     
-    load_plugin_textdomain( 'responsive-menu', false, basename( dirname( __FILE__) ) );
+    load_plugin_textdomain( 'responsive-menu', false, basename( dirname( __FILE__) )  . '/translations/' );
  
 }
 
