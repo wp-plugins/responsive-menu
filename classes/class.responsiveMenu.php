@@ -65,7 +65,10 @@ class ResponsiveMenu {
                 'RMTxtAlign' => 'left',
                 'RMSearch' => false,
                 'RMExpand' => false,
-                'RMLinkHeight' => 20
+                'RMLinkHeight' => 20,
+                
+                /* Added in 1.8 */
+                'RMExternal' => false
                 
             ) );
 
@@ -136,7 +139,10 @@ class ResponsiveMenu {
                     'RMTxtAlign' => 'left',
                     'RMSearch' => false,
                     'RMExpand' => false,
-                    'RMLinkHeight' => 20
+                    'RMLinkHeight' => 20,
+                
+                    /* Added in 1.8 */
+                    'RMExternal' => false
                     
                 ) );
             
@@ -234,9 +240,9 @@ class ResponsiveMenu {
 
                     //Extend the wp.media object
                     custom_uploader = wp.media.frames.file_frame = wp.media({
-                        title: <?php _e( 'Choose Image', 'responsive-menu' ); ?>,
+                        title: 'Choose Image',
                         button: {
-                            text: <?php _e( 'Choose Image', 'responsive-menu' ); ?>
+                            text: 'Choose Image',
                         },
                         multiple: false
                     });
@@ -260,7 +266,7 @@ class ResponsiveMenu {
 
             <form action="" method="post">
 
-                <h2><?php echo __( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
+                <h2><?php _e( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
                 <?php if ( isset( $validated ) ) : ?>
 
@@ -369,7 +375,7 @@ class ResponsiveMenu {
 
                                 <select name="RM">
 
-                                    <?php foreach (get_terms('nav_menu') as $menu) : ?>
+                                    <?php foreach( get_terms( 'nav_menu' ) as $menu ) : ?>
 
                                         <option 
                                             value="<?php echo $menu->slug; ?>"
@@ -409,7 +415,7 @@ class ResponsiveMenu {
                         
                         <h4><?php _e( 'CSS of Menu To Hide', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the CSS of the menu you want to hide once the responsive menu shows', 'responsive-menu' ); ?> - e.g #primary-nav, .menu</h5>
+                        <h5><?php _e( 'This is the CSS of the menu you want to hide once the responsive menu shows', 'responsive-menu' ); ?> - <?php _e( 'e.g', 'responsive-menu' ); ?> #primary-nav, .menu</h5>
 
                         <input 
                             type="text" 
@@ -488,7 +494,29 @@ class ResponsiveMenu {
                             />
 
                     </td>                
-                </tr>                
+                </tr>  
+                
+                <tr>
+                    <td>
+                        
+                        <h4><?php _e( 'Include CSS/JS as external files', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to include CSS and jQuery as external files', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMExternal" 
+                            id="RMExternal"
+                            value="external"
+                            <?php echo isset( $options['RMExternal'] ) && $options['RMExternal'] == 'external' ? ' checked="checked" ' : ''; ?>
+                            />
+                    
+                    </td>
+                    <td>
+
+                    </td>                
+                </tr>  
+                
             </table>
                 
             <hr />
@@ -919,7 +947,7 @@ class ResponsiveMenu {
 
                             <h4><?php _e( 'Page Wrappers CSS', 'responsive-menu' ); ?></h4> 
 
-                            <h5><?php _e( 'This is the CSS of the wrapper you want to push when using the push animation', 'responsive-menu' ); ?> (e.g - #pushWrapper)</h5>
+                            <h5><?php _e( 'This is the CSS of the wrapper you want to push when using the push animation', 'responsive-menu' ); ?> (<?php _e( 'e.g', 'responsive-menu' ); ?> - #pushWrapper)</h5>
 
                             <input 
                                 type="text" 
@@ -981,7 +1009,7 @@ class ResponsiveMenu {
 
     private static function validate() {
 
-        if (isset($_POST['RMSubmit'])) :
+        if ( isset($_POST['RMSubmit'] ) ) :
 
             // Initialise Variables Correctly
             $RM = isset($_POST['RM']) ? $_POST['RM'] : '';
@@ -1025,6 +1053,9 @@ class ResponsiveMenu {
             $RMExpand = isset($_POST['RMExpand']) ? $_POST['RMExpand'] : false;
             $RMLinkHeight = isset($_POST['RMLinkHeight']) ? $_POST['RMLinkHeight'] : 20;
                     
+            /* Added in 1.8 */
+            $RMExternal = isset( $_POST['RMExternal'] ) ? $_POST['RMExternal'] : false;
+            
             $optionsArray = array(
                 // Filter Input Correctly
                 'RM' => self::filterInput($RM),
@@ -1066,7 +1097,11 @@ class ResponsiveMenu {
                 'RMTxtAlign' => self::filterInput( $RMTxtAlign ),
                 'RMSearch' => self::filterInput( $RMSearch ),
                 'RMExpand' => self::filterInput( $RMExpand ),    
-                'RMLinkHeight' => intval( $RMLinkHeight )  
+                'RMLinkHeight' => intval( $RMLinkHeight ),
+                
+                /* Added in 1.8 */
+                
+                'RMExternal' => self::filterInput( $RMExternal )
                     
             );
             
@@ -1075,6 +1110,23 @@ class ResponsiveMenu {
                     // Serialize For Database
                     $optionsArray );
 
+            /* Create Css & JS Files If Required */
+            if( $RMExternal == 'external' ) :
+                
+                $css = self::getCSS( 'strip_tags' );
+            
+                $file = fopen( RM_PATH . 'css/responsive-menu.css', 'w' );
+                fwrite( $file, $css );
+                fclose( $file );
+                
+                $js = self::getJavascript( 'strip_tags' );
+             
+                $file = fopen( RM_PATH . 'js/responsive-menu.js', 'w' );
+                fwrite( $file, $js  );
+                fclose( $file );
+                
+            endif;
+            
             return true;
 
         else :
@@ -1083,9 +1135,16 @@ class ResponsiveMenu {
 
         endif;
     }
+    
+    static function ExternalScripts() {
+
+        wp_enqueue_style( 'responsive-menu', RM_CSS . 'responsive-menu.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu.js', 'jquery', '1.0', false );   
+
+    }
 
     static function displayMenu() {
-
+            
         echo self::getJavascript();
         echo self::getCSS();
         
@@ -1108,8 +1167,8 @@ class ResponsiveMenu {
     
     static function Internationalise() {
     
-        load_plugin_textdomain( 'responsive-menu', false, RM_BASE  . 'translations/' );
- 
+        load_plugin_textdomain( 'responsive-menu', false, basename( dirname( dirname( __FILE__ ) ) ) . '/translations/' );
+
     }
 
     static function jQuery() { 
@@ -1118,7 +1177,7 @@ class ResponsiveMenu {
   
     }
     
-    static function getJavascript() {
+    static function getJavascript( $args = null ) {
 
         $options = self::getOptions();
 
@@ -1138,8 +1197,15 @@ class ResponsiveMenu {
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000; 
         
-        $js = "
-        <script>
+        $js = '';
+        
+        if( $args != 'strip_tags' ) : 
+
+            $js .= "<script> ";
+        
+        endif;
+        
+        $js .= "
 
             jQuery( document ).ready( function( $ ) {
 
@@ -1244,9 +1310,16 @@ class ResponsiveMenu {
 
     endif;
     
-        $js .= "}); </script>";
+        $js .= "}); ";
 
-        echo $js;
+        if( $args != 'strip_tags' ) : 
+
+            $js .= "</script> ";
+        
+        endif;
+
+        return $js;
+            
     }
 
     static function getHTML() {
@@ -1296,7 +1369,7 @@ class ResponsiveMenu {
         return $html;
     }
 
-    static function getCSS() {
+    static function getCSS( $args = null ) {
 
         $options = self::getOptions();
 
@@ -1336,9 +1409,15 @@ class ResponsiveMenu {
         $height = empty( $options['RMLinkHeight'] ) ? 19 : $options['RMLinkHeight'];
         $subBtnAlign =   $align == 'right' ? 'left' : 'right';
         
-        $css = "
+        $css = '';
+        
+        if( $args != 'strip_tags' ) : 
 
-        <style>
+            $css .= "<style> ";
+        
+        endif;
+        
+        $css .= "
 
             .RMPushOpen
             {
@@ -1613,9 +1692,14 @@ class ResponsiveMenu {
 
         $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: relative !important; left: 0px; } " : '';
 
-        $css .= "</style>";
+        if( $args != 'strip_tags' ) : 
+
+            $css .= "</style> ";
+        
+        endif;
 
         return $css;
+        
     }
 
     private static function checkViewPortTag() {
@@ -1629,11 +1713,11 @@ class ResponsiveMenu {
 
     private static function filterInput($input) {
 
-        return stripslashes(strip_tags(trim($input)));
+        return stripslashes( strip_tags( trim( $input ) ) );
         
     }
     
-    private static function getOptions() {
+    public static function getOptions() {
         
         $options = !is_array( get_option( 'RMOptions' ) ) ? unserialize( get_option( 'RMOptions' ) ) :  get_option( 'RMOptions' );
 
