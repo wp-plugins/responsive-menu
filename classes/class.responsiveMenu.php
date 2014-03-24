@@ -1106,6 +1106,12 @@ class ResponsiveMenu {
 
     }
     
+    static function Internationalise() {
+    
+        load_plugin_textdomain( 'responsive-menu', false, RM_BASE  . 'translations/' );
+ 
+    }
+
     static function jQuery() { 
     
         wp_enqueue_script( 'jquery' );

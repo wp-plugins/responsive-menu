@@ -36,8 +36,9 @@ Tags: responsive, menu, responsive menu
 require_once( 'classes/class.responsiveMenu.php' );
 
 /* 1.2 Define Our Plugin Constants ============= */
-define( 'RM_IMAGES', plugin_dir_url( __FILE__ ) . 'imgs/' );
-define( 'RM_JS', plugin_dir_url( __FILE__ ) . 'js/' );
+define( 'RM_BASE', plugin_dir_url( __FILE__ ) );
+define( 'RM_IMAGES', RM_BASE . 'imgs/' );
+define( 'RM_JS', RM_BASE . 'js/' );
 define( 'RM_V', 1.8 );
 
 /* 1.3 Make Sure We Have jQuery ============= */
@@ -71,14 +72,8 @@ endif;
 /* 4.2 Add Colour Picker to Admin Pages ============= */
 if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' ) :
 
-    add_action('admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
-
+    add_action( 'admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
+    add_action( 'plugins_loaded', array( 'ResponsiveMenu', 'Internationalise' ) );
+    
 endif;
 
-function internationaliseResponsiveMenu() {
-    
-    load_plugin_textdomain( 'responsive-menu', false, basename( dirname( __FILE__) )  . '/translations/' );
- 
-}
-
-add_action( 'plugins_loaded', 'internationaliseResponsiveMenu' );
