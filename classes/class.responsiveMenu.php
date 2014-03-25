@@ -1550,6 +1550,8 @@ class ResponsiveMenu {
             {
                 color: $titleCol !important;
                 text-decoration: none !important;
+                white-space: pre !important;
+                overflow: hidden !important;
             }
             
             #responsive-menu #responsive-menu-title a:hover {
