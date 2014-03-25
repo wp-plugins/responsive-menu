@@ -1234,11 +1234,12 @@ class ResponsiveMenu {
 
         /* Added 1.8 */
         $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide']; 
-        
-        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { $side: \"$width%\" }, 500, 'linear' ); " : '';
+        $pos = $side == 'left' ? '' : '-';
+                
+        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
         $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
 
-        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { $side: \"0\" }, 500, 'linear' ); " : '';
+        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
         $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
