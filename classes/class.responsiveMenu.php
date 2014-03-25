@@ -71,7 +71,8 @@ class ResponsiveMenu {
                 'RMLinkHeight' => 20,
                 
                 /* Added in 1.8 */
-                'RMExternal' => false
+                'RMExternal' => false,
+                'RMSide' => 'left'
                 
             ) );
 
@@ -145,7 +146,8 @@ class ResponsiveMenu {
                     'RMLinkHeight' => 20,
                 
                     /* Added in 1.8 */
-                    'RMExternal' => false
+                    'RMExternal' => false,
+                    'RMSide' => 'left'
                     
                 ) );
             
@@ -523,6 +525,26 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
+                        <h4><?php _e( 'Slide Side', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the side of the screen from which the menu will slide', 'responsive-menu' ); ?></h5>
+
+                        <select name="RMSide">
+
+                                <option 
+                                    value="left"
+                                    <?php echo isset( $options['RMSide'] ) && $options['RMSide'] == 'left' ? 'selected="selected">' : '>'; ?>
+                                    Left
+                                </option>
+                                
+                                <option 
+                                    value="right"
+                                    <?php echo isset( $options['RMSide'] ) && $options['RMSide'] == 'right' ? 'selected="selected">' : '>'; ?>
+                                    Right
+                                </option>
+                                
+                        </select>
+                        
                     </td>                
                 </tr>  
                 
@@ -1064,6 +1086,7 @@ class ResponsiveMenu {
                     
             /* Added in 1.8 */
             $RMExternal = isset( $_POST['RMExternal'] ) ? $_POST['RMExternal'] : false;
+            $RMSide = isset( $_POST['RMSide'] ) ? $_POST['RMSide'] : 'left';
             
             $optionsArray = array(
                 // Filter Input Correctly
@@ -1110,7 +1133,8 @@ class ResponsiveMenu {
                 
                 /* Added in 1.8 */
                 
-                'RMExternal' => self::filterInput( $RMExternal )
+                'RMExternal' => self::filterInput( $RMExternal ),
+                'RMSide' => self::filterInput( $RMSide )
                     
             );
             
@@ -1208,13 +1232,16 @@ class ResponsiveMenu {
         $slideOpen = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( 'body' ).addClass( 'RMPushOpen' ); " : '';
         $slideRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( 'body' ).removeClass( 'RMPushOpen' ); " : '';
 
-        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"$width%\" }, 500, 'linear' ); " : '';
+        /* Added 1.8 */
+        $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide']; 
+        
+        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { $side: \"$width%\" }, 500, 'linear' ); " : '';
         $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
 
-        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
+        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { $side: \"0\" }, 500, 'linear' ); " : '';
         $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
-        $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000; 
+        $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
         
         $js = '';
         
@@ -1243,7 +1270,7 @@ class ResponsiveMenu {
                       $slideOver
                           
                       $( '#responsive-menu' ).css( 'display', 'block' ); 
-                      $( '#responsive-menu' ).stop().animate( { left: \"0\" }, $speed, 'linear', function() { 
+                      $( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
                           
                         $setHeight
     
@@ -1257,7 +1284,7 @@ class ResponsiveMenu {
 
                         $slideBack
                         
-                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, $speed, 'linear', function() { 
+                        $( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
                       
                             $slideRemove
                             $slideOverCssRemove
@@ -1277,11 +1304,11 @@ class ResponsiveMenu {
 
                     if( $( window ).width() > $breakpoint ) { 
 
-                        if( $( '#responsive-menu' ).css( 'left' ) != '-{$width}%' ) {
+                        if( $( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
 
                         $slideBack
                             
-                        $( '#responsive-menu' ).animate( { left: \"-{$width}%\" }, $speed, 'linear', function() { 
+                        $( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
                         
                             $slideRemove
                             $slideOverCssRemove                      
@@ -1428,6 +1455,9 @@ class ResponsiveMenu {
         $height = empty( $options['RMLinkHeight'] ) ? 19 : $options['RMLinkHeight'];
         $subBtnAlign =   $align == 'right' ? 'left' : 'right';
         
+        /* Added 1.8 */
+        $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide']; 
+        
         $css = '';
         
         if( $args != 'strip_tags' ) : 
@@ -1448,7 +1478,7 @@ class ResponsiveMenu {
             .RMPushSlide
             {
                 position: relative;
-                left: $width%;
+                $side: $width%;
             }
 
             #responsive-menu								
@@ -1458,7 +1488,7 @@ class ResponsiveMenu {
                 $bottom
                 width: $width%;
                 top: 0px; 
-                left: -$width%;
+                $side: -$width%;
                 background: $mainBkg;
                 z-index: 9999;  
                 box-shadow: 0px 1px 8px #333333; 
