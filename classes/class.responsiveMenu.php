@@ -1224,23 +1224,23 @@ class ResponsiveMenu {
 
         $options = self::getOptions();
 
-        $setHeight = $options['RMPos'] == 'fixed' ? '' : " $( '#responsive-menu' ).css( 'height', $( document ).height() ); ";
+        $setHeight = $options['RMPos'] == 'fixed' ? '' : " \$RMjQuery( '#responsive-menu' ).css( 'height', \$RMjQuery( document ).height() ); ";
         $breakpoint = empty($options['RMBreak']) ? "400" : $options['RMBreak'];
         $width = empty($options['RMWidth']) ? "75" : $options['RMWidth'];
         $RMPushCSS = empty($options['RMPushCSS']) ? "" : $options['RMPushCSS'];
 
-        $slideOpen = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( 'body' ).addClass( 'RMPushOpen' ); " : '';
-        $slideRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( 'body' ).removeClass( 'RMPushOpen' ); " : '';
+        $slideOpen = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( 'body' ).addClass( 'RMPushOpen' ); " : '';
+        $slideRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( 'body' ).removeClass( 'RMPushOpen' ); " : '';
 
         /* Added 1.8 */
         $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide']; 
         $pos = $side == 'left' ? '' : '-';
                 
-        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
-        $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
+        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { left: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
+        $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
 
-        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
-        $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " $( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
+        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
+        $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
         
@@ -1254,13 +1254,15 @@ class ResponsiveMenu {
         
         $js .= "
 
-            jQuery( document ).ready( function( $ ) {
+            var \$RMjQuery = jQuery.noConflict();
+
+            \$RMjQuery( document ).ready( function( ) {
 
                 // Toggle Responsive Menu Once Button Clicked
                 
                 isOpen = false;
 
-            $( '#click-menu' ).click( function() {
+            \$RMjQuery( '#click-menu' ).click( function() {
                         
                 $setHeight
                     
@@ -1270,8 +1272,8 @@ class ResponsiveMenu {
                       $slideOverCss
                       $slideOver
                           
-                      $( '#responsive-menu' ).css( 'display', 'block' ); 
-                      $( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
+                      \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
+                      \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
                           
                         $setHeight
     
@@ -1285,11 +1287,11 @@ class ResponsiveMenu {
 
                         $slideBack
                         
-                        $( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
+                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
                       
                             $slideRemove
                             $slideOverCssRemove
-                            $( '#responsive-menu' ).css( 'display', 'none' );  
+                            \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
 
                         } );
                       
@@ -1299,21 +1301,21 @@ class ResponsiveMenu {
 
                 // Close Responsive Menu If Browser Width Goes Above {$breakpoint}px
                     
-                $( window ).resize(function() { 
+                \$RMjQuery( window ).resize(function() { 
                 
                     $setHeight
 
-                    if( $( window ).width() > $breakpoint ) { 
+                    if( \$RMjQuery( window ).width() > $breakpoint ) { 
 
-                        if( $( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
+                        if( \$RMjQuery( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
 
                         $slideBack
                             
-                        $( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
+                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
                         
                             $slideRemove
                             $slideOverCssRemove                      
-                            $( '#responsive-menu' ).css( 'display', 'none' );  
+                            \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
 
                         } );
 
@@ -1333,20 +1335,20 @@ class ResponsiveMenu {
         $js .= " 
             
                 clickLink = '<span class=\"appendLink\">&#9660;</span>';
-                $( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' ); 
-                $( '#responsive-menu .responsive-menu .menu-item-has-children' ).prepend( clickLink );
+                \$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' ); 
+                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).prepend( clickLink );
                 
-                $( '.appendLink' ).on( 'click', function() { 
+                \$RMjQuery( '.appendLink' ).on( 'click', function() { 
                 
-                    $( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+                    \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
 
-                    if( $( this ).html() == '▼' ) {
+                    if( \$RMjQuery( this ).html() == '▼' ) {
 
-                        $( this ).html( '&#9650;' ); 
+                        \$RMjQuery( this ).html( '&#9650;' ); 
 
                     } else {
 
-                        $( this ).html( '&#9660;' );
+                        \$RMjQuery( this ).html( '&#9660;' );
 
                     }
 
