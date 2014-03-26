@@ -65,6 +65,8 @@ It also includes the following functionality:
 </ul>
 On the current development list for the next update are the following:
 <ul>
+<li> - Option to include JavaScript in footer</li>
+<li> - Minify created CSS and JS files</li>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
 <li> - Croatian language translation</li>
