@@ -59,13 +59,11 @@ It requires no shortcodes or fancy php code to be inserted by yourself making it
 You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS).
 <br /><br />
 It also includes the following functionality:
-<br /><br />
 <ul>
 <li> - WPML Support</li>
 <li> - International translation ready (awaiting translations)</li>
 </ul>
 On the current development list for the next update are the following:
-<br />
 <ul>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
