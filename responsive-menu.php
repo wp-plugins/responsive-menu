@@ -4,8 +4,9 @@
 Plugin Name: Responsive Menu
 Plugin URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone @ Network Intellect.
-Version: 1.7
+Version: 1.8
 Author: Peter Featherstone
+Text Domain: responsive-menu
 Author URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 License: GPL2
 Tags: responsive, menu, responsive menu
@@ -35,12 +36,17 @@ Tags: responsive, menu, responsive menu
 require_once( 'classes/class.responsiveMenu.php' );
 
 /* 1.2 Define Our Plugin Constants ============= */
-define( 'RM_IMAGES', plugin_dir_url( __FILE__ ) . 'imgs/' );
-define( 'RM_JS', plugin_dir_url( __FILE__ ) . 'js/' );
-define( 'RM_V', 1.7 );
+define( 'RM_BASE', plugin_dir_url( __FILE__ ) );
+define( 'RM_PATH', plugin_dir_path( __FILE__ ) );
+define( 'RM_IMAGES', RM_BASE . 'imgs/' );
+define( 'RM_JS', RM_BASE . 'js/' );
+define( 'RM_CSS', RM_BASE . 'css/' );
+define( 'RM_V', 1.8 );
+
+$options = ResponsiveMenu::getOptions();
 
 /* 1.3 Make Sure We Have jQuery ============= */
-add_action('wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
+add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
 
 /* ====================
    2. Installation
@@ -62,14 +68,24 @@ add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
 /* 4.1 Display Responsive Menu on Site ============= */
 if( !is_admin() ) :
 
-    add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) );
-    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
+    if( isset( $options['RMExternal'] ) && $options['RMExternal'] == 'external' ) :
+        
+        add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'ExternalScripts' ) );
+    
+    else :
+        
+        add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) ); 
+    
+    endif;
 
+    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
+    
 endif;
 
 /* 4.2 Add Colour Picker to Admin Pages ============= */
 if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' ) :
 
-    add_action('admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
-
+    add_action( 'admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
+    add_action( 'plugins_loaded', array( 'ResponsiveMenu', 'Internationalise' ) );
+    
 endif;

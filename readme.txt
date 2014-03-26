@@ -1,10 +1,10 @@
-=== Responsive Menu ===
+=== Reponsive Menu ===
 Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 36 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 38 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -46,22 +46,32 @@ This is a Highly Customisable Responsive Menu Plugin, with 36 customisable optio
 <li> - Slide Animation Speed</li>
 <li> - Menu Link Heights</li>
 <li> - Text Alignment</li>
+<li> - Choice of side to slide in from</li>
+<li> - Choice to use inline/external stylesheets and scripts</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 36 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 38 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
 <br /><br />
-It adds no extra HTTP requests to your site and the code added is extremely small (only a little jQuery and CSS).
+You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS).
 <br /><br />
+It also includes the following functionality:
+<br /><br />
+<ul>
+<li> - WPML Support</li>
+<li> - International translation ready (awaiting translations)</li>
+</ul>
 On the current development list for the next update are the following:
 <br />
 <ul>
-<li> - Various language translations</li>
+<li> - Spanish language translation</li>
+<li> - German language translation</li>
+<li> - Croatian language translation</li>
 </ul>
-If you would like to see any other options added to the plugin then please email me or place them as a support request.
+If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
 
 == Installation ==
@@ -88,10 +98,6 @@ Alternatively:
 
 - You need to add the following meta tag to your site header: &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;
 
-= Why have all my options disappeared when upgrading to 1.6 =
-
-- When upgrading to 1.6, you may need to de-activate and then re-activate the plug-in again to get your options to re-appear. 
-
 Don't worry none of your settings will be lost and will not happen in future releases.
 
 This will not be required for most people.
@@ -105,6 +111,14 @@ This will not be required for most people.
 3. Example Front End Expanded Menu
 
 == Changelog ==
+
+= 1.8 (26th Mar 2014) =
+
+* Added option to include styles/scripts externally/internally
+* Added WPML Support
+* Added internationalisation functionality, awaiting translations
+* Added ability to choose which side the menu slides in from
+* Minor Code Improvements
 
 = 1.7 (13th Mar 2014) =
 
@@ -165,9 +179,3 @@ This will not be required for most people.
 * Initial Version Released.
 
 == Upgrade Notice ==
-
-When upgrading to 1.6, you may need to de-activate and then re-activate the plug-in again to get your options to re-appear. 
-
-Don't worry none of your settings will be lost and will not happen in future releases.
-
-This will not be required for most people.
