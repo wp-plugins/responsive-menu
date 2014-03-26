@@ -60,7 +60,7 @@ You have the choice to include the stylesheets and scripts inline to avoid addin
 <br /><br />
 It also includes the following functionality:
 <ul>
-<li> - WPML Support</li>
+<li> - WPML/Polylang Support</li>
 <li> - International translation ready (awaiting translations)</li>
 </ul>
 On the current development list for the next update are the following:
