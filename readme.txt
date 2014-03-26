@@ -1,4 +1,4 @@
-=== Reponsive Menu ===
+=== Responsive Menu ===
 Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
