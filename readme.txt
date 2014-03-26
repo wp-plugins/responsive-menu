@@ -4,7 +4,7 @@ Donate link: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 3.8.1
-Stable tag: 1.7
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,14 +62,16 @@ It also includes the following functionality:
 <br /><br />
 <ul>
 <li> - WPML Support</li>
-<li> - Spanish translation</li>
+<li> - International translation ready (awaiting translations)</li>
 </ul>
 On the current development list for the next update are the following:
 <br />
 <ul>
-<li> - Various additional language translations</li>
+<li> - Spanish language translation</li>
+<li> - German language translation</li>
+<li> - Croatian language translation</li>
 </ul>
-If you would like to see any other options added to the plugin then please email me or place them as a support request.
+If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
 
 == Installation ==
@@ -110,11 +112,11 @@ This will not be required for most people.
 
 == Changelog ==
 
-= 1.8 (28th Mar 2014) =
+= 1.8 (26th Mar 2014) =
 
 * Added option to include styles/scripts externally/internally
 * Added WPML Support
-* Added Spanish translation
+* Added internationalisation functionality, awaiting translations
 * Added ability to choose which side the menu slides in from
 * Minor Code Improvements
 

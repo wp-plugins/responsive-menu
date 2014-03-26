@@ -89,4 +89,3 @@ if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' )
     add_action( 'plugins_loaded', array( 'ResponsiveMenu', 'Internationalise' ) );
     
 endif;
-
