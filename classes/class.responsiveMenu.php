@@ -1146,13 +1146,13 @@ class ResponsiveMenu {
                 
                 $css = self::getCSS( 'strip_tags' );
             
-                $file = fopen( RM_PATH . 'css/responsive-menu.css', 'w' );
+                $file = fopen( RM_PATH . 'css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
                 $cssFile = fwrite( $file, $css );
                 fclose( $file );
                 
                 $js = self::getJavascript( 'strip_tags' );
              
-                $file = fopen( RM_PATH . 'js/responsive-menu.js', 'w' );
+                $file = fopen( RM_PATH . 'js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
                 $jsFile = fwrite( $file, $js  );
                 fclose( $file );
                 
@@ -1181,8 +1181,8 @@ class ResponsiveMenu {
     
     static function ExternalScripts() {
 
-        wp_enqueue_style( 'responsive-menu', RM_CSS . 'responsive-menu.css', array(), '1.0', 'all' );
-        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu.js', 'jquery', '1.0', false );   
+        wp_enqueue_style( 'responsive-menu', RM_CSS . 'responsive-menu-' . get_current_blog_id() . '.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu' . get_current_blog_id() . '.js', 'jquery', '1.0', false );   
 
     }
 
@@ -1764,7 +1764,7 @@ class ResponsiveMenu {
 
     private static function checkViewPortTag() {
 
-        $metaTags = get_meta_tags(get_bloginfo('url'));
+        $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
 
         if ($metaTags['viewport'])
             return $metaTags['viewport'];
