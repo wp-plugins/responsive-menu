@@ -68,6 +68,8 @@ add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
 /* 4.1 Display Responsive Menu on Site ============= */
 if( !is_admin() ) :
 
+    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
+
     if( isset( $options['RMExternal'] ) && $options['RMExternal'] == 'external' ) :
         
         add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'ExternalScripts' ) );
@@ -80,8 +82,6 @@ if( !is_admin() ) :
         add_action( $inFooter, array( 'ResponsiveMenu', 'InlineJavaScript' ) ); 
         
     endif;
-
-    add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
     
 endif;
 
