@@ -362,7 +362,7 @@ class ResponsiveMenu {
                             <input 
                                 type="button" 
                                 id="RMImageButton" 
-                                value="Upload Image" 
+                                value="<?php _e( 'Upload Image', 'responsive-menu' ); ?>" 
                                 class="button" 
                                 />
 
@@ -426,7 +426,7 @@ class ResponsiveMenu {
                             type="text" 
                             name="RMBreak" 
                             value="<?php echo isset($options['RMBreak']) ? $options['RMBreak'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                     <td>
@@ -477,7 +477,7 @@ class ResponsiveMenu {
                             type="text" 
                             name="RMWidth" 
                             value="<?php echo isset($options['RMWidth']) ? $options['RMWidth'] : ''; ?>" 
-                            />%
+                            /> %
 
                     </td>
                 </tr>                
@@ -532,9 +532,9 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
-                        <h4><?php _e( 'Include scripts in footer', 'responsive-menu' ); ?></h4> 
+                        <h4><?php _e( 'Include script in footer', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Tick if you would like to include jQuery in footer', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'Tick if you would like to include your jQuery script in footer', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="checkbox" 
@@ -595,21 +595,21 @@ class ResponsiveMenu {
                             type="text" 
                             name="RMTop" 
                             value="<?php echo isset($options['RMTop']) ? $options['RMTop'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                     <td>
 
                         <h4><?php _e( 'Right', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the distance from the right of the page in percentage that the menu will be displayed', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the distance from the right of the page in % that the menu will be displayed', 'responsive-menu' ); ?></h5>
 
                         <input 
                             class="numberInput" 
                             type="text" 
                             name="RMRight" 
                             value="<?php echo isset($options['RMRight']) ? $options['RMRight'] : ''; ?>" 
-                            />%
+                            /> %
 
                     </td>
                 </tr>
@@ -840,7 +840,7 @@ class ResponsiveMenu {
 
                         <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Tick this if you would like the menu button to remain in the same place when scrolling', 'responsive-menu' ); ?>.</h5>
+                        <h5><?php _e( 'Tick this if you would like the menu button to remain in the same place when scrolling', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="checkbox" 
@@ -858,7 +858,7 @@ class ResponsiveMenu {
 
                         <h4><?php _e( 'Font', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Enter a font name below, if empty your default site font will be used', 'responsive-menu' ); ?>.</h5>
+                        <h5><?php _e( 'Enter a font name below, if empty your default site font will be used', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -878,7 +878,7 @@ class ResponsiveMenu {
                             name="RMFontSize" 
                             class="numberInput" 
                             value="<?php echo isset($options['RMFontSize']) ? $options['RMFontSize'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                 </tr>  
@@ -895,7 +895,7 @@ class ResponsiveMenu {
                             name="RMBtnSize" 
                             class="numberInput" 
                             value="<?php echo isset($options['RMBtnSize']) ? $options['RMBtnSize'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                     <td>  
@@ -909,7 +909,7 @@ class ResponsiveMenu {
                             name="RMTitleSize" 
                             class="numberInput" 
                             value="<?php echo isset($options['RMTitleSize']) ? $options['RMTitleSize'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                 </tr>    
@@ -919,7 +919,7 @@ class ResponsiveMenu {
 
                         <h4><?php _e( 'Text Alignment', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Enter a text alignment option below', 'responsive-menu' ); ?> <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: <?php _e( 'left', 'responsive-menu' ); ?></span></h5>
+                        <h5><?php _e( 'Enter a text alignment option below', 'responsive-menu' ); ?> <span class='default'><?php _e( 'default', 'responsive-menu' ); ?>: <?php _e( 'Left', 'responsive-menu' ); ?></span></h5>
 
                         <select name="RMTxtAlign">
 
@@ -953,7 +953,7 @@ class ResponsiveMenu {
                             name="RMLinkHeight" 
                             class="numberInput" 
                             value="<?php echo isset($options['RMLinkHeight']) ? $options['RMLinkHeight'] : ''; ?>" 
-                            />px
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
 
                     </td>
                 </tr>
@@ -1029,7 +1029,7 @@ class ResponsiveMenu {
                                 name="RMAnimSpd" 
                                 class="numberInput" 
                                 value="<?php echo isset($options['RMAnimSpd']) ? $options['RMAnimSpd'] : ''; ?>" 
-                                />s
+                                /> <?php _e( 'seconds', 'responsive-menu' ); ?>
 
                         </td>
                         <td>
@@ -1043,7 +1043,7 @@ class ResponsiveMenu {
                                 name="RMTranSpd" 
                                 class="numberInput" 
                                 value="<?php echo isset($options['RMTranSpd']) ? $options['RMTranSpd'] : ''; ?>" 
-                                />s
+                                /> <?php _e( 'seconds', 'responsive-menu' ); ?>
                     
                         </td>
                     </tr>

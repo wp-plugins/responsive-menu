@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu\n"
-"POT-Creation-Date: 2014-03-25 10:04-0000\n"
-"PO-Revision-Date: 2014-03-25 10:04-0000\n"
+"POT-Creation-Date: 2014-03-28 22:29-0000\n"
+"PO-Revision-Date: 2014-03-28 22:30-0000\n"
 "Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
 "com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
@@ -11,458 +11,478 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: \\\\nas\\NI Data\\1 - NETWORK INTELLECT\\PERSONAL FOLDERS"
-"\\Peter Featherstone\\Work\\Code\\PHP\\WordPress\\Plugins\\SVN Repository"
-"\\responsive-menu\\tags\\1.8\\\n"
+"X-Poedit-Basepath: C:\\Users\\Peter\\SkyDrive\\Documents\\Web Design"
+"\\WordPress\\SVN Repository\\responsive-menu\\tags\\1.9\\\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: classes\n"
 
-#: classes/class.responsiveMenu.php:38 classes/class.responsiveMenu.php:331
+#: classes/class.responsiveMenu.php:39 classes/class.responsiveMenu.php:338
 msgid "Menu Title"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:85 classes/class.responsiveMenu.php:86
+#: classes/class.responsiveMenu.php:89 classes/class.responsiveMenu.php:90
 #, fuzzy
 msgid "Responsive Menu"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:274
+#: classes/class.responsiveMenu.php:281
 #, fuzzy
 msgid "Responsive Menu Options"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:292
+#: classes/class.responsiveMenu.php:299
 msgid "Initial Checks"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:294
+#: classes/class.responsiveMenu.php:301
 msgid "Viewport Meta Tag Check"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:298
+#: classes/class.responsiveMenu.php:305
 msgid "Below Viewport Meta Tag Found"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:312
+#: classes/class.responsiveMenu.php:319
 msgid "Viewport Meta Tag Not Found"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:316
+#: classes/class.responsiveMenu.php:323
 msgid "Recommended"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:324
+#: classes/class.responsiveMenu.php:331
 #, fuzzy
 msgid "Menu Settings"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:333
+#: classes/class.responsiveMenu.php:340
 #, fuzzy
 msgid "This is the title at the top of the responsive menu"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:344
+#: classes/class.responsiveMenu.php:351
 #, fuzzy
 msgid "Menu Image"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:346
+#: classes/class.responsiveMenu.php:353
 msgid ""
 "This is the image that sits next to the responsive menu title. The best size "
 "is 32px x 32px"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:368
+#: classes/class.responsiveMenu.php:365
+msgid "Upload Image"
+msgstr ""
+
+#: classes/class.responsiveMenu.php:375
 #, fuzzy
 msgid "Menu Button Title"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:370
+#: classes/class.responsiveMenu.php:377
 msgid "This is the title under the 3 lines of the menu button"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:381
+#: classes/class.responsiveMenu.php:388
 #, fuzzy
 msgid "Choose Menu To Responsify"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:383
+#: classes/class.responsiveMenu.php:390
 #, fuzzy
 msgid "This is the menu that will be used responsively"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:403
+#: classes/class.responsiveMenu.php:410
 msgid "You haven't set up any site menus yet"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:413
+#: classes/class.responsiveMenu.php:420
 #, fuzzy
 msgid "Menu Breakpoint"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:415
+#: classes/class.responsiveMenu.php:422
 msgid ""
 "This is the point where the responsive menu will be visible in px width of "
 "the browser"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:427
+#: classes/class.responsiveMenu.php:429 classes/class.responsiveMenu.php:598
+#: classes/class.responsiveMenu.php:881 classes/class.responsiveMenu.php:898
+#: classes/class.responsiveMenu.php:912 classes/class.responsiveMenu.php:956
+msgid "px"
+msgstr ""
+
+#: classes/class.responsiveMenu.php:434
 #, fuzzy
 msgid "CSS of Menu To Hide"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:429
+#: classes/class.responsiveMenu.php:436
 msgid ""
 "This is the CSS of the menu you want to hide once the responsive menu shows"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:429 classes/class.responsiveMenu.php:981
+#: classes/class.responsiveMenu.php:436 classes/class.responsiveMenu.php:1009
 msgid "e.g"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:443
+#: classes/class.responsiveMenu.php:450
 #, fuzzy
 msgid "Menu Depth"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:445
+#: classes/class.responsiveMenu.php:452
 msgid "This is how deep into your menu tree will be visible (max 3)"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:464
+#: classes/class.responsiveMenu.php:471
 #, fuzzy
 msgid "Menu Width"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:466
+#: classes/class.responsiveMenu.php:473
 msgid "This is the width the menu takes up across the page once expanded"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:466 classes/class.responsiveMenu.php:846
-#: classes/class.responsiveMenu.php:863 classes/class.responsiveMenu.php:877
-#: classes/class.responsiveMenu.php:894 classes/class.responsiveMenu.php:921
-#: classes/class.responsiveMenu.php:997 classes/class.responsiveMenu.php:1011
+#: classes/class.responsiveMenu.php:473 classes/class.responsiveMenu.php:874
+#: classes/class.responsiveMenu.php:891 classes/class.responsiveMenu.php:905
+#: classes/class.responsiveMenu.php:922 classes/class.responsiveMenu.php:949
+#: classes/class.responsiveMenu.php:1025 classes/class.responsiveMenu.php:1039
 msgid "default"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:480
+#: classes/class.responsiveMenu.php:487
 msgid "Remove Search Box"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:482
+#: classes/class.responsiveMenu.php:489
 msgid "Tick if you would like to remove the search box"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:495
+#: classes/class.responsiveMenu.php:502
 msgid "Auto Expand Sub-Menus"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:497
+#: classes/class.responsiveMenu.php:504
 msgid "Tick if you would like sub-menus to be automatically expanded"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:513
+#: classes/class.responsiveMenu.php:520
 msgid "Include CSS/JS as external files"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:515
+#: classes/class.responsiveMenu.php:522
 msgid "Tick if you would like to include CSS and jQuery as external files"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:528
+#: classes/class.responsiveMenu.php:535
+msgid "Include script in footer"
+msgstr ""
+
+#: classes/class.responsiveMenu.php:537
+msgid "Tick if you would like to include your jQuery script in footer"
+msgstr ""
+
+#: classes/class.responsiveMenu.php:553
 msgid "Slide Side"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:530
+#: classes/class.responsiveMenu.php:555
 msgid "This is the side of the screen from which the menu will slide"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:555
+#: classes/class.responsiveMenu.php:583
 #, fuzzy
 msgid "Location Settings"
 msgstr "translated"
 
-#: classes/class.responsiveMenu.php:561
+#: classes/class.responsiveMenu.php:589
 msgid "Top"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:563
+#: classes/class.responsiveMenu.php:591
 msgid ""
 "This is the distance from the top of the page in px that the menu will be "
 "displayed"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:575 classes/class.responsiveMenu.php:911
+#: classes/class.responsiveMenu.php:603 classes/class.responsiveMenu.php:939
 msgid "Right"
 msgstr "Derecho"
 
-#: classes/class.responsiveMenu.php:577
+#: classes/class.responsiveMenu.php:605
 msgid ""
-"This is the distance from the right of the page in percentage that the menu "
-"will be displayed"
+"This is the distance from the right of the page in % that the menu will be "
+"displayed"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:592
+#: classes/class.responsiveMenu.php:620
 msgid "Colour Settings"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:598
+#: classes/class.responsiveMenu.php:626
 msgid "Menu Line & Text Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:600
+#: classes/class.responsiveMenu.php:628
 msgid "This is the colour of the 3 lines and text for the menu button"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:613
+#: classes/class.responsiveMenu.php:641
 msgid "Menu Button Background Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:615
+#: classes/class.responsiveMenu.php:643
 msgid "This is the background colour of the 3 lines container"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:630
+#: classes/class.responsiveMenu.php:658
 #, fuzzy
 msgid "Menu Background Colour"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:632
+#: classes/class.responsiveMenu.php:660
 msgid "This is the background colour of the expanded menu"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:645
+#: classes/class.responsiveMenu.php:673
 msgid "Menu Background Hover Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:647
+#: classes/class.responsiveMenu.php:675
 msgid "This is the hover background colour of the expanded menu"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:663
+#: classes/class.responsiveMenu.php:691
 #, fuzzy
 msgid "Menu Title Colour"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:665
+#: classes/class.responsiveMenu.php:693
 msgid "This is the text colour of the expanded menu title"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:678
+#: classes/class.responsiveMenu.php:706
 #, fuzzy
 msgid "Menu Title Hover Colour"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:680
+#: classes/class.responsiveMenu.php:708
 msgid "This is the hover colour of the expanded menu title"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:695
+#: classes/class.responsiveMenu.php:723
 #, fuzzy
 msgid "Menu Text Colour"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:697
+#: classes/class.responsiveMenu.php:725
 msgid "This is the text colour of the expanded menu links"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:710
+#: classes/class.responsiveMenu.php:738
 msgid "Menu Text Hover Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:712
+#: classes/class.responsiveMenu.php:740
 msgid "This is the text hover colour of the expanded menu links"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:727
+#: classes/class.responsiveMenu.php:755
 msgid "Menu Link Border Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:729
+#: classes/class.responsiveMenu.php:757
 msgid "This is the border colour of the expanded menu titles"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:742
+#: classes/class.responsiveMenu.php:770
 #, fuzzy
 msgid "Title Background Colour"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:744
+#: classes/class.responsiveMenu.php:772
 msgid "This is the background colour of the expanded menu title"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:759
+#: classes/class.responsiveMenu.php:787
 msgid "Current Page Background Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:761
+#: classes/class.responsiveMenu.php:789
 msgid "This is the background colour of the current page"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:774
+#: classes/class.responsiveMenu.php:802
 msgid "Current Page Text Colour"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:776
+#: classes/class.responsiveMenu.php:804
 msgid "This is the text colour of the current page"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:792
+#: classes/class.responsiveMenu.php:820
 msgid "Style Settings"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:798
+#: classes/class.responsiveMenu.php:826
 #, fuzzy
 msgid "Menu Background Transparent"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:800
+#: classes/class.responsiveMenu.php:828
 msgid "Tick this if you would like a transparent background"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:813
+#: classes/class.responsiveMenu.php:841
 msgid "Fixed Positioning"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:815
+#: classes/class.responsiveMenu.php:843
 msgid ""
 "Tick this if you would like the menu button to remain in the same place when "
 "scrolling"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:831
+#: classes/class.responsiveMenu.php:859
 msgid "Font"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:833
+#: classes/class.responsiveMenu.php:861
 msgid "Enter a font name below, if empty your default site font will be used"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:844
+#: classes/class.responsiveMenu.php:872
 msgid "Font Size"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:846
+#: classes/class.responsiveMenu.php:874
 msgid "Enter a font size in pixels below"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:861
+#: classes/class.responsiveMenu.php:889
 msgid "Click Button Font Size"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:863
+#: classes/class.responsiveMenu.php:891
 msgid "Enter a click button font size in pixels below"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:875
+#: classes/class.responsiveMenu.php:903
 #, fuzzy
 msgid "Title Font Size"
 msgstr "Titulo del menú"
 
-#: classes/class.responsiveMenu.php:877
+#: classes/class.responsiveMenu.php:905
 msgid "Enter a title font size in pixels below"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:892
+#: classes/class.responsiveMenu.php:920
 msgid "Text Alignment"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:894
+#: classes/class.responsiveMenu.php:922
 msgid "Enter a text alignment option below"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:894
-msgid "left"
-msgstr "izquierda"
-
-#: classes/class.responsiveMenu.php:901
+#: classes/class.responsiveMenu.php:922 classes/class.responsiveMenu.php:929
 msgid "Left"
 msgstr "Izquierda"
 
-#: classes/class.responsiveMenu.php:906
+#: classes/class.responsiveMenu.php:934
 msgid "Centre"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:919
+#: classes/class.responsiveMenu.php:947
 msgid "Links Height"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:921
+#: classes/class.responsiveMenu.php:949
 msgid "Enter a link height size in pixels below"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:937
+#: classes/class.responsiveMenu.php:965
 msgid "Animation Settings"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:942
+#: classes/class.responsiveMenu.php:970
 msgid ""
 "Warning: The Push Animation requires you to place the following meta tag in "
 "your site header"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:957
+#: classes/class.responsiveMenu.php:985
 msgid "Slide Animation"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:959
+#: classes/class.responsiveMenu.php:987
 msgid "Choose the type of animation applied to the menu"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:966
+#: classes/class.responsiveMenu.php:994
 msgid "Overlay"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:971
+#: classes/class.responsiveMenu.php:999
 msgid "Push"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:979
+#: classes/class.responsiveMenu.php:1007
 #, fuzzy
 msgid "Page Wrappers CSS"
 msgstr "translated"
 
-#: classes/class.responsiveMenu.php:981
+#: classes/class.responsiveMenu.php:1009
 msgid ""
 "This is the CSS of the wrapper you want to push when using the push animation"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:995
+#: classes/class.responsiveMenu.php:1023
 msgid "Animation Speed"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:997
+#: classes/class.responsiveMenu.php:1025
 msgid "Enter a speed in seconds below of the slide animation"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1009
+#: classes/class.responsiveMenu.php:1032 classes/class.responsiveMenu.php:1046
+msgid "seconds"
+msgstr ""
+
+#: classes/class.responsiveMenu.php:1037
 msgid "Transition Speed"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1011
+#: classes/class.responsiveMenu.php:1039
 msgid "Enter a speed in seconds below of the hover transition effect"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1031
+#: classes/class.responsiveMenu.php:1059
 msgid "Update Responsive Menu Options"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1161
+#: classes/class.responsiveMenu.php:1194
 msgid ""
 "There was a problem writing the CSS and JS files, please check the plugin js "
 "and css folder/file permissions"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1165
+#: classes/class.responsiveMenu.php:1198
 msgid ""
 "Your Responsive Menu Options and CSS/JS files have been updated successfully"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1171
+#: classes/class.responsiveMenu.php:1204
 msgid "Your Responsive Menu Options have been updated"
 msgstr ""
 
-#: classes/class.responsiveMenu.php:1177
+#: classes/class.responsiveMenu.php:1210
 msgid "There was an error updating the plugin options"
 msgstr ""
+
+#~ msgid "left"
+#~ msgstr "izquierda"
