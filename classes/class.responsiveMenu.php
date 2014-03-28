@@ -20,6 +20,7 @@
 
 class ResponsiveMenu {
 
+    /* Added in 1.8 */
     private static $success = null;
     private static $error = null;
     
@@ -72,7 +73,10 @@ class ResponsiveMenu {
                 
                 /* Added in 1.8 */
                 'RMExternal' => false,
-                'RMSide' => 'left'
+                'RMSide' => 'left',
+                
+                /* Added in 1.9 */
+                'RMFooter' => false
                 
             ) );
 
@@ -147,7 +151,10 @@ class ResponsiveMenu {
                 
                     /* Added in 1.8 */
                     'RMExternal' => false,
-                    'RMSide' => 'left'
+                    'RMSide' => 'left',
+                    
+                    /* Added in 1.9 */
+                    'RMFooter' => false
                     
                 ) );
             
@@ -525,6 +532,24 @@ class ResponsiveMenu {
                     </td>
                     <td>
 
+                        <h4><?php _e( 'Include scripts in footer', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to include jQuery in footer', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMFooter" 
+                            id="RMFooter"
+                            value="footer"
+                            <?php echo isset( $options['RMFooter'] ) && $options['RMFooter'] == 'footer' ? ' checked="checked" ' : ''; ?>
+                            />
+                        
+                    </td>                
+                </tr>  
+                
+                          <tr>
+                    <td>
+                        
                         <h4><?php _e( 'Slide Side', 'responsive-menu' ); ?></h4> 
 
                         <h5><?php _e( 'This is the side of the screen from which the menu will slide', 'responsive-menu' ); ?></h5>
@@ -544,6 +569,9 @@ class ResponsiveMenu {
                                 </option>
                                 
                         </select>
+                    
+                    </td>
+                    <td>
                         
                     </td>                
                 </tr>  
@@ -1088,6 +1116,9 @@ class ResponsiveMenu {
             $RMExternal = isset( $_POST['RMExternal'] ) ? $_POST['RMExternal'] : false;
             $RMSide = isset( $_POST['RMSide'] ) ? $_POST['RMSide'] : 'left';
             
+            /* Added in 1.9 */
+            $RMFooter = isset( $_POST['RMFooter'] ) ? $_POST['RMFooter'] : false;
+            
             $optionsArray = array(
                 // Filter Input Correctly
                 'RM' => self::filterInput($RM),
@@ -1132,9 +1163,11 @@ class ResponsiveMenu {
                 'RMLinkHeight' => intval( $RMLinkHeight ),
                 
                 /* Added in 1.8 */
-                
                 'RMExternal' => self::filterInput( $RMExternal ),
-                'RMSide' => self::filterInput( $RMSide )
+                'RMSide' => self::filterInput( $RMSide ),
+                
+                /* Added in 1.9 */
+                'RMFooter' => self::filterInput( $RMFooter )
                     
             );
             
@@ -1177,28 +1210,40 @@ class ResponsiveMenu {
                 self::$error = __( 'There was an error updating the plugin options', 'responsive-menu');
 
         endif;
+        
     }
     
+    /* Added in 1.8 */
     static function ExternalScripts() {
 
+        $options = self::getOptions();
+        
+        $inFooter = isset( $options['RMFooter'] ) && $options['RMFooter'] == 'footer' ? true : false;
+        
         wp_enqueue_style( 'responsive-menu', RM_CSS . 'responsive-menu-' . get_current_blog_id() . '.css', array(), '1.0', 'all' );
-        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu-' . get_current_blog_id() . '.js', 'jquery', '1.0', false );   
+        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu-' . get_current_blog_id() . '.js', 'jquery', '1.0', $inFooter );   
 
     }
-
-    static function displayMenu() {
-            
-        echo self::getJavascript();
+    
+    /* Added in 1.9 */
+    static function InlineCss() {
+        
         echo self::getCSS();
         
     }
-
+    
+    /* Added in 1.9 */
+    static function InlineJavaScript() {
+        
+        echo self::getJavascript();
+        
+    }
+    
     static function displayMenuHtml() {
         
         echo self::getHTML();
         
     }
-    
     
     static function Colorpicker(){ 
     
@@ -1208,6 +1253,7 @@ class ResponsiveMenu {
 
     }
     
+    /* Added in 1.8 */
     static function Internationalise() {
     
         load_plugin_textdomain( 'responsive-menu', false, basename( dirname( dirname( __FILE__ ) ) ) . '/translations/' );

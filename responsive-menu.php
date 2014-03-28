@@ -74,8 +74,11 @@ if( !is_admin() ) :
     
     else :
         
-        add_action( 'wp_head', array( 'ResponsiveMenu', 'displayMenu' ) ); 
+        $inFooter = isset( $options['RMFooter'] ) && $options['RMFooter'] == 'footer' ? 'wp_footer' : 'wp_head';
     
+        add_action( 'wp_head', array( 'ResponsiveMenu', 'InlineCSS' ) ); 
+        add_action( $inFooter, array( 'ResponsiveMenu', 'InlineJavaScript' ) ); 
+        
     endif;
 
     add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
