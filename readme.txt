@@ -90,18 +90,6 @@ Alternatively:
 
 == Frequently Asked Questions ==
 
-= Why do I get a "Parse error: syntax error, unexpected T_STRING in /wp-content/plugins/responsive-menu/classes/class.responsiveMenu.php on line 22 error? =
-
-- The Responsive Menu plugin used to use Namespaces, which are only available in PHP versions 5.3 and above, please ask your hosting provider to upgrade your PHP version on the server or delete the plugin completely and re-install to remove this error.
-
-= Why does my site go weird when using the Push animation =
-
-- You need to add the following meta tag to your site header: &lt;meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /&gt;
-
-Don't worry none of your settings will be lost and will not happen in future releases.
-
-This will not be required for most people.
-
 == Screenshots ==
 
 1. Fully customisable Admin Screen
