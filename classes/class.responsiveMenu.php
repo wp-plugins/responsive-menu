@@ -1523,6 +1523,20 @@ class ResponsiveMenu {
         
         $css .= "
 
+#responsive-menu .appendLink, 
+#responsive-menu .responsive-menu li a, 
+#responsive-menu #responsive-menu-title a,
+#responsive-menu .responsive-menu, 
+#responsive-menu div, 
+#responsive-menu .responsive-menu li, 
+#responsive-menu 
+{
+box-sizing: content-box !important;
+-moz-box-sizing: content-box !important;
+-webkit-box-sizing: content-box !important;
+-o-box-sizing: content-box !important;
+}
+
             .RMPushOpen
             {
                 width: 100% !important;
