@@ -66,7 +66,7 @@ You have the choice to include the stylesheets and scripts inline to avoid addin
 It also includes the following functionality:
 <ul>
 <li> - WPML/Polylang Support</li>
-<li> - Croatian translation - Massive thanks to <a href="http://neveronedesign.3owl.com">Neverone Design</a> for this!</li>
+<li> - Croatian translation - Massive thanks to <a href="https://www.facebook.com/pages/Neverone-design/490262371018076">Neverone Design</a> for this!</li>
 </ul>
 On the current development list for the next update are the following:
 <ul>
@@ -113,7 +113,7 @@ Alternatively:
 * Added ability to upload custom menu button image to replace the 3 lines
 * Added ability to close menu on each link click (good for single page sites)
 * Added ability to minify output (saving 50% on file size)
-* Added Croatian Translation - Massive thanks to <a href="http://neveronedesign.3owl.com">Neverone Design</a> for this!
+* Added Croatian Translation - Massive thanks to <a href="https://www.facebook.com/pages/Neverone-design/490262371018076">Neverone Design</a> for this!
 
 = 1.8 (26th Mar 2014) =
 
