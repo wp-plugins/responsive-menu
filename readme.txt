@@ -50,6 +50,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 43 customisable optio
 <li> - Choice of side to slide in from</li>
 <li> - Choice to use inline/external stylesheets and scripts</li>
 <li> - Option to include JavaScript in footer</li>
+<li> - Option to remove CSS !important tags</li>
 <li> - Choice to Minify created CSS and JS files (saves up to 50% file space)</li>
 <li> - Choice to auto-close menu items on click (for single page sites)</li>
 <li> - Plus more...</li>
