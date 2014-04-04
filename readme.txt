@@ -12,12 +12,13 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Ne
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 38 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 43 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
 <li> - Menu Title Image</li>
 <li> - Button Title</li>
+<li> - Button Title Image</li>
 <li> - Menu To Responsify</li>
 <li> - Media Query Breakpoint Width</li>
 <li> - CSS Options For Hiding Specific Elements</li>
@@ -48,29 +49,28 @@ This is a Highly Customisable Responsive Menu Plugin, with 38 customisable optio
 <li> - Text Alignment</li>
 <li> - Choice of side to slide in from</li>
 <li> - Choice to use inline/external stylesheets and scripts</li>
+<li> - Option to include JavaScript in footer</li>
+<li> - Choice to Minify created CSS and JS files (saves up to 50% file space)</li>
+<li> - Choice to auto-close menu items on click (for single page sites)</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 38 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 43 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
 <br /><br />
 You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS).
 <br /><br />
 It also includes the following functionality:
 <ul>
 <li> - WPML/Polylang Support</li>
-<li> - International translation ready (awaiting translations)</li>
+<li> - Croatian translation - Massive thanks to <a href="http://omnomnom.com.hr/">neverone</a> for this!</li>
 </ul>
 On the current development list for the next update are the following:
 <ul>
-<li> - Option to include JavaScript in footer [done]</li>
-<li> - Minify created CSS and JS files</li>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
-<li> - Croatian language translation</li>
-<li> - Option to auto-close menu items on click (for single page sites)</li>
 <li> - Mobile browser check support</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
@@ -101,6 +101,14 @@ Alternatively:
 3. Example Front End Expanded Menu
 
 == Changelog ==
+
+= 1.9 (5th Apr 2014) =
+
+* Added option to include scripts in footer
+* Added ability to upload custom menu button image to replace the 3 lines
+* Added ability to close menu on each link click (good for single page sites)
+* Added ability to minify output (saving 50% on file size)
+* Added Croatian Translation - Massive thanks to <a href="http://omnomnom.com.hr/">neverone</a> for this!
 
 = 1.8 (26th Mar 2014) =
 
