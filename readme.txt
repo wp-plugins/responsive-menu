@@ -101,6 +101,10 @@ Alternatively:
 
 3. Example Front End Expanded Menu
 
+4. Example Custom Front End Menu Button Image
+
+5. Example Custom Front End Expanded Menu
+
 == Changelog ==
 
 = 1.9 (5th Apr 2014) =
