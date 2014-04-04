@@ -55,13 +55,13 @@ This is a Highly Customisable Responsive Menu Plugin, with 43 customisable optio
 <li> - Choice to auto-close menu items on click (for single page sites)</li>
 <li> - Plus more...</li>
 </ul>
-The plugin creates a nice three-lined menu button that users can click to bring a slide out menu, which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
+The plugin creates a nice three-lined menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left or right, again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 43 customisable options, you can get it to look exactly as you want it to in just a matter of seconds.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 43 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
 <br /><br />
-You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS).
+You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS) and there is even an option to minify the output if you wish saving a further 50% on file space.
 <br /><br />
 It also includes the following functionality:
 <ul>
