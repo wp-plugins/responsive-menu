@@ -26,7 +26,7 @@ class ResponsiveMenu {
     
     static function install() {
 
-        update_option( 'RMVer', RM_V );
+            add_option( 'RMVer', RM_V );
 
             add_option( 'RMOptions', array(
                 
@@ -169,10 +169,6 @@ class ResponsiveMenu {
                     'RMMinWidth' => null 
                     
                 ) );
-            
-        else :
-                    
-            update_option( 'RMVer', RM_V );
                 
         endif;
         
