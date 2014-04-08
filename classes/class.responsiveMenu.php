@@ -80,7 +80,9 @@ class ResponsiveMenu {
                 'RMClickImg' => false,
                 'RMMinify' => false,
                 'RMClickClose' => false,
-                'RMRemImp' => false             
+                'RMRemImp' => false,
+                'RMX' => false,
+                'RMMinWidth' => null
                 
             ) );
 
@@ -162,7 +164,9 @@ class ResponsiveMenu {
                     'RMClickImg' => false,
                     'RMMinify' => false,
                     'RMClickClose' => false,
-                    'RMRemImp' => false 
+                    'RMRemImp' => false,
+                    'RMX' => false,
+                    'RMMinWidth' => null 
                     
                 ) );
             
@@ -1039,10 +1043,41 @@ class ResponsiveMenu {
 
                     </td>
                     <td>
+                        
+                        <h4><?php _e( 'Change click menu to an x on click', 'responsive-menu' ); ?></h4> 
+
+                        <h5>
+                            <?php _e( 'Tick this if you would like the 3 lines to turn into an x once clicked', 'responsive-menu' ); ?>. 
+                        </h5>
+                        <input 
+                            type="checkbox" 
+                            name="RMX" 
+                            id="RMX"
+                            value="rmx"
+                            <?php echo $options['RMX'] == 'rmx' ? ' checked="checked" ' : ''; ?>
+                            />
 
                     </td>
                 </tr>
-                
+                <tr>
+                    <td>                    
+
+                        <h4><?php _e( 'Minimum Width', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Enter a minimum menu width size in pixels below', 'responsive-menu' ); ?>.</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMMinWidth" 
+                            class="numberInput" 
+                            value="<?php echo isset($options['RMMinWidth']) ? $options['RMMinWidth'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>                    
+
+                    </td>
+                </tr>
             </table>
 
         <hr />        
@@ -1207,7 +1242,10 @@ class ResponsiveMenu {
             $RMMinify = isset( $_POST['RMMinify'] ) ? $_POST['RMMinify'] : false;
             $RMClickClose = isset( $_POST['RMClickClose'] ) ? $_POST['RMClickClose'] : false;
             $RMRemImp = isset( $_POST['RMRemImp'] ) ? $_POST['RMRemImp'] : false;  
-                                    
+              
+            $RMX = isset( $_POST['RMX'] ) ? $_POST['RMX'] : false;
+            $RMMinWidth = isset( $_POST['RMMinWidth'] ) ? $_POST['RMMinWidth'] : null;
+                    
             $optionsArray = array(
                 // Filter Input Correctly
                 'RM' => self::filterInput($RM),
@@ -1260,7 +1298,9 @@ class ResponsiveMenu {
                 'RMClickImg' => self::filterInput( $RMClickImg ),
                 'RMMinify' => self::filterInput( $RMMinify ),
                 'RMClickClose' => self::filterInput( $RMClickClose ),
-                'RMRemImp' => self::filterInput( $RMRemImp )
+                'RMRemImp' => self::filterInput( $RMRemImp ),
+                'RMX' => self::filterInput( $RMX ),
+                'RMMinWidth' => intval( $RMMinWidth )
             
             );
             
@@ -1392,6 +1432,20 @@ class ResponsiveMenu {
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
         
+        if( $options['RMX'] ) : 
+        
+            $closeX = " \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'none' );
+                        \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'block' ); ";
+        
+            $showX = " \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'none' );
+                         \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'block' ); ";        
+        else :
+        
+            $closeX = "";
+            $showX = "";
+        
+        endif;
+            
         $js = '';
         
         if( $args != 'strip_tags' ) : 
@@ -1406,12 +1460,13 @@ class ResponsiveMenu {
 
             \$RMjQuery( document ).ready( function( ) {
 
-function openRM() {
+                function openRM() {
 
                       $slideOpen  
                       $sideSlideOpen
                       $slideOverCss
                       $slideOver
+                      $showX
                           
                       \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
                       \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
@@ -1420,9 +1475,9 @@ function openRM() {
     
                       } ); 
                       
-}
+                }
    
-function closeRM() {
+                function closeRM() {
 
                         $slideBack
                         
@@ -1431,33 +1486,34 @@ function closeRM() {
                             $slideRemove
                             $sideSlideRemove
                             $slideOverCssRemove
+                            $closeX
                             \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
 
                         } );
                         
-}
+                }
                 
                 isOpen = false;
 
-            \$RMjQuery( '#click-menu' ).click( function() {
+                \$RMjQuery( '#click-menu' ).click( function() {
                        
-                $setHeight
+                    $setHeight
 
-                if( !isOpen ) {
-                
-                     openRM();
+                    if( !isOpen ) {
 
-                      isOpen = true;
-                      
-                } else {
+                         openRM();
 
-                    closeRM();
-                      
-                      isOpen = false;
-                      
-                }
+                          isOpen = true;
 
-});
+                    } else {
+
+                        closeRM();
+
+                          isOpen = false;
+
+                    }
+
+                });
                     
                 \$RMjQuery( window ).resize( function() { 
                 
@@ -1535,16 +1591,21 @@ function closeRM() {
 
         $options = self::getOptions();
 
-        $html = '
-            <div id="responsive-menu">
+        $html = '<div id="responsive-menu">';
+        
+        if( $options['RMTitle'] || $options['RMImage'] ) :
 			
-                <div id="responsive-menu-title">';
+            $html .= '<div id="responsive-menu-title">';
 
-        $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
+            $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
 
 
-        $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a></div>';
+            $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a>';
+            
+            $html .= '</div>';
 
+        endif;
+            
         $html .= wp_nav_menu(array(
             'menu' => $options['RM'],
             'echo' => false,
@@ -1564,10 +1625,16 @@ function closeRM() {
 
         $html .= '<div id="click-menu">';
         
+        if( $options['RMX'] ) : 
+            
+            $html .= '<div class="threeLines" id="RMX">x</div>';
+        
+        endif;
+        
         if( !$options['RMClickImg'] ) : 
 
             $html .= '
-            <div class="threeLines">       
+            <div class="threeLines" id="RM3Lines">       
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line"></div>
@@ -1575,7 +1642,7 @@ function closeRM() {
                 
         else :
             
-            $html .= '<img src="' . $options['RMClickImg'] . '" class="click-menu-image" />';
+            $html .= '<img id="RM3Lines" src="' . $options['RMClickImg'] . '" class="click-menu-image" />';
               
         endif;
 
@@ -1633,6 +1700,9 @@ function closeRM() {
         /* Added 1.8 */
         $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide'];
         
+        /* Added 1.9 */
+        $minWidth = empty( $options['RMMinWidth'] ) ? '' : 'min-width: ' . $options['RMMinWidth'] . 'px' . $important;
+        
         $css = '';
         
         if( $args != 'strip_tags' ) : 
@@ -1643,19 +1713,27 @@ function closeRM() {
         
         $css .= "
 
-#responsive-menu .appendLink, 
-#responsive-menu .responsive-menu li a, 
-#responsive-menu #responsive-menu-title a,
-#responsive-menu .responsive-menu, 
-#responsive-menu div, 
-#responsive-menu .responsive-menu li, 
-#responsive-menu 
-{
-box-sizing: content-box{$important}
--moz-box-sizing: content-box{$important}
--webkit-box-sizing: content-box{$important}
--o-box-sizing: content-box{$important}
-}
+            #responsive-menu .appendLink, 
+            #responsive-menu .responsive-menu li a, 
+            #responsive-menu #responsive-menu-title a,
+            #responsive-menu .responsive-menu, 
+            #responsive-menu div, 
+            #responsive-menu .responsive-menu li, 
+            #responsive-menu 
+            {
+                box-sizing: content-box{$important}
+                -moz-box-sizing: content-box{$important}
+                -webkit-box-sizing: content-box{$important}
+                -o-box-sizing: content-box{$important}
+            }
+
+            #click-menu #RMX {
+
+                display: none;
+                font-size: 24px;
+                line-height: 30px;
+                color: $clickCol{$important}
+            }
 
             .RMPushOpen
             {
@@ -1684,6 +1762,7 @@ box-sizing: content-box{$important}
                 font-size: {$fontSize}px{$important}
                 max-width: 999px;
                 display: none;
+                $minWidth
             }
 
             #responsive-menu .appendLink

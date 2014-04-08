@@ -4,7 +4,7 @@
 Plugin Name: Responsive Menu
 Plugin URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
 Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone @ Network Intellect.
-Version: 1.8
+Version: 1.9
 Author: Peter Featherstone
 Text Domain: responsive-menu
 Author URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
@@ -41,7 +41,7 @@ define( 'RM_PATH', plugin_dir_path( __FILE__ ) );
 define( 'RM_IMAGES', RM_BASE . 'imgs/' );
 define( 'RM_JS', RM_BASE . 'js/' );
 define( 'RM_CSS', RM_BASE . 'css/' );
-define( 'RM_V', 1.8 );
+define( 'RM_V', 1.9 );
 
 $options = ResponsiveMenu::getOptions();
 
