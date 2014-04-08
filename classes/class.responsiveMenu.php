@@ -1306,23 +1306,21 @@ class ResponsiveMenu {
             /* Create Css & JS Files If Required */
             if( $RMExternal == 'external' ) :
                 
+                self::createDataFolders();
+                
                 $css = self::getCSS( 'strip_tags' );
-            
+   
                 /* Added 1.9 */
                 if( $RMMinify ) $css = self::Minify( $css );
-                
-                $file = fopen( RM_PATH . 'css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
-                $cssFile = fwrite( $file, $css );
-                fclose( $file );
+
+                $cssFile = self::createCSSFile( $css );
                 
                 $js = self::getJavascript( 'strip_tags' );
                 
                 /* Added 1.9 */
                 if( $RMMinify ) $js = self::Minify( $js );
                 
-                $file = fopen( RM_PATH . 'js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
-                $jsFile = fwrite( $file, $js  );
-                fclose( $file );
+                $jsFile = self::createJSFile( $js );
                 
                 if( $cssFile === false || $jsFile === false ) :
                     
@@ -1355,8 +1353,8 @@ class ResponsiveMenu {
         
         $inFooter = isset( $options['RMFooter'] ) && $options['RMFooter'] == 'footer' ? true : false;
         
-        wp_enqueue_style( 'responsive-menu', RM_CSS . 'responsive-menu-' . get_current_blog_id() . '.css', array(), '1.0', 'all' );
-        wp_enqueue_script( 'responsive-menu', RM_JS . 'responsive-menu-' . get_current_blog_id() . '.js', 'jquery', '1.0', $inFooter );   
+        wp_enqueue_style( 'responsive-menu', RM_CSS_URL . 'responsive-menu-' . get_current_blog_id() . '.css', array(), '1.0', 'all' );
+        wp_enqueue_script( 'responsive-menu', RM_JS_URL . 'responsive-menu-' . get_current_blog_id() . '.js', 'jquery', '1.0', $inFooter );   
 
     }
     
@@ -2048,7 +2046,7 @@ class ResponsiveMenu {
      * @param string $type [css, js]
      */
     
-    protected static function Minify( $input ) {
+    static function Minify( $input ) {
 
         /* remove comments */
         $output = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $input);
@@ -2062,5 +2060,35 @@ class ResponsiveMenu {
         return $output;
         
     }
+    
+    /* Added 1.9 */
+    static function createDataFolders() {
+        
+        if( !file_exists( RM_DATA ) ) mkdir( RM_DATA, 0777 );
+        if( !file_exists( RM_CSS ) ) mkdir( RM_CSS, 0777 );
+        if( !file_exists( RM_JS ) ) mkdir( RM_JS, 0777 ); 
+                
+    }
+    
+    /* Added 1.9 */
+    static function createCSSFile( $css ) {
+        
+        $file = fopen( RM_CSS . 'responsive-menu-' . get_current_blog_id() . '.css', 'w' );
+        $cssFile = fwrite( $file, $css );
+        fclose( $file );
+        
+        return $cssFile;
+        
+    }
+    
+    /* Added 1.9 */
+    static function createJSFile( $js ) {
 
+        $file = fopen( RM_JS . 'responsive-menu-' . get_current_blog_id() . '.js', 'w' );
+        $jsFile = fwrite( $file, $js  );
+        fclose( $file );
+        
+        return $jsFile;
+        
+    }
 }

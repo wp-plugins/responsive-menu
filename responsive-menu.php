@@ -37,11 +37,21 @@ require_once( 'classes/class.responsiveMenu.php' );
 
 /* 1.2 Define Our Plugin Constants ============= */
 define( 'RM_BASE', plugin_dir_url( __FILE__ ) );
+define( 'RM_PLUGIN', dirname( plugin_dir_path( __FILE__ ) ) );
 define( 'RM_PATH', plugin_dir_path( __FILE__ ) );
+
 define( 'RM_IMAGES', RM_BASE . 'imgs/' );
-define( 'RM_JS', RM_BASE . 'js/' );
-define( 'RM_CSS', RM_BASE . 'css/' );
+
+define( 'RM_DATA', RM_PLUGIN . '/responsive-menu-data/' );
+define( 'RM_JS', RM_DATA . 'js/' );
+define( 'RM_CSS', RM_DATA . 'css/' );
+
+define( 'RM_DATA_URL', plugin_dir_url( dirname( __FILE__ ) ) . 'responsive-menu-data/' );
+define( 'RM_JS_URL', RM_DATA_URL . 'js/' );
+define( 'RM_CSS_URL', RM_DATA_URL . 'css/' );
+
 define( 'RM_V', 1.9 );
+
 
 $options = ResponsiveMenu::getOptions();
 
@@ -102,24 +112,22 @@ if( get_option( 'RMVer' ) != RM_V ) :
     
     if( $options['RMExternal'] ) :
         
+        ResponsiveMenu::createDataFolders();
+    
         $css = ResponsiveMenu::getCSS( 'strip_tags' );
 
         /* Added 1.9 */
         if( $options['RMMinify'] ) $css = ResponsiveMenu::Minify( $css );
 
-        $file = fopen( RM_PATH . 'css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
-        $cssFile = fwrite( $file, $css );
-        fclose( $file );
+        ResponsiveMenu::createCSSFile( $css );
 
         $js = ResponsiveMenu::getJavascript( 'strip_tags' );
 
         /* Added 1.9 */
         if( $options['RMMinify'] ) $js = ResponsiveMenu::Minify( $js );
 
-        $file = fopen( RM_PATH . 'js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
-        $jsFile = fwrite( $file, $js  );
-        fclose( $file );
-                
+        ResponsiveMenu::createJSFile( $js );
+        
     endif;
     
     /* Update option version so this doesn't get called again */
