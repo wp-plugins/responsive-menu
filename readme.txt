@@ -74,6 +74,7 @@ On the current development list for the next update are the following:
 <ul>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
+<li> - Improvement of "X" animation</li>
 <li> - Mobile browser check support</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
