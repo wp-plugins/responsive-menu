@@ -93,30 +93,36 @@ if( is_admin() && isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' )
     
 endif;
 
+/* ====================
+   5. Upgrade Functions
+   =================== */
+
+/* 5.1 If upgrade, check version and then create files if necessary */
 if( get_option( 'RMVer' ) != RM_V ) :
     
     if( $options['RMExternal'] ) :
         
-                $css = ResponsiveMenu::getCSS( 'strip_tags' );
-            
-                /* Added 1.9 */
-                if( $options['RMMinify'] ) $css = ResponsiveMenu::Minify( $css );
-                
-                $file = fopen( RM_PATH . 'css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
-                $cssFile = fwrite( $file, $css );
-                fclose( $file );
-                
-                $js = ResponsiveMenu::getJavascript( 'strip_tags' );
-                
-                /* Added 1.9 */
-                if( $options['RMMinify'] ) $js = ResponsiveMenu::Minify( $js );
-                
-                $file = fopen( RM_PATH . 'js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
-                $jsFile = fwrite( $file, $js  );
-                fclose( $file );
+        $css = ResponsiveMenu::getCSS( 'strip_tags' );
+
+        /* Added 1.9 */
+        if( $options['RMMinify'] ) $css = ResponsiveMenu::Minify( $css );
+
+        $file = fopen( RM_PATH . 'css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
+        $cssFile = fwrite( $file, $css );
+        fclose( $file );
+
+        $js = ResponsiveMenu::getJavascript( 'strip_tags' );
+
+        /* Added 1.9 */
+        if( $options['RMMinify'] ) $js = ResponsiveMenu::Minify( $js );
+
+        $file = fopen( RM_PATH . 'js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
+        $jsFile = fwrite( $file, $js  );
+        fclose( $file );
                 
     endif;
     
+    /* Update option version so this doesn't get called again */
     update_option( 'RMVer', RM_V );
     
 endif;
