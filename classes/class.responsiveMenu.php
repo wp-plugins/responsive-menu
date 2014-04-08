@@ -1324,7 +1324,7 @@ class ResponsiveMenu {
                 
                 if( $cssFile === false || $jsFile === false ) :
                     
-                    self::$error = __( 'There was a problem writing the CSS and JS files, please check the plugin js and css folder/file permissions', 'responsive-menu');
+                    self::$error = __( 'There was a problem writing the CSS and JS files, please check the plugins folder/file permissions', 'responsive-menu');
                 
                 else :
                     
