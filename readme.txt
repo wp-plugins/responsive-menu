@@ -111,6 +111,7 @@ Alternatively:
 
 = 1.9 (5th Apr 2014) =
 
+* Changed where custom CSS/JS files are stored. If you have issues when upgrading, please just click "Update Options" from admin and this should return back to normal.
 * Added option to include scripts in footer
 * Added ability to upload custom menu button image to replace the 3 lines
 * Added ability to close menu on each link click (good for single page sites)
