@@ -1664,7 +1664,7 @@ class ResponsiveMenu {
         $width = empty($options['RMWidth']) ? '75' : $options['RMWidth'];
         $mainBkg = empty($options['RMBkg']) ? "#43494C" : $options['RMBkg'];
         $mainBkgH = empty($options['RMBkgHov']) ? "#3C3C3C" : $options['RMBkgHov'];
-        $font = empty($options['RMFont']) ? '' : 'font-family: "' . $options['RMFont'] . $important;
+        $font = empty($options['RMFont']) ? '' : 'font-family: ' . $options['RMFont'] . $important;
         $titleCol = empty($options['RMTitleCol']) ? '#FFFFFF' : $options['RMTitleCol'];
         $titleColH = empty($options['RMTitleColHov']) ? '#FFFFFF' : $options['RMTitleColHov'];
         $txtCol = empty($options['RMTextCol']) ? "#FFFFFF" : $options['RMTextCol'];
