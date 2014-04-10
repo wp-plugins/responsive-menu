@@ -1841,7 +1841,7 @@ class ResponsiveMenu {
                 margin: 0px{$important}
             }
                         
-            #responsive-menu .responsive-menu li.current_page_item a
+            #responsive-menu .responsive-menu li.current_page_item > a
             {
                 background: $curBkg{$important}
                 color: $curCol{$important}
