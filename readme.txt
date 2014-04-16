@@ -3,7 +3,7 @@ Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/donate/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
-Tested up to: 3.8.2
+Tested up to: 3.9
 Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,8 @@ It also includes the following functionality:
 </ul>
 On the current development list for the next update are the following:
 <ul>
+<li> - Option to include JavaScript in footer</li>
+<li> - Minify created CSS and JS files</li>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
 <li> - Mobile browser check support</li>
