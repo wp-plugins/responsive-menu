@@ -72,6 +72,8 @@ It also includes the following functionality:
 </ul>
 On the current development list for the next update are the following:
 <ul>
+<li> - Colour for active parent menu link</li>
+<li> - Auto-Expand parent menu items option</li>
 <li> - Spanish language translation</li>
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
