@@ -1374,7 +1374,7 @@ class ResponsiveMenu {
     
     static function displayMenuHtml() {
         
-        echo self::Minify( self::getHTML() );
+        echo self::getHTML();
         
     }
     

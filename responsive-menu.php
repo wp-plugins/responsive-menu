@@ -52,7 +52,6 @@ define( 'RM_CSS_URL', RM_DATA_URL . 'css/' );
 
 define( 'RM_V', 1.9 );
 
-
 $options = ResponsiveMenu::getOptions();
 
 /* 1.3 Make Sure We Have jQuery ============= */
