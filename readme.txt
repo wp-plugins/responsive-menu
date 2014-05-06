@@ -78,6 +78,7 @@ On the current development list for the next update are the following:
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
 <li> - Add fixed width menu option</li>
+<li> - Option to ignore parent link clicks</li>
 <li> - Option to place menu on left or right</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.

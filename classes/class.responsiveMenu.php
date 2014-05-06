@@ -31,7 +31,7 @@ class ResponsiveMenu {
             add_option( 'RMOptions', array(
                 
                 'RM' => '',
-                'RMBreak' => 400,
+                'RMBreak' => 600,
                 'RMDepth' => 2,
                 'RMTop' => 10,
                 'RMRight' => 5,
@@ -1404,7 +1404,7 @@ class ResponsiveMenu {
         $options = self::getOptions();
 
         $setHeight = $options['RMPos'] == 'fixed' ? '' : " \$RMjQuery( '#responsive-menu' ).css( 'height', \$RMjQuery( document ).height() ); ";
-        $breakpoint = empty($options['RMBreak']) ? "400" : $options['RMBreak'];
+        $breakpoint = empty($options['RMBreak']) ? "600" : $options['RMBreak'];
         $width = empty($options['RMWidth']) ? "75" : $options['RMWidth'];
         $RMPushCSS = empty($options['RMPushCSS']) ? "" : $options['RMPushCSS'];
 
@@ -1672,7 +1672,7 @@ class ResponsiveMenu {
         $clickCol = empty($options['RMLineCol']) ? "#FFFFFF" : $options['RMLineCol'];
         $clickBkg = empty($options['RMBkgTran']) ? "background: {$options['RMClickBkg']};" : '';
         $borCol = empty($options['RMBorCol']) ? "#3C3C3C" : $options['RMBorCol'];
-        $breakpoint = empty($options['RMBreak']) ? "400" : $options['RMBreak'];
+        $breakpoint = empty($options['RMBreak']) ? "600" : $options['RMBreak'];
         $titleBkg = empty($options['RMTitleBkg']) ? "#43494C" : $options['RMTitleBkg'];
         
         $fontSize = empty($options['RMFontSize']) ? 13 : $options['RMFontSize'];
