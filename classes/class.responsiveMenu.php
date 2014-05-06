@@ -1591,10 +1591,10 @@ class ResponsiveMenu {
 			
             $html .= '<div id="responsive-menu-title">';
 
-            $html .= $options['RMImage'] ? '<a href="' . get_site_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
+            $html .= $options['RMImage'] ? '<a href="' . get_home_url() . ' "><img src="' . $options['RMImage'] . '" class="RMImage" alt="' . $options['RMTitle'] . '" title="' . $options['RMTitle'] . '" /></a>' : '';
 
 
-            $html .= '<a href="' . get_site_url() . ' ">' . $options['RMTitle'] . '</a>';
+            $html .= '<a href="' . get_home_url() . ' ">' . $options['RMTitle'] . '</a>';
             
             $html .= '</div>';
 
