@@ -81,6 +81,7 @@ On the current development list for the next update are the following:
 <li> - Option to ignore parent link clicks</li>
 <li> - Option to place menu on left or right</li>
 <li> - Option to change expand menu symbol</li>
+<li> - Increase menu depth to 5</li>
 <li> - Option to change title menu link</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
