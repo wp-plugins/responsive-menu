@@ -24,6 +24,10 @@ class ResponsiveMenu {
     private static $success = null;
     private static $error = null;
     
+    /*
+     * Installation Instructions
+     */
+    
     static function install() {
 
             add_option( 'RMVer', RM_V );
@@ -88,6 +92,10 @@ class ResponsiveMenu {
 
     }
 
+    /*
+     * Build Admin Menu Structure
+     */
+    
     static function menus() {
 
         add_menu_page( 
@@ -102,76 +110,14 @@ class ResponsiveMenu {
                 );
 
     }
+    
+    /*
+     * Display options for the admin page
+     * ToDo: Add to seperate class
+     */
 
     public static function adminPage() {
-            
-         if ( get_option('responsive_menu_options') && !get_option( 'RMVer' ) ) :
-
-            add_option( 'RMVer', RM_V );
-            
-            // Migrate Old Data 
-            $options = unserialize( get_option( 'responsive_menu_options' ) );
-
-                add_option( 'RMOptions', array(
                     
-                    'RM' => $options['reponsiveMenuMenu'],
-                    'RMBreak' => $options['responsiveMenuBreakpoint'],
-                    'RMDepth' => $options['reponsiveMenuDepth'],
-                    'RMTop' => $options['responsiveMenuTop'],
-                    'RMRight' => $options['responsiveMenuRight'],
-                    'RMCss' => $options['responsiveMenuCss'],
-                    'RMTitle' => $options['responsiveMenuTitle'],
-                    'RMLineCol' => $options['responsiveMenuLineColour'],
-                    'RMClickBkg' => $options['responsiveMenuBackgroundColour'],
-                    'RMClickTitle' => $options['responsiveMenuButtonTitle'],
-                    'RMBkgTran' => $options['responsiveMenuBackgroundTransparent'],
-                    'RMFont' => $options['responsiveMenuFont'],
-                    'RMPos' => $options['responsiveMenuFixed'],
-                    'RMImage' => $options['responsiveMenuImage'],
-                    'RMWidth' => $options['responsiveMenuWidth'],
-                    'RMBkg' => $options['responsiveMenuMainBackground'],
-                    'RMBkgHov' => $options['responsiveMenuMainBackgroundHover'],
-                    'RMTitleCol' => $options['responsiveMenuMainTitleColour'],
-                    'RMTextCol' => $options['responsiveMenuMainTextColour'],
-                    'RMBorCol' => $options['responsiveMenuMainBorderColour'],
-                    'RMTextColHov' => $options['responsiveMenuMainTextColourHover'],
-                    'RMTitleColHov' => $options['responsiveMenuMainTitleColourHover'],
-                    
-                    /* Added in 1.6 */
-                    'RMAnim' => 'overlay',
-                    'RMPushCSS' => '',
-                    'RMTitleBkg' => '#43494C',
-                    'RMFontSize' => 13,
-                    'RMTitleSize' => 14,
-                    'RMBtnSize' => 13,
-                    'RMCurBkg' => $options['responsiveMenuMainBackground'],
-                    'RMCurCol' => $options['responsiveMenuMainTextColour'],
-                    'RMAnimSpd' => 0.5,
-                    
-                    /* Added in 1.7 */
-                    'RMTranSpd' => 1,
-                    'RMTxtAlign' => 'left',
-                    'RMSearch' => false,
-                    'RMExpand' => false,
-                    'RMLinkHeight' => 20,
-                
-                    /* Added in 1.8 */
-                    'RMExternal' => false,
-                    'RMSide' => 'left',
-                    
-                    /* Added in 1.9 */
-                    'RMFooter' => false,
-                    'RMClickImg' => false,
-                    'RMMinify' => false,
-                    'RMClickClose' => false,
-                    'RMRemImp' => false,
-                    'RMX' => false,
-                    'RMMinWidth' => null 
-                    
-                ) );
-                
-        endif;
-        
         if ( isset( $_POST['RMSubmit'] ) ) :
 
             $validated = self::validate();
@@ -1180,8 +1126,13 @@ class ResponsiveMenu {
         </div>
 
         <?php
+        
     }
 
+    /*
+     * Validation function for all input data
+     */
+    
     private static function validate() {
 
         if ( isset($_POST['RMSubmit'] ) ) :
@@ -1346,7 +1297,12 @@ class ResponsiveMenu {
         
     }
     
-    /* Added in 1.8 */
+    /* Added in 1.9 
+     * 
+     * Load and Queue External JS and CSS files
+     * If inline option is NOT set
+     */
+    
     static function ExternalScripts() {
 
         $options = self::getOptions();
@@ -1358,25 +1314,43 @@ class ResponsiveMenu {
 
     }
     
-    /* Added in 1.9 */
+    /* Added in 1.9 
+     * 
+     * Minify and display CSS
+     * If inline option is set
+     */
+    
     static function InlineCss() {
         
         echo self::Minify( self::getCSS() );
         
     }
     
-    /* Added in 1.9 */
+    /* Added in 1.9 
+     * 
+     * Minify and display JavaScript
+     * If inline option is set
+     */
+    
     static function InlineJavaScript() {
         
         echo self::Minify( self::getJavascript() );
         
     }
     
+    /* 
+     * Display the HTML onto the page
+     */
+    
     static function displayMenuHtml() {
         
         echo self::getHTML();
         
     }
+    
+    /* 
+     * Adds the Colour Picker to the admin area
+     */
     
     static function Colorpicker(){ 
     
@@ -1386,18 +1360,32 @@ class ResponsiveMenu {
 
     }
     
-    /* Added in 1.8 */
+    /* Added in 1.8 
+     * 
+     * Loads the correct files for international translations
+     */
+    
     static function Internationalise() {
     
         load_plugin_textdomain( 'responsive-menu', false, basename( dirname( dirname( __FILE__ ) ) ) . '/translations/' );
 
     }
 
+    /* 
+     * Simply adds jQuery to WordPress front end
+     */
+    
     static function jQuery() { 
     
         wp_enqueue_script( 'jquery' );
   
     }
+    
+    /* 
+     * Builds and returns the JavaScript for the Respnsive Menu
+     * @param $args - 
+     *      ['strip_tags'] - Strips out the <script> tags for use in external files
+     */
     
     static function getJavascript( $args = null ) {
 
@@ -1580,7 +1568,11 @@ class ResponsiveMenu {
         return $js;
             
     }
-
+    
+    /* 
+     * Returns the HTML for the Responsive Menu and click button
+     */
+    
     static function getHTML() {
 
         $options = self::getOptions();
@@ -1607,7 +1599,7 @@ class ResponsiveMenu {
 
         if( !$options['RMSearch'] ) : 
             
-            $html .= '<form action="/" id="responsiveSearch" method="get" role="search">
+            $html .= '<form action="' . get_site_url() . '" id="responsiveSearch" method="get" role="search">
 
                         <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
 
@@ -1648,6 +1640,12 @@ class ResponsiveMenu {
         
     }
 
+    /* 
+     * Returns the CSS for the Respnsive Menu
+     * @param $args - 
+     *      ['strip_tags'] - Strips out the <script> tags for use in external files
+     */
+    
     static function getCSS( $args = null ) {
 
         $options = self::getOptions();
@@ -2015,6 +2013,10 @@ class ResponsiveMenu {
         
     }
 
+    /* 
+     * Function to check the viewport meta tag on the site and return
+     */
+    
     private static function checkViewPortTag() {
 
         $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
@@ -2024,11 +2026,20 @@ class ResponsiveMenu {
         
     }
 
-    private static function filterInput($input) {
+    /* 
+     * Function to filter user input and return stripped and trimmed
+     * @param string $input
+     */
+    
+    private static function filterInput( $input ) {
 
         return stripslashes( strip_tags( trim( $input ) ) );
         
     }
+    
+    /* 
+     * Function to get all current options and make sure it is returned as an array
+     */
     
     public static function getOptions() {
         
@@ -2038,12 +2049,11 @@ class ResponsiveMenu {
         
     }
     
-    /* Added 1.9 *
+    /* Added 1.9
      * Function to minify outputted JavaScript and CSS Files
      * Parts taken from
      * http://castlesblog.com/2010/august/14/php-javascript-css-minification
      * @param string $input
-     * @param string $type [css, js]
      */
     
     static function Minify( $input ) {
@@ -2061,7 +2071,12 @@ class ResponsiveMenu {
         
     }
     
-    /* Added 1.9 */
+    /* Added 1.9 
+     * Creates seperate folders to hold external JS and CSS files
+     * This is to stop these files being deleted on plug-in upgrade
+     * Takes no input
+     */
+    
     static function createDataFolders() {
         
         if( !file_exists( RM_DATA ) ) mkdir( RM_DATA, 0777 );
@@ -2070,7 +2085,11 @@ class ResponsiveMenu {
                 
     }
     
-    /* Added 1.9 */
+    /* Added 1.9 
+     * Creates specific CSS file, numbered by blog to make it Multi-Site compatible
+     * @param string $css
+     */
+    
     static function createCSSFile( $css ) {
         
         $file = fopen( RM_CSS . 'responsive-menu-' . get_current_blog_id() . '.css', 'w' );
@@ -2081,7 +2100,11 @@ class ResponsiveMenu {
         
     }
     
-    /* Added 1.9 */
+   /* Added 1.9 
+    * Creates specific JS file, numbered by blog to make it Multi-Site compatible     
+    * @param string $js
+    */
+    
     static function createJSFile( $js ) {
 
         $file = fopen( RM_JS . 'responsive-menu-' . get_current_blog_id() . '.js', 'w' );
@@ -2091,4 +2114,5 @@ class ResponsiveMenu {
         return $jsFile;
         
     }
+    
 }

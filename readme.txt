@@ -3,7 +3,7 @@ Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/donate/
 Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
-Tested up to: 3.9
+Tested up to: 3.9.1
 Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -83,6 +83,7 @@ On the current development list for the next update are the following:
 <li> - Option to change expand menu symbol</li>
 <li> - Increase menu depth to 5</li>
 <li> - Option to change title menu link</li>
+<li> - Shortcode support to enable multiple menus</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
