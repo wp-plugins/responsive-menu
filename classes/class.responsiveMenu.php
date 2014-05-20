@@ -1607,7 +1607,7 @@ class ResponsiveMenu {
 
         if( !$options['RMSearch'] ) : 
             
-            $html .= '<form action="/" id="responsiveSearch" method="get" role="search">
+            $html .= '<form action="' . get_site_url() . '" id="responsiveSearch" method="get" role="search">
 
                         <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
 
