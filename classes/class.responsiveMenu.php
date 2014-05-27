@@ -1791,6 +1791,7 @@ class ResponsiveMenu {
             {
                 vertical-align: middle;
                 margin-right: 10px;
+                display: inline-block;
             }
 
             #responsive-menu,
