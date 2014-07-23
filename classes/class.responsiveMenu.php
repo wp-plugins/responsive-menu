@@ -1464,13 +1464,9 @@ class ResponsiveMenu {
 
                          openRM();
 
-                          
-
                     } else {
 
                         closeRM();
-
-                          isOpen = false;
 
                     }
 
