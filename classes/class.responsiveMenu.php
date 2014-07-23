@@ -509,7 +509,7 @@ class ResponsiveMenu {
                         
                         <h4><?php _e( 'Menu Depth', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is how deep into your menu tree will be visible (max 3)', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is how deep into your menu tree will be visible (max 5)', 'responsive-menu' ); ?></h5>
 
                         <select name="RMDepth">
 
@@ -1474,38 +1474,38 @@ class ResponsiveMenu {
                     
                 function openRM() {
 
-                      $slideOpen  
-                      $sideSlideOpen
-                      $slideOverCss
-                      $slideOver
-                      $showX
-                          
-                      \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
-                      \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
-                          
+                    $slideOpen  
+                    $sideSlideOpen
+                    $slideOverCss
+                    $slideOver
+                    $showX
+
+                    \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
+                    \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
+
                         $setHeight
-    
+
                         isOpen = true;
 
-                      } ); 
+                    } ); 
                       
                 }
    
                 function closeRM() {
 
-                        $slideBack
-                        
-                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
-                      
-                            $slideRemove
-                            $sideSlideRemove
-                            $slideOverCssRemove
-                            $closeX
-                            \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
+                    $slideBack
 
-                            isOpen = false;
+                    \$RMjQuery( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
 
-                        } );
+                        $slideRemove
+                        $sideSlideRemove
+                        $slideOverCssRemove
+                        $closeX
+                        \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
+
+                        isOpen = false;
+
+                    } );
                         
                 }
                 
