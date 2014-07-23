@@ -1456,7 +1456,7 @@ class ResponsiveMenu {
             
                 var isOpen = false;
 
-                \$RMjQuery( '#click-menu' ).click( function() {
+                \$RMjQuery( document ).on( 'click', '#click-menu', function() {
                        
                     $setHeight
 
@@ -1609,7 +1609,7 @@ class ResponsiveMenu {
             
             $html .= '<form action="' . get_site_url() . '" id="responsiveSearch" method="get" role="search">
 
-                        <input type="text" name="s" value="" placeholder="Search" id="responsiveSearchInput">
+                        <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
 
                     </form>';
         
