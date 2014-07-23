@@ -513,11 +513,11 @@ class ResponsiveMenu {
 
                         <select name="RMDepth">
 
-                            <?php for ($i = 1; $i < 4; $i++) : ?>
+                            <?php for ( $i = 1; $i < 6; $i++ ) : ?>
 
                                 <option 
                                     value="<?php echo $i; ?>"
-                                    <?php echo isset( $options['RMDepth'] ) &&$i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
+                                    <?php echo isset( $options['RMDepth'] ) && $i == $options['RMDepth'] ? 'selected="selected">' : '>'; ?>
                                     <?php echo $i; ?>
                                 </option>
 
@@ -1940,11 +1940,20 @@ class ResponsiveMenu {
                 overflow: hidden{$important}
             }
             
-            #responsive-menu .responsive-menu li li li li
+            #responsive-menu .responsive-menu li li li li a
             {
-                display: none{$important}
+                padding-$paddingAlign: 20%{$important}
+                width: 80%{$important}
+                overflow: hidden{$important}
             }
             
+            #responsive-menu .responsive-menu li li li li li a
+            {
+                padding-$paddingAlign: 25%{$important}
+                width: 75%{$important}
+                overflow: hidden{$important}
+            }
+
             #responsive-menu .responsive-menu li a:hover
             {       
                 background: $mainBkgH{$important}
@@ -1998,9 +2007,30 @@ class ResponsiveMenu {
                 #responsive-menu .responsive-menu li li li { display: none; }
 
             ";
+        
+        endif;
+        
+        if( $options['RMDepth'] == 3 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li li li .appendLink,
+                #responsive-menu .responsive-menu li li li li { display: none; }
+
+            ";
+        
+        endif;
+        
+        if( $options['RMDepth'] == 4 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li li li li .appendLink,
+                #responsive-menu .responsive-menu li li li li li { display: none; }
+
+            ";
 
         endif;
-
 
         $css .= " }";
 
