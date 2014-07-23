@@ -1453,7 +1453,29 @@ class ResponsiveMenu {
             var \$RMjQuery = jQuery.noConflict();
 
             \$RMjQuery( document ).ready( function( ) {
+            
+                var isOpen = false;
 
+                \$RMjQuery( '#click-menu' ).click( function() {
+                       
+                    $setHeight
+
+                    if( !isOpen ) {
+
+                         openRM();
+
+                          
+
+                    } else {
+
+                        closeRM();
+
+                          isOpen = false;
+
+                    }
+
+                });
+                    
                 function openRM() {
 
                       $slideOpen  
@@ -1467,6 +1489,8 @@ class ResponsiveMenu {
                           
                         $setHeight
     
+                        isOpen = true;
+
                       } ); 
                       
                 }
@@ -1483,32 +1507,12 @@ class ResponsiveMenu {
                             $closeX
                             \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
 
+                            isOpen = false;
+
                         } );
                         
                 }
                 
-                isOpen = false;
-
-                \$RMjQuery( '#click-menu' ).click( function() {
-                       
-                    $setHeight
-
-                    if( !isOpen ) {
-
-                         openRM();
-
-                          isOpen = true;
-
-                    } else {
-
-                        closeRM();
-
-                          isOpen = false;
-
-                    }
-
-                });
-                    
                 \$RMjQuery( window ).resize( function() { 
                 
                     $setHeight
