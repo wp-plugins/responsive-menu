@@ -3,8 +3,8 @@
 /*
 Plugin Name: Responsive Menu
 Plugin URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
-Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone @ Network Intellect.
-Version: 1.9
+Description: Highly Customisable Responsive Menu Plugin Created By Peter Featherstone
+Version: 1.10
 Author: Peter Featherstone
 Text Domain: responsive-menu
 Author URI: http://www.peterfeatherstone.com/wordpress/responsive-menu/
@@ -32,9 +32,11 @@ Tags: responsive, menu, responsive menu
    1. Initial Setup
    =================== */
 
-/* 1.1 Include Main Config File ============= */
+/* 1.1 Include Main Config File =================== */
 require_once( 'app/config.php' );
 
+/* 1.2 Include the Bootsrap to get everything ready */
 require_once( 'app/bootstrap.php' );
 
+/* 1.3 Finally, we run our application ============ */
 $app->run();
