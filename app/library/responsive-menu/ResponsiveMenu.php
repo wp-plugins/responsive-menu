@@ -14,6 +14,15 @@ class ResponsiveMenu {
     
     public function run() {
         
+        add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
+        register_activation_hook( __FILE__, array( 'ResponsiveMenu', 'install' ) );
+        add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
+        add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
+        add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'ExternalScripts' ) );
+        add_action( 'wp_head', array( 'ResponsiveMenu', 'InlineCSS' ) ); 
+        add_action( $inFooter, array( 'ResponsiveMenu', 'InlineJavaScript' ) ); 
+        add_action( 'admin_enqueue_scripts', array( 'ResponsiveMenu', 'Colorpicker' ) );
+        add_action( 'plugins_loaded', array( 'ResponsiveMenu', 'Internationalise' ) );
         
     }
     
