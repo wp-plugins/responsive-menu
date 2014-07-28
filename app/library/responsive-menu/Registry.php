@@ -14,4 +14,10 @@ class Registry {
         
     }
     
+    public static function get( $array, $option ) {
+        
+        return $$array[$option];
+        
+    }
+    
 }

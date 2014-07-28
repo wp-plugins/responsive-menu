@@ -14,8 +14,8 @@ class ResponsiveMenu {
     
     public function run() {
         
-        add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
         register_activation_hook( __FILE__, array( 'ResponsiveMenu', 'install' ) );
+        add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'jQuery' ) );
         add_action( 'admin_menu', array( 'ResponsiveMenu', 'menus' ) );
         add_action( 'wp_footer', array( 'ResponsiveMenu', 'displayMenuHtml' ) );
         add_action( 'wp_enqueue_scripts', array( 'ResponsiveMenu', 'ExternalScripts' ) );
