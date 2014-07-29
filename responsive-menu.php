@@ -32,6 +32,8 @@ Tags: responsive, menu, responsive menu
    1. Initial Setup
    =================== */
 
+ini_set( 'display_errors', 1 );
+
 /* 1.1 Include Main Config File =================== */
 require_once 'app/config.php';
 

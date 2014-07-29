@@ -9,7 +9,7 @@ $config = array(
     'plugins_dir' => plugin_dir_path( __FILE__ ),
         
     
-    'plugins_base_uri' => plugin_dir_url( __FILE__ ),
+    'plugins_base_uri' => plugin_dir_url( dirname( __FILE__ ) ),
     
     
     'plugin_base_dir' => dirname( plugin_dir_path( __FILE__ ) ),
@@ -26,6 +26,7 @@ $config = array(
 
 
 $defaults = array( 
+    
     
     'RM' => '',
     
@@ -92,6 +93,7 @@ $defaults = array(
     
     'RMTitleColHov' => '#FFFFFF',
 
+    
     /* Added in 1.6 */
     
     
@@ -121,6 +123,7 @@ $defaults = array(
     
     'RMAnimSpd' => 0.5,
 
+    
     /* Added in 1.7 */
     
     
@@ -138,6 +141,7 @@ $defaults = array(
     
     'RMLinkHeight' => 20,
 
+    
     /* Added in 1.8 */
     
     
@@ -146,6 +150,7 @@ $defaults = array(
     
     'RMSide' => 'left',
 
+    
     /* Added in 1.9 */
     
     
@@ -169,4 +174,5 @@ $defaults = array(
     
     'RMMinWidth' => null
 
+    
 );

@@ -2,22 +2,25 @@
 
 class Registry {
     
-    public static function getConfig( $option ) {
+    
+    static $registry;
+    
+    
+    public static function get( $array, $val = null ) {
         
-        return $config[$option];
+        if( !$val )
+            return self::$registry[$array];
+        else
+            return self::$registry[$array][$val];
         
     }
     
-    public static function getDefault( $option ) {
-        
-        return $defaults[$option];
-        
-    }
     
-    public static function get( $array, $option ) {
+    public static function set( $key, $val ) {
         
-        return $$array[$option];
+        self::$registry[$key] = $val;
         
     }
+   
     
 }
