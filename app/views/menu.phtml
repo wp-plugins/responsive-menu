@@ -1,71 +1,74 @@
-<div id="responsive-menu">
-        
-    <?php if( $data['RMTitle'] || $data['RMImage'] ) : ?>
-			
-<div id="responsive-menu-title">
+<!-- Responsive Menu added by Responsive Menu -->
 
-<?php if( $data['RMImage'] ) : ?>
-    
-    <a href="<?php echo get_home_url(); ?>">
-        <img src="<?php echo $data['RMImage']; ?>" 
-             class="RMImage" 
-             alt="<?php echo $data['RMTitle']; ?>" 
-             title="<?php echo $data['RMTitle']; ?>" />
-    </a>
-    
+<div id="responsive-menu">
+
+    <?php if ($data['RMTitle'] || $data['RMImage']) : ?>
+
+        <div id="responsive-menu-title">
+
+            <?php if ($data['RMImage']) : ?>
+
+                <a href="<?php echo get_home_url(); ?>">
+                    <img src="<?php echo $data['RMImage']; ?>" 
+                         class="RMImage" 
+                         alt="<?php echo $data['RMTitle']; ?>" 
+                         title="<?php echo $data['RMTitle']; ?>" />
+                </a>
+
+            <?php endif; ?>
+
+            <a href="<?php echo get_home_url(); ?>"><?php echo $data['RMTitle']; ?></a>
+
+        </div>
     <?php endif; ?>
 
-    <a href="<?php echo get_home_url(); ?>"><?php echo $data['RMTitle']; ?></a>
-    
-</div>
+    <?php
+        wp_nav_menu(array(
+        'menu' => $data['RM'],
+        'menu_class' => 'responsive-menu'));
+
+    if (!$data['RMSearch']) :
+        ?>
+
+        <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
+
+            <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
+
+        </form>
+
 <?php endif; ?>
-            
-<?php echo wp_nav_menu( array(
-            'menu' => $data['RM'],
-            'echo' => false,
-            'menu_class' => 'responsive-menu'));
 
-        if( !$data['RMSearch'] ) : ?>
-            
-<form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
-
-<input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
-
-</form>
-        
-<?php endif; ?>
-                
 </div>
 
 <!-- Click Menu added by Responsive Menu -->
 
 <div id="click-menu">
-        
-        <?php if( $data['RMX'] ) : ?>
-            
-       <div class="threeLines" id="RMX">x</div>
-        
-       <?php endif; ?>
-        
-       <?php if( !$data['RMClickImg'] ) : ?>
+
+<?php if ($data['RMX']) : ?>
+
+        <div class="threeLines" id="RMX">x</div>
+
+    <?php endif; ?>
+
+<?php if (!$data['RMClickImg']) : ?>
 
 
-            <div class="threeLines" id="RM3Lines">       
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-                
-        <?php else : ?>
-            
-            <img id="RM3Lines" src="<?php echo $data['RMClickImg']; ?>" class="click-menu-image" />
-              
-        <?php endif; ?>
-
-        <?php if( $data['RMClickTitle'] ) : ?>
-            
-            <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
-
-            <?php endif; ?>
-            
+        <div class="threeLines" id="RM3Lines">       
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
+
+<?php else : ?>
+
+        <img id="RM3Lines" src="<?php echo $data['RMClickImg']; ?>" class="click-menu-image" />
+
+    <?php endif; ?>
+
+<?php if ($data['RMClickTitle']) : ?>
+
+        <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
+
+<?php endif; ?>
+
+</div>

@@ -30,7 +30,7 @@ class AdminController extends BaseController {
     }
     
     
-    function Colorpicker(){ 
+    function colorpicker(){ 
     
         wp_enqueue_media();
         wp_enqueue_style( 'wp-color-picker' );
