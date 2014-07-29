@@ -112,6 +112,30 @@
 
                 <hr />
 
+                <h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>
+                    
+                    <?php if ( $portTag = self::checkViewPortTag() ) : ?>
+                    
+                        <span class='success'> - <?php _e( 'Below Viewport Meta Tag Found', 'responsive-menu' ); ?></span>
+                    
+                    <?php else : 
+                        
+                        $portTag = null; 
+                    
+                    endif; ?>
+                    
+                </h4> 
+
+                <?php if( $portTag ) : ?>
+                
+                    &lt;meta name='viewport' content='<?php echo $portTag; ?>' /&gt;
+                    
+                <?php else : ?>
+                    
+                    <span class='error'><?php _e( 'Viewport Meta Tag Not Found', 'responsive-menu' ); ?></span>
+                    
+                <?php endif; ?>
+                
                 <h4><?php _e( 'Recommended Metaport Tag', 'responsive-menu' ); ?></h4>
                 
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /&gt;

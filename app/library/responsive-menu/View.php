@@ -11,5 +11,14 @@ class View {
         
     }
     
+    function checkViewPortTag() {
+
+        $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
+
+        if ( $metaTags['viewport'] )
+            return $metaTags['viewport'];
+        
+    }
+    
     
 }
