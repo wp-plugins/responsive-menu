@@ -20,6 +20,12 @@ require_once 'controllers/GlobalController.php';
 
 require_once 'controllers/InstallController.php';
 
+require_once 'controllers/HTMLController.php';
+
+require_once 'controllers/JSController.php';
+
+require_once 'controllers/CSSController.php';
+
 require_once 'models/BaseModel.php';
 
 require_once 'models/AdminModel.php';
