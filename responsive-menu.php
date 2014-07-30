@@ -28,12 +28,37 @@ Tags: responsive, menu, responsive menu
 
 */
 
-/* ====================
-   1. Initial Setup
-   =================== */
+/**
+ * Responsive Menu - A WordPress Responsive Menu Plugin
+ *
+ * @package  Responsive Menu
+ * @author   Peter Featherstone <hello@peterfeatherstone.com>
+ */
 
-/* 1.1 Include the Bootsrap to get everything ready */
+/*
+|--------------------------------------------------------------------------
+| Turn On The Lights
+|--------------------------------------------------------------------------
+|
+| We need to illuminate PHP development, so let's turn on the lights.
+| This bootstraps the framework and gets it ready for use, then it
+| will load up this application so that we can run it and send
+| the responses back to the browser and delight these users.
+|
+*/
+
 require_once 'app/bootstrap.php';
 
-/* 1.2 Finally, we run our application ============ */
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+|
+| Once we have the application, we can simply call the run method,
+| which will execute the request and send the response back to
+| the client's browser allowing them to enjoy the creative
+| and wonderful application we have whipped up for them.
+|
+*/
+
 $app->run();
