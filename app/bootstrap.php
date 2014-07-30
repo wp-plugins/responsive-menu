@@ -1,12 +1,10 @@
 <?php
 
-require_once 'library/responsive-menu/ResponsiveMenu.php';
-
 require_once 'library/responsive-menu/Registry.php';
 
-Registry::set( 'config', $config );
+require_once 'config.php';
 
-Registry::set( 'defaults', $defaults );
+require_once 'library/responsive-menu/ResponsiveMenu.php';
 
 require_once 'library/responsive-menu/View.php';
 
@@ -26,8 +24,16 @@ require_once 'controllers/JSController.php';
 
 require_once 'controllers/CSSController.php';
 
+require_once 'controllers/UpgradeController.php';
+
 require_once 'models/BaseModel.php';
 
 require_once 'models/AdminModel.php';
+
+require_once 'models/FolderModel.php';
+
+require_once 'models/CSSModel.php';
+
+require_once 'models/JSModel.php';
 
 $app = new ResponsiveMenu;

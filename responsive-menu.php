@@ -32,13 +32,8 @@ Tags: responsive, menu, responsive menu
    1. Initial Setup
    =================== */
 
-ini_set( 'display_errors', 1 );
-
-/* 1.1 Include Main Config File =================== */
-require_once 'app/config.php';
-
-/* 1.2 Include the Bootsrap to get everything ready */
+/* 1.1 Include the Bootsrap to get everything ready */
 require_once 'app/bootstrap.php';
 
-/* 1.3 Finally, we run our application ============ */
+/* 1.2 Finally, we run our application ============ */
 $app->run();

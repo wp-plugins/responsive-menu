@@ -3,7 +3,7 @@
 $config = array( 
     
     
-    'current_version' => 1.10,
+    'current_version' => 2,
     
     
     'plugins_dir' => plugin_dir_path( __FILE__ ),
@@ -15,15 +15,15 @@ $config = array(
     'plugin_base_dir' => dirname( plugin_dir_path( __FILE__ ) ),
     
     
-    'plugin_data_uri' => plugin_dir_url( dirname( __FILE__ ) ) . 'responsive-menu-data/',
+    'plugin_data_uri' => plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . 'responsive-menu-data/',
     
     
-    'plugin_data_dir' => dirname( plugin_dir_path( __FILE__ ) ) . '/responsive-menu-data/',
+    'plugin_data_dir' => dirname( dirname( plugin_dir_path( __FILE__ ) ) ) . '/responsive-menu-data/',
     
     
 );
 
-
+Registry::set( 'config', $config );
 
 $defaults = array( 
     
@@ -31,7 +31,7 @@ $defaults = array(
     'RM' => '',
     
     
-    'RMBreak' => 600,
+    'RMBreak' => 800,
     
     
     'RMDepth' => 2,
@@ -154,13 +154,13 @@ $defaults = array(
     /* Added in 1.9 */
     
     
-    'RMFooter' => false,
+    'RMFooter' => true,
     
     
     'RMClickImg' => false,
     
     
-    'RMMinify' => false,
+    'RMMinify' => true,
     
     
     'RMClickClose' => false,
@@ -176,3 +176,5 @@ $defaults = array(
 
     
 );
+
+Registry::set( 'defaults', $defaults );
