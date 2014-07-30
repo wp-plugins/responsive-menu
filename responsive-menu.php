@@ -26,24 +26,20 @@ Tags: responsive, menu, responsive menu
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
-*/
+Responsive Menu - A WordPress Responsive Menu Plugin
 
-/**
- * Responsive Menu - A WordPress Responsive Menu Plugin
- *
- * @package  Responsive Menu
- * @author   Peter Featherstone <hello@peterfeatherstone.com>
+@package  WordPress Responsive Menu
+@author   Peter Featherstone <hello@peterfeatherstone.com>
+
  */
 
 /*
 |--------------------------------------------------------------------------
-| Turn On The Lights
+| Bootstrap The Application
 |--------------------------------------------------------------------------
 |
-| We need to illuminate PHP development, so let's turn on the lights.
-| This bootstraps the framework and gets it ready for use, then it
-| will load up this application so that we can run it and send
-| the responses back to the browser and delight these users.
+| This bootstraps the Responsive Menu and gets it ready for use, then it
+| will load up the Responsive Menu application so that we can run it.
 |
 */
 
@@ -55,9 +51,8 @@ require_once 'app/bootstrap.php';
 |--------------------------------------------------------------------------
 |
 | Once we have the application, we can simply call the run method,
-| which will execute the request and send the response back to
-| the client's browser allowing them to enjoy the creative
-| and wonderful application we have whipped up for them.
+| which will setup everything we need to display the Responsive Menu 
+| straight out the box with no extra customisation needed.
 |
 */
 
