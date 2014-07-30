@@ -110,6 +110,9 @@
 
                 <h2><?php _e( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
+                <?php if ( $status = Status::get() )
+                    echo self::statusBar( $status ); ?>
+
                 <hr />
 
                 <h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>

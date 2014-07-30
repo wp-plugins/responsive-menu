@@ -12,6 +12,9 @@ class CSSModel extends BaseModel {
         
         fclose( $file );
         
+        if( !$file ) 
+            Status::set( 'error', __( 'Unable to create CSS file', 'responsive-menu' ) );
+                
         return $cssFile;
         
         

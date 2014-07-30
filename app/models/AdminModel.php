@@ -218,6 +218,7 @@ class AdminModel extends BaseModel {
         
         Registry::set( 'options', $optionsArray );
 
+        Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
         
     }
     

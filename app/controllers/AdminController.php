@@ -6,6 +6,7 @@ class AdminController extends BaseController {
     
     function addMenus() {
 
+        
         add_menu_page( 
 
             __( 'Responsive Menu', 'responsive-menu' ), 
@@ -17,10 +18,12 @@ class AdminController extends BaseController {
 
         );
 
+        
     }
     
     
     function adminPage() {
+        
         
         if( isset( $_POST['RMSubmit'] ) ) :
             
@@ -36,15 +39,18 @@ class AdminController extends BaseController {
 
         View::make( 'admin.page', Registry::get( 'options' ) );
         
+        
     }
     
     
     function colorpicker(){ 
     
+        
         wp_enqueue_media();
         wp_enqueue_style( 'wp-color-picker' );
         wp_enqueue_script( 'wp-color-picker' );
 
+        
     }
     
     

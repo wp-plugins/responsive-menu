@@ -12,6 +12,9 @@ class JSModel extends BaseModel {
         
         fclose( $file );
         
+        if( !$file ) 
+            Status::set( 'error', __( 'Unable to create JS file', 'responsive-menu' ) );
+                
         return $jsFile;
         
         
