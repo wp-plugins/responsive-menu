@@ -22,9 +22,18 @@ class AdminController extends BaseController {
     
     function adminPage() {
         
-        if( isset( $_POST['RMSubmit'] ) )
-            AdminModel::save( $_POST );
+        if( isset( $_POST['RMSubmit'] ) ) :
             
+            AdminModel::save( $_POST );
+        
+            if( Registry::get( 'options', 'RMExternal' ) ) : 
+                
+                FolderModel::create();
+            
+            endif;
+        
+        endif;    
+
         View::make( 'admin.page', Registry::get( 'options' ) );
         
     }

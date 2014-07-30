@@ -5,6 +5,7 @@ class AdminModel extends BaseModel {
     
     public function save( $data ) {
     
+        
         // Initialise Variables Correctly
         
         $RM = isset($_POST['RM']) ? $_POST['RM'] : Registry::get( 'defaults', 'RM' );
@@ -216,7 +217,9 @@ class AdminModel extends BaseModel {
         // And save back to the registry 
         
         Registry::set( 'options', $optionsArray );
+
         
     }
+    
     
 }
