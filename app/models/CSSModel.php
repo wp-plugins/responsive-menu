@@ -181,14 +181,18 @@ class CSSModel extends BaseModel {
             }
       
             #responsive-menu #responsive-menu-title,
-            #responsive-menu #responsive-menu-title a
+            #responsive-menu #responsive-menu-title a 
             {
                 color: $titleCol{$important}
                 text-decoration: none{$important}
-                white-space: pre{$important}
                 overflow: hidden{$important}
             }
             
+            #responsive-menu #responsive-menu-title a
+            {
+                white-space: pre{$important}
+            }
+                
             #responsive-menu #responsive-menu-title a:hover {
                 color: $titleColH{$important}
                 text-decoration: none{$important}

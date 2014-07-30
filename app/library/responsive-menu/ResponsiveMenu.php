@@ -5,10 +5,16 @@ class ResponsiveMenu {
     
     public function __construct() {
         
+        if( !get_option( 'RMVer' ) )
+                add_option( 'RMVer', Registry::get( 'config', 'current_version' ) );
+                
+        if( !get_option( 'RMOptions' ) )
+            add_option( 'RMOptions', Registry::get( 'defaults' ) );
+        
         
         Registry::set( 'options', get_option( 'RMOptions' ) );
         Registry::set( 'version', get_option( 'RMVer' ) );
-        
+
         
     }
     
