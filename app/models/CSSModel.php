@@ -194,6 +194,7 @@ class RM_CSSModel extends RM_BaseModel {
                 padding: $titlePadding{$important}
                 margin-left: 0px{$important}
                 background: $titleBkg{$important}
+                white-space: nowrap{$important}
             }
       
             #responsive-menu #responsive-menu-title,
