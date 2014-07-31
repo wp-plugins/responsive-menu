@@ -42,8 +42,8 @@ class RM_GlobalController extends RM_BaseController {
      *
      * Current Translations:
      * 
-     * hr_HR - Croatian - With thanks to 
-     * es_ES - Spanish - With thanks to
+     * hr_HR - Croatian - With thanks to Neverone Design - https://www.facebook.com/pages/Neverone-design/490262371018076
+     * es_ES - Spanish - With thanks to Andrew @ WebHostingHub - http://www.webhostinghub.com
      * 
      * @return null
      * @added 1.6
