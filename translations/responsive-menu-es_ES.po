@@ -1,65 +1,91 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu\n"
-"POT-Creation-Date: 2014-04-08 10:19-0000\n"
-"PO-Revision-Date: 2014-07-28 14:14+0100\n"
-"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"POT-Creation-Date: 2014-07-31 12:45-0000\n"
+"PO-Revision-Date: 2014-07-31 12:48-0000\n"
+"Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
+"com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.6.7\n"
 "X-Poedit-Basepath: ..\\\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-SearchPath-0: classes\n"
+"X-Poedit-KeywordsList: __;_e;_\n"
+"X-Poedit-SearchPath-0: app\n"
 
-#: classes/class.responsiveMenu.php:39 classes/class.responsiveMenu.php:356
+#: app/config.php:82 app/views/admin/page.phtml:157
 msgid "Menu Title"
 msgstr "Título del Menú"
 
-#: classes/class.responsiveMenu.php:95 classes/class.responsiveMenu.php:96
+#: app/controllers/AdminController.php:35
+#: app/controllers/AdminController.php:36
 msgid "Responsive Menu"
 msgstr "Menú Flexible"
 
-#: classes/class.responsiveMenu.php:299
+#: app/controllers/AdminController.php:107
+msgid "Settings"
+msgstr "Ajustes"
+
+#: app/models/AdminModel.php:229
+msgid "You have successfully updated the Responsive Menu options"
+msgstr "Has actualizado los opciones del menú Flexible"
+
+#: app/models/CSSModel.php:24
+msgid "Unable to create CSS file"
+msgstr "No es posible crear el archivo de CSS"
+
+#: app/models/FolderModel.php:26
+msgid "Unable to create data folders"
+msgstr "No es posible crear carpetas de datos"
+
+#: app/models/FolderModel.php:29
+msgid "Unable to create CSS folders"
+msgstr "No es posible crear carpetas de CSS"
+
+#: app/models/FolderModel.php:32
+msgid "Unable to create JS folders"
+msgstr "No es posible crear carpetas de JS"
+
+#: app/models/JSModel.php:24
+msgid "Unable to create JS file"
+msgstr "No es posible crear el archivo de JS"
+
+#: app/views/admin/page.phtml:111
 msgid "Responsive Menu Options"
 msgstr "Opciones del Menú Flexible"
 
-#: classes/class.responsiveMenu.php:317
-msgid "Initial Checks"
-msgstr "Comprobaciones Iniciales"
-
-#: classes/class.responsiveMenu.php:319
+#: app/views/admin/page.phtml:118
 msgid "Viewport Meta Tag Check"
 msgstr "Comprobar Meta Etiqueta de Viewport "
 
-#: classes/class.responsiveMenu.php:323
+#: app/views/admin/page.phtml:122
 msgid "Below Viewport Meta Tag Found"
 msgstr "Meta Etiqueta Debajo de Viewport Encontrada"
 
-#: classes/class.responsiveMenu.php:337
+#: app/views/admin/page.phtml:138
 msgid "Viewport Meta Tag Not Found"
 msgstr "No se Encontró la Meta Etiqueta de Viewport "
 
-#: classes/class.responsiveMenu.php:341
-msgid "Recommended"
-msgstr "Recomendado"
+#: app/views/admin/page.phtml:142
+msgid "Recommended Metaport Tag"
+msgstr "Metaport Tag Recomendado"
 
-#: classes/class.responsiveMenu.php:349
+#: app/views/admin/page.phtml:150
 msgid "Menu Settings"
 msgstr "Configuraciones del Menú"
 
-#: classes/class.responsiveMenu.php:358
+#: app/views/admin/page.phtml:159
 msgid "This is the title at the top of the responsive menu"
 msgstr "Este es el título en la parte superior del menú flexible"
 
-#: classes/class.responsiveMenu.php:369
+#: app/views/admin/page.phtml:170
 msgid "Menu Image"
 msgstr "Imagen del Menú "
 
-#: classes/class.responsiveMenu.php:371
+#: app/views/admin/page.phtml:172
 msgid ""
 "This is the image that sits next to the responsive menu title. The best size "
 "is 32px x 32px"
@@ -67,23 +93,23 @@ msgstr ""
 "Esta es la imagen que se encuentra al lado del título del menú flexible. El "
 "mejor tamaño es 32px x 32px"
 
-#: classes/class.responsiveMenu.php:383 classes/class.responsiveMenu.php:419
+#: app/views/admin/page.phtml:184 app/views/admin/page.phtml:220
 msgid "Upload Image"
 msgstr "Subir Imagen"
 
-#: classes/class.responsiveMenu.php:393
+#: app/views/admin/page.phtml:194
 msgid "Menu Button Title"
 msgstr "Título de Botón de Menú "
 
-#: classes/class.responsiveMenu.php:395
+#: app/views/admin/page.phtml:196
 msgid "This is the title under the 3 lines of the menu button"
 msgstr "Este es el título debajo de las 3 líneas del botón del menú"
 
-#: classes/class.responsiveMenu.php:405
+#: app/views/admin/page.phtml:206
 msgid "Click Menu Image"
 msgstr "Imagen del Menú del Clic"
 
-#: classes/class.responsiveMenu.php:407
+#: app/views/admin/page.phtml:208
 msgid ""
 "This is the click image button that replaces the 3 lines. If empty, the 3 "
 "lines will be used"
@@ -91,31 +117,31 @@ msgstr ""
 "Este el boton de la imagen del clic que remplaza a las 3 líneas. Si se deja "
 "vacío, las 3 líneas serán usadas"
 
-#: classes/class.responsiveMenu.php:429
+#: app/views/admin/page.phtml:230
 msgid "Choose Menu To Responsify"
 msgstr "Escoger Menú A Flexibilizar"
 
-#: classes/class.responsiveMenu.php:431
+#: app/views/admin/page.phtml:232
 msgid "This is the menu that will be used responsively"
 msgstr "Este es el menú que se utilizará flexiblemente"
 
-#: classes/class.responsiveMenu.php:451
+#: app/views/admin/page.phtml:252
 msgid "You haven't set up any site menus yet"
 msgstr "Usted no ha configurado ningún menú en el sitio todavía"
 
-#: classes/class.responsiveMenu.php:457
+#: app/views/admin/page.phtml:258
 msgid "Slide Side"
 msgstr "Lado de la Diapositiva"
 
-#: classes/class.responsiveMenu.php:459
+#: app/views/admin/page.phtml:260
 msgid "This is the side of the screen from which the menu will slide"
 msgstr "Este es el lado de la pantalla desde el cual el menú se desplazará"
 
-#: classes/class.responsiveMenu.php:484
+#: app/views/admin/page.phtml:285
 msgid "Menu Breakpoint"
 msgstr "Punto de Ruptura del Menú "
 
-#: classes/class.responsiveMenu.php:486
+#: app/views/admin/page.phtml:287
 msgid ""
 "This is the point where the responsive menu will be visible in px width of "
 "the browser"
@@ -123,89 +149,89 @@ msgstr ""
 "Este es el punto donde el menú flexible será visible en ancho en px del "
 "navegador"
 
-#: classes/class.responsiveMenu.php:493 classes/class.responsiveMenu.php:664
-#: classes/class.responsiveMenu.php:947 classes/class.responsiveMenu.php:964
-#: classes/class.responsiveMenu.php:978 classes/class.responsiveMenu.php:1022
-#: classes/class.responsiveMenu.php:1074
+#: app/views/admin/page.phtml:294 app/views/admin/page.phtml:465
+#: app/views/admin/page.phtml:748 app/views/admin/page.phtml:765
+#: app/views/admin/page.phtml:779 app/views/admin/page.phtml:823
+#: app/views/admin/page.phtml:875
 msgid "px"
 msgstr "px"
 
-#: classes/class.responsiveMenu.php:498
+#: app/views/admin/page.phtml:299
 msgid "CSS of Menu To Hide"
 msgstr "CSS del Menú A Esconder"
 
-#: classes/class.responsiveMenu.php:500
+#: app/views/admin/page.phtml:301
 msgid ""
 "This is the CSS of the menu you want to hide once the responsive menu shows"
 msgstr ""
 "Este es el CSS del menú que desea esconder una vez que el menú flexible se "
 "muestra"
 
-#: classes/class.responsiveMenu.php:500 classes/class.responsiveMenu.php:1129
+#: app/views/admin/page.phtml:301 app/views/admin/page.phtml:930
 msgid "e.g"
 msgstr "e.g"
 
-#: classes/class.responsiveMenu.php:514
+#: app/views/admin/page.phtml:315
 msgid "Menu Depth"
 msgstr "Profundidad del  Menú"
 
-#: classes/class.responsiveMenu.php:516
-msgid "This is how deep into your menu tree will be visible (max 3)"
-msgstr "Esto es cuán profundo en su árbol del menú será visible (max 3)"
+#: app/views/admin/page.phtml:317
+msgid "This is how deep into your menu tree will be visible (max"
+msgstr "Esto es cuán profundo en su árbol del menú será visible (max"
 
-#: classes/class.responsiveMenu.php:535
+#: app/views/admin/page.phtml:336
 msgid "Menu Width"
 msgstr "Ancho del Menú"
 
-#: classes/class.responsiveMenu.php:537
+#: app/views/admin/page.phtml:338
 msgid "This is the width the menu takes up across the page once expanded"
 msgstr ""
 "Esto es el ancho que el menú coje a lo largo de la página una vez expandido"
 
-#: classes/class.responsiveMenu.php:537 classes/class.responsiveMenu.php:940
-#: classes/class.responsiveMenu.php:957 classes/class.responsiveMenu.php:971
-#: classes/class.responsiveMenu.php:988 classes/class.responsiveMenu.php:1015
-#: classes/class.responsiveMenu.php:1145 classes/class.responsiveMenu.php:1159
+#: app/views/admin/page.phtml:338 app/views/admin/page.phtml:741
+#: app/views/admin/page.phtml:758 app/views/admin/page.phtml:772
+#: app/views/admin/page.phtml:789 app/views/admin/page.phtml:816
+#: app/views/admin/page.phtml:946 app/views/admin/page.phtml:960
 msgid "default"
 msgstr "por defecto"
 
-#: classes/class.responsiveMenu.php:551
+#: app/views/admin/page.phtml:352
 msgid "Remove Search Box"
 msgstr "Remover el Campo de Búsqueda"
 
-#: classes/class.responsiveMenu.php:553
+#: app/views/admin/page.phtml:354
 msgid "Tick if you would like to remove the search box"
 msgstr "Marque si desea remover el campo de búsqueda"
 
-#: classes/class.responsiveMenu.php:566
+#: app/views/admin/page.phtml:367
 msgid "Auto Expand Sub-Menus"
 msgstr "Sub-Menús de Auto Expansión"
 
-#: classes/class.responsiveMenu.php:568
+#: app/views/admin/page.phtml:369
 msgid "Tick if you would like sub-menus to be automatically expanded"
 msgstr "Marque si quiere que los submenús se expandan automáticamente"
 
-#: classes/class.responsiveMenu.php:584
+#: app/views/admin/page.phtml:385
 msgid "Include CSS/JS as external files"
 msgstr "Incluir CSS/JS como archivos externos"
 
-#: classes/class.responsiveMenu.php:586
+#: app/views/admin/page.phtml:387
 msgid "Tick if you would like to include CSS and jQuery as external files"
 msgstr "Marque si quiere incluir el CSS y el jQuery como archivos externos"
 
-#: classes/class.responsiveMenu.php:599
+#: app/views/admin/page.phtml:400
 msgid "Include script in footer"
 msgstr "Incluir script en el pie de página"
 
-#: classes/class.responsiveMenu.php:601
+#: app/views/admin/page.phtml:402
 msgid "Tick if you would like to include your jQuery script in footer"
 msgstr "Marque si quiere incluir su script de jQuery en el pie de página"
 
-#: classes/class.responsiveMenu.php:616
+#: app/views/admin/page.phtml:417
 msgid "Close menu on click"
 msgstr "Cerrar menú con un clic"
 
-#: classes/class.responsiveMenu.php:618
+#: app/views/admin/page.phtml:419
 msgid ""
 "Tick if you would like to close the menu on each link click, useful for "
 "single page sites"
@@ -213,11 +239,11 @@ msgstr ""
 "Marque si desea cerrar el menú en cada enlace haciendo click, útil para los "
 "sitios de una sola página"
 
-#: classes/class.responsiveMenu.php:631
+#: app/views/admin/page.phtml:432
 msgid "Minify output"
 msgstr "Minimizar salida"
 
-#: classes/class.responsiveMenu.php:633
+#: app/views/admin/page.phtml:434
 msgid ""
 "Tick if you would like to minify the script/style output. Saves up to 50% in "
 "file size"
@@ -225,15 +251,15 @@ msgstr ""
 "Marque si desea minimizar la salida del script/estilo. Salva hasta el 50% "
 "del tamaño del archivo."
 
-#: classes/class.responsiveMenu.php:649
+#: app/views/admin/page.phtml:450
 msgid "Location Settings"
 msgstr "Configuración de Localización"
 
-#: classes/class.responsiveMenu.php:655
+#: app/views/admin/page.phtml:456
 msgid "Top"
 msgstr "Superior"
 
-#: classes/class.responsiveMenu.php:657
+#: app/views/admin/page.phtml:458
 msgid ""
 "This is the distance from the top of the page in px that the menu will be "
 "displayed"
@@ -241,11 +267,11 @@ msgstr ""
 "Esta es la distancia desde la parte superior de la página en px en la que se "
 "mostrará el menú"
 
-#: classes/class.responsiveMenu.php:669 classes/class.responsiveMenu.php:1005
+#: app/views/admin/page.phtml:470 app/views/admin/page.phtml:806
 msgid "Right"
 msgstr "Derecha"
 
-#: classes/class.responsiveMenu.php:671
+#: app/views/admin/page.phtml:472
 msgid ""
 "This is the distance from the right of the page in % that the menu will be "
 "displayed"
@@ -253,123 +279,123 @@ msgstr ""
 "Esta es la distancia desde la derecha de la página en % en la que se "
 "mostrará el menú"
 
-#: classes/class.responsiveMenu.php:686
+#: app/views/admin/page.phtml:487
 msgid "Colour Settings"
 msgstr "Ajustes de color"
 
-#: classes/class.responsiveMenu.php:692
+#: app/views/admin/page.phtml:493
 msgid "Menu Line & Text Colour"
 msgstr "Línea del Menú y Color del texto"
 
-#: classes/class.responsiveMenu.php:694
+#: app/views/admin/page.phtml:495
 msgid "This is the colour of the 3 lines and text for the menu button"
 msgstr "Este es el color de las 3 líneas y el texto del botón de menú"
 
-#: classes/class.responsiveMenu.php:707
+#: app/views/admin/page.phtml:508
 msgid "Menu Button Background Colour"
 msgstr "Color de Fondo del Botón del Menú"
 
-#: classes/class.responsiveMenu.php:709
+#: app/views/admin/page.phtml:510
 msgid "This is the background colour of the 3 lines container"
 msgstr "Este es el color de fondo del contenedor de las 3 líneas"
 
-#: classes/class.responsiveMenu.php:724
+#: app/views/admin/page.phtml:525
 msgid "Menu Background Colour"
 msgstr "Color de Fondo del Menú "
 
-#: classes/class.responsiveMenu.php:726
+#: app/views/admin/page.phtml:527
 msgid "This is the background colour of the expanded menu"
 msgstr "Este es el color de fondo del menú desplegado"
 
-#: classes/class.responsiveMenu.php:739
+#: app/views/admin/page.phtml:540
 msgid "Menu Background Hover Colour"
 msgstr "Color de Fondo del Over del Menú"
 
-#: classes/class.responsiveMenu.php:741
+#: app/views/admin/page.phtml:542
 msgid "This is the hover background colour of the expanded menu"
 msgstr "Este es el color de fondo del over del menú expandido"
 
-#: classes/class.responsiveMenu.php:757
+#: app/views/admin/page.phtml:558
 msgid "Menu Title Colour"
 msgstr "Color del Título del Menú "
 
-#: classes/class.responsiveMenu.php:759
+#: app/views/admin/page.phtml:560
 msgid "This is the text colour of the expanded menu title"
 msgstr "Este es el color del texto del título del menú expandido"
 
-#: classes/class.responsiveMenu.php:772
+#: app/views/admin/page.phtml:573
 msgid "Menu Title Hover Colour"
 msgstr "Color del Over del Título del Menú"
 
-#: classes/class.responsiveMenu.php:774
+#: app/views/admin/page.phtml:575
 msgid "This is the hover colour of the expanded menu title"
 msgstr "Este es el color del over del título del menú expandido."
 
-#: classes/class.responsiveMenu.php:789
+#: app/views/admin/page.phtml:590
 msgid "Menu Text Colour"
 msgstr "Color del Texto del Menú"
 
-#: classes/class.responsiveMenu.php:791
+#: app/views/admin/page.phtml:592
 msgid "This is the text colour of the expanded menu links"
 msgstr "Este es el color del texto de los enlaces del menú expandido"
 
-#: classes/class.responsiveMenu.php:804
+#: app/views/admin/page.phtml:605
 msgid "Menu Text Hover Colour"
 msgstr "Color del Over del Texto del Menú"
 
-#: classes/class.responsiveMenu.php:806
+#: app/views/admin/page.phtml:607
 msgid "This is the text hover colour of the expanded menu links"
 msgstr "Este es el color del over del texto de los enlaces del menú expandido"
 
-#: classes/class.responsiveMenu.php:821
+#: app/views/admin/page.phtml:622
 msgid "Menu Link Border Colour"
 msgstr "Color del Borde del Enlace del Menú"
 
-#: classes/class.responsiveMenu.php:823
+#: app/views/admin/page.phtml:624
 msgid "This is the border colour of the expanded menu titles"
 msgstr "Este es el color del borde de los títulos del menú expandido"
 
-#: classes/class.responsiveMenu.php:836
+#: app/views/admin/page.phtml:637
 msgid "Title Background Colour"
 msgstr "Color de Fondo del Título"
 
-#: classes/class.responsiveMenu.php:838
+#: app/views/admin/page.phtml:639
 msgid "This is the background colour of the expanded menu title"
 msgstr "Este es el color de fondo del título del menú expandido"
 
-#: classes/class.responsiveMenu.php:853
+#: app/views/admin/page.phtml:654
 msgid "Current Page Background Colour"
 msgstr "Color de Fondo de la Página Actual"
 
-#: classes/class.responsiveMenu.php:855
+#: app/views/admin/page.phtml:656
 msgid "This is the background colour of the current page"
 msgstr "Este es el color de fondo de la página actual"
 
-#: classes/class.responsiveMenu.php:868
+#: app/views/admin/page.phtml:669
 msgid "Current Page Text Colour"
 msgstr "Color de Texto de la Página Actual"
 
-#: classes/class.responsiveMenu.php:870
+#: app/views/admin/page.phtml:671
 msgid "This is the text colour of the current page"
 msgstr "Este es el color de la página actual"
 
-#: classes/class.responsiveMenu.php:886
+#: app/views/admin/page.phtml:687
 msgid "Style Settings"
 msgstr "Configuraciones de Estilo"
 
-#: classes/class.responsiveMenu.php:892
+#: app/views/admin/page.phtml:693
 msgid "Menu Background Transparent"
 msgstr "Fondo del Menú Transparente"
 
-#: classes/class.responsiveMenu.php:894
+#: app/views/admin/page.phtml:695
 msgid "Tick this if you would like a transparent background"
-msgstr "+Marque esta opción si desea un fondo transparente"
+msgstr "Marque esta opción si desea un fondo transparente"
 
-#: classes/class.responsiveMenu.php:907
+#: app/views/admin/page.phtml:708
 msgid "Fixed Positioning"
 msgstr "Posicionamiento fijo"
 
-#: classes/class.responsiveMenu.php:909
+#: app/views/admin/page.phtml:710
 msgid ""
 "Tick this if you would like the menu button to remain in the same place when "
 "scrolling"
@@ -377,73 +403,73 @@ msgstr ""
 "Marque esta opción si desea que el botón del menú permanezca en el mismo "
 "lugar cuando se desplaza"
 
-#: classes/class.responsiveMenu.php:925
+#: app/views/admin/page.phtml:726
 msgid "Font"
 msgstr "Fuente"
 
-#: classes/class.responsiveMenu.php:927
+#: app/views/admin/page.phtml:728
 msgid "Enter a font name below, if empty your default site font will be used"
 msgstr ""
 "Introduzca un nombre de tipo de letra, si está vacío se utilizará el tipo de "
 "letra predeterminada del sitio"
 
-#: classes/class.responsiveMenu.php:938
+#: app/views/admin/page.phtml:739
 msgid "Font Size"
 msgstr "Tamaño de la Fuente"
 
-#: classes/class.responsiveMenu.php:940
+#: app/views/admin/page.phtml:741
 msgid "Enter a font size in pixels below"
 msgstr "Introduzca un tamaño de fuente en píxeles debajo"
 
-#: classes/class.responsiveMenu.php:955
+#: app/views/admin/page.phtml:756
 msgid "Click Button Font Size"
 msgstr "Tamaño de la Fuente del Clic del Botón"
 
-#: classes/class.responsiveMenu.php:957
+#: app/views/admin/page.phtml:758
 msgid "Enter a click button font size in pixels below"
 msgstr "Entre el tamaño de la fuente del clic del botón en píxeles debajo"
 
-#: classes/class.responsiveMenu.php:969
+#: app/views/admin/page.phtml:770
 msgid "Title Font Size"
 msgstr "Tamaño de la Fuente del Título"
 
-#: classes/class.responsiveMenu.php:971
+#: app/views/admin/page.phtml:772
 msgid "Enter a title font size in pixels below"
 msgstr "Entre el tamaño de la fuente del título en píxeles debajo"
 
-#: classes/class.responsiveMenu.php:986
+#: app/views/admin/page.phtml:787
 msgid "Text Alignment"
 msgstr "Alineación del Texto"
 
-#: classes/class.responsiveMenu.php:988
+#: app/views/admin/page.phtml:789
 msgid "Enter a text alignment option below"
 msgstr "Entre la opción de la alineación del texto debajo"
 
-#: classes/class.responsiveMenu.php:988 classes/class.responsiveMenu.php:995
+#: app/views/admin/page.phtml:789 app/views/admin/page.phtml:796
 msgid "Left"
 msgstr "Izquierda"
 
-#: classes/class.responsiveMenu.php:1000
+#: app/views/admin/page.phtml:801
 msgid "Centre"
 msgstr "Centrar"
 
-#: classes/class.responsiveMenu.php:1013
+#: app/views/admin/page.phtml:814
 msgid "Links Height"
 msgstr "Altura de los Enlaces "
 
-#: classes/class.responsiveMenu.php:1015
+#: app/views/admin/page.phtml:816
 msgid "Enter a link height size in pixels below"
 msgstr "Introduzca el tamaño de la altura del enlace en píxeles debajo"
 
-#: classes/class.responsiveMenu.php:1030
+#: app/views/admin/page.phtml:831
 msgid "Remove CSS !important tags"
 msgstr "Retire las etiquetas !important del CSS"
 
-#: classes/class.responsiveMenu.php:1033
+#: app/views/admin/page.phtml:834
 msgid "Tick this if you would like to remove the !important tags from the CSS"
 msgstr "Marque si desea remover las etiquetas !important del CSS"
 
-#: classes/class.responsiveMenu.php:1034
+#: app/views/admin/page.phtml:835
 msgid ""
 "Ticking this will make it easier to over-ride the styles but may make the "
 "default settings not display well"
@@ -451,28 +477,28 @@ msgstr ""
 "Marcar esto hará más fácil sobrescribir los estilos pero puede hacer que las "
 "configuraciones por defecto no se muestren bien"
 
-#: classes/class.responsiveMenu.php:1047
+#: app/views/admin/page.phtml:848
 msgid "Change click menu to an x on click"
 msgstr "Cambiar el clic del menú a una x en el clic"
 
-#: classes/class.responsiveMenu.php:1050
+#: app/views/admin/page.phtml:851
 msgid "Tick this if you would like the 3 lines to turn into an x once clicked"
 msgstr ""
 "Marque esto si quiere que 3 líneas a convertir en una x cuando se hace clic"
 
-#: classes/class.responsiveMenu.php:1065
+#: app/views/admin/page.phtml:866
 msgid "Minimum Width"
 msgstr "Ancho Mínimo"
 
-#: classes/class.responsiveMenu.php:1067
+#: app/views/admin/page.phtml:868
 msgid "Enter a minimum menu width size in pixels below"
 msgstr "Entre un tamaño de ancho mínimo de menú en píxeles debajo"
 
-#: classes/class.responsiveMenu.php:1085
+#: app/views/admin/page.phtml:886
 msgid "Animation Settings"
 msgstr "Configuraciones de la Animación"
 
-#: classes/class.responsiveMenu.php:1090
+#: app/views/admin/page.phtml:891
 msgid ""
 "Warning: The Push Animation requires you to place the following meta tag in "
 "your site header"
@@ -480,81 +506,81 @@ msgstr ""
 "Advertencia: La Animación de Empuje requiere que ponga la siguiente meta "
 "etiqueta en el encabezado de su sitio"
 
-#: classes/class.responsiveMenu.php:1105
+#: app/views/admin/page.phtml:906
 msgid "Slide Animation"
 msgstr "Animación de Diapositiva"
 
-#: classes/class.responsiveMenu.php:1107
+#: app/views/admin/page.phtml:908
 msgid "Choose the type of animation applied to the menu"
 msgstr "Elija el tipo de animación aplicada al menú"
 
-#: classes/class.responsiveMenu.php:1114
+#: app/views/admin/page.phtml:915
 msgid "Overlay"
 msgstr "Superposición"
 
-#: classes/class.responsiveMenu.php:1119
+#: app/views/admin/page.phtml:920
 msgid "Push"
 msgstr "Empuje"
 
-#: classes/class.responsiveMenu.php:1127
+#: app/views/admin/page.phtml:928
 msgid "Page Wrappers CSS"
 msgstr "CSS de la Envoltura de la Página "
 
-#: classes/class.responsiveMenu.php:1129
+#: app/views/admin/page.phtml:930
 msgid ""
 "This is the CSS of the wrapper you want to push when using the push animation"
 msgstr ""
 "Este es el CSS de la envoltura que desea empujar cuando se usa la animación "
 "de empuje"
 
-#: classes/class.responsiveMenu.php:1143
+#: app/views/admin/page.phtml:944
 msgid "Animation Speed"
 msgstr "Velocidad de la Animación"
 
-#: classes/class.responsiveMenu.php:1145
+#: app/views/admin/page.phtml:946
 msgid "Enter a speed in seconds below of the slide animation"
 msgstr ""
 "Introduzca la velocidad en cuestión en segundos debajo de la animación de "
 "diapositiva"
 
-#: classes/class.responsiveMenu.php:1152 classes/class.responsiveMenu.php:1166
+#: app/views/admin/page.phtml:953 app/views/admin/page.phtml:967
 msgid "seconds"
 msgstr "segundos"
 
-#: classes/class.responsiveMenu.php:1157
+#: app/views/admin/page.phtml:958
 msgid "Transition Speed"
 msgstr "Velocidad de Transición"
 
-#: classes/class.responsiveMenu.php:1159
+#: app/views/admin/page.phtml:960
 msgid "Enter a speed in seconds below of the hover transition effect"
 msgstr "Introduzca la velocidad en segundos debajo del efecto de transición"
 
-#: classes/class.responsiveMenu.php:1179
+#: app/views/admin/page.phtml:980
 msgid "Update Responsive Menu Options"
 msgstr "Actualizar Opciones del menú Flexible"
 
-#: classes/class.responsiveMenu.php:1333
-msgid ""
-"There was a problem writing the CSS and JS files, please check the plugin js "
-"and css folder/file permissions"
-msgstr ""
-"Hubo un problema al escribir los archivos CSS y JS, compruebe los js del "
-"plugin y los permisos de carpeta/archivo del css"
+#~ msgid "Initial Checks"
+#~ msgstr "Comprobaciones Iniciales"
 
-#: classes/class.responsiveMenu.php:1337
-msgid ""
-"Your Responsive Menu Options and CSS/JS files have been updated successfully"
-msgstr ""
-"Sus Opciones de Menú Flexible y archivos CSS/JS se han actualizado "
-"correctamente"
+#~ msgid ""
+#~ "There was a problem writing the CSS and JS files, please check the plugin "
+#~ "js and css folder/file permissions"
+#~ msgstr ""
+#~ "Hubo un problema al escribir los archivos CSS y JS, compruebe los js del "
+#~ "plugin y los permisos de carpeta/archivo del css"
 
-#: classes/class.responsiveMenu.php:1343
-msgid "Your Responsive Menu Options have been updated"
-msgstr "Sus Opciones del Menú Flexible han sido actualizadas"
+#~ msgid ""
+#~ "Your Responsive Menu Options and CSS/JS files have been updated "
+#~ "successfully"
+#~ msgstr ""
+#~ "Sus Opciones de Menú Flexible y archivos CSS/JS se han actualizado "
+#~ "correctamente"
 
-#: classes/class.responsiveMenu.php:1349
-msgid "There was an error updating the plugin options"
-msgstr "Se ha producido un error al actualizar las opciones del plugin"
+#~ msgid "Your Responsive Menu Options have been updated"
+#~ msgstr "Sus Opciones del Menú Flexible han sido actualizadas"
+
+#~ msgid "There was an error updating the plugin options"
+#~ msgstr "Se ha producido un error al actualizar las opciones del plugin"
 
 #~ msgid "left"
 #~ msgstr "izquierda"
