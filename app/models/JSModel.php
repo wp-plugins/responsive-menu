@@ -67,10 +67,10 @@ class RM_JSModel extends RM_BaseModel {
         if( $options['RMX'] ) : 
         
             $closeX = " \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'none' );
-                        \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'block' ); ";
+                        \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'inline' ); ";
         
             $showX = " \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'none' );
-                         \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'block' ); ";        
+                         \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'inline' ); ";        
         else :
         
             $closeX = "";
