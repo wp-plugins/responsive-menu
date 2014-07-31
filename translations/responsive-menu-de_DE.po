@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu WordPress\n"
-"POT-Creation-Date: 2014-07-31 12:48-0000\n"
-"PO-Revision-Date: 2014-07-31 12:48-0000\n"
+"POT-Creation-Date: 2014-07-31 13:02-0000\n"
+"PO-Revision-Date: 2014-07-31 13:02-0000\n"
 "Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
 "com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
@@ -27,6 +27,11 @@ msgstr ""
 
 #: app/controllers/AdminController.php:107
 msgid "Settings"
+msgstr ""
+
+#: app/controllers/GlobalController.php:55
+msgid ""
+"Highly Customisable Responsive Menu Plugin Created By Peter Featherstone"
 msgstr ""
 
 #: app/models/AdminModel.php:229
