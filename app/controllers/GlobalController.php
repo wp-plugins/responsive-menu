@@ -45,7 +45,7 @@ class RM_GlobalController extends RM_BaseController {
      * hr_HR - Croatian - With thanks to Neverone Design - https://www.facebook.com/pages/Neverone-design/490262371018076
      * es_ES - Spanish - With thanks to Andrew @ WebHostingHub - http://www.webhostinghub.com
      * 
-     * @return null
+     * @return null 
      * @added 1.6
      */
     
@@ -53,6 +53,7 @@ class RM_GlobalController extends RM_BaseController {
     static function Internationalise() {
 
         __( 'Highly Customisable Responsive Menu Plugin Created By Peter Featherstone', 'responsive-menu' );
+        
         load_plugin_textdomain( 'responsive-menu', false, 'responsive-menu/translations/' );
 
         
