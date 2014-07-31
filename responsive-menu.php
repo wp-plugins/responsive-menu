@@ -31,9 +31,7 @@ Responsive Menu - A WordPress Responsive Menu Plugin
 @package  WordPress Responsive Menu
 @author   Peter Featherstone <hello@peterfeatherstone.com>
 
- */
 
-/*
 |--------------------------------------------------------------------------
 | Bootstrap The Application
 |--------------------------------------------------------------------------
