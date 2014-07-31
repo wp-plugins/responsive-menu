@@ -1,6 +1,6 @@
 <?php
 
-class UpgradeController extends BaseController {
+class RM_UpgradeController extends RM_BaseController {
     
       
     /**
@@ -10,13 +10,13 @@ class UpgradeController extends BaseController {
      * @added 2.0
      */
     
-    function upgrade() {
+    static function upgrade() {
         
         
         if( self::needsUpgrade() ) :
             
 
-            update_option( 'RMVer', Registry::get( 'config', 'current_version' ) );
+            update_option( 'RMVer', RM_Registry::get( 'config', 'current_version' ) );
             
         
         endif;
@@ -32,10 +32,10 @@ class UpgradeController extends BaseController {
      * @added 2.0
      */
     
-    function needsUpgrade() {
+    static function needsUpgrade() {
         
         
-        return get_option( 'RMVer' ) != Registry::get( 'config', 'current_version' ) ? true : false;
+        return get_option( 'RMVer' ) != RM_Registry::get( 'config', 'current_version' ) ? true : false;
 
         
     }

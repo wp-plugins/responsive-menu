@@ -1,7 +1,7 @@
 <?php
 
 
-class HTMLController extends BaseController {
+class RM_HTMLController extends RM_BaseController {
     
     
     /**
@@ -11,10 +11,10 @@ class HTMLController extends BaseController {
      * @added 1.0
      */
     
-    function prepare() {
+    static function prepare() {
         
         
-        add_action( 'wp_footer', array( 'HTMLController', 'display' ) );
+        add_action( 'wp_footer', array( 'RM_HTMLController', 'display' ) );
         
         
     }
@@ -27,10 +27,10 @@ class HTMLController extends BaseController {
      * @added 1.0
      */
     
-    function display() {
+    static function display() {
         
          
-        View::make( 'menu', Registry::get( 'options' ) );
+        RM_View::make( 'menu', RM_Registry::get( 'options' ) );
      
         
     }

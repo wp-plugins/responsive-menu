@@ -1,9 +1,26 @@
 <?php
 
 
-class GlobalController extends BaseController {
+class RM_GlobalController extends RM_BaseController {
     
+        
+    /**
+     * Prepare our Global Options
+     *
+     * @return null
+     * @added 2.0
+     */
     
+    static function prepare() {
+        
+        
+        add_action( 'plugins_loaded', array( 'RM_GlobalController', 'Internationalise' ) );
+        add_action( 'wp_enqueue_scripts', array( 'RM_GlobalController', 'jQuery' ) );
+        
+        
+    }
+    
+
     /**
      * Makes sure jQuery is added to all pages as it is needed for the
      * system to work
@@ -12,7 +29,7 @@ class GlobalController extends BaseController {
      * @added 1.0
      */
     
-    function jQuery() {
+    static function jQuery() {
         
         
         wp_enqueue_script( 'jquery' );
@@ -33,9 +50,9 @@ class GlobalController extends BaseController {
      */
     
     
-    function Internationalise() {
+    static function Internationalise() {
 
-        load_plugin_textdomain( 'responsive-menu', false, Registry::get( 'config', 'plugin_base_dir' ) . '/translations/' );
+        load_plugin_textdomain( 'responsive-menu', false, RM_Registry::get( 'config', 'plugin_base_dir' ) . '/translations/' );
 
     }
     

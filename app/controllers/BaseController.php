@@ -1,6 +1,6 @@
 <?php
 
-class BaseController {
+class RM_BaseController {
     
     
     /**
@@ -10,10 +10,10 @@ class BaseController {
      * @added 2.0
      */
     
-    function inFooter() {
+    static function inFooter() {
            
         
-        return Registry::get( 'options', 'RMFooter' ) && Registry::get( 'options', 'RMFooter' ) == 'footer' ?  true : false;
+        return RM_Registry::get( 'options', 'RMFooter' ) && RM_Registry::get( 'options', 'RMFooter' ) == 'footer' ?  true : false;
         
         
     }

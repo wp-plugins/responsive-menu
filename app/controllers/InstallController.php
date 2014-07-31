@@ -1,6 +1,22 @@
 <?php
 
-class InstallController extends BaseController {
+class RM_InstallController extends RM_BaseController {
+    
+    
+    /**
+     * Prepare our Installation Options
+     *
+     * @return null
+     * @added 2.0
+     */
+    
+    static function prepare() {
+        
+        
+        register_activation_hook( __FILE__, array( 'RM_InstallController', 'install' ) );
+        
+        
+    }
     
         
     /**
@@ -11,11 +27,11 @@ class InstallController extends BaseController {
      * @added 1.0
      */
     
-    public function install() {
+    static function install() {
 
         
-        add_option( 'RMVer', Registry::get( 'config', 'current_version' ) );
-        add_option( 'RMOptions', Registry::get( 'defaults' ) );
+        add_option( 'RMVer', RM_Registry::get( 'config', 'current_version' ) );
+        add_option( 'RMOptions', RM_Registry::get( 'defaults' ) );
 
         
     }

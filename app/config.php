@@ -45,7 +45,7 @@ $config = array(
 |
 */
 
-Registry::set( 'config', $config );
+RM_Registry::set( 'config', $config );
 
 
 /*
@@ -222,4 +222,4 @@ $defaults = array(
 |
 */
 
-Registry::set( 'defaults', $defaults );
+RM_Registry::set( 'defaults', $defaults );

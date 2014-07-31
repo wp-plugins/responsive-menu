@@ -16,15 +16,15 @@ class ResponsiveMenu {
         
         
         if( !get_option( 'RMVer' ) )
-                add_option( 'RMVer', Registry::get( 'config', 'current_version' ) );
+                add_option( 'RMVer', RM_Registry::get( 'config', 'current_version' ) );
                 
         
         if( !get_option( 'RMOptions' ) )
-            add_option( 'RMOptions', Registry::get( 'defaults' ) );
+            add_option( 'RMOptions', RM_Registry::get( 'defaults' ) );
         
         
-        Registry::set( 'options', get_option( 'RMOptions' ) );
-        Registry::set( 'version', get_option( 'RMVer' ) );
+        RM_Registry::set( 'options', get_option( 'RMOptions' ) );
+        RM_Registry::set( 'version', get_option( 'RMVer' ) );
 
         
     }
@@ -40,21 +40,14 @@ class ResponsiveMenu {
     
     public function run() {
         
-        
-        add_action( 'plugins_loaded', array( 'GlobalController', 'Internationalise' ) );
-        
-        register_activation_hook( __FILE__, array( 'InstallController', 'install' ) );
-        
-        UpgradeController::upgrade();
-        
-        add_action( 'wp_enqueue_scripts', array( 'GlobalController', 'jQuery' ) );
-        
-        add_action( 'admin_menu', array( 'AdminController', 'addMenus' ) );
-        add_action( 'admin_enqueue_scripts', array( 'AdminController', 'colorpicker' ) );
-        
-        HTMLController::prepare();
-        CSSController::prepare();
-        JSController::prepare();
+
+        RM_InstallController::prepare();
+        RM_UpgradeController::upgrade();
+        RM_GlobalController::prepare();
+        RM_AdminController::prepare();
+        RM_HTMLController::prepare();
+        RM_CSSController::prepare();
+        RM_JSController::prepare();
      
      
     }

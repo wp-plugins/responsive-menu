@@ -1,6 +1,6 @@
 <?php
 
-class BaseModel {
+class RM_BaseModel {
     
     
     /**

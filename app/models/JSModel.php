@@ -1,6 +1,6 @@
 <?php
 
-class JSModel extends BaseModel {
+class RM_JSModel extends RM_BaseModel {
     
     
     /**
@@ -11,17 +11,17 @@ class JSModel extends BaseModel {
      * @added 1.6
      */
     
-    function createJSFile( $js ) {
+    static function createJSFile( $js ) {
 
         
-        $file = fopen( Registry::get( 'config', 'plugin_data_dir' ) . '/js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
+        $file = fopen( RM_Registry::get( 'config', 'plugin_data_dir' ) . '/js/responsive-menu-' . get_current_blog_id() . '.js', 'w' );
         
         $jsFile = fwrite( $file, $js );
         
         fclose( $file );
         
         if( !$file ) 
-            Status::set( 'error', __( 'Unable to create JS file', 'responsive-menu' ) );
+            RM_Status::set( 'error', __( 'Unable to create JS file', 'responsive-menu' ) );
                 
         return $jsFile;
         
@@ -37,9 +37,9 @@ class JSModel extends BaseModel {
      * @added 1.0
      */
     
-    function getJS( $args = null ) {
+    static function getJS( $args = null ) {
 
-        $options = Registry::get( 'options' );
+        $options = RM_Registry::get( 'options' );
 
         $setHeight = $options['RMPos'] == 'fixed' ? '' : " \$RMjQuery( '#responsive-menu' ).css( 'height', \$RMjQuery( document ).height() ); ";
         $breakpoint = empty($options['RMBreak']) ? "600" : $options['RMBreak'];

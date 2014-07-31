@@ -1,6 +1,6 @@
 <?php
 
-class View {
+class RM_View {
     
         
     /**
@@ -13,12 +13,12 @@ class View {
      * @added 2.0
      */
     
-    function make( $page, $data ) {
+    static function make( $page, $data ) {
         
         
         $page = str_replace( '.', '/', $page );
         
-        require Registry::get( 'config', 'plugin_base_dir' ) . '/app/views/' . $page . '.phtml';
+        require RM_Registry::get( 'config', 'plugin_base_dir' ) . '/app/views/' . $page . '.phtml';
         
         
     }
@@ -31,7 +31,7 @@ class View {
      * @added 2.0
      */
     
-    function checkViewPortTag() {
+    static function checkViewPortTag() {
 
         
         $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
@@ -51,7 +51,7 @@ class View {
      * @added 2.0
      */
     
-    function statusBar( $status ) {
+    static function statusBar( $status ) {
 
         
         $message = null;        

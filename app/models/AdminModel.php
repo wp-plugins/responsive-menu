@@ -1,6 +1,6 @@
 <?php
 
-class AdminModel extends BaseModel {
+class RM_AdminModel extends RM_BaseModel {
     
         
     /**
@@ -11,108 +11,108 @@ class AdminModel extends BaseModel {
      * @added 1.0
      */
     
-    public function save( $data ) {
+    static public function save( $data ) {
     
         
         // Initialise Variables Correctly
         
-        $RM = isset($data['RM']) ? $data['RM'] : Registry::get( 'defaults', 'RM' );
+        $RM = isset($data['RM']) ? $data['RM'] : RM_Registry::get( 'defaults', 'RM' );
         
-        $RMTitle = isset($data['RMTitle']) ? $data['RMTitle'] : Registry::get( 'defaults', 'RMTitle' );
+        $RMTitle = isset($data['RMTitle']) ? $data['RMTitle'] : RM_Registry::get( 'defaults', 'RMTitle' );
         
-        $RMBreak = isset($data['RMBreak']) ? $data['RMBreak'] : Registry::get( 'defaults', 'RMBreak' );
+        $RMBreak = isset($data['RMBreak']) ? $data['RMBreak'] : RM_Registry::get( 'defaults', 'RMBreak' );
         
-        $RMDepth = isset($data['RMDepth']) ? $data['RMDepth'] : Registry::get( 'defaults', 'RMDepth' );
+        $RMDepth = isset($data['RMDepth']) ? $data['RMDepth'] : RM_Registry::get( 'defaults', 'RMDepth' );
         
-        $RMTop = isset($data['RMTop']) ? $data['RMTop'] : Registry::get( 'defaults', 'RMTop' );
+        $RMTop = isset($data['RMTop']) ? $data['RMTop'] : RM_Registry::get( 'defaults', 'RMTop' );
         
-        $RMRight = isset($data['RMRight']) ? $data['RMRight'] : Registry::get( 'defaults', 'RMRight' );
+        $RMRight = isset($data['RMRight']) ? $data['RMRight'] : RM_Registry::get( 'defaults', 'RMRight' );
         
-        $RMCss = isset($data['RMCss']) ? $data['RMCss'] : Registry::get( 'defaults', 'RMCss' );
+        $RMCss = isset($data['RMCss']) ? $data['RMCss'] : RM_Registry::get( 'defaults', 'RMCss' );
         
-        $RMLineCol = isset($data['RMLineCol']) ? $data['RMLineCol'] : Registry::get( 'defaults', 'RMLineCol' );
+        $RMLineCol = isset($data['RMLineCol']) ? $data['RMLineCol'] : RM_Registry::get( 'defaults', 'RMLineCol' );
         
-        $RMClickBkg = isset($data['RMClickBkg']) ? $data['RMClickBkg'] : Registry::get( 'defaults', 'RMClickBkg' );
+        $RMClickBkg = isset($data['RMClickBkg']) ? $data['RMClickBkg'] : RM_Registry::get( 'defaults', 'RMClickBkg' );
         
-        $RMClickTitle = isset($data['RMClickTitle']) ? $data['RMClickTitle'] : Registry::get( 'defaults', 'RMClickTitle' );
+        $RMClickTitle = isset($data['RMClickTitle']) ? $data['RMClickTitle'] : RM_Registry::get( 'defaults', 'RMClickTitle' );
         
-        $RMBkgTran = isset($data['RMBkgTran']) ? $data['RMBkgTran'] : Registry::get( 'defaults', 'RMBkgTran' );
+        $RMBkgTran = isset($data['RMBkgTran']) ? $data['RMBkgTran'] : RM_Registry::get( 'defaults', 'RMBkgTran' );
         
-        $RMPos = isset($data['RMPos']) ? $data['RMPos'] : Registry::get( 'defaults', 'RMPos' );
+        $RMPos = isset($data['RMPos']) ? $data['RMPos'] : RM_Registry::get( 'defaults', 'RMPos' );
         
-        $RMImage = isset($data['RMImage']) ? $data['RMImage'] : Registry::get( 'defaults', 'RMImage' );
+        $RMImage = isset($data['RMImage']) ? $data['RMImage'] : RM_Registry::get( 'defaults', 'RMImage' );
         
-        $RMWidth = isset($data['RMWidth']) ? $data['RMWidth'] : Registry::get( 'defaults', 'RMWidth' );
+        $RMWidth = isset($data['RMWidth']) ? $data['RMWidth'] : RM_Registry::get( 'defaults', 'RMWidth' );
         
-        $RMBkg = isset($data['RMBkg']) ? $data['RMBkg'] : Registry::get( 'defaults', 'RMBkg' );
+        $RMBkg = isset($data['RMBkg']) ? $data['RMBkg'] : RM_Registry::get( 'defaults', 'RMBkg' );
         
-        $RMBkgHov = isset($data['RMBkgHov']) ? $data['RMBkgHov'] : Registry::get( 'defaults', 'RMBkgHov' );
+        $RMBkgHov = isset($data['RMBkgHov']) ? $data['RMBkgHov'] : RM_Registry::get( 'defaults', 'RMBkgHov' );
         
-        $RMTitleCol = isset($data['RMTitleCol']) ? $data['RMTitleCol'] : Registry::get( 'defaults', 'RMTitleCol' );
+        $RMTitleCol = isset($data['RMTitleCol']) ? $data['RMTitleCol'] : RM_Registry::get( 'defaults', 'RMTitleCol' );
         
-        $RMTextCol = isset($data['RMTextCol']) ? $data['RMTextCol'] : Registry::get( 'defaults', 'RMTextCol' );
+        $RMTextCol = isset($data['RMTextCol']) ? $data['RMTextCol'] : RM_Registry::get( 'defaults', 'RMTextCol' );
         
-        $RMBorCol = isset($data['RMBorCol']) ? $data['RMBorCol'] : Registry::get( 'defaults', 'RMBorCol' );
+        $RMBorCol = isset($data['RMBorCol']) ? $data['RMBorCol'] : RM_Registry::get( 'defaults', 'RMBorCol' );
         
-        $RMTextColHov = isset($data['RMTextColHov']) ? $data['RMTextColHov'] : Registry::get( 'defaults', 'RMTextColHov' );
+        $RMTextColHov = isset($data['RMTextColHov']) ? $data['RMTextColHov'] : RM_Registry::get( 'defaults', 'RMTextColHov' );
         
-        $RMTitleColHov = isset($data['RMTitleColHov']) ? $data['RMTitleColHov'] : Registry::get( 'defaults', 'RMTitleColHov' );
+        $RMTitleColHov = isset($data['RMTitleColHov']) ? $data['RMTitleColHov'] : RM_Registry::get( 'defaults', 'RMTitleColHov' );
 
         /* Added in 1.6 */
         
-        $RMAnim = isset($data['RMAnim']) ? $data['RMAnim'] : Registry::get( 'defaults', 'RMAnim' );
+        $RMAnim = isset($data['RMAnim']) ? $data['RMAnim'] : RM_Registry::get( 'defaults', 'RMAnim' );
         
-        $RMPushCSS = isset($data['RMPushCSS']) ? $data['RMPushCSS'] : Registry::get( 'defaults', 'RMPushCSS' );
+        $RMPushCSS = isset($data['RMPushCSS']) ? $data['RMPushCSS'] : RM_Registry::get( 'defaults', 'RMPushCSS' );
         
-        $RMTitleBkg = isset($data['RMTitleBkg']) ? $data['RMTitleBkg'] : Registry::get( 'defaults', 'RMTitleBkg' );
+        $RMTitleBkg = isset($data['RMTitleBkg']) ? $data['RMTitleBkg'] : RM_Registry::get( 'defaults', 'RMTitleBkg' );
         
-        $RMFont =  isset($data['RMFont']) ? $data['RMFont'] : Registry::get( 'defaults', 'RMFont' );
+        $RMFont =  isset($data['RMFont']) ? $data['RMFont'] : RM_Registry::get( 'defaults', 'RMFont' );
         
-        $RMFontSize = isset($data['RMFontSize']) ? $data['RMFontSize'] : Registry::get( 'defaults', 'RMFontSize' );
+        $RMFontSize = isset($data['RMFontSize']) ? $data['RMFontSize'] : RM_Registry::get( 'defaults', 'RMFontSize' );
         
-        $RMTitleSize = isset($data['RMTitleSize']) ? $data['RMTitleSize'] : Registry::get( 'defaults', 'RMTitleSize' );
+        $RMTitleSize = isset($data['RMTitleSize']) ? $data['RMTitleSize'] : RM_Registry::get( 'defaults', 'RMTitleSize' );
         
-        $RMBtnSize = isset($data['RMBtnSize']) ? $data['RMBtnSize'] : Registry::get( 'defaults', 'RMBtnSize' );
+        $RMBtnSize = isset($data['RMBtnSize']) ? $data['RMBtnSize'] : RM_Registry::get( 'defaults', 'RMBtnSize' );
         
-        $RMCurBkg = isset($data['RMCurBkg']) ? $data['RMCurBkg'] : Registry::get( 'defaults', 'RMCurBkg' );
+        $RMCurBkg = isset($data['RMCurBkg']) ? $data['RMCurBkg'] : RM_Registry::get( 'defaults', 'RMCurBkg' );
         
-        $RMCurCol = isset($data['RMCurCol']) ? $data['RMCurCol'] : Registry::get( 'defaults', 'RMCurCol' );
+        $RMCurCol = isset($data['RMCurCol']) ? $data['RMCurCol'] : RM_Registry::get( 'defaults', 'RMCurCol' );
         
-        $RMAnimSpd = isset($data['RMAnimSpd']) ? $data['RMAnimSpd'] : Registry::get( 'defaults', 'RMAnimSpd' );
+        $RMAnimSpd = isset($data['RMAnimSpd']) ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
 
         /* Added in 1.7 */
         
-        $RMTranSpd = isset($data['RMTranSpd']) ? $data['RMTranSpd'] : Registry::get( 'defaults', 'RMTranSpd' );
+        $RMTranSpd = isset($data['RMTranSpd']) ? $data['RMTranSpd'] : RM_Registry::get( 'defaults', 'RMTranSpd' );
         
-        $RMTxtAlign = isset($data['RMTxtAlign']) ? $data['RMTxtAlign'] : Registry::get( 'defaults', 'RMTxtAlign' );
+        $RMTxtAlign = isset($data['RMTxtAlign']) ? $data['RMTxtAlign'] : RM_Registry::get( 'defaults', 'RMTxtAlign' );
         
-        $RMSearch = isset($data['RMSearch']) ? $data['RMSearch'] : Registry::get( 'defaults', 'RMSearch' );
+        $RMSearch = isset($data['RMSearch']) ? $data['RMSearch'] : RM_Registry::get( 'defaults', 'RMSearch' );
         
-        $RMExpand = isset($data['RMExpand']) ? $data['RMExpand'] : Registry::get( 'defaults', 'RMExpand' );
+        $RMExpand = isset($data['RMExpand']) ? $data['RMExpand'] : RM_Registry::get( 'defaults', 'RMExpand' );
         
-        $RMLinkHeight = isset($data['RMLinkHeight']) ? $data['RMLinkHeight'] : Registry::get( 'defaults', 'RMLinkHeight' );
+        $RMLinkHeight = isset($data['RMLinkHeight']) ? $data['RMLinkHeight'] : RM_Registry::get( 'defaults', 'RMLinkHeight' );
 
         /* Added in 1.8 */
         
-        $RMExternal = isset( $data['RMExternal'] ) ? $data['RMExternal'] : Registry::get( 'defaults', 'RMExternal' );
+        $RMExternal = isset( $data['RMExternal'] ) ? $data['RMExternal'] : RM_Registry::get( 'defaults', 'RMExternal' );
         
-        $RMSide = isset( $data['RMSide'] ) ? $data['RMSide'] : Registry::get( 'defaults', 'RMSide' );
+        $RMSide = isset( $data['RMSide'] ) ? $data['RMSide'] : RM_Registry::get( 'defaults', 'RMSide' );
 
         /* Added in 1.9 */
         
-        $RMFooter = isset( $data['RMFooter'] ) ? $data['RMFooter'] : Registry::get( 'defaults', 'RMFooter' );
+        $RMFooter = isset( $data['RMFooter'] ) ? $data['RMFooter'] : RM_Registry::get( 'defaults', 'RMFooter' );
         
-        $RMClickImg = isset( $data['RMClickImg'] ) ? $data['RMClickImg'] : Registry::get( 'defaults', 'RMClickImg' );
+        $RMClickImg = isset( $data['RMClickImg'] ) ? $data['RMClickImg'] : RM_Registry::get( 'defaults', 'RMClickImg' );
         
-        $RMMinify = isset( $data['RMMinify'] ) ? $data['RMMinify'] : Registry::get( 'defaults', 'RMMinify' );
+        $RMMinify = isset( $data['RMMinify'] ) ? $data['RMMinify'] : RM_Registry::get( 'defaults', 'RMMinify' );
         
-        $RMClickClose = isset( $data['RMClickClose'] ) ? $data['RMClickClose'] : Registry::get( 'defaults', 'RMClickClose' );
+        $RMClickClose = isset( $data['RMClickClose'] ) ? $data['RMClickClose'] : RM_Registry::get( 'defaults', 'RMClickClose' );
         
-        $RMRemImp = isset( $data['RMRemImp'] ) ? $data['RMRemImp'] : Registry::get( 'defaults', 'RMRemImp' ); 
+        $RMRemImp = isset( $data['RMRemImp'] ) ? $data['RMRemImp'] : RM_Registry::get( 'defaults', 'RMRemImp' ); 
 
-        $RMX = isset( $data['RMX'] ) ? $data['RMX'] : Registry::get( 'defaults', 'RMX' );
+        $RMX = isset( $data['RMX'] ) ? $data['RMX'] : RM_Registry::get( 'defaults', 'RMX' );
         
-        $RMMinWidth = isset( $data['RMMinWidth'] ) ? $data['RMMinWidth'] : Registry::get( 'defaults', 'RMMinWidthRM' );
+        $RMMinWidth = isset( $data['RMMinWidth'] ) ? $data['RMMinWidth'] : RM_Registry::get( 'defaults', 'RMMinWidthRM' );
 
         $optionsArray = array(
             
@@ -224,9 +224,9 @@ class AdminModel extends BaseModel {
             
         // And save back to the registry 
         
-        Registry::set( 'options', $optionsArray );
+        RM_Registry::set( 'options', $optionsArray );
 
-        Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
+        RM_Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
         
         
     }

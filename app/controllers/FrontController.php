@@ -1,6 +1,6 @@
 <?php
 
-class FrontController extends BaseController {
+class RM_FrontController extends RM_BaseController {
 
     
     /**

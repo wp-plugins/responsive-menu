@@ -110,7 +110,7 @@
 
                 <h2><?php _e( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
-                <?php if ( $status = Status::get() )
+                <?php if ( $status = RM_Status::get() )
                     echo self::statusBar( $status ); ?>
 
                 <hr />

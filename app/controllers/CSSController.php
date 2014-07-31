@@ -1,7 +1,7 @@
 <?php
 
 
-class CSSController extends BaseController {
+class RM_CSSController extends RM_BaseController {
     
     
     /**
@@ -11,29 +11,29 @@ class CSSController extends BaseController {
      * @added 2.0
      */
     
-    function prepare() {
+    static function prepare() {
         
         
-        if( Registry::get( 'options', 'RMExternal' ) ) :
+        if( RM_Registry::get( 'options', 'RMExternal' ) ) :
 
             
-            $css = CSSModel::getCSS( 'strip_tags' );
+            $css = RM_CSSModel::getCSS( 'strip_tags' );
 
         
-            if( Registry::get( 'options', 'RMMinify') == 'minify' )
-                    $css = CSSModel::Minify( $css );
+            if( RM_Registry::get( 'options', 'RMMinify') == 'minify' )
+                    $css = RM_CSSModel::Minify( $css );
             
             
-            CSSModel::createCSSFile( $css );
+            RM_CSSModel::createCSSFile( $css );
             
             
-            add_action( 'wp_enqueue_scripts', array( 'CSSController', 'addExternal' ) );
+            add_action( 'wp_enqueue_scripts', array( 'RM_CSSController', 'addExternal' ) );
             
             
         else :
                 
             
-            add_action( 'wp_head', array( 'CSSController', 'addInline' ) ); 
+            add_action( 'wp_head', array( 'RM_CSSController', 'addInline' ) ); 
 
         
         endif;   
@@ -49,10 +49,10 @@ class CSSController extends BaseController {
      * @added 2.0
      */
     
-    function addInline() {
+    static function addInline() {
         
         
-        echo Registry::get( 'options', 'RMMinify' ) == 'minify' ? CSSModel::Minify( CSSModel::getCSS() ) : CSSModel::getCSS(); 
+        echo RM_Registry::get( 'options', 'RMMinify' ) == 'minify' ? RM_CSSModel::Minify( RM_CSSModel::getCSS() ) : RM_CSSModel::getCSS(); 
         
         
     }
@@ -65,12 +65,12 @@ class CSSController extends BaseController {
      * @added 2.0
      */
     
-    function addExternal() {
+    static function addExternal() {
         
         
         wp_enqueue_style( 
             'responsive-menu', 
-            Registry::get( 'config', 'plugin_data_uri' ) . 'css/responsive-menu-' . get_current_blog_id() . '.css', 
+            RM_Registry::get( 'config', 'plugin_data_uri' ) . 'css/responsive-menu-' . get_current_blog_id() . '.css', 
             array(), 
             '1.0', 
             'all' 

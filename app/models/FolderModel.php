@@ -1,6 +1,6 @@
 <?php
 
-class FolderModel extends BaseModel {
+class RM_FolderModel extends RM_BaseModel {
     
     /**
      * Function to create the data folders
@@ -12,9 +12,9 @@ class FolderModel extends BaseModel {
     static function create() {
 
         
-        $mainFolder = Registry::get( 'config', 'plugin_data_dir' );
-        $cssFolder  = Registry::get( 'config', 'plugin_data_dir' ) . '/css';
-        $jsFolder   = Registry::get( 'config', 'plugin_data_dir' ) . '/js';
+        $mainFolder = RM_Registry::get( 'config', 'plugin_data_dir' );
+        $cssFolder  = RM_Registry::get( 'config', 'plugin_data_dir' ) . '/css';
+        $jsFolder   = RM_Registry::get( 'config', 'plugin_data_dir' ) . '/js';
         
 
         if( !file_exists( $mainFolder ) ) mkdir( $mainFolder, 0777 );
@@ -23,13 +23,13 @@ class FolderModel extends BaseModel {
 
         
         if( !file_exists( $mainFolder ) )
-            Status::set( 'error', __( 'Unable to create data folders', 'responsive-menu' ) );
+            RM_Status::set( 'error', __( 'Unable to create data folders', 'responsive-menu' ) );
         
         if( !file_exists( $cssFolder ) )
-            Status::set( 'error', __( 'Unable to create CSS folders', 'responsive-menu' ) );
+            RM_Status::set( 'error', __( 'Unable to create CSS folders', 'responsive-menu' ) );
         
         if( !file_exists( $cssFolder ) )
-            Status::set( 'error', __( 'Unable to create JS folders', 'responsive-menu' ) );
+            RM_Status::set( 'error', __( 'Unable to create JS folders', 'responsive-menu' ) );
         
         
     }

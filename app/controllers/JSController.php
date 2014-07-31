@@ -1,7 +1,7 @@
 <?php
 
 
-class JSController extends BaseController {
+class RM_JSController extends RM_BaseController {
     
         
     /**
@@ -11,19 +11,19 @@ class JSController extends BaseController {
      * @added 1.0
      */
     
-    function prepare() {
+    static function prepare() {
 
         
-        if( Registry::get( 'options', 'RMExternal' ) ) :
+        if( RM_Registry::get( 'options', 'RMExternal' ) ) :
 
             
-            $js = JSModel::getJs( 'strip_tags' );
+            $js = RM_JSModel::getJs( 'strip_tags' );
         
-            $js = Registry::get( 'options', 'RMMinify') == 'minify' ? JSModel::Minify( $js ) : $js = $js;
+            $js = RM_Registry::get( 'options', 'RMMinify') == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js;
         
-            JSModel::createJSFile( $js );
+            RM_JSModel::createJSFile( $js );
 
-            add_action( 'wp_enqueue_scripts', array( 'JSController', 'addExternal' ) );
+            add_action( 'wp_enqueue_scripts', array( 'RM_JSController', 'addExternal' ) );
  
         
         else :
@@ -31,7 +31,7 @@ class JSController extends BaseController {
             
             $inFooter = self::inFooter() ? 'wp_footer' : 'wp_head';
         
-            add_action( $inFooter, array( 'JSController', 'addInline' ) ); 
+            add_action( $inFooter, array( 'RM_JSController', 'addInline' ) ); 
                
             
         endif;
@@ -47,10 +47,10 @@ class JSController extends BaseController {
      * @added 1.0
      */
     
-    function addInline() {
+    static function addInline() {
         
         
-        echo Registry::get( 'options', 'RMMinify' ) == 'minify' ? JSModel::Minify( JSModel::getJs() ) : JSModel::getJs();
+        echo RM_Registry::get( 'options', 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( RM_JSModel::getJs() ) : RM_JSModel::getJs();
             
         
     }
@@ -63,13 +63,13 @@ class JSController extends BaseController {
      * @added 1.4
      */
     
-    function addExternal() {
+    static function addExternal() {
         
         
         wp_enqueue_script( 
 
             'responsive-menu', 
-            Registry::get( 'config', 'plugin_data_uri' ) . 'js/responsive-menu-' . get_current_blog_id() . '.js', 
+            RM_Registry::get( 'config', 'plugin_data_uri' ) . 'js/responsive-menu-' . get_current_blog_id() . '.js', 
             'jquery', 
             '1.0', 
             self::inFooter() 

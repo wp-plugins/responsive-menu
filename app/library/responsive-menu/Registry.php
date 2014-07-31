@@ -1,6 +1,6 @@
 <?php
 
-class Registry {
+class RM_Registry {
     
     /**
      * Base array that holds all our further registry key => val pairs

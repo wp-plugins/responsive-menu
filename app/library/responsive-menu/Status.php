@@ -1,6 +1,6 @@
 <?php
 
-class Status {
+class RM_Status {
     
     /**
      * Static Array that holds all the current system statuses
@@ -21,7 +21,7 @@ class Status {
      * @added 2.0
      */
     
-    function set( $type, $text ) {
+    static function set( $type, $text ) {
         
         
         array_push( self::$status, array( $type, $text ) );
@@ -36,7 +36,7 @@ class Status {
      * @added 2.0
      */
     
-    function get() {
+    static function get() {
         
         
         return self::$status;

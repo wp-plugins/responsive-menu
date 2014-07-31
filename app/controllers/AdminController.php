@@ -1,7 +1,24 @@
 <?php
 
 
-class AdminController extends BaseController {
+class RM_AdminController extends RM_BaseController {
+    
+        
+    /**
+     * Prepare our Admin Options
+     *
+     * @return null
+     * @added 2.0
+     */
+    
+    static function prepare() {
+        
+        add_action( 'admin_menu', array( 'RM_AdminController', 'addMenus' ) );
+        add_action( 'admin_enqueue_scripts', array( 'RM_AdminController', 'colorpicker' ) );
+        add_filter( 'plugin_action_links', array( 'RM_AdminController', 'addSettingsLink' ), 10, 2 );
+        
+    }
+    
     
     /**
      * Create our admin menus.
@@ -10,7 +27,7 @@ class AdminController extends BaseController {
      * @added 1.0
      */
     
-    function addMenus() {
+    static function addMenus() {
 
         
         add_menu_page( 
@@ -19,8 +36,8 @@ class AdminController extends BaseController {
             __( 'Responsive Menu', 'responsive-menu' ), 
             'manage_options', 
             'responsive-menu', 
-            array( 'AdminController', 'adminPage' ), 
-            Registry::get( 'config', 'plugins_base_uri' ) . 'public/imgs/icon.png' 
+            array( 'RM_AdminController', 'adminPage' ), 
+            RM_Registry::get( 'config', 'plugins_base_uri' ) . 'public/imgs/icon.png' 
 
         );
 
@@ -34,22 +51,22 @@ class AdminController extends BaseController {
      * @added 1.0
      */
     
-    function adminPage() {
+    static function adminPage() {
         
         
         if( isset( $_POST['RMSubmit'] ) ) :
             
-            AdminModel::save( $_POST );
+            RM_AdminModel::save( $_POST );
         
-            if( Registry::get( 'options', 'RMExternal' ) ) : 
+            if( RM_Registry::get( 'options', 'RMExternal' ) ) : 
                 
-                FolderModel::create();
+                RM_FolderModel::create();
             
             endif;
         
         endif;    
 
-        View::make( 'admin.page', Registry::get( 'options' ) );
+        RM_View::make( 'admin.page', RM_Registry::get( 'options' ) );
         
         
     }
@@ -61,7 +78,7 @@ class AdminController extends BaseController {
      * @added 1.0
      */
     
-    function colorpicker(){ 
+    static function colorpicker(){ 
     
         
         wp_enqueue_media();
@@ -71,5 +88,31 @@ class AdminController extends BaseController {
         
     }
     
+        
+    /**
+     * Adds the settings link on the WordPress Plugins Page
+     *
+     * @param array $links
+     * @param string $file
+     * @return array
+     * @added 2.0
+     */
+    
+    static function addSettingsLink( $links, $file ) {
+        
+        
+        if ( $file == 'responsive-menu/responsive-menu.php' ) :
+
+            $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=responsive-menu">Settings</a>';
+            
+            array_unshift( $links, $settings_link );
+
+        endif;
+
+        return $links;
+
+    
+    }
+
     
 }

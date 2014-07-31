@@ -1,6 +1,6 @@
 <?php
 
-class CSSModel extends BaseModel {
+class RM_CSSModel extends RM_BaseModel {
     
     
     /**
@@ -11,17 +11,17 @@ class CSSModel extends BaseModel {
      * @added 1.6
      */
     
-    function createCSSFile( $css ) {
+    static function createCSSFile( $css ) {
         
         
-        $file = fopen( Registry::get( 'config', 'plugin_data_dir' ) . '/css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
+        $file = fopen( RM_Registry::get( 'config', 'plugin_data_dir' ) . '/css/responsive-menu-' . get_current_blog_id() . '.css', 'w' );
         
         $cssFile = fwrite( $file, $css );
         
         fclose( $file );
         
         if( !$file ) 
-            Status::set( 'error', __( 'Unable to create CSS file', 'responsive-menu' ) );
+            RM_Status::set( 'error', __( 'Unable to create CSS file', 'responsive-menu' ) );
                 
         return $cssFile;
         
@@ -36,10 +36,10 @@ class CSSModel extends BaseModel {
      * @added 1.0
      */
     
-    function getCSS( $args = null ) {
+    static function getCSS( $args = null ) {
 
         
-        $options = Registry::get( 'options' );
+        $options = RM_Registry::get( 'options' );
 
         $important = empty( $options['RMRemImp'] ) ? ' !important;' : ';';
         
