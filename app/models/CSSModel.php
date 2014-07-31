@@ -204,11 +204,6 @@ class RM_CSSModel extends RM_BaseModel {
                 overflow: hidden{$important}
             }
             
-            #responsive-menu #responsive-menu-title a
-            {
-                white-space: pre{$important}
-            }
-                
             #responsive-menu #responsive-menu-title a:hover {
                 color: $titleColH{$important}
                 text-decoration: none{$important}
