@@ -7,7 +7,7 @@
 |--------------------------------------------------------------------------
 |
 | Although some people aren't fans of array configurations, here we have one!
-| This is where we set paths and version numbers among other things.
+| This is where we set paths and our version number among other things.
 |
 */
 
@@ -41,7 +41,7 @@ $config = array(
 |--------------------------------------------------------------------------
 |
 | Again, some people don't like Registry's in PHP Applications, but here we
-| have one and is very useful for retrieving our settings throughout the app
+| have one and it is very useful for retrieving our settings throughout the app
 |
 */
 
@@ -217,7 +217,8 @@ $defaults = array(
 |--------------------------------------------------------------------------
 |
 | Again, some people don't like Registry's in PHP Applications, but here we
-| have one and is very useful for retrieving our defaults throughout the app
+| have it again and it is very useful for retrieving our default values
+| throughout the app
 |
 */
 
