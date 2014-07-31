@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu WordPress\n"
-"POT-Creation-Date: 2014-07-31 12:43-0000\n"
-"PO-Revision-Date: 2014-07-31 12:44-0000\n"
+"POT-Creation-Date: 2014-07-31 12:51-0000\n"
+"PO-Revision-Date: 2014-07-31 12:51-0000\n"
 "Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
 "com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
@@ -168,7 +168,7 @@ msgid "Menu Depth"
 msgstr ""
 
 #: app/views/admin/page.phtml:317
-msgid "This is how deep into your menu tree will be visible (max 5)"
+msgid "This is how deep into your menu tree will be visible (max"
 msgstr ""
 
 #: app/views/admin/page.phtml:336
