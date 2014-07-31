@@ -103,7 +103,9 @@ class RM_AdminController extends RM_BaseController {
         
         if ( $file == 'responsive-menu/responsive-menu.php' ) :
 
-            $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=responsive-menu">Settings</a>';
+            $settings_link = '<a href="' . get_bloginfo('wpurl') . '/wp-admin/admin.php?page=responsive-menu">';
+            $settings_link .= __( 'Settings', 'responsive-menu' );
+            $settings_link .= '</a>';
             
             array_unshift( $links, $settings_link );
 
