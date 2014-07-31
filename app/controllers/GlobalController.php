@@ -16,8 +16,8 @@ class RM_GlobalController extends RM_BaseController {
         
         add_action( 'plugins_loaded', array( 'RM_GlobalController', 'Internationalise' ) );
         add_action( 'wp_enqueue_scripts', array( 'RM_GlobalController', 'jQuery' ) );
-        
-        
+
+         
     }
     
 
@@ -32,7 +32,7 @@ class RM_GlobalController extends RM_BaseController {
     static function jQuery() {
         
         
-        wp_enqueue_script( 'jquery' );
+        wp_enqueue_script( 'jquery' ); 
         
         
     }
@@ -52,6 +52,7 @@ class RM_GlobalController extends RM_BaseController {
     
     static function Internationalise() {
 
+        
         __( 'Highly Customisable Responsive Menu Plugin Created By Peter Featherstone', 'responsive-menu' );
         
         load_plugin_textdomain( 'responsive-menu', false, 'responsive-menu/translations/' );
