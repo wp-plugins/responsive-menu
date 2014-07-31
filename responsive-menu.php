@@ -31,7 +31,21 @@ Responsive Menu - A WordPress Responsive Menu Plugin
 @package  WordPress Responsive Menu
 @author   Peter Featherstone <hello@peterfeatherstone.com>
 
+|--------------------------------------------------------------------------
+| A note on Namespaces (or lack of)
+|--------------------------------------------------------------------------
+ 
+Unfortunately, due to ~70% non-support for NameSpaces all Classes are pre-fixed
+with the RM_ tag to avoid conflict, will be updated to use Namespaces when and 
+if it becomes a requirement for WordPress.
 
+It's a bit ugly but it's the best way for compatibility with other plug-ins and 
+all WordPress users.
+ 
+ ****************
+ * NOW LETS GO! *
+ ****************
+ 
 |--------------------------------------------------------------------------
 | Bootstrap The Application
 |--------------------------------------------------------------------------

@@ -52,8 +52,10 @@ class RM_GlobalController extends RM_BaseController {
     
     static function Internationalise() {
 
-        load_plugin_textdomain( 'responsive-menu', false, RM_Registry::get( 'config', 'plugin_base_dir' ) . '/translations/' );
 
+        load_plugin_textdomain( 'responsive-menu', false, 'responsive-menu/translations/' );
+
+        
     }
     
     
