@@ -2,6 +2,12 @@
 
 class FolderModel extends BaseModel {
     
+    /**
+     * Function to create the data folders
+     *
+     * @return null
+     * @added 1.6
+     */
     
     static function create() {
 

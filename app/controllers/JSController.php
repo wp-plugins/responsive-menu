@@ -3,15 +3,23 @@
 
 class JSController extends BaseController {
     
+        
+    /**
+     * Prepare our JavaScript for inclusion throughout the site
+     *
+     * @return null
+     * @added 1.0
+     */
     
     function prepare() {
 
+        
         if( Registry::get( 'options', 'RMExternal' ) ) :
 
+            
             $js = JSModel::getJs( 'strip_tags' );
         
-            if( Registry::get( 'options', 'RMMinify') == 'minify' )
-                $js = JSModel::Minify( $js );
+            $js = Registry::get( 'options', 'RMMinify') == 'minify' ? JSModel::Minify( $js ) : $js = $js;
         
             JSModel::createJSFile( $js );
 
@@ -20,25 +28,43 @@ class JSController extends BaseController {
         
         else :
 
+            
             $inFooter = self::inFooter() ? 'wp_footer' : 'wp_head';
+        
             add_action( $inFooter, array( 'JSController', 'addInline' ) ); 
                
-        endif;   
+            
+        endif;
         
-     
         
     }
+    
+        
+    /**
+     * Creates and echos the inline styles if used
+     *
+     * @return string
+     * @added 1.0
+     */
     
     function addInline() {
         
-        if( Registry::get( 'options', 'RMMinify' ) == 'minify' )
-            echo JSModel::Minify( JSModel::getJs() );
-        else 
-            echo JSModel::getJs();
+        
+        echo Registry::get( 'options', 'RMMinify' ) == 'minify' ? JSModel::Minify( JSModel::getJs() ) : JSModel::getJs();
             
+        
     }
     
+        
+    /**
+     * Adds the external scripts to the site if required
+     *
+     * @return null
+     * @added 1.4
+     */
+    
     function addExternal() {
+        
         
         wp_enqueue_script( 
 
@@ -49,7 +75,9 @@ class JSController extends BaseController {
             self::inFooter() 
 
         );
-                    
+             
+        
     }
+    
     
 }

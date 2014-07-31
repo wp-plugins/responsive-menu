@@ -3,6 +3,14 @@
 class CSSModel extends BaseModel {
     
     
+    /**
+     * Function to create the file to hold the CSS file
+     *
+     * @param string $css
+     * @return file
+     * @added 1.6
+     */
+    
     function createCSSFile( $css ) {
         
         
@@ -19,6 +27,14 @@ class CSSModel extends BaseModel {
         
         
     }
+    
+    /**
+     * Function to format, create and get the CSS itself
+     *
+     * @param string $args
+     * @return string
+     * @added 1.0
+     */
     
     function getCSS( $args = null ) {
 
@@ -420,6 +436,8 @@ class CSSModel extends BaseModel {
 
         return $css;
         
+        
     }
 
+    
 }

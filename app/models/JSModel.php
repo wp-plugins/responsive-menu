@@ -3,6 +3,14 @@
 class JSModel extends BaseModel {
     
     
+    /**
+     * Function to create the file to hold the JS file
+     *
+     * @param string $js
+     * @return file
+     * @added 1.6
+     */
+    
     function createJSFile( $js ) {
 
         
@@ -19,6 +27,15 @@ class JSModel extends BaseModel {
         
         
     }  
+    
+    
+    /**
+     * Function to format, create and get the JS itself
+     *
+     * @param string $args
+     * @return string
+     * @added 1.0
+     */
     
     function getJS( $args = null ) {
 
@@ -200,6 +217,7 @@ class JSModel extends BaseModel {
 
         return $js;
             
+        
     }
     
 

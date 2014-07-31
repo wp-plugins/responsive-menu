@@ -2,6 +2,14 @@
 
 class AdminModel extends BaseModel {
     
+        
+    /**
+     * Saves all the data from the admin page to the database
+     *
+     * @param  array  $data
+     * @return null
+     * @added 1.0
+     */
     
     public function save( $data ) {
     
@@ -219,6 +227,7 @@ class AdminModel extends BaseModel {
         Registry::set( 'options', $optionsArray );
 
         Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
+        
         
     }
     

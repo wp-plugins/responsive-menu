@@ -2,13 +2,18 @@
 
 class BaseController {
     
+    
+    /**
+     * Determines wether to display scripts in footer
+     *
+     * @return boolean
+     * @added 2.0
+     */
+    
     function inFooter() {
            
         
-        if( Registry::get( 'options', 'RMFooter' ) && Registry::get( 'options', 'RMFooter' ) == 'footer' )
-            return true;
-        else 
-            return false;
+        return Registry::get( 'options', 'RMFooter' ) && Registry::get( 'options', 'RMFooter' ) == 'footer' ?  true : false;
         
         
     }

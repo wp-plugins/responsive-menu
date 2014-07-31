@@ -1,13 +1,24 @@
 <?php
 
+
 class ResponsiveMenu {
     
     
+    /**
+     * Main Construct for the Whole Application
+     * Sets Registry and Default Values (if none present)
+     *
+     * @return null
+     * @added 2.0
+     */
+    
     public function __construct() {
+        
         
         if( !get_option( 'RMVer' ) )
                 add_option( 'RMVer', Registry::get( 'config', 'current_version' ) );
                 
+        
         if( !get_option( 'RMOptions' ) )
             add_option( 'RMOptions', Registry::get( 'defaults' ) );
         
@@ -18,8 +29,17 @@ class ResponsiveMenu {
         
     }
     
+        
+    /**
+     * The main application run function, this sets up all the magic and grunt
+     * work of the application, firing off all the different controllers.
+     *
+     * @return null
+     * @added 2.0
+     */
     
     public function run() {
+        
         
         add_action( 'plugins_loaded', array( 'GlobalController', 'Internationalise' ) );
         

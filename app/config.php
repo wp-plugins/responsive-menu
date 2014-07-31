@@ -1,5 +1,16 @@
 <?php
 
+
+/*
+|--------------------------------------------------------------------------
+| Configuration Settings
+|--------------------------------------------------------------------------
+|
+| Although some people aren't fans of array configurations, here we have one!
+| This is where we set paths and version numbers among other things.
+|
+*/
+
 $config = array( 
     
     
@@ -23,7 +34,29 @@ $config = array(
     
 );
 
+
+/*
+|--------------------------------------------------------------------------
+| Save Config to the Registry
+|--------------------------------------------------------------------------
+|
+| Again, some people don't like Registry's in PHP Applications, but here we
+| have one and is very useful for retrieving our settings throughout the app
+|
+*/
+
 Registry::set( 'config', $config );
+
+
+/*
+|--------------------------------------------------------------------------
+| Responsive Menu Defaults
+|--------------------------------------------------------------------------
+|
+| Another configuration array of type, this time we hold all the application
+| default options.
+|
+*/
 
 $defaults = array( 
     
@@ -176,5 +209,16 @@ $defaults = array(
 
     
 );
+
+
+/*
+|--------------------------------------------------------------------------
+| Save Defaults to the Registry
+|--------------------------------------------------------------------------
+|
+| Again, some people don't like Registry's in PHP Applications, but here we
+| have one and is very useful for retrieving our defaults throughout the app
+|
+*/
 
 Registry::set( 'defaults', $defaults );

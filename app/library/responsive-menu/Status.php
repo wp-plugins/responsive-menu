@@ -2,7 +2,24 @@
 
 class Status {
     
+    /**
+     * Static Array that holds all the current system statuses
+     *
+     * @param  array  $status
+     * @added 2.0
+     */
+    
     protected static $status = array();
+    
+    
+    /**
+     * Function to set a new status in the system
+     *
+     * @param  string  $type
+     * @param string $text
+     * @return null
+     * @added 2.0
+     */
     
     function set( $type, $text ) {
         
@@ -12,6 +29,12 @@ class Status {
         
     }
     
+    /**
+     * Function to retrieve all current statuses in the system
+     *
+     * @return array
+     * @added 2.0
+     */
     
     function get() {
         

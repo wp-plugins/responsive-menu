@@ -3,6 +3,12 @@
 
 class AdminController extends BaseController {
     
+    /**
+     * Create our admin menus.
+     *
+     * @return null
+     * @added 1.0
+     */
     
     function addMenus() {
 
@@ -21,6 +27,12 @@ class AdminController extends BaseController {
         
     }
     
+    /**
+     * Creates the main admin page and saves data
+     *
+     * @return null
+     * @added 1.0
+     */
     
     function adminPage() {
         
@@ -42,6 +54,12 @@ class AdminController extends BaseController {
         
     }
     
+    /**
+     * Adds the WordPress Colour Picker to the admin options page
+     *
+     * @return null
+     * @added 1.0
+     */
     
     function colorpicker(){ 
     

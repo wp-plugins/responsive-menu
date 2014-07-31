@@ -2,6 +2,16 @@
 
 class View {
     
+        
+    /**
+     * Create a new view for display throughout the application
+     * Users .phtml files found in the app/views folder
+     *
+     * @param  string  $page
+     * @param mixed $data
+     * @return null
+     * @added 2.0
+     */
     
     function make( $page, $data ) {
         
@@ -13,6 +23,14 @@ class View {
         
     }
     
+    
+    /**
+     * Function to Check the current View Port Tag on the site
+     *
+     * @return string
+     * @added 2.0
+     */
+    
     function checkViewPortTag() {
 
         
@@ -23,6 +41,15 @@ class View {
         
         
     }
+    
+    
+    /**
+     * Function to format and display the status bar in the admin pages
+     *
+     * @param  array  $status
+     * @return string
+     * @added 2.0
+     */
     
     function statusBar( $status ) {
 
@@ -38,7 +65,8 @@ class View {
         endforeach;
 
         return $message;
-                    
+                
+        
     }
     
     
