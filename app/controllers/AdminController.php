@@ -54,9 +54,9 @@ class RM_AdminController extends RM_BaseController {
     static function adminPage() {
         
         
-        if( isset( $_POST['RMSubmit'] ) ) :
+        if( RM_Input::post( 'RMSubmit' ) ) :
             
-            RM_AdminModel::save( $_POST );
+            RM_AdminModel::save( RM_Input::post() );
         
             if( RM_Registry::get( 'options', 'RMExternal' ) ) : 
                 

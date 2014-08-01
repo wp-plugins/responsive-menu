@@ -21,6 +21,8 @@ require_once 'library/responsive-menu/View.php';
 
 require_once 'library/responsive-menu/Status.php';
 
+require_once 'library/responsive-menu/Input.php';
+
 require_once 'controllers/BaseController.php';
 
 require_once 'controllers/AdminController.php';
