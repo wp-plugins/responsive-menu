@@ -45,7 +45,7 @@ class RM_AdminController extends RM_BaseController {
     }
     
     /**
-     * Creates the main admin page and saves data
+     * Creates the main admin page and saves the data if submitted
      *
      * @return null
      * @added 1.0
