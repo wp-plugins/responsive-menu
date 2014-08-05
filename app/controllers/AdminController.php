@@ -13,10 +13,25 @@ class RM_AdminController extends RM_BaseController {
     
     static function prepare() {
         
-        add_action( 'admin_menu', array( 'RM_AdminController', 'addMenus' ) );
-        add_action( 'admin_enqueue_scripts', array( 'RM_AdminController', 'colorpicker' ) );
-        add_filter( 'plugin_action_links', array( 'RM_AdminController', 'addSettingsLink' ), 10, 2 );
+        // Check that we are in the admin area
+        if( is_admin() ) : 
+            
         
+            add_filter( 'plugin_action_links', array( 'RM_AdminController', 'addSettingsLink' ), 10, 2 );
+            add_action( 'admin_menu', array( 'RM_AdminController', 'addMenus' ) );
+        
+        
+            // Specifically for Responsive Menu Page
+            if( isset( $_GET['page'] ) && $_GET['page'] == 'responsive-menu' ) :
+
+                add_action( 'admin_enqueue_scripts', array( 'RM_AdminController', 'colorpicker' ) );
+
+            endif;
+        
+            
+        endif;
+        
+
     }
     
     
