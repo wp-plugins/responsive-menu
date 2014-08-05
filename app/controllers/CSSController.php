@@ -17,16 +17,6 @@ class RM_CSSController extends RM_BaseController {
         if( RM_Registry::get( 'options', 'RMExternal' ) ) :
 
             
-            $css = RM_CSSModel::getCSS( 'strip_tags' );
-
-        
-            if( RM_Registry::get( 'options', 'RMMinify') == 'minify' )
-                    $css = RM_CSSModel::Minify( $css );
-            
-            
-            RM_CSSModel::createCSSFile( $css );
-            
-            
             add_action( 'wp_enqueue_scripts', array( 'RM_CSSController', 'addExternal' ) );
             
             

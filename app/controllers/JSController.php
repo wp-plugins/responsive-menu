@@ -17,14 +17,8 @@ class RM_JSController extends RM_BaseController {
         if( RM_Registry::get( 'options', 'RMExternal' ) ) :
 
             
-            $js = RM_JSModel::getJs( 'strip_tags' );
-        
-            $js = RM_Registry::get( 'options', 'RMMinify') == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js;
-        
-            RM_JSModel::createJSFile( $js );
-
             add_action( 'wp_enqueue_scripts', array( 'RM_JSController', 'addExternal' ) );
- 
+        
         
         else :
 
