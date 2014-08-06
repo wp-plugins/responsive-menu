@@ -33,7 +33,7 @@ class RM_Input {
     static function post( $name = null ) {
         
         
-        return $name ? $_POST[$name] : $_POST;
+        return $name && isset( $_POST[$name] ) ? $_POST[$name] : $_POST;
         
         
     }
@@ -49,7 +49,7 @@ class RM_Input {
     static function get( $name = null ) {
         
         
-        return $name ? $_GET[$name] : $_GET;
+        return $name && isset( $_GET[$name] ) ? $_GET[$name] : $_GET;
         
         
     }
