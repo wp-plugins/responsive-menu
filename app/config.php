@@ -205,8 +205,14 @@ $defaults = array(
     'RMX' => false,
     
     
-    'RMMinWidth' => null
+    'RMMinWidth' => null,
 
+    
+    /* Added in 2.0 */
+    
+    'RMExpandPar' => true,
+    
+    'RMIgnParCli' => false
     
 );
 

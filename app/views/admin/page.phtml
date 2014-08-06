@@ -454,6 +454,37 @@
                     </td>                
                 </tr>  
                 
+                <tr>
+                    <td>
+                        <h4><?php _e( 'Auto Expand Current Parent Items', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to make the current pages children expanded automatically', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMExpandPar" 
+                            id="RMExpandPar"
+                            value="expand"
+                            <?php echo isset( $data['RMExpandPar'] ) && $data['RMExpandPar'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                            />
+       
+                    
+                    </td>
+                    <td>
+                        <h4><?php _e( 'Ignore Parent Clicks', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to ignore clicks on parent links', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMIgnParCli" 
+                            id="RMIgnParCli"
+                            value="ignoreparentclick"
+                            <?php echo isset( $data['RMIgnParCli'] ) && $data['RMIgnParCli'] == 'ignoreparentclick' ? ' checked="checked" ' : ''; ?>
+                            />
+                    </td>                
+                </tr>  
+                
             </table>
                 
             <hr />

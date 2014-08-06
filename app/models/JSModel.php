@@ -78,6 +78,33 @@ class RM_JSModel extends RM_BaseModel {
         
         endif;
             
+        /* Added 2.0 to stop clicks on the main parent items */
+        
+        $parentClick = "";
+        
+        if( $options['RMIgnParCli'] ) :
+            
+            $parentClick = "
+                
+                \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
+                    e.preventDefault();
+                });";
+
+        endif;
+        
+        $expandChildren = "";
+        
+        if( $options['RMExpandPar'] ) :
+            
+            $expandChildren = "
+                
+                \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+                \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+
+            ";
+                
+        endif;
+        
         $js = '';
         
         if( $args != 'strip_tags' ) : 
@@ -92,6 +119,8 @@ class RM_JSModel extends RM_BaseModel {
 
             \$RMjQuery( document ).ready( function( ) {
             
+                $parentClick
+                    
                 var isOpen = false;
 
                 \$RMjQuery( document ).on( 'click', '#click-menu', function() {
@@ -206,6 +235,8 @@ class RM_JSModel extends RM_BaseModel {
             } );";
 
     endif;
+    
+        $js .= $expandChildren;
     
         $js .= "}); ";
 

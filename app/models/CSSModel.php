@@ -381,7 +381,7 @@ class RM_CSSModel extends RM_BaseModel {
             $css .= "
                 
                 #responsive-menu .responsive-menu li .appendLink,
-                #responsive-menu .responsive-menu li li { display: none; }
+                #responsive-menu .responsive-menu li li { display: none !important; }
 
             ";
 
@@ -392,7 +392,7 @@ class RM_CSSModel extends RM_BaseModel {
             $css .= "
                 
                 #responsive-menu .responsive-menu li li .appendLink,
-                #responsive-menu .responsive-menu li li li { display: none; }
+                #responsive-menu .responsive-menu li li li { display: none !important; }
 
             ";
         
@@ -403,7 +403,7 @@ class RM_CSSModel extends RM_BaseModel {
             $css .= "
                 
                 #responsive-menu .responsive-menu li li li .appendLink,
-                #responsive-menu .responsive-menu li li li li { display: none; }
+                #responsive-menu .responsive-menu li li li li { display: none !important; }
 
             ";
         
@@ -414,7 +414,18 @@ class RM_CSSModel extends RM_BaseModel {
             $css .= "
                 
                 #responsive-menu .responsive-menu li li li li .appendLink,
-                #responsive-menu .responsive-menu li li li li li { display: none; }
+                #responsive-menu .responsive-menu li li li li li { display: none !important; }
+
+            ";
+
+        endif;
+        
+        if( $options['RMDepth'] == 5 ) :
+            
+            $css .= "
+                
+                #responsive-menu .responsive-menu li li li li li .appendLink,
+                #responsive-menu .responsive-menu li li li li li li { display: none !important; }
 
             ";
 
@@ -423,13 +434,14 @@ class RM_CSSModel extends RM_BaseModel {
         $css .= " }";
 
         $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: relative{$important} left: 0px; } " : '';
-
+        
+        /* Finally Add The tag at the end only if it's an inline style */
         if( $args != 'strip_tags' ) : 
 
             $css .= "</style> ";
         
         endif;
-
+        
         return $css;
         
         

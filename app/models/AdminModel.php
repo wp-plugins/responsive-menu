@@ -114,6 +114,13 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMMinWidth = isset( $data['RMMinWidth'] ) ? $data['RMMinWidth'] : RM_Registry::get( 'defaults', 'RMMinWidthRM' );
 
+        /* Added in 2.0 */
+        
+        $RMExpandPar = isset( $data['RMExpandPar'] ) ? $data['RMExpandPar'] : false;
+        
+        $RMIgnParCli = isset( $data['RMIgnParCli'] ) ? $data['RMIgnParCli'] : RM_Registry::get( 'defaults', 'RMIgnParCli' );
+        
+        
         $optionsArray = array(
             
             // Filter Input Correctly
@@ -214,8 +221,14 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMX' => self::Filter( $RMX ),
             
-            'RMMinWidth' => intval( $RMMinWidth )
+            'RMMinWidth' => intval( $RMMinWidth ),
 
+            /* Added in 2.0 */
+            
+            'RMExpandPar' => self::Filter( $RMExpandPar ),
+            
+            'RMIgnParCli' => self::Filter( $RMIgnParCli )
+                
         );
 
         // Update Submitted Options 

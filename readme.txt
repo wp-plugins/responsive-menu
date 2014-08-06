@@ -8,11 +8,11 @@ Stable tag: 2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This is a Highly Customisable Responsive Menu Created By Peter Featherstone @ Network Intellect.
+This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 45 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 47 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -55,13 +55,15 @@ This is a Highly Customisable Responsive Menu Plugin, with 45 customisable optio
 <li> - Choice to auto-close menu items on click (for single page sites)</li>
 <li> - Choice to replace 3 lines with an x on click</li>
 <li> - Minimum width of menu</li>
+<li> - Choice to Auto Expand Parent Links</li>
+<li> - Choice to ignore links on ancestor links</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left or right, again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
 <br /><br />
-It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 45 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
+It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 47 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
 <br /><br />
 You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS) and there is even an option to minify the output if you wish saving a further 50% on file space.
 <br /><br />
@@ -74,11 +76,9 @@ It also includes the following functionality:
 On the current development list for the next update are the following:
 <ul>
 <li> - Colour for active parent menu link</li>
-<li> - Auto-Expand parent menu items option</li>
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
 <li> - Add fixed width menu option</li>
-<li> - Option to ignore parent link clicks</li>
 <li> - Option to change expand menu symbol</li>
 <li> - Option to change title menu link</li>
 <li> - Shortcode support</li>
@@ -123,6 +123,8 @@ Alternatively:
 * Added Spanish Translation - Massive thanks to Andrew @ <a href="http://www.webhostinghub.com">WebHostingHub</a> for this!
 * 'Double Click' menu bug fixed
 * Various bug fixes
+* Added Choice to Auto Expand Parent Links
+* Added Choice to ignore links on ancestor links
 
 = 1.9 (5th Apr 2014) =
 
