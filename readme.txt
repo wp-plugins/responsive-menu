@@ -69,21 +69,19 @@ It also includes the following functionality:
 <ul>
 <li> - WPML/Polylang Support</li>
 <li> - Croatian translation - Massive thanks to <a href="https://www.facebook.com/pages/Neverone-design/490262371018076">Neverone Design</a> for this!</li>
+<li> - Spanish Translation - Massive thanks to Andrew @ <a href="http://www.webhostinghub.com">WebHostingHub</a> for this!</li>
 </ul>
 On the current development list for the next update are the following:
 <ul>
 <li> - Colour for active parent menu link</li>
 <li> - Auto-Expand parent menu items option</li>
-<li> - Spanish language translation</li>
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
 <li> - Add fixed width menu option</li>
 <li> - Option to ignore parent link clicks</li>
-<li> - Option to place menu on left or right</li>
 <li> - Option to change expand menu symbol</li>
-<li> - Increase menu depth to 5</li>
 <li> - Option to change title menu link</li>
-<li> - Shortcode support to enable multiple menus</li>
+<li> - Shortcode support</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
@@ -117,6 +115,14 @@ Alternatively:
 5. Example Custom Front End Expanded Menu
 
 == Changelog ==
+
+= 2.0 (6th Aug 2014) =
+
+* Complete overhaul of the codebase
+* Increased menu depth to 5
+* Added Spanish Translation - Massive thanks to Andrew @ <a href="http://www.webhostinghub.com">WebHostingHub</a> for this!
+* 'Double Click' menu bug fixed
+* Various bug fixes
 
 = 1.9 (5th Apr 2014) =
 
