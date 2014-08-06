@@ -64,7 +64,7 @@ class RM_JSController extends RM_BaseController {
 
             'responsive-menu', 
             RM_Registry::get( 'config', 'plugin_data_uri' ) . 'js/responsive-menu-' . get_current_blog_id() . '.js', 
-            'jquery', 
+            'jquery.mobile', 
             '1.0', 
             self::inFooter() 
 

@@ -120,6 +120,8 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMIgnParCli = isset( $data['RMIgnParCli'] ) ? $data['RMIgnParCli'] : RM_Registry::get( 'defaults', 'RMIgnParCli' );
         
+        $RMCliToClo = isset( $data['RMCliToClo'] ) ? $data['RMCliToClo'] : RM_Registry::get( 'defaults', 'RMCliToClo' );
+        
         
         $optionsArray = array(
             
@@ -227,7 +229,9 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMExpandPar' => self::Filter( $RMExpandPar ),
             
-            'RMIgnParCli' => self::Filter( $RMIgnParCli )
+            'RMIgnParCli' => self::Filter( $RMIgnParCli ),
+            
+            'RMCliToClo' => self::Filter( $RMCliToClo )
                 
         );
 

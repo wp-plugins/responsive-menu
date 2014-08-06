@@ -26,6 +26,9 @@ $config = array(
     'plugin_base_dir' => dirname( plugin_dir_path( __FILE__ ) ),
     
     
+    'plugin_base_uri' => plugin_dir_url( dirname( __FILE__ ) ),
+    
+    
     'plugin_data_uri' => plugin_dir_url( dirname( dirname( __FILE__ ) ) ) . 'responsive-menu-data/',
     
     
@@ -212,7 +215,9 @@ $defaults = array(
     
     'RMExpandPar' => true,
     
-    'RMIgnParCli' => false
+    'RMIgnParCli' => false,
+    
+    'RMCliToClo' => false
     
 );
 

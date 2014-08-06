@@ -92,6 +92,8 @@ class RM_JSModel extends RM_BaseModel {
 
         endif;
         
+        /* Added 2.0 to automatically expand children links of parents */
+        
         $expandChildren = "";
         
         if( $options['RMExpandPar'] ) :
@@ -105,6 +107,10 @@ class RM_JSModel extends RM_BaseModel {
                 
         endif;
         
+        /* Added 2.0 to close menu on page clicks */
+    
+        $clickToClose = $options['RMCliToClo'] ? "\$RMjQuery( document ).on( 'click tap', function( e ) { if( !\$RMjQuery( e.target ).closest( '#responsive-menu, #click-menu' ).length ) { closeRM(); } } );" : "";
+
         $js = '';
         
         if( $args != 'strip_tags' ) : 
@@ -120,6 +126,7 @@ class RM_JSModel extends RM_BaseModel {
             \$RMjQuery( document ).ready( function( ) {
             
                 $parentClick
+                $clickToClose
                     
                 var isOpen = false;
 

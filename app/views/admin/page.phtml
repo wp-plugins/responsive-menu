@@ -425,7 +425,7 @@
                 
                           <tr>
                     <td>
-                        <h4><?php _e( 'Close menu on click', 'responsive-menu' ); ?></h4> 
+                        <h4><?php _e( 'Click to Close Menu on Link Click', 'responsive-menu' ); ?></h4> 
 
                         <h5><?php _e( 'Tick if you would like to close the menu on each link click, useful for single page sites', 'responsive-menu' ); ?></h5>
 
@@ -482,6 +482,31 @@
                             value="ignoreparentclick"
                             <?php echo isset( $data['RMIgnParCli'] ) && $data['RMIgnParCli'] == 'ignoreparentclick' ? ' checked="checked" ' : ''; ?>
                             />
+                    </td>                
+                </tr>  
+                
+                <tr>
+                    <td>
+                        <h4><?php _e( 'Click to Close Menu on Page Click', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to close the current menu on page clicks', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMCliToClo" 
+                            id="RMCliToClo"
+                            value="clicktoclose"
+                            <?php echo isset( $data['RMCliToClo'] ) && $data['RMCliToClo'] == 'clicktoclose' ? ' checked="checked" ' : ''; ?>
+                            />
+       
+                    
+                    </td>
+                    <td>
+                        <h4><?php _e( '', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( '', 'responsive-menu' ); ?></h5>
+
+
                     </td>                
                 </tr>  
                 
