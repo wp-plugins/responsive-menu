@@ -53,6 +53,11 @@
                 box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
             }
             
+            #RMVersion.beta
+            {
+                border-color: orange;
+            }
+            
             @media only screen and ( min-width : 0px ) and ( max-width : 600px ) { 
 
                 table, table td, table tr
@@ -115,7 +120,10 @@
 
         <div class="wrap">
 
-            <div id="RMVersion">Version <?php echo RM_Registry::get( 'config', 'current_version' ); ?></div>
+            <div id="RMVersion" <?php echo RM_Registry::get( 'config', 'is_beta' ) ? 'class="beta"' : ''; ?>>
+                Version <?php echo RM_Registry::get( 'config', 'current_version' ); ?> 
+                <?php echo RM_Registry::get( 'config', 'is_beta' ) ? 'Beta' : ''; ?>
+            </div>
             
             <form action="" method="post">
 
