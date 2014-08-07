@@ -44,6 +44,7 @@ class ResponsiveMenu {
         RM_InstallController::prepare();
         RM_UpgradeController::upgrade();
         RM_GlobalController::prepare();
+        RM_FrontController::prepare();
         RM_AdminController::prepare();
         RM_HTMLController::prepare();
         RM_CSSController::prepare();

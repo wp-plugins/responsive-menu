@@ -16,7 +16,6 @@ class RM_GlobalController extends RM_BaseController {
         
         add_action( 'plugins_loaded', array( 'RM_GlobalController', 'Internationalise' ) );
         add_action( 'wp_enqueue_scripts', array( 'RM_GlobalController', 'jQuery' ) );
-        add_action( 'wp_enqueue_scripts', array( 'RM_GlobalController', 'jQueryMobile' ) );
 
          
     }
@@ -36,21 +35,6 @@ class RM_GlobalController extends RM_BaseController {
         wp_enqueue_script( 'jquery' ); 
         
         
-    }
-    
-    /**
-     * Makes sure jQuery Mobile is added to all pages as it is needed for some of the functions
-     * to work
-     *
-     * @return null
-     * @added 2.0
-     */
-    
-    static function jQueryMobile() {
-        
-        wp_register_script( 'touch', RM_Registry::get( 'config', 'plugin_base_uri' ) . 'public/js/touch.js', 'jquery', '', false );
-	wp_enqueue_script( 'touch' ); 
-
     }
     
     
