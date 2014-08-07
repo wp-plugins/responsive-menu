@@ -2,11 +2,11 @@
 
 <div id="responsive-menu">
 
-    <?php if ($data['RMTitle'] || $data['RMImage']) : ?>
+    <?php if( $data['RMTitle'] || $data['RMImage'] ) : ?>
 
         <div id="responsive-menu-title">
 
-            <?php if ($data['RMImage']) : ?>
+            <?php if( $data['RMImage'] ) : ?>
 
                 <a href="<?php echo get_home_url(); ?>">
                     <img src="<?php echo $data['RMImage']; ?>" 
@@ -20,38 +20,36 @@
             <a href="<?php echo get_home_url(); ?>"><?php echo $data['RMTitle']; ?></a>
 
         </div>
-    <?php endif; ?>
+    
+    <?php endif;
 
-    <?php
+        if( !$data['RMSearch'] && $data['RMSearchPos'] == 'above' )
+            RM_View::searchBar();
+        
+    
         wp_nav_menu(array(
         'menu' => $data['RM'],
         'menu_class' => 'responsive-menu'));
 
-    if (!$data['RMSearch']) :
-        ?>
+        
+    if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' )
+        RM_View::searchBar();
 
-        <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
-
-            <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
-            <input type="submit" style="display: none;" />
-            
-        </form>
-
-<?php endif; ?>
-
+    ?>
+    
 </div>
 
 <!-- Click Menu added by Responsive Menu -->
 
 <div id="click-menu">
 
-<?php if ($data['RMX']) : ?>
+<?php if( $data['RMX'] ) : ?>
 
         <div class="threeLines" id="RMX">x</div>
 
     <?php endif; ?>
 
-<?php if (!$data['RMClickImg']) : ?>
+<?php if( !$data['RMClickImg'] ) : ?>
 
 
         <div class="threeLines" id="RM3Lines">       
@@ -66,7 +64,7 @@
 
     <?php endif; ?>
 
-<?php if ($data['RMClickTitle']) : ?>
+<?php if( $data['RMClickTitle'] ) : ?>
 
         <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
 

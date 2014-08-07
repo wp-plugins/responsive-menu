@@ -417,17 +417,24 @@
                     </td>
                     <td>
                     
-                        <h4><?php _e( 'Auto Expand Sub-Menus', 'responsive-menu' ); ?></h4> 
+                        <h4><?php _e( 'Search Box Positioning', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Tick if you would like sub-menus to be automatically expanded', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'Select where you would like the search box to appear', 'responsive-menu' ); ?></h5>
 
-                        <input 
-                            type="checkbox" 
-                            name="RMExpand" 
-                            id="RMExpand"
-                            value="expand"
-                            <?php echo isset( $data['RMExpand'] ) && $data['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
-                            />
+                        <select name="RMSearchPos">
+
+                            <option 
+                                value="above"
+                                <?php echo isset( $data['RMSearchPos']) && 'above' == $data['RMSearchPos'] ? ' selected="selected " ' : ''; ?>>
+                                <?php _e( 'Above Menu Links', 'responsive-menu' ); ?>
+                            </option>
+                            <option 
+                                value="below"
+                                <?php echo isset($data['RMSearchPos']) && 'below' == $data['RMSearchPos'] ? ' selected="selected " ' : ''; ?>>
+                                <?php _e( 'Below Menu Links', 'responsive-menu' ); ?>
+                            </option>  
+
+                        </select>
 
                     </td>                
                 </tr>  
@@ -544,7 +551,18 @@
                     
                     </td>
                     <td>
+                        
+                        <h4><?php _e( 'Auto Expand Sub-Menus', 'responsive-menu' ); ?></h4> 
 
+                        <h5><?php _e( 'Tick if you would like sub-menus to be automatically expanded', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMExpand" 
+                            id="RMExpand"
+                            value="expand"
+                            <?php echo isset( $data['RMExpand'] ) && $data['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                            />
 
                     </td>                
                 </tr>  

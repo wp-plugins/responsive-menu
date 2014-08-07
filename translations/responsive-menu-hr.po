@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu WordPress\n"
-"POT-Creation-Date: 2014-08-07 15:41-0000\n"
-"PO-Revision-Date: 2014-08-07 15:42-0000\n"
+"POT-Creation-Date: 2014-08-07 16:02-0000\n"
+"PO-Revision-Date: 2014-08-07 16:02-0000\n"
 "Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
 "com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
@@ -26,17 +26,19 @@ msgid "Responsive Menu"
 msgstr "Responsive Menu"
 
 #: app/controllers/AdminController.php:135
+#, fuzzy
 msgid "Settings"
-msgstr ""
+msgstr "Postavke izbornika"
 
 #: app/controllers/GlobalController.php:57
 msgid ""
 "Highly Customisable Responsive Menu Plugin Created By Peter Featherstone"
 msgstr ""
 
-#: app/models/AdminModel.php:250
+#: app/models/AdminModel.php:254
+#, fuzzy
 msgid "You have successfully updated the Responsive Menu options"
-msgstr ""
+msgstr "Ažuriraj mogućnosti Responsive Menu-a"
 
 #: app/models/CSSModel.php:24
 msgid "Unable to create CSS file"
@@ -75,8 +77,9 @@ msgid "Viewport Meta Tag Not Found"
 msgstr "Viewport Meta Tag nije pronađen"
 
 #: app/views/admin/page.phtml:174
+#, fuzzy
 msgid "Recommended Metaport Tag"
-msgstr ""
+msgstr "Preporučeno"
 
 #: app/views/admin/page.phtml:182
 msgid "Menu Settings"
@@ -111,8 +114,9 @@ msgid "This is the title under the 3 lines of the menu button"
 msgstr "Ovo je naslov ispod tri linije dugmeta za izbornik"
 
 #: app/views/admin/page.phtml:238
+#, fuzzy
 msgid "Click Menu Image"
-msgstr ""
+msgstr "Slika izbornika"
 
 #: app/views/admin/page.phtml:240
 msgid ""
@@ -140,17 +144,17 @@ msgstr "Strana klizanja"
 msgid "This is the side of the screen from which the menu will slide"
 msgstr "Ovo je strana ekrana od koje če se otvarati izbornik"
 
-#: app/views/admin/page.phtml:299 app/views/admin/page.phtml:931
-#: app/views/admin/page.phtml:938
+#: app/views/admin/page.phtml:299 app/views/admin/page.phtml:949
+#: app/views/admin/page.phtml:956
 msgid "Left"
 msgstr "Lijevo"
 
-#: app/views/admin/page.phtml:305 app/views/admin/page.phtml:576
-#: app/views/admin/page.phtml:948
+#: app/views/admin/page.phtml:305 app/views/admin/page.phtml:594
+#: app/views/admin/page.phtml:966
 msgid "Right"
 msgstr "Desno"
 
-#: app/views/admin/page.phtml:311 app/views/admin/page.phtml:562
+#: app/views/admin/page.phtml:311 app/views/admin/page.phtml:580
 msgid "Top"
 msgstr "Vrh"
 
@@ -170,10 +174,10 @@ msgstr ""
 "Ovo je točka od koje će se Responsive Menu pojavljivati u web-preglednicima "
 "(u pikselima)"
 
-#: app/views/admin/page.phtml:342 app/views/admin/page.phtml:571
-#: app/views/admin/page.phtml:890 app/views/admin/page.phtml:907
-#: app/views/admin/page.phtml:921 app/views/admin/page.phtml:965
-#: app/views/admin/page.phtml:1030 app/views/admin/page.phtml:1044
+#: app/views/admin/page.phtml:342 app/views/admin/page.phtml:589
+#: app/views/admin/page.phtml:908 app/views/admin/page.phtml:925
+#: app/views/admin/page.phtml:939 app/views/admin/page.phtml:983
+#: app/views/admin/page.phtml:1048 app/views/admin/page.phtml:1062
 msgid "px"
 msgstr "px"
 
@@ -187,7 +191,7 @@ msgid ""
 msgstr ""
 "Ovo je CSS izbornika kojeg želite sakriti jednom kada se izbornik pojavi"
 
-#: app/views/admin/page.phtml:349 app/views/admin/page.phtml:1098
+#: app/views/admin/page.phtml:349 app/views/admin/page.phtml:1116
 msgid "e.g"
 msgstr "npr."
 
@@ -207,10 +211,10 @@ msgstr "Širina izbornika"
 msgid "This is the width the menu takes up across the page once expanded"
 msgstr "Ovo je širina koju izbornik zauzima preko ekrana kada se otvori"
 
-#: app/views/admin/page.phtml:386 app/views/admin/page.phtml:883
-#: app/views/admin/page.phtml:900 app/views/admin/page.phtml:914
-#: app/views/admin/page.phtml:931 app/views/admin/page.phtml:958
-#: app/views/admin/page.phtml:1114 app/views/admin/page.phtml:1128
+#: app/views/admin/page.phtml:386 app/views/admin/page.phtml:901
+#: app/views/admin/page.phtml:918 app/views/admin/page.phtml:932
+#: app/views/admin/page.phtml:949 app/views/admin/page.phtml:976
+#: app/views/admin/page.phtml:1132 app/views/admin/page.phtml:1146
 msgid "default"
 msgstr "Zadano"
 
@@ -223,86 +227,118 @@ msgid "Tick if you would like to remove the search box"
 msgstr "Označite ovo ako želite ukloniti tražilicu"
 
 #: app/views/admin/page.phtml:420
-msgid "Auto Expand Sub-Menus"
-msgstr "Automatsko otvaranje podstavki"
+#, fuzzy
+msgid "Search Box Positioning"
+msgstr "Ukloniti tražilicu"
 
 #: app/views/admin/page.phtml:422
-msgid "Tick if you would like sub-menus to be automatically expanded"
-msgstr "Označite ako želite da se podstavke izbornika automatski otvaraju"
+#, fuzzy
+msgid "Select where you would like the search box to appear"
+msgstr "Označite ovo ako želite ukloniti tražilicu"
 
-#: app/views/admin/page.phtml:438
+#: app/views/admin/page.phtml:429
+#, fuzzy
+msgid "Above Menu Links"
+msgstr "Ovo je boja teksta poveznica u otvorenom izborniku"
+
+#: app/views/admin/page.phtml:434
+#, fuzzy
+msgid "Below Menu Links"
+msgstr "Ovo je boja teksta poveznica u otvorenom izborniku"
+
+#: app/views/admin/page.phtml:445
 msgid "Include CSS/JS as external files"
 msgstr "Uključiti CSS/JS kao vanjske datoteke"
 
-#: app/views/admin/page.phtml:440
+#: app/views/admin/page.phtml:447
 msgid "Tick if you would like to include CSS and jQuery as external files"
 msgstr "Označite ovo ako želite uključiti CSS i jQuery kao vanjske datoteke"
 
-#: app/views/admin/page.phtml:453
+#: app/views/admin/page.phtml:460
 msgid "Include script in footer"
 msgstr "Uključiti skriptu u footer"
 
-#: app/views/admin/page.phtml:455
+#: app/views/admin/page.phtml:462
 msgid "Tick if you would like to include your jQuery script in footer"
 msgstr "Označite ovo ako želite uključiti vašu jQuery skriptu u footer"
 
-#: app/views/admin/page.phtml:470
+#: app/views/admin/page.phtml:477
+#, fuzzy
 msgid "Click to Close Menu on Link Click"
-msgstr ""
+msgstr "Veličina slova za dugme za klik"
 
-#: app/views/admin/page.phtml:472
+#: app/views/admin/page.phtml:479
+#, fuzzy
 msgid ""
 "Tick if you would like to close the menu on each link click, useful for "
 "single page sites"
 msgstr ""
+"Označite ovo ako želite da dugme za izbornik ostane na istom mjestu prilikom "
+"navigiranja kroz stranicu"
 
-#: app/views/admin/page.phtml:485
+#: app/views/admin/page.phtml:492
 msgid "Minify output"
 msgstr ""
 
-#: app/views/admin/page.phtml:487
+#: app/views/admin/page.phtml:494
+#, fuzzy
 msgid ""
 "Tick if you would like to minify the script/style output. Saves up to 50% in "
 "file size"
-msgstr ""
+msgstr "Označite ovo ako želite uključiti vašu jQuery skriptu u footer"
 
-#: app/views/admin/page.phtml:501
+#: app/views/admin/page.phtml:508
+#, fuzzy
 msgid "Auto Expand Current Parent Items"
-msgstr ""
+msgstr "Automatsko otvaranje podstavki"
 
-#: app/views/admin/page.phtml:503
+#: app/views/admin/page.phtml:510
+#, fuzzy
 msgid ""
 "Tick if you would like to make the current pages children expanded "
 "automatically"
-msgstr ""
+msgstr "Označite ako želite da se podstavke izbornika automatski otvaraju"
 
-#: app/views/admin/page.phtml:516
+#: app/views/admin/page.phtml:523
 msgid "Ignore Parent Clicks"
 msgstr ""
 
-#: app/views/admin/page.phtml:518
+#: app/views/admin/page.phtml:525
+#, fuzzy
 msgid "Tick if you would like to ignore clicks on parent links"
-msgstr ""
+msgstr "Označite ovo ako želite uključiti vašu jQuery skriptu u footer"
 
-#: app/views/admin/page.phtml:532
+#: app/views/admin/page.phtml:539
+#, fuzzy
 msgid "Click to Close Menu on Page Click"
-msgstr ""
+msgstr "Veličina slova za dugme za klik"
 
-#: app/views/admin/page.phtml:534
+#: app/views/admin/page.phtml:541
+#, fuzzy
 msgid "Tick if you would like to close the current menu on page clicks"
 msgstr ""
+"Označite ovo ako želite da dugme za izbornik ostane na istom mjestu prilikom "
+"navigiranja kroz stranicu"
 
-#: app/views/admin/page.phtml:556
+#: app/views/admin/page.phtml:555
+msgid "Auto Expand Sub-Menus"
+msgstr "Automatsko otvaranje podstavki"
+
+#: app/views/admin/page.phtml:557
+msgid "Tick if you would like sub-menus to be automatically expanded"
+msgstr "Označite ako želite da se podstavke izbornika automatski otvaraju"
+
+#: app/views/admin/page.phtml:574
 msgid "Location Settings"
 msgstr "Postavke pozicije"
 
-#: app/views/admin/page.phtml:564
+#: app/views/admin/page.phtml:582
 msgid ""
 "This is the distance from the top of the page in px that the menu will be "
 "displayed"
 msgstr "Ovo je udaljenost od vrha stranice po kojem će se ravnati izbornik"
 
-#: app/views/admin/page.phtml:578
+#: app/views/admin/page.phtml:596
 msgid ""
 "This is the distance from the right of the page in % that the menu will be "
 "displayed"
@@ -310,140 +346,156 @@ msgstr ""
 "Ovo je udaljenost od desnog ruba stranice u postotcima po kojem će se "
 "ravnati izbornik"
 
-#: app/views/admin/page.phtml:593
+#: app/views/admin/page.phtml:611
 msgid "Colour Settings"
 msgstr "Postavke boja"
 
-#: app/views/admin/page.phtml:595
+#: app/views/admin/page.phtml:613
+#, fuzzy
 msgid "Background Colours"
-msgstr ""
+msgstr "Pozadinska boja trenutne stranice"
 
-#: app/views/admin/page.phtml:599
+#: app/views/admin/page.phtml:617
+#, fuzzy
 msgid "Click Menu"
-msgstr ""
+msgstr "Veličina slova za dugme za klik"
 
-#: app/views/admin/page.phtml:607
+#: app/views/admin/page.phtml:625
 msgid "Menu Line & Text Colour"
 msgstr "Boja crta i teksta izbornika"
 
-#: app/views/admin/page.phtml:609
+#: app/views/admin/page.phtml:627
 msgid "This is the colour of the 3 lines and text for the menu button"
 msgstr "Ovo je boja tri crte i teksta dugmeta za izbornik"
 
-#: app/views/admin/page.phtml:622
+#: app/views/admin/page.phtml:640
 msgid "Menu Button Background Colour"
 msgstr "Boja pozadine dugmeta za izbornik"
 
-#: app/views/admin/page.phtml:624
+#: app/views/admin/page.phtml:642
 msgid "This is the background colour of the 3 lines container"
 msgstr "Ovo je boja pozadine dugmeta sa tri vodoravne crte"
 
-#: app/views/admin/page.phtml:640
+#: app/views/admin/page.phtml:658
+#, fuzzy
 msgid "Main Menu"
-msgstr ""
+msgstr "Naslov izbornika"
 
-#: app/views/admin/page.phtml:648
+#: app/views/admin/page.phtml:666
 msgid "Menu Background Colour"
 msgstr "Boja pozadine otvorenog izbornika "
 
-#: app/views/admin/page.phtml:650
+#: app/views/admin/page.phtml:668
 msgid "This is the background colour of the expanded menu"
 msgstr "Ovo je boja pozadine otvorenog izbornika "
 
-#: app/views/admin/page.phtml:663
+#: app/views/admin/page.phtml:681
 msgid "Menu Background Hover Colour"
 msgstr "Boja pozadine izbornika tokom hovera"
 
-#: app/views/admin/page.phtml:665
+#: app/views/admin/page.phtml:683
 msgid "This is the hover background colour of the expanded menu"
 msgstr ""
 "Ovo je boja pozadine otvorenog izbornika u trenutku lebdjenja mišem (hover)"
 
-#: app/views/admin/page.phtml:680
+#: app/views/admin/page.phtml:698
 msgid "Menu Link Border Colour"
 msgstr "Boja obruba poveznice za izbornik"
 
-#: app/views/admin/page.phtml:682
+#: app/views/admin/page.phtml:700
+#, fuzzy
 msgid "This is the border colour of the  menu links"
-msgstr ""
+msgstr "Boja obruba poveznice za izbornik"
 
-#: app/views/admin/page.phtml:695
+#: app/views/admin/page.phtml:713
 msgid "Title Background Colour"
 msgstr "Pozadinska boja naslova"
 
-#: app/views/admin/page.phtml:697
+#: app/views/admin/page.phtml:715
+#, fuzzy
 msgid "This is the background colour of the menu title"
-msgstr ""
-
-#: app/views/admin/page.phtml:712
-msgid "Current Page Link Background Colour"
-msgstr ""
-
-#: app/views/admin/page.phtml:714
-msgid "This is the background colour of the current page link"
-msgstr ""
+msgstr "Ovo je pozadinska boja naslova izbornika kada je otvoren"
 
 #: app/views/admin/page.phtml:730
-msgid "Text Colours"
-msgstr ""
+#, fuzzy
+msgid "Current Page Link Background Colour"
+msgstr "Pozadinska boja trenutne stranice"
 
-#: app/views/admin/page.phtml:739
+#: app/views/admin/page.phtml:732
+#, fuzzy
+msgid "This is the background colour of the current page link"
+msgstr "Pozadinska boja trenutne stranice"
+
+#: app/views/admin/page.phtml:748
+#, fuzzy
+msgid "Text Colours"
+msgstr "Poravnanje teksta"
+
+#: app/views/admin/page.phtml:757
 msgid "Menu Title Colour"
 msgstr "Boja naslova izbornika"
 
-#: app/views/admin/page.phtml:741
+#: app/views/admin/page.phtml:759
+#, fuzzy
 msgid "This is the text colour of the menu title"
-msgstr ""
+msgstr "Ovo je boja naslova otvorenog izbornika"
 
-#: app/views/admin/page.phtml:754
+#: app/views/admin/page.phtml:772
 msgid "Menu Title Hover Colour"
 msgstr "Boja naslova izbornika tokom hovera"
 
-#: app/views/admin/page.phtml:756
+#: app/views/admin/page.phtml:774
+#, fuzzy
 msgid "This is the hover colour of the menu title"
-msgstr ""
+msgstr "Boja naslova izbornika tokom hovera"
 
-#: app/views/admin/page.phtml:771
+#: app/views/admin/page.phtml:789
+#, fuzzy
 msgid "Menu Link Colour"
-msgstr ""
+msgstr "Boja obruba poveznice za izbornik"
 
-#: app/views/admin/page.phtml:773
+#: app/views/admin/page.phtml:791
+#, fuzzy
 msgid "This is the text colour of the menu links"
-msgstr ""
-
-#: app/views/admin/page.phtml:786
-msgid "Menu Link Hover Colour"
-msgstr ""
-
-#: app/views/admin/page.phtml:788
-msgid "This is the text hover colour of the menu links"
-msgstr ""
+msgstr "Ovo je boja teksta poveznica u otvorenom izborniku"
 
 #: app/views/admin/page.phtml:804
-msgid "Current Page Link Colour"
-msgstr ""
+#, fuzzy
+msgid "Menu Link Hover Colour"
+msgstr "Boja obruba poveznice za izbornik"
 
 #: app/views/admin/page.phtml:806
-msgid "This is the text colour of the current page link"
-msgstr ""
+#, fuzzy
+msgid "This is the text hover colour of the menu links"
+msgstr "Ovo je boja teksta poveznica u trenutku lebdjenja mišem (hover)"
 
-#: app/views/admin/page.phtml:827
+#: app/views/admin/page.phtml:822
+#, fuzzy
+msgid "Current Page Link Colour"
+msgstr "Pozadinska boja trenutne stranice"
+
+#: app/views/admin/page.phtml:824
+#, fuzzy
+msgid "This is the text colour of the current page link"
+msgstr "Boja teksta trenutne stranice"
+
+#: app/views/admin/page.phtml:845
 msgid "Style Settings"
 msgstr "Postavke stila"
 
-#: app/views/admin/page.phtml:833
+#: app/views/admin/page.phtml:851
 msgid "Menu Background Transparent"
 msgstr "Pozadina izbornika transparentna"
 
-#: app/views/admin/page.phtml:835
+#: app/views/admin/page.phtml:853
 msgid "Tick this if you would like a transparent background"
 msgstr "Označite ovo ako biste željeli transparentnu pozadinu"
 
-#: app/views/admin/page.phtml:848
+#: app/views/admin/page.phtml:866
 msgid "Fixed Positioning"
 msgstr "Fiksno pozicioniranje"
 
-#: app/views/admin/page.phtml:850
+#: app/views/admin/page.phtml:868
 msgid ""
 "Tick this if you would like the menu button to remain in the same place when "
 "scrolling"
@@ -451,113 +503,122 @@ msgstr ""
 "Označite ovo ako želite da dugme za izbornik ostane na istom mjestu prilikom "
 "navigiranja kroz stranicu"
 
-#: app/views/admin/page.phtml:868
+#: app/views/admin/page.phtml:886
 msgid "Font"
 msgstr "Vrsta slova"
 
-#: app/views/admin/page.phtml:870
+#: app/views/admin/page.phtml:888
 msgid "Enter a font name below, if empty your default site font will be used"
 msgstr ""
 "Unesite ime vrste slova, ako ostavite prazno, koristit će se zadani font "
 "vaše web-stranice"
 
-#: app/views/admin/page.phtml:881
+#: app/views/admin/page.phtml:899
 msgid "Font Size"
 msgstr "Veličina slova"
 
-#: app/views/admin/page.phtml:883
+#: app/views/admin/page.phtml:901
 msgid "Enter a font size in pixels below"
 msgstr "Unesite veličinu slova ispod (u pikselima)"
 
-#: app/views/admin/page.phtml:898
+#: app/views/admin/page.phtml:916
 msgid "Click Button Font Size"
 msgstr "Veličina slova za dugme za klik"
 
-#: app/views/admin/page.phtml:900
+#: app/views/admin/page.phtml:918
 msgid "Enter a click button font size in pixels below"
 msgstr "Unestie veličinu slova za dugme za klik ispod (u pikselima)"
 
-#: app/views/admin/page.phtml:912
+#: app/views/admin/page.phtml:930
 msgid "Title Font Size"
 msgstr "Veličina slova naslova"
 
-#: app/views/admin/page.phtml:914
+#: app/views/admin/page.phtml:932
 msgid "Enter a title font size in pixels below"
 msgstr "Unesite veličinu slova naslova ispod (u pikselima)"
 
-#: app/views/admin/page.phtml:929
+#: app/views/admin/page.phtml:947
 msgid "Text Alignment"
 msgstr "Poravnanje teksta"
 
-#: app/views/admin/page.phtml:931
+#: app/views/admin/page.phtml:949
 msgid "Enter a text alignment option below"
 msgstr "Unesite poravnanje teksta ispod"
 
-#: app/views/admin/page.phtml:943
+#: app/views/admin/page.phtml:961
 msgid "Centre"
 msgstr "Centar"
 
-#: app/views/admin/page.phtml:956
+#: app/views/admin/page.phtml:974
 msgid "Links Height"
 msgstr "Visina linkova"
 
-#: app/views/admin/page.phtml:958
+#: app/views/admin/page.phtml:976
 msgid "Enter a link height size in pixels below"
 msgstr "Unesite visinu linka u pikselima ispod"
 
-#: app/views/admin/page.phtml:975
+#: app/views/admin/page.phtml:993
 msgid "Remove CSS !important tags"
 msgstr ""
 
-#: app/views/admin/page.phtml:978
+#: app/views/admin/page.phtml:996
+#, fuzzy
 msgid "Tick this if you would like to remove the !important tags from the CSS"
-msgstr ""
+msgstr "Označite ovo ako želite ukloniti tražilicu"
 
-#: app/views/admin/page.phtml:979
+#: app/views/admin/page.phtml:997
 msgid ""
 "Ticking this will make it easier to over-ride the styles but may make the "
 "default settings not display well"
 msgstr ""
 
-#: app/views/admin/page.phtml:992
+#: app/views/admin/page.phtml:1010
+#, fuzzy
 msgid "Change click menu to an x on click"
-msgstr ""
+msgstr "Veličina slova za dugme za klik"
 
-#: app/views/admin/page.phtml:995
+#: app/views/admin/page.phtml:1013
+#, fuzzy
 msgid "Tick this if you would like the 3 lines to turn into an x once clicked"
 msgstr ""
+"Označite ovo ako želite da dugme za izbornik ostane na istom mjestu prilikom "
+"navigiranja kroz stranicu"
 
-#: app/views/admin/page.phtml:1010
+#: app/views/admin/page.phtml:1028
 msgid "Note"
 msgstr ""
 
-#: app/views/admin/page.phtml:1011
+#: app/views/admin/page.phtml:1029
 msgid ""
 "Setting the below two values to the same number will give you a fixed width "
 "effect"
 msgstr ""
 
-#: app/views/admin/page.phtml:1021
+#: app/views/admin/page.phtml:1039
+#, fuzzy
 msgid "Minimum Width"
-msgstr ""
+msgstr "Širina izbornika"
 
-#: app/views/admin/page.phtml:1023
+#: app/views/admin/page.phtml:1041
+#, fuzzy
 msgid "Enter a minimum menu width size in pixels below"
-msgstr ""
+msgstr "Unesite visinu linka u pikselima ispod"
 
-#: app/views/admin/page.phtml:1035
+#: app/views/admin/page.phtml:1053
+#, fuzzy
 msgid "Maximum Width"
-msgstr ""
+msgstr "Širina izbornika"
 
-#: app/views/admin/page.phtml:1037
+#: app/views/admin/page.phtml:1055
+#, fuzzy
 msgid "Enter a maximum menu width size in pixels below"
-msgstr ""
+msgstr "Unesite visinu linka u pikselima ispod"
 
-#: app/views/admin/page.phtml:1054
+#: app/views/admin/page.phtml:1072
 msgid "Animation Settings"
 msgstr "Postavke animacije"
 
-#: app/views/admin/page.phtml:1059
+#: app/views/admin/page.phtml:1077
 msgid ""
 "Warning: The Push Animation requires you to place the following meta tag in "
 "your site header"
@@ -565,54 +626,54 @@ msgstr ""
 "Upozorenje: animacija stiskanja od vas zahtjeva da sljedeći meta tag "
 "smjestite u header vašeg site-a"
 
-#: app/views/admin/page.phtml:1074
+#: app/views/admin/page.phtml:1092
 msgid "Slide Animation"
 msgstr "Animacija klizanja"
 
-#: app/views/admin/page.phtml:1076
+#: app/views/admin/page.phtml:1094
 msgid "Choose the type of animation applied to the menu"
 msgstr "Odberite vrstu animacije koja se primjenjuje na izbornik"
 
-#: app/views/admin/page.phtml:1083
+#: app/views/admin/page.phtml:1101
 msgid "Overlay"
 msgstr "Overlay"
 
-#: app/views/admin/page.phtml:1088
+#: app/views/admin/page.phtml:1106
 msgid "Push"
 msgstr "Stisnuti"
 
-#: app/views/admin/page.phtml:1096
+#: app/views/admin/page.phtml:1114
 msgid "Page Wrappers CSS"
 msgstr "CSS Page wrappera"
 
-#: app/views/admin/page.phtml:1098
+#: app/views/admin/page.phtml:1116
 msgid ""
 "This is the CSS of the wrapper you want to push when using the push animation"
 msgstr ""
 "Ovo je CSS wrapper-a kojeg želite stisnuti kada koristite animaciju stiskanja"
 
-#: app/views/admin/page.phtml:1112
+#: app/views/admin/page.phtml:1130
 msgid "Animation Speed"
 msgstr "Brzina animacije"
 
-#: app/views/admin/page.phtml:1114
+#: app/views/admin/page.phtml:1132
 msgid "Enter a speed in seconds below of the slide animation"
 msgstr "Unesite brzinu klizne animacije ispod (u sekundama)"
 
-#: app/views/admin/page.phtml:1121 app/views/admin/page.phtml:1135
+#: app/views/admin/page.phtml:1139 app/views/admin/page.phtml:1153
 msgid "seconds"
 msgstr "sekunda"
 
-#: app/views/admin/page.phtml:1126
+#: app/views/admin/page.phtml:1144
 msgid "Transition Speed"
 msgstr "Brzina prijelaza"
 
-#: app/views/admin/page.phtml:1128
+#: app/views/admin/page.phtml:1146
 msgid "Enter a speed in seconds below of the hover transition effect"
 msgstr ""
 "Unesite brzinu efekta prijelaza tokom lebdjenja (hover-a) ispod (u sekundama)"
 
-#: app/views/admin/page.phtml:1148
+#: app/views/admin/page.phtml:1166
 msgid "Update Responsive Menu Options"
 msgstr "Ažuriraj mogućnosti Responsive Menu-a"
 

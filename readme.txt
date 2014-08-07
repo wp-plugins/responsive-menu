@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 49 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 50 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -43,6 +43,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 49 customisable optio
 <li> - Slide Animation Speed</li>
 <li> - Ability to auto expand/hide sub-menus</li>
 <li> - Inclusion/Exclusion of Search Box</li>
+<li> - Choice of Positioning of Search Box</li>
 <li> - Transition speed</li>
 <li> - Slide Animation Speed</li>
 <li> - Menu Link Heights</li>
@@ -58,6 +59,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 49 customisable optio
 <li> - Maximum width of menu</li>
 <li> - Choice to Auto Expand Parent Links</li>
 <li> - Choice to Ignore Clicks on Ancestor Links</li>
+<li> - Choice to Close Menu Automatically on Page Clicks</li>
 <li> - Choice to Close Menu Automatically on Page Clicks</li>
 <li> - Plus more...</li>
 </ul>
@@ -118,6 +120,8 @@ Alternatively:
 
 = 2.0 (6th Aug 2014) =
 
+*** WE HAVE REACHED OVER 50 CUSTOMISABLE OPTIONS! ***
+
 * Complete overhaul of the codebase
 * Increased menu depth to 5
 * Added Spanish Translation - Massive thanks to Andrew @ <a href="http://www.webhostinghub.com">WebHostingHub</a> for this!
@@ -128,6 +132,7 @@ Alternatively:
 * Added Choice to Close Menu Automatically on Page Clicks
 * Added Top and Bottom Slide Options
 * Added Option to set a Maximum Width for the menu
+* Added Choice of Positioning of Search Box
 
 = 1.9 (5th Apr 2014) =
 

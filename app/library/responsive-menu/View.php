@@ -70,4 +70,20 @@ class RM_View {
     }
     
     
+    static function searchBar() { ?>
+        
+
+        <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
+
+            <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
+            <input type="submit" style="display: none;" />
+            
+        </form>
+                        
+                        
+   <?php 
+   
+    }
+    
+    
 }

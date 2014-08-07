@@ -124,6 +124,8 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMCliToClo = isset( $data['RMCliToClo'] ) ? $data['RMCliToClo'] : RM_Registry::get( 'defaults', 'RMCliToClo' );
         
+        $RMSearchPos = isset( $data['RMSearchPos'] ) ? $data['RMSearchPos'] : RM_Registry::get( 'defaults', 'RMSearchPos' );
+        
         
         $optionsArray = array(
             
@@ -235,7 +237,9 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMIgnParCli' => self::Filter( $RMIgnParCli ),
             
-            'RMCliToClo' => self::Filter( $RMCliToClo )
+            'RMCliToClo' => self::Filter( $RMCliToClo ),
+            
+            'RMSearchPos' => self::Filter( $RMSearchPos )
                 
         );
 

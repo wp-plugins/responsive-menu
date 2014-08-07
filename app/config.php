@@ -224,9 +224,13 @@ $defaults = array(
     
     
     'RMIgnParCli' => false,
+
+    
+    'RMCliToClo' => false,
     
     
-    'RMCliToClo' => false
+    'RMSearchPos' => 'below'
+    
     
 );
 
