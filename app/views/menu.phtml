@@ -8,32 +8,52 @@
 
             <?php if( $data['RMImage'] ) : ?>
 
-                <a href="<?php echo get_home_url(); ?>">
-                    <img src="<?php echo $data['RMImage']; ?>" 
-                         class="RMImage" 
-                         alt="<?php echo $data['RMTitle']; ?>" 
-                         title="<?php echo $data['RMTitle']; ?>" />
-                </a>
+                <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+            
+                    <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
+                        
+                <?php endif; ?>
+                    
+                <img src="<?php echo $data['RMImage']; ?>" 
+                     class="RMImage" 
+                     alt="<?php echo $data['RMTitle']; ?>" 
+                     title="<?php echo $data['RMTitle']; ?>" />
+                
+            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+                
+                    </a>
+            
+            <?php endif; ?>
 
             <?php endif; ?>
 
-            <a href="<?php echo get_home_url(); ?>"><?php echo $data['RMTitle']; ?></a>
-
+            <?php if( isset( $data['RMTitleLink'] ) && $data['RMTitle'] ) : ?>
+            
+                <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
+                    
+            <?php endif; ?>
+                    
+            <?php echo $data['RMTitle']; ?>
+                
+            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+                    
+                </a>
+            
+            <?php endif; ?>
+            
         </div>
     
     <?php endif;
 
         if( !$data['RMSearch'] && $data['RMSearchPos'] == 'above' )
-            RM_View::searchBar();
+            self::searchBar();
         
-    
         wp_nav_menu(array(
         'menu' => $data['RM'],
         'menu_class' => 'responsive-menu'));
-
         
-    if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' )
-        RM_View::searchBar();
+        if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' )
+            self::searchBar();
 
     ?>
     

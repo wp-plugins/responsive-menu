@@ -229,7 +229,13 @@ $defaults = array(
     'RMCliToClo' => false,
     
     
-    'RMSearchPos' => 'below'
+    'RMSearchPos' => 'below',
+    
+    
+    'RMTitleLink' => null,
+    
+    
+    'RMTitleLoc' => '_self'
     
     
 );

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Responsive Menu\n"
-"POT-Creation-Date: 2014-08-07 16:02-0000\n"
-"PO-Revision-Date: 2014-08-07 16:02-0000\n"
+"POT-Creation-Date: 2014-08-07 16:23-0000\n"
+"PO-Revision-Date: 2014-08-07 16:23-0000\n"
 "Last-Translator: Peter Featherstone <peter.featherstone@networkintellect."
 "com>\n"
 "Language-Team: Peter Featherstone <peter.featherstone@networkintellect.com>\n"
@@ -34,7 +34,7 @@ msgid ""
 "Highly Customisable Responsive Menu Plugin Created By Peter Featherstone"
 msgstr "Plugin Menú Flexible Muy Adaptable Creado Por Peter Featherstone"
 
-#: app/models/AdminModel.php:254
+#: app/models/AdminModel.php:262
 msgid "You have successfully updated the Responsive Menu options"
 msgstr "Has actualizado los opciones del menú Flexible"
 
@@ -142,17 +142,17 @@ msgstr "Lado de la Diapositiva"
 msgid "This is the side of the screen from which the menu will slide"
 msgstr "Este es el lado de la pantalla desde el cual el menú se desplazará"
 
-#: app/views/admin/page.phtml:299 app/views/admin/page.phtml:949
-#: app/views/admin/page.phtml:956
+#: app/views/admin/page.phtml:299 app/views/admin/page.phtml:997
+#: app/views/admin/page.phtml:1004
 msgid "Left"
 msgstr "Izquierda"
 
-#: app/views/admin/page.phtml:305 app/views/admin/page.phtml:594
-#: app/views/admin/page.phtml:966
+#: app/views/admin/page.phtml:305 app/views/admin/page.phtml:642
+#: app/views/admin/page.phtml:1014
 msgid "Right"
 msgstr "Derecha"
 
-#: app/views/admin/page.phtml:311 app/views/admin/page.phtml:580
+#: app/views/admin/page.phtml:311 app/views/admin/page.phtml:628
 msgid "Top"
 msgstr "Superior"
 
@@ -160,11 +160,48 @@ msgstr "Superior"
 msgid "Bottom"
 msgstr ""
 
-#: app/views/admin/page.phtml:333
+#: app/views/admin/page.phtml:327
+#, fuzzy
+msgid "Menu Title Link"
+msgstr "Color del Borde del Enlace del Menú"
+
+#: app/views/admin/page.phtml:329
+#, fuzzy
+msgid "This is the link location for the title"
+msgstr "translated"
+
+#: app/views/admin/page.phtml:339
+#, fuzzy
+msgid "Menu Title Link Location"
+msgstr "Color del Borde del Enlace del Menú"
+
+#: app/views/admin/page.phtml:341
+msgid "This is where your title page will be opened once clicked"
+msgstr ""
+
+#: app/views/admin/page.phtml:348
+msgid "New Tab"
+msgstr ""
+
+#: app/views/admin/page.phtml:354
+#, fuzzy
+msgid "Same Page"
+msgstr "translated"
+
+#: app/views/admin/page.phtml:360
+#, fuzzy
+msgid "Parent Page"
+msgstr "translated"
+
+#: app/views/admin/page.phtml:366
+msgid "Full Window Body"
+msgstr ""
+
+#: app/views/admin/page.phtml:381
 msgid "Menu Breakpoint"
 msgstr "Punto de Ruptura del Menú "
 
-#: app/views/admin/page.phtml:335
+#: app/views/admin/page.phtml:383
 msgid ""
 "This is the point where the responsive menu will be visible in px width of "
 "the browser"
@@ -172,102 +209,102 @@ msgstr ""
 "Este es el punto donde el menú flexible será visible en ancho en px del "
 "navegador"
 
-#: app/views/admin/page.phtml:342 app/views/admin/page.phtml:589
-#: app/views/admin/page.phtml:908 app/views/admin/page.phtml:925
-#: app/views/admin/page.phtml:939 app/views/admin/page.phtml:983
-#: app/views/admin/page.phtml:1048 app/views/admin/page.phtml:1062
+#: app/views/admin/page.phtml:390 app/views/admin/page.phtml:637
+#: app/views/admin/page.phtml:956 app/views/admin/page.phtml:973
+#: app/views/admin/page.phtml:987 app/views/admin/page.phtml:1031
+#: app/views/admin/page.phtml:1096 app/views/admin/page.phtml:1110
 msgid "px"
 msgstr "px"
 
-#: app/views/admin/page.phtml:347
+#: app/views/admin/page.phtml:395
 msgid "CSS of Menu To Hide"
 msgstr "CSS del Menú A Esconder"
 
-#: app/views/admin/page.phtml:349
+#: app/views/admin/page.phtml:397
 msgid ""
 "This is the CSS of the menu you want to hide once the responsive menu shows"
 msgstr ""
 "Este es el CSS del menú que desea esconder una vez que el menú flexible se "
 "muestra"
 
-#: app/views/admin/page.phtml:349 app/views/admin/page.phtml:1116
+#: app/views/admin/page.phtml:397 app/views/admin/page.phtml:1164
 msgid "e.g"
 msgstr "e.g"
 
-#: app/views/admin/page.phtml:363
+#: app/views/admin/page.phtml:411
 msgid "Menu Depth"
 msgstr "Profundidad del  Menú"
 
-#: app/views/admin/page.phtml:365
+#: app/views/admin/page.phtml:413
 msgid "This is how deep into your menu tree will be visible (max"
 msgstr "Esto es cuán profundo en su árbol del menú será visible (max"
 
-#: app/views/admin/page.phtml:384
+#: app/views/admin/page.phtml:432
 msgid "Menu Width"
 msgstr "Ancho del Menú"
 
-#: app/views/admin/page.phtml:386
+#: app/views/admin/page.phtml:434
 msgid "This is the width the menu takes up across the page once expanded"
 msgstr ""
 "Esto es el ancho que el menú coje a lo largo de la página una vez expandido"
 
-#: app/views/admin/page.phtml:386 app/views/admin/page.phtml:901
-#: app/views/admin/page.phtml:918 app/views/admin/page.phtml:932
-#: app/views/admin/page.phtml:949 app/views/admin/page.phtml:976
-#: app/views/admin/page.phtml:1132 app/views/admin/page.phtml:1146
+#: app/views/admin/page.phtml:434 app/views/admin/page.phtml:949
+#: app/views/admin/page.phtml:966 app/views/admin/page.phtml:980
+#: app/views/admin/page.phtml:997 app/views/admin/page.phtml:1024
+#: app/views/admin/page.phtml:1180 app/views/admin/page.phtml:1194
 msgid "default"
 msgstr "por defecto"
 
-#: app/views/admin/page.phtml:405
+#: app/views/admin/page.phtml:453
 msgid "Remove Search Box"
 msgstr "Remover el Campo de Búsqueda"
 
-#: app/views/admin/page.phtml:407
+#: app/views/admin/page.phtml:455
 msgid "Tick if you would like to remove the search box"
 msgstr "Marque si desea remover el campo de búsqueda"
 
-#: app/views/admin/page.phtml:420
+#: app/views/admin/page.phtml:468
 #, fuzzy
 msgid "Search Box Positioning"
 msgstr "Remover el Campo de Búsqueda"
 
-#: app/views/admin/page.phtml:422
+#: app/views/admin/page.phtml:470
 #, fuzzy
 msgid "Select where you would like the search box to appear"
 msgstr "Marque si desea remover el campo de búsqueda"
 
-#: app/views/admin/page.phtml:429
+#: app/views/admin/page.phtml:477
 #, fuzzy
 msgid "Above Menu Links"
 msgstr "Este es el color del texto de los enlaces del menú"
 
-#: app/views/admin/page.phtml:434
+#: app/views/admin/page.phtml:482
 #, fuzzy
 msgid "Below Menu Links"
 msgstr "Este es el color del texto de los enlaces del menú"
 
-#: app/views/admin/page.phtml:445
+#: app/views/admin/page.phtml:493
 msgid "Include CSS/JS as external files"
 msgstr "Incluir CSS/JS como archivos externos"
 
-#: app/views/admin/page.phtml:447
+#: app/views/admin/page.phtml:495
 msgid "Tick if you would like to include CSS and jQuery as external files"
 msgstr "Marque si quiere incluir el CSS y el jQuery como archivos externos"
 
-#: app/views/admin/page.phtml:460
+#: app/views/admin/page.phtml:508
 msgid "Include script in footer"
 msgstr "Incluir script en el pie de página"
 
-#: app/views/admin/page.phtml:462
+#: app/views/admin/page.phtml:510
 msgid "Tick if you would like to include your jQuery script in footer"
 msgstr "Marque si quiere incluir su script de jQuery en el pie de página"
 
-#: app/views/admin/page.phtml:477
+#: app/views/admin/page.phtml:525
 #, fuzzy
 msgid "Click to Close Menu on Link Click"
 msgstr "Cerrar menú con un clic de enlace"
 
-#: app/views/admin/page.phtml:479
+#: app/views/admin/page.phtml:527
 msgid ""
 "Tick if you would like to close the menu on each link click, useful for "
 "single page sites"
@@ -275,11 +312,11 @@ msgstr ""
 "Marque si desea cerrar el menú en cada enlace haciendo click, útil para los "
 "sitios de una sola página"
 
-#: app/views/admin/page.phtml:492
+#: app/views/admin/page.phtml:540
 msgid "Minify output"
 msgstr "Minimizar salida"
 
-#: app/views/admin/page.phtml:494
+#: app/views/admin/page.phtml:542
 msgid ""
 "Tick if you would like to minify the script/style output. Saves up to 50% in "
 "file size"
@@ -287,51 +324,51 @@ msgstr ""
 "Marque si desea minimizar la salida del script/estilo. Salva hasta el 50% "
 "del tamaño del archivo."
 
-#: app/views/admin/page.phtml:508
+#: app/views/admin/page.phtml:556
 #, fuzzy
 msgid "Auto Expand Current Parent Items"
 msgstr "Sub-Menús de Auto Expansión"
 
-#: app/views/admin/page.phtml:510
+#: app/views/admin/page.phtml:558
 #, fuzzy
 msgid ""
 "Tick if you would like to make the current pages children expanded "
 "automatically"
 msgstr "Marque si quiere que los submenús se expandan automáticamente"
 
-#: app/views/admin/page.phtml:523
+#: app/views/admin/page.phtml:571
 msgid "Ignore Parent Clicks"
 msgstr ""
 
-#: app/views/admin/page.phtml:525
+#: app/views/admin/page.phtml:573
 #, fuzzy
 msgid "Tick if you would like to ignore clicks on parent links"
 msgstr "Marque si quiere incluir su script de jQuery en el pie de página"
 
-#: app/views/admin/page.phtml:539
+#: app/views/admin/page.phtml:587
 #, fuzzy
 msgid "Click to Close Menu on Page Click"
 msgstr "Cerrar menú con un clic en la pagina"
 
-#: app/views/admin/page.phtml:541
+#: app/views/admin/page.phtml:589
 #, fuzzy
 msgid "Tick if you would like to close the current menu on page clicks"
 msgstr ""
 "Marque si desea cerrar el menú en cada enlace haciendo click en la pagina"
 
-#: app/views/admin/page.phtml:555
+#: app/views/admin/page.phtml:603
 msgid "Auto Expand Sub-Menus"
 msgstr "Sub-Menús de Auto Expansión"
 
-#: app/views/admin/page.phtml:557
+#: app/views/admin/page.phtml:605
 msgid "Tick if you would like sub-menus to be automatically expanded"
 msgstr "Marque si quiere que los submenús se expandan automáticamente"
 
-#: app/views/admin/page.phtml:574
+#: app/views/admin/page.phtml:622
 msgid "Location Settings"
 msgstr "Configuración de Localización"
 
-#: app/views/admin/page.phtml:582
+#: app/views/admin/page.phtml:630
 msgid ""
 "This is the distance from the top of the page in px that the menu will be "
 "displayed"
@@ -339,7 +376,7 @@ msgstr ""
 "Esta es la distancia desde la parte superior de la página en px en la que se "
 "mostrará el menú"
 
-#: app/views/admin/page.phtml:596
+#: app/views/admin/page.phtml:644
 msgid ""
 "This is the distance from the right of the page in % that the menu will be "
 "displayed"
@@ -347,155 +384,155 @@ msgstr ""
 "Esta es la distancia desde la derecha de la página en % en la que se "
 "mostrará el menú"
 
-#: app/views/admin/page.phtml:611
+#: app/views/admin/page.phtml:659
 msgid "Colour Settings"
 msgstr "Ajustes de color"
 
-#: app/views/admin/page.phtml:613
+#: app/views/admin/page.phtml:661
 #, fuzzy
 msgid "Background Colours"
 msgstr "Colores de Fondos"
 
-#: app/views/admin/page.phtml:617
+#: app/views/admin/page.phtml:665
 #, fuzzy
 msgid "Click Menu"
 msgstr "Imagen del Menú del Clic"
 
-#: app/views/admin/page.phtml:625
+#: app/views/admin/page.phtml:673
 msgid "Menu Line & Text Colour"
 msgstr "Línea del Menú y Color del texto"
 
-#: app/views/admin/page.phtml:627
+#: app/views/admin/page.phtml:675
 msgid "This is the colour of the 3 lines and text for the menu button"
 msgstr "Este es el color de las 3 líneas y el texto del botón de menú"
 
-#: app/views/admin/page.phtml:640
+#: app/views/admin/page.phtml:688
 msgid "Menu Button Background Colour"
 msgstr "Color de Fondo del Botón del Menú"
 
-#: app/views/admin/page.phtml:642
+#: app/views/admin/page.phtml:690
 msgid "This is the background colour of the 3 lines container"
 msgstr "Este es el color de fondo del contenedor de las 3 líneas"
 
-#: app/views/admin/page.phtml:658
+#: app/views/admin/page.phtml:706
 #, fuzzy
 msgid "Main Menu"
 msgstr "Titulo del menú"
 
-#: app/views/admin/page.phtml:666
+#: app/views/admin/page.phtml:714
 msgid "Menu Background Colour"
 msgstr "Color de Fondo del Menú "
 
-#: app/views/admin/page.phtml:668
+#: app/views/admin/page.phtml:716
 msgid "This is the background colour of the expanded menu"
 msgstr "Este es el color de fondo del menú desplegado"
 
-#: app/views/admin/page.phtml:681
+#: app/views/admin/page.phtml:729
 msgid "Menu Background Hover Colour"
 msgstr "Color de Fondo del Over del Menú"
 
-#: app/views/admin/page.phtml:683
+#: app/views/admin/page.phtml:731
 msgid "This is the hover background colour of the expanded menu"
 msgstr "Este es el color de fondo del over del menú expandido"
 
-#: app/views/admin/page.phtml:698
+#: app/views/admin/page.phtml:746
 msgid "Menu Link Border Colour"
 msgstr "Color del Borde del Enlace del Menú"
 
-#: app/views/admin/page.phtml:700
+#: app/views/admin/page.phtml:748
 #, fuzzy
 msgid "This is the border colour of the  menu links"
 msgstr "Color del Borde del Enlace del Menú"
 
-#: app/views/admin/page.phtml:713
+#: app/views/admin/page.phtml:761
 msgid "Title Background Colour"
 msgstr "Color de Fondo del Título"
 
-#: app/views/admin/page.phtml:715
+#: app/views/admin/page.phtml:763
 #, fuzzy
 msgid "This is the background colour of the menu title"
 msgstr "Este es el color de fondo del título del menú"
 
-#: app/views/admin/page.phtml:730
+#: app/views/admin/page.phtml:778
 #, fuzzy
 msgid "Current Page Link Background Colour"
 msgstr "Color de Fondo de la Página Actual"
 
-#: app/views/admin/page.phtml:732
+#: app/views/admin/page.phtml:780
 #, fuzzy
 msgid "This is the background colour of the current page link"
 msgstr "Color de Fondo de la Página Actual"
 
-#: app/views/admin/page.phtml:748
+#: app/views/admin/page.phtml:796
 #, fuzzy
 msgid "Text Colours"
 msgstr "Colores del Texto"
 
-#: app/views/admin/page.phtml:757
+#: app/views/admin/page.phtml:805
 msgid "Menu Title Colour"
 msgstr "Color del Título del Menú "
 
-#: app/views/admin/page.phtml:759
+#: app/views/admin/page.phtml:807
 #, fuzzy
 msgid "This is the text colour of the menu title"
 msgstr "Este es el color del texto del título del menú"
 
-#: app/views/admin/page.phtml:772
+#: app/views/admin/page.phtml:820
 msgid "Menu Title Hover Colour"
 msgstr "Color del Over del Título del Menú"
 
-#: app/views/admin/page.phtml:774
+#: app/views/admin/page.phtml:822
 #, fuzzy
 msgid "This is the hover colour of the menu title"
 msgstr "Color del Over del Título del Menú"
 
-#: app/views/admin/page.phtml:789
+#: app/views/admin/page.phtml:837
 #, fuzzy
 msgid "Menu Link Colour"
 msgstr "Color del Borde del Enlace del Menú"
 
-#: app/views/admin/page.phtml:791
+#: app/views/admin/page.phtml:839
 #, fuzzy
 msgid "This is the text colour of the menu links"
 msgstr "Este es el color del texto de los enlaces del menú"
 
-#: app/views/admin/page.phtml:804
+#: app/views/admin/page.phtml:852
 #, fuzzy
 msgid "Menu Link Hover Colour"
 msgstr "Color del Borde del Enlace del Menú"
 
-#: app/views/admin/page.phtml:806
+#: app/views/admin/page.phtml:854
 #, fuzzy
 msgid "This is the text hover colour of the menu links"
 msgstr "Este es el color del over del texto de los enlaces del menú"
 
-#: app/views/admin/page.phtml:822
+#: app/views/admin/page.phtml:870
 #, fuzzy
 msgid "Current Page Link Colour"
 msgstr "Color de Fondo de la Página Actual"
 
-#: app/views/admin/page.phtml:824
+#: app/views/admin/page.phtml:872
 #, fuzzy
 msgid "This is the text colour of the current page link"
 msgstr "Color de Texto de la Página Actual"
 
-#: app/views/admin/page.phtml:845
+#: app/views/admin/page.phtml:893
 msgid "Style Settings"
 msgstr "Configuraciones de Estilo"
 
-#: app/views/admin/page.phtml:851
+#: app/views/admin/page.phtml:899
 msgid "Menu Background Transparent"
 msgstr "Fondo del Menú Transparente"
 
-#: app/views/admin/page.phtml:853
+#: app/views/admin/page.phtml:901
 msgid "Tick this if you would like a transparent background"
 msgstr "Marque esta opción si desea un fondo transparente"
 
-#: app/views/admin/page.phtml:866
+#: app/views/admin/page.phtml:914
 msgid "Fixed Positioning"
 msgstr "Posicionamiento fijo"
 
-#: app/views/admin/page.phtml:868
+#: app/views/admin/page.phtml:916
 msgid ""
 "Tick this if you would like the menu button to remain in the same place when "
 "scrolling"
@@ -503,69 +540,69 @@ msgstr ""
 "Marque esta opción si desea que el botón del menú permanezca en el mismo "
 "lugar cuando se desplaza"
 
-#: app/views/admin/page.phtml:886
+#: app/views/admin/page.phtml:934
 msgid "Font"
 msgstr "Fuente"
 
-#: app/views/admin/page.phtml:888
+#: app/views/admin/page.phtml:936
 msgid "Enter a font name below, if empty your default site font will be used"
 msgstr ""
 "Introduzca un nombre de tipo de letra, si está vacío se utilizará el tipo de "
 "letra predeterminada del sitio"
 
-#: app/views/admin/page.phtml:899
+#: app/views/admin/page.phtml:947
 msgid "Font Size"
 msgstr "Tamaño de la Fuente"
 
-#: app/views/admin/page.phtml:901
+#: app/views/admin/page.phtml:949
 msgid "Enter a font size in pixels below"
 msgstr "Introduzca un tamaño de fuente en píxeles debajo"
 
-#: app/views/admin/page.phtml:916
+#: app/views/admin/page.phtml:964
 msgid "Click Button Font Size"
 msgstr "Tamaño de la Fuente del Clic del Botón"
 
-#: app/views/admin/page.phtml:918
+#: app/views/admin/page.phtml:966
 msgid "Enter a click button font size in pixels below"
 msgstr "Entre el tamaño de la fuente del clic del botón en píxeles debajo"
 
-#: app/views/admin/page.phtml:930
+#: app/views/admin/page.phtml:978
 msgid "Title Font Size"
 msgstr "Tamaño de la Fuente del Título"
 
-#: app/views/admin/page.phtml:932
+#: app/views/admin/page.phtml:980
 msgid "Enter a title font size in pixels below"
 msgstr "Entre el tamaño de la fuente del título en píxeles debajo"
 
-#: app/views/admin/page.phtml:947
+#: app/views/admin/page.phtml:995
 msgid "Text Alignment"
 msgstr "Alineación del Texto"
 
-#: app/views/admin/page.phtml:949
+#: app/views/admin/page.phtml:997
 msgid "Enter a text alignment option below"
 msgstr "Entre la opción de la alineación del texto debajo"
 
-#: app/views/admin/page.phtml:961
+#: app/views/admin/page.phtml:1009
 msgid "Centre"
 msgstr "Centrar"
 
-#: app/views/admin/page.phtml:974
+#: app/views/admin/page.phtml:1022
 msgid "Links Height"
 msgstr "Altura de los Enlaces "
 
-#: app/views/admin/page.phtml:976
+#: app/views/admin/page.phtml:1024
 msgid "Enter a link height size in pixels below"
 msgstr "Introduzca el tamaño de la altura del enlace en píxeles debajo"
 
-#: app/views/admin/page.phtml:993
+#: app/views/admin/page.phtml:1041
 msgid "Remove CSS !important tags"
 msgstr "Retire las etiquetas !important del CSS"
 
-#: app/views/admin/page.phtml:996
+#: app/views/admin/page.phtml:1044
 msgid "Tick this if you would like to remove the !important tags from the CSS"
 msgstr "Marque si desea remover las etiquetas !important del CSS"
 
-#: app/views/admin/page.phtml:997
+#: app/views/admin/page.phtml:1045
 msgid ""
 "Ticking this will make it easier to over-ride the styles but may make the "
 "default settings not display well"
@@ -573,48 +610,48 @@ msgstr ""
 "Marcar esto hará más fácil sobrescribir los estilos pero puede hacer que las "
 "configuraciones por defecto no se muestren bien"
 
-#: app/views/admin/page.phtml:1010
+#: app/views/admin/page.phtml:1058
 msgid "Change click menu to an x on click"
 msgstr "Cambiar el clic del menú a una x en el clic"
 
-#: app/views/admin/page.phtml:1013
+#: app/views/admin/page.phtml:1061
 msgid "Tick this if you would like the 3 lines to turn into an x once clicked"
 msgstr ""
 "Marque esto si quiere que 3 líneas a convertir en una x cuando se hace clic"
 
-#: app/views/admin/page.phtml:1028
+#: app/views/admin/page.phtml:1076
 msgid "Note"
 msgstr ""
 
-#: app/views/admin/page.phtml:1029
+#: app/views/admin/page.phtml:1077
 msgid ""
 "Setting the below two values to the same number will give you a fixed width "
 "effect"
 msgstr ""
 
-#: app/views/admin/page.phtml:1039
+#: app/views/admin/page.phtml:1087
 msgid "Minimum Width"
 msgstr "Ancho Mínimo"
 
-#: app/views/admin/page.phtml:1041
+#: app/views/admin/page.phtml:1089
 msgid "Enter a minimum menu width size in pixels below"
 msgstr "Entre un tamaño de ancho mínimo de menú en píxeles debajo"
 
-#: app/views/admin/page.phtml:1053
+#: app/views/admin/page.phtml:1101
 #, fuzzy
 msgid "Maximum Width"
 msgstr "Ancho maximo del Menú"
 
-#: app/views/admin/page.phtml:1055
+#: app/views/admin/page.phtml:1103
 #, fuzzy
 msgid "Enter a maximum menu width size in pixels below"
 msgstr "Entre un tamaño de ancho maximo de menú en píxeles debajo"
 
-#: app/views/admin/page.phtml:1072
+#: app/views/admin/page.phtml:1120
 msgid "Animation Settings"
 msgstr "Configuraciones de la Animación"
 
-#: app/views/admin/page.phtml:1077
+#: app/views/admin/page.phtml:1125
 msgid ""
 "Warning: The Push Animation requires you to place the following meta tag in "
 "your site header"
@@ -622,56 +659,56 @@ msgstr ""
 "Advertencia: La Animación de Empuje requiere que ponga la siguiente meta "
 "etiqueta en el encabezado de su sitio"
 
-#: app/views/admin/page.phtml:1092
+#: app/views/admin/page.phtml:1140
 msgid "Slide Animation"
 msgstr "Animación de Diapositiva"
 
-#: app/views/admin/page.phtml:1094
+#: app/views/admin/page.phtml:1142
 msgid "Choose the type of animation applied to the menu"
 msgstr "Elija el tipo de animación aplicada al menú"
 
-#: app/views/admin/page.phtml:1101
+#: app/views/admin/page.phtml:1149
 msgid "Overlay"
 msgstr "Superposición"
 
-#: app/views/admin/page.phtml:1106
+#: app/views/admin/page.phtml:1154
 msgid "Push"
 msgstr "Empuje"
 
-#: app/views/admin/page.phtml:1114
+#: app/views/admin/page.phtml:1162
 msgid "Page Wrappers CSS"
 msgstr "CSS de la Envoltura de la Página "
 
-#: app/views/admin/page.phtml:1116
+#: app/views/admin/page.phtml:1164
 msgid ""
 "This is the CSS of the wrapper you want to push when using the push animation"
 msgstr ""
 "Este es el CSS de la envoltura que desea empujar cuando se usa la animación "
 "de empuje"
 
-#: app/views/admin/page.phtml:1130
+#: app/views/admin/page.phtml:1178
 msgid "Animation Speed"
 msgstr "Velocidad de la Animación"
 
-#: app/views/admin/page.phtml:1132
+#: app/views/admin/page.phtml:1180
 msgid "Enter a speed in seconds below of the slide animation"
 msgstr ""
 "Introduzca la velocidad en cuestión en segundos debajo de la animación de "
 "diapositiva"
 
-#: app/views/admin/page.phtml:1139 app/views/admin/page.phtml:1153
+#: app/views/admin/page.phtml:1187 app/views/admin/page.phtml:1201
 msgid "seconds"
 msgstr "segundos"
 
-#: app/views/admin/page.phtml:1144
+#: app/views/admin/page.phtml:1192
 msgid "Transition Speed"
 msgstr "Velocidad de Transición"
 
-#: app/views/admin/page.phtml:1146
+#: app/views/admin/page.phtml:1194
 msgid "Enter a speed in seconds below of the hover transition effect"
 msgstr "Introduzca la velocidad en segundos debajo del efecto de transición"
 
-#: app/views/admin/page.phtml:1166
+#: app/views/admin/page.phtml:1214
 msgid "Update Responsive Menu Options"
 msgstr "Actualizar Opciones del menú Flexible"
 

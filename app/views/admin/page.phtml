@@ -322,6 +322,54 @@
                             
                         </td>
                 </tr>
+                <tr>
+                        <td>
+                            <h4><?php _e( 'Menu Title Link', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'This is the link location for the title', 'responsive-menu' ); ?></h5>
+
+                            <input 
+                                type="text" 
+                                name="RMTitleLink" 
+                                value="<?php echo isset( $data['RMTitleLink'] ) ? $data['RMTitleLink'] : ''; ?>" 
+                                />
+                        </td>
+                        <td>
+
+                            <h4><?php _e( 'Menu Title Link Location', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'This is where your title page will be opened once clicked', 'responsive-menu' ); ?></h5>
+
+                        <select name="RMTitleLoc">
+
+                                <option 
+                                    value="_blank"
+                                    <?php echo isset( $data['RMTitleLoc'] ) && $data['RMTitleLoc'] == '_blank' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'New Tab', 'responsive-menu' ); ?>
+                                </option>
+                                
+                                <option 
+                                    value="_self"
+                                    <?php echo isset( $data['RMTitleLoc'] ) && $data['RMTitleLoc'] == '_self' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'Same Page', 'responsive-menu' ); ?>
+                                </option>
+                                
+                                <option 
+                                    value="_parent"
+                                    <?php echo isset( $data['RMTitleLoc'] ) && $data['RMTitleLoc'] == '_parent' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'Parent Page', 'responsive-menu' ); ?>
+                                </option>
+                                
+                                <option 
+                                    value="_top"
+                                    <?php echo isset( $data['RMTitleLoc'] ) && $data['RMTitleLoc'] == '_top' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'Full Window Body', 'responsive-menu' ); ?>
+                                </option>
+                                
+                        </select>   
+                            
+                        </td>
+                    </tr>
                 </table>
                 
                 <hr />

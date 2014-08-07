@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 50 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 52 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -60,7 +60,8 @@ This is a Highly Customisable Responsive Menu Plugin, with 50 customisable optio
 <li> - Choice to Auto Expand Parent Links</li>
 <li> - Choice to Ignore Clicks on Ancestor Links</li>
 <li> - Choice to Close Menu Automatically on Page Clicks</li>
-<li> - Choice to Close Menu Automatically on Page Clicks</li>
+<li> - Choice to Specify Title Menu Link</li>
+<li> - Choice to Specify Title Menu Link Location</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left or right, again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -82,7 +83,6 @@ On the current development list for the next update are the following:
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
 <li> - Option to change expand menu symbol</li>
-<li> - Option to change title menu link</li>
 <li> - Shortcode support</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
@@ -133,6 +133,8 @@ Alternatively:
 * Added Top and Bottom Slide Options
 * Added Option to set a Maximum Width for the menu
 * Added Choice of Positioning of Search Box
+* Added Choice to Specify Title Menu Link
+* Added Choice to Specify Title Menu Link Location
 
 = 1.9 (5th Apr 2014) =
 
