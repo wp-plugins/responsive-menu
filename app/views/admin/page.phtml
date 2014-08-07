@@ -292,6 +292,18 @@
                                     <?php _e( 'Right', 'responsive-menu' ); ?>
                                 </option>
                                 
+                                <option 
+                                    value="top"
+                                    <?php echo isset( $data['RMSide'] ) && $data['RMSide'] == 'top' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'Top', 'responsive-menu' ); ?>
+                                </option>
+                                
+                                <option 
+                                    value="bottom"
+                                    <?php echo isset( $data['RMSide'] ) && $data['RMSide'] == 'bottom' ? 'selected="selected">' : '>'; ?>
+                                    <?php _e( 'Bottom', 'responsive-menu' ); ?>
+                                </option>
+                                
                         </select>     
 
                             

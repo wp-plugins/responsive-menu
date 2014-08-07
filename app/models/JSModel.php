@@ -43,23 +43,47 @@ class RM_JSModel extends RM_BaseModel {
 
         $setHeight = $options['RMPos'] == 'fixed' ? '' : " \$RMjQuery( '#responsive-menu' ).css( 'height', \$RMjQuery( document ).height() ); ";
         $breakpoint = empty($options['RMBreak']) ? "600" : $options['RMBreak'];
-        $width = empty($options['RMWidth']) ? "75" : $options['RMWidth'];
+        
         $RMPushCSS = empty($options['RMPushCSS']) ? "" : $options['RMPushCSS'];
 
         $slideOpen = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( 'body' ).addClass( 'RMPushOpen' ); " : '';
         $slideRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( 'body' ).removeClass( 'RMPushOpen' ); " : '';
 
         /* Added 1.8 */
-        $side = empty( $options['RMSide'] ) ? 'left' : $options['RMSide']; 
-        $pos = $side == 'left' ? '' : '-';
+        switch( $options['RMSide'] ) :
+            case 'left' : $side = 'left'; break;
+            case 'right' : $side = 'right'; break;
+            case 'top' : $side = 'top'; break;
+            case 'bottom' : $side = 'top'; break;
+            default : $side = 'left'; break;
+        endswitch;
+                
+        /* Added 2.0 */
+        switch( $options['RMSide'] ) :
+            case 'left' : $width = $options['RMWidth']; $neg = '-'; break;
+            case 'right' : $width = $options['RMWidth']; $neg = '-'; break;
+            case 'top' : $width = '100'; $neg = '-'; break;
+            case 'bottom' : $width = '100'; $neg = ''; break;
+            default : $width = '75'; break;
+        endswitch;
+        
+        switch( $options['RMSide']  ) :
+            case 'left' : $pushSide = 'left'; $pos = ''; break;
+            case 'right' : $pushSide = 'left'; $pos = '-'; break;
+            case 'top' : $pushSide = 'top'; $pos = ''; break;
+            case 'bottom' : $pushSide = 'top'; $pos = '-'; break;
+        endswitch;
 
         $sideSlideOpen = $side == 'right' && empty( $slideOpen ) ? " \$RMjQuery( 'body' ).addClass( 'RMPushOpen' ); " : '';
         $sideSlideRemove =  $side == 'right' && empty( $slideRemove ) ? " \$RMjQuery( 'body' ).removeClass( 'RMPushOpen' ); " : '';
         
-        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { left: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
+
+        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
+        
         $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
 
-        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { left: \"0\" }, 500, 'linear' ); " : '';
+        $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"0\" }, 500, 'linear' ); " : '';
+        
         $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
@@ -156,6 +180,8 @@ class RM_JSModel extends RM_BaseModel {
                       $showX
                           
                       \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
+                      \$RMjQuery( '#responsive-menu' ).addClass( 'RMOpened' );  
+                      
                       \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
                           
                         $setHeight
@@ -170,13 +196,14 @@ class RM_JSModel extends RM_BaseModel {
 
                         $slideBack
                         
-                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"-{$width}%\" }, $speed, 'linear', function() { 
+                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"{$neg}{$width}%\" }, $speed, 'linear', function() { 
                       
                             $slideRemove
                             $sideSlideRemove
                             $slideOverCssRemove
                             $closeX
                             \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
+                            \$RMjQuery( '#responsive-menu' ).removeClass( 'RMOpened' );  
 
                             isOpen = false;
 

@@ -85,6 +85,22 @@ class RM_CSSModel extends RM_BaseModel {
         /* Added 1.9 */
         $minWidth = empty( $options['RMMinWidth'] ) ? '' : 'min-width: ' . $options['RMMinWidth'] . 'px' . $important;
         
+        /* Added 2.0 */
+        switch( $options['RMSide'] ) :
+            case 'left' : $topRM = 'top: 0px'; $botRM = ''; break;
+            case 'right' : $topRM = 'top: 0px'; $botRM = ''; break;
+            case 'top' : $topRM = 'top: -100%'; $botRM = ''; break;
+            case 'bottom' : $topRM = 'top: 100%'; $botRM = 'bottom: 0px'; break;
+        endswitch;
+        
+        switch( $side ) :
+            case 'left' : $pushSide = $side; $pushWidth = $width; $pushPos = 'relative'; break;
+            case 'right' : $pushSide = $side; $pushWidth = $width; $pushPos = 'relative'; break;
+            case 'top' : $pushSide = 'top'; $pushWidth = '100'; $pushPos = 'absolute'; break;
+            case 'bottom' : $pushSide = 'bottom'; $pushWidth = '-100'; $pushPos = 'absolute'; break;
+            default : $pushSide = $side; $pushWidth = $width; break;
+        endswitch;
+        
         $css = '';
         
         if( $args != 'strip_tags' ) : 
@@ -126,8 +142,8 @@ class RM_CSSModel extends RM_BaseModel {
 
             .RMPushSlide
             {
-                position: relative;
-                $side: $width%;
+                position: $pushPos;
+                $pushSide: $pushWidth%;
             }
 
             #responsive-menu								
@@ -136,8 +152,8 @@ class RM_CSSModel extends RM_BaseModel {
                 $overflowy
                 $bottom
                 width: $width%;
-                top: 0px; 
                 $side: -$width%;
+                $topRM;
                 background: $mainBkg;
                 z-index: 9999;  
                 box-shadow: 0px 1px 8px #333333; 
@@ -182,6 +198,11 @@ class RM_CSSModel extends RM_BaseModel {
                 display: inline-block;
             }
 
+            #responsive-menu.RMOpened
+            {
+                $botRM;
+            }
+            
             #responsive-menu,
             #responsive-menu input {
                 $font
@@ -433,7 +454,7 @@ class RM_CSSModel extends RM_BaseModel {
 
         $css .= " }";
 
-        $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: relative{$important} left: 0px; } " : '';
+        $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: {$pushPos}{$important} left: 0px; } " : '';
         
         /* Finally Add The tag at the end only if it's an inline style */
         if( $args != 'strip_tags' ) : 

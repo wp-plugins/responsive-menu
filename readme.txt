@@ -47,7 +47,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 48 customisable optio
 <li> - Slide Animation Speed</li>
 <li> - Menu Link Heights</li>
 <li> - Text Alignment</li>
-<li> - Choice of side to slide in from</li>
+<li> - Choice of side to slide in from (left, right, top, bottom)</li>
 <li> - Choice to use inline/external stylesheets and scripts</li>
 <li> - Option to include JavaScript in footer</li>
 <li> - Option to remove CSS !important tags</li>
@@ -127,6 +127,7 @@ Alternatively:
 * Added Choice to Auto Expand Parent Links
 * Added Choice to Ignore Clicks on Ancestor Links
 * Added Choice to Close Menu Automatically on Page Clicks
+* Added Top and Bottom Slide Options
 
 = 1.9 (5th Apr 2014) =
 
