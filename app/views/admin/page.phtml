@@ -5,6 +5,11 @@
                 font-weight: bold;
                 margin: 10px 0px 0px 0px;
             }
+            
+            h4.divider
+            {
+                color: #D44A44;
+            }
 
             h5
             {
@@ -56,6 +61,12 @@
             #RMVersion.beta
             {
                 border-color: orange;
+            }
+            
+            .note
+            {
+                padding: 25px 0px 0px 0px;
+                color: green;
             }
             
             @media only screen and ( min-width : 0px ) and ( max-width : 600px ) { 
@@ -573,6 +584,10 @@
 
             <h3><?php _e( 'Colour Settings', 'responsive-menu' ); ?></h3>
 
+            <h4 class="divider"><?php _e( 'Background Colours', 'responsive-menu' ); ?></h4>
+                
+            <hr />
+            
             <table>
                 <tr>
                     <td>
@@ -639,76 +654,11 @@
                     </td>
                 </tr>
                 <tr>
-
-                    <td>
-
-                        <h4><?php _e( 'Menu Title Colour', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the text colour of the expanded menu title', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="text" 
-                            name="RMTitleCol" 
-                            id="RMTitleCol" 
-                            class="colourPicker" 
-                            value="<?php echo isset($data['RMTitleCol']) ? $data['RMTitleCol'] : ''; ?>" 
-                            />
-
-                    </td>
-                    <td>
-
-                        <h4><?php _e( 'Menu Title Hover Colour', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the hover colour of the expanded menu title', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="text" 
-                            name="RMTitleColHov" 
-                            id="RMTitleColHov" 
-                            class="colourPicker" 
-                            value="<?php echo isset($data['RMTitleColHov']) ? $data['RMTitleColHov'] : ''; ?>" 
-                            />
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-
-                        <h4><?php _e( 'Menu Text Colour', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the text colour of the expanded menu links', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="text" 
-                            name="RMTextCol" 
-                            id="RMTextCol" 
-                            class="colourPicker" 
-                            value="<?php echo isset($data['RMTextCol']) ? $data['RMTextCol'] : ''; ?>" 
-                            />
-
-                    </td>
-                    <td>
-
-                        <h4><?php _e( 'Menu Text Hover Colour', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the text hover colour of the expanded menu links', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="text" 
-                            name="RMTextColHov" 
-                            id="RMTextColHov" 
-                            class="colourPicker" 
-                            value="<?php echo isset($data['RMTextColHov']) ? $data['RMTextColHov'] : ''; ?>" 
-                            />
-
-                    </td>
-                </tr>
-                <tr>
                     <td>
 
                         <h4><?php _e( 'Menu Link Border Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the border colour of the expanded menu titles', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the border colour of the  menu links', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -723,7 +673,7 @@
 
                         <h4><?php _e( 'Title Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the background colour of the expanded menu title', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the background colour of the menu title', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -738,9 +688,9 @@
                 <tr>
                     <td>
 
-                        <h4><?php _e( 'Current Page Background Colour', 'responsive-menu' ); ?></h4> 
+                        <h4><?php _e( 'Current Page Link Background Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the background colour of the current page', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the background colour of the current page link', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -752,10 +702,87 @@
 
                     </td>
                     <td>
+                    </td>
+                </tr>
+            </table>
+            
+            <h4 class="divider"><?php _e( 'Text Colours', 'responsive-menu' ); ?></h4>
+            
+            <hr />
+            
+            <table>
+                <tr>
 
-                        <h4><?php _e( 'Current Page Text Colour', 'responsive-menu' ); ?></h4> 
+                    <td>
 
-                        <h5><?php _e( 'This is the text colour of the current page', 'responsive-menu' ); ?></h5>
+                        <h4><?php _e( 'Menu Title Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the text colour of the menu title', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTitleCol" 
+                            id="RMTitleCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMTitleCol']) ? $data['RMTitleCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( 'Menu Title Hover Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the hover colour of the menu title', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTitleColHov" 
+                            id="RMTitleColHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMTitleColHov']) ? $data['RMTitleColHov'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Menu Link Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the text colour of the menu links', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTextCol" 
+                            id="RMTextCol" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMTextCol']) ? $data['RMTextCol'] : ''; ?>" 
+                            />
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( 'Menu Link Hover Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the text hover colour of the menu links', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMTextColHov" 
+                            id="RMTextColHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMTextColHov']) ? $data['RMTextColHov'] : ''; ?>" 
+                            />
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        
+                        <h4><?php _e( 'Current Page Link Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the text colour of the current page link', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -764,6 +791,11 @@
                             class="colourPicker" 
                             value="<?php echo isset($data['RMCurCol']) ? $data['RMCurCol'] : ''; ?>" 
                             />
+
+                    </td>
+                    <td>
+
+
 
                     </td>
                 </tr>
@@ -947,6 +979,17 @@
 
                     </td>
                 </tr>
+            </table>
+             
+            <h4 class="divider">
+                <?php _e( 'Note' ); ?>: </strong>
+                <?php _e( 'Setting the below two values to the same number will give you a fixed width effect', 'responsive-menu' ); ?>
+            </h4>
+            
+            <hr />
+            
+            <table>
+                    
                 <tr>
                     <td>                    
 
@@ -978,7 +1021,9 @@
                     </td>
                 </tr>
             </table>
+            
 
+            
         <hr />        
 
         <h3><?php _e( 'Animation Settings', 'responsive-menu' ); ?></h3>
