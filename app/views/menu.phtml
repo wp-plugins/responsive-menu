@@ -45,15 +45,21 @@
     
     <?php endif;
 
+        if( $data['RMHtml'] && $data['RMHtmlLoc'] == 'above' )
+            self::additionalContent();
+            
         if( !$data['RMSearch'] && $data['RMSearchPos'] == 'above' )
             self::searchBar();
-        
+                
         wp_nav_menu(array(
         'menu' => $data['RM'],
         'menu_class' => 'responsive-menu'));
         
         if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' )
             self::searchBar();
+        
+        if( $data['RMHtml'] && $data['RMHtmlLoc'] == 'below' )
+            self::additionalContent();
 
     ?>
     

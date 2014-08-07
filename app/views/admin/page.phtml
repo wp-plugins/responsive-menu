@@ -22,6 +22,11 @@
                 width: 50px;
             }
 
+            textarea
+            {
+                width: 100%;
+            }
+            
             table
             {
                 width: 98%;
@@ -1113,8 +1118,6 @@
                 </tr>
             </table>
             
-
-            
         <hr />        
 
         <h3><?php _e( 'Animation Settings', 'responsive-menu' ); ?></h3>
@@ -1205,6 +1208,48 @@
                     
                 </table>
  
+                <hr />        
+
+                <h3><?php _e( 'Additional HTML Content Settings', 'responsive-menu' ); ?></h3>
+        
+                <table>
+                    
+                    <tr>
+                        <td>
+
+                            <h4><?php _e( 'Additional HTML Content', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'Enter any additional HTML you may want below, useful for advertisement banners etc.', 'responsive-menu' ); ?></h5>
+
+                            <textarea name="RMHtml"><?php echo isset( $data['RMHtml'] ) ? $data['RMHtml'] : ''; ?></textarea>
+
+                        </td>
+                        <td>
+
+                        <h4><?php _e( 'Additional HTML Content Positioning', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Select where you would like the additional HTML content to appear', 'responsive-menu' ); ?></h5>
+
+                        <select name="RMHtmlLoc">
+
+                            <option 
+                                value="above"
+                                <?php echo isset( $data['RMHtmlLoc'] ) && 'above' == $data['RMHtmlLoc'] ? ' selected="selected " ' : ''; ?>>
+                                <?php _e( 'Above Menu Links', 'responsive-menu' ); ?>
+                            </option>
+                            <option 
+                                value="below"
+                                <?php echo isset( $data['RMHtmlLoc'] ) && 'below' == $data['RMHtmlLoc'] ? ' selected="selected " ' : ''; ?>>
+                                <?php _e( 'Below Menu Links', 'responsive-menu' ); ?>
+                            </option>  
+
+                        </select>
+                    
+                        </td>
+                    </tr>
+                    
+                </table>
+                
                 <br /><br />
 
                 <input 

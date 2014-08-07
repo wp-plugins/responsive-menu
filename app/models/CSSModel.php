@@ -165,7 +165,13 @@ class RM_CSSModel extends RM_BaseModel {
                 $minWidth
                 $maxWidth
             }
-
+            
+            #responsive-menu #rm-additional-content
+            {
+                padding: 10px 5%;
+                width: 90%;
+            }
+            
             #responsive-menu .appendLink
             {
                 $subBtnAlign: 0px{$important}

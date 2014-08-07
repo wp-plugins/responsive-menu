@@ -235,7 +235,13 @@ $defaults = array(
     'RMTitleLink' => null,
     
     
-    'RMTitleLoc' => '_self'
+    'RMTitleLoc' => '_self',
+    
+    
+    'RMHtml' => null,
+    
+    
+    'RMHtmlLoc' => 'bottom'
     
     
 );

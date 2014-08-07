@@ -130,6 +130,10 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMTitleLoc = isset( $data['RMTitleLoc'] ) ? $data['RMTitleLoc'] : RM_Registry::get( 'defaults', 'RMTitleLoc' );
         
+        $RMHtml = isset( $data['RMHtml'] ) ? $data['RMHtml'] : RM_Registry::get( 'defaults', 'RMHtml' );
+        
+        $RMHtmlLoc = isset( $data['RMHtmlLoc'] ) ? $data['RMHtmlLoc'] : RM_Registry::get( 'defaults', 'RMHtmlLoc' );
+        
         
         $optionsArray = array(
             
@@ -247,7 +251,12 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMTitleLink' => self::Filter( $RMTitleLink ),
                 
-            'RMTitleLoc' => self::Filter( $RMTitleLoc )
+            'RMTitleLoc' => self::Filter( $RMTitleLoc ),
+            
+            'RMHtml' => self::FilterHtml( $RMHtml ),
+            
+            'RMHtmlLoc' => self::Filter( $RMHtmlLoc )
+            
                 
         );
 

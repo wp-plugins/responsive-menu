@@ -70,6 +70,14 @@ class RM_View {
     }
     
     
+    /**
+     * Function to format and display the search bar in the main menu
+     *
+     * @param  array  $status
+     * @return string
+     * @added 2.0
+     */
+    
     static function searchBar() { ?>
         
 
@@ -79,6 +87,25 @@ class RM_View {
             <input type="submit" style="display: none;" />
             
         </form>
+                        
+                        
+   <?php 
+   
+    }
+    
+    
+    /**
+     * Function to format and display the search bar in the main menu
+     *
+     * @param  array  $status
+     * @return string
+     * @added 2.0
+     */
+    
+    static function additionalContent() { ?>
+        
+
+        <div id="rm-additional-content"><?php echo RM_Registry::get( 'options', 'RMHtml' ); ?></div>
                         
                         
    <?php 

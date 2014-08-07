@@ -19,6 +19,22 @@ class RM_BaseModel {
         
     }
     
+    /**
+     * Basic Function to filter HTML allowed Input
+     *
+     * @param string $input
+     * @return string
+     * @added 1.0
+     */
+    
+    static function FilterHtml( $input ) {
+
+        
+        return stripslashes( wp_kses( trim( $input ) ) );
+        
+        
+    }
+    
     
     /**
      * Function to minify the Js and CSS files if required
