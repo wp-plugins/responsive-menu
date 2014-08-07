@@ -101,6 +101,7 @@ class RM_JSModel extends RM_BaseModel {
             $expandChildren = "
                 
                 \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+                \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
                 \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
 
             ";
