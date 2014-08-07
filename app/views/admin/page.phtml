@@ -964,6 +964,17 @@
                     </td>
                     <td>                    
 
+                        <h4><?php _e( 'Maximum Width', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Enter a maximum menu width size in pixels below', 'responsive-menu' ); ?>.</h5>
+
+                        <input 
+                            type="text" 
+                            name="RMMaxWidth" 
+                            class="numberInput" 
+                            value="<?php echo isset($data['RMMaxWidth']) ? $data['RMMaxWidth'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
                     </td>
                 </tr>
             </table>

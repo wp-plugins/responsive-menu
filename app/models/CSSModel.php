@@ -86,6 +86,8 @@ class RM_CSSModel extends RM_BaseModel {
         $minWidth = empty( $options['RMMinWidth'] ) ? '' : 'min-width: ' . $options['RMMinWidth'] . 'px' . $important;
         
         /* Added 2.0 */
+        $maxWidth = empty( $options['RMMaxWidth'] ) ? '' : 'max-width: ' . $options['RMMaxWidth'] . 'px' . $important;
+        
         switch( $options['RMSide'] ) :
             case 'left' : $topRM = 'top: 0px'; $botRM = ''; break;
             case 'right' : $topRM = 'top: 0px'; $botRM = ''; break;
@@ -161,6 +163,7 @@ class RM_CSSModel extends RM_BaseModel {
                 max-width: 999px;
                 display: none;
                 $minWidth
+                $maxWidth
             }
 
             #responsive-menu .appendLink

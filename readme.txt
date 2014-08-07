@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 48 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 49 customisable options enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -55,6 +55,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 48 customisable optio
 <li> - Choice to auto-close menu items on click (for single page sites)</li>
 <li> - Choice to replace 3 lines with an x on click</li>
 <li> - Minimum width of menu</li>
+<li> - Maximum width of menu</li>
 <li> - Choice to Auto Expand Parent Links</li>
 <li> - Choice to Ignore Clicks on Ancestor Links</li>
 <li> - Choice to Close Menu Automatically on Page Clicks</li>
@@ -76,10 +77,8 @@ It also includes the following functionality:
 </ul>
 On the current development list for the next update are the following:
 <ul>
-<li> - Colour for active parent menu link</li>
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
-<li> - Add fixed width menu option</li>
 <li> - Option to change expand menu symbol</li>
 <li> - Option to change title menu link</li>
 <li> - Shortcode support</li>
@@ -128,6 +127,7 @@ Alternatively:
 * Added Choice to Ignore Clicks on Ancestor Links
 * Added Choice to Close Menu Automatically on Page Clicks
 * Added Top and Bottom Slide Options
+* Added Option to set a Maximum Width for the menu
 
 = 1.9 (5th Apr 2014) =
 

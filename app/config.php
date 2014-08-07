@@ -216,9 +216,15 @@ $defaults = array(
     
     /* Added in 2.0 */
     
+    
+    'RMMaxWidth' => null,
+    
+    
     'RMExpandPar' => true,
     
+    
     'RMIgnParCli' => false,
+    
     
     'RMCliToClo' => false
     

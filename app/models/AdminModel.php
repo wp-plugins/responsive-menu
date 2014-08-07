@@ -116,6 +116,8 @@ class RM_AdminModel extends RM_BaseModel {
 
         /* Added in 2.0 */
         
+        $RMMaxWidth = isset( $data['RMMaxWidth'] ) ? $data['RMMaxWidth'] : RM_Registry::get( 'defaults', 'RMMaxWidth' );
+        
         $RMExpandPar = isset( $data['RMExpandPar'] ) ? $data['RMExpandPar'] : false;
         
         $RMIgnParCli = isset( $data['RMIgnParCli'] ) ? $data['RMIgnParCli'] : RM_Registry::get( 'defaults', 'RMIgnParCli' );
@@ -226,6 +228,8 @@ class RM_AdminModel extends RM_BaseModel {
             'RMMinWidth' => intval( $RMMinWidth ),
 
             /* Added in 2.0 */
+            
+            'RMMaxWidth' => intval( $RMMaxWidth ),
             
             'RMExpandPar' => self::Filter( $RMExpandPar ),
             
