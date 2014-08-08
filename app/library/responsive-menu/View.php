@@ -110,13 +110,15 @@ class RM_View {
      * @added 2.0
      */
     
-    static function additionalContent() { ?>
+    static function additionalContent() { 
         
-
-        <div id="rm-additional-content"><?php echo RM_Registry::get( 'options', 'RMHtml' ); ?></div>
-                        
-                        
+        if( RM_Registry::get( 'options', 'RMHtml' ) ) : ?>
+        
+            <div id="rm-additional-content"><?php echo RM_Registry::get( 'options', 'RMHtml' ); ?></div>
+                                      
    <?php 
+   
+        endif;
    
     }
     
