@@ -1,6 +1,6 @@
 <!-- Responsive Menu added by Responsive Menu -->
 
-<div id="responsive-menu">
+<div id="responsive-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
 
     <?php if( $data['RMTitle'] || $data['RMImage'] ) : ?>
 
@@ -45,7 +45,7 @@
     
     <?php endif;
 
-        if( $data['RMHtml'] && $data['RMHtmlLoc'] == 'above' )
+        if( isset( $data['RMHtml'] ) && $data['RMHtmlLoc'] == 'above' )
             self::additionalContent();
             
         if( !$data['RMSearch'] && $data['RMSearchPos'] == 'above' )
@@ -58,7 +58,7 @@
         if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' )
             self::searchBar();
         
-        if( $data['RMHtml'] && $data['RMHtmlLoc'] == 'below' )
+        if( isset( $data['RMHtml'] ) && $data['RMHtmlLoc'] == 'below' )
             self::additionalContent();
 
     ?>
@@ -67,7 +67,7 @@
 
 <!-- Click Menu added by Responsive Menu -->
 
-<div id="click-menu">
+<div id="click-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
 
 <?php if( $data['RMX'] ) : ?>
 

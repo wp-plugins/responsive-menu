@@ -48,7 +48,9 @@ class RM_CSSModel extends RM_BaseModel {
         $bottom = $options['RMPos'] == 'fixed' ? 'bottom: 0px;' : '';
 
         $right = empty($options['RMRight']) ? '0' : $options['RMRight'];
-        $top = empty($options['RMTop']) ? '0' : $options['RMTop'];
+        
+        $top = empty( $options['RMTop']) ? '0' : $options['RMTop'];
+        
         $width = empty($options['RMWidth']) ? '75' : $options['RMWidth'];
         $mainBkg = empty($options['RMBkg']) ? "#43494C" : $options['RMBkg'];
         $mainBkgH = empty($options['RMBkgHov']) ? "#3C3C3C" : $options['RMBkgHov'];
@@ -102,7 +104,7 @@ class RM_CSSModel extends RM_BaseModel {
             case 'bottom' : $pushSide = 'bottom'; $pushWidth = '-100'; $pushPos = 'absolute'; break;
             default : $pushSide = $side; $pushWidth = $width; break;
         endswitch;
-        
+  
         $css = '';
         
         if( $args != 'strip_tags' ) : 
@@ -166,10 +168,21 @@ class RM_CSSModel extends RM_BaseModel {
                 $maxWidth
             }
             
+            #responsive-menu.admin-bar-showing
+            {
+                padding-top: 32px;
+            }
+            
+            #click-menu.admin-bar-showing
+            {
+                margin-top: 32px;
+            }
+                
             #responsive-menu #rm-additional-content
             {
-                padding: 10px 5%;
-                width: 90%;
+                padding: 10px 5%{$important}
+                width: 90%{$important}
+                color: $txtCol;
             }
             
             #responsive-menu .appendLink

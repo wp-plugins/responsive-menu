@@ -30,7 +30,7 @@ class RM_BaseModel {
     static function FilterHtml( $input ) {
 
         
-        return stripslashes( wp_kses( trim( $input ) ) );
+        return trim( stripslashes( $input ) );
         
         
     }

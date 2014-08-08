@@ -139,6 +139,7 @@ Alternatively:
 * Added Choice to Specify Title Menu Link Location
 * Added Ability to add custom HTML snippet inside the menu
 * Added Choice of location for custom HTML snippet inside the menu
+* Detect if WP Login bar is active and adjust accordingly
 
 = 1.9 (5th Apr 2014) =
 
