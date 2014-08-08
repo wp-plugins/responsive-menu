@@ -34,10 +34,18 @@ class RM_View {
     static function checkViewPortTag() {
 
         
-        $metaTags = get_meta_tags( get_bloginfo( 'url' ) );
+        if( $metaTags = @get_meta_tags( get_bloginfo( 'url' ) ) ) :
 
-        if ( $metaTags['viewport'] )
-            return $metaTags['viewport'];
+            
+            if ( isset( $metaTags['viewport'] ) )
+                return $metaTags['viewport'];
+            else 
+                return false;
+        
+        endif;
+        
+        
+        return false;
         
         
     }
