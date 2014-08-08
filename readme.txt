@@ -1,7 +1,7 @@
 === Responsive Menu ===
 Contributors: peter.featherstone
 Donate link: http://www.peterfeatherstone.com/donate/
-Tags: responsive, menu, responsive menu, 3 lines, 3 line, three line, three lines
+Tags: responsive, menu, responsive menu, mobile menu, tablet menu, mobile, tablet, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 4.0
 Stable tag: 2
@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 54 customisable options enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 54 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -66,9 +66,9 @@ This is a Highly Customisable Responsive Menu Plugin, with 54 customisable optio
 <li> - Choice of location for custom HTML snippet inside the menu</li>
 <li> - Plus more...</li>
 </ul>
-The plugin creates a nice three-lined menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
+The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
-The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you.
+The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you. It can be used as a responsive menu, mobile menu, tablet menu or full dedicated menu for your main site.
 <br /><br />
 It requires no shortcodes or fancy php code to be inserted by yourself making it very easy to install, with 54 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
 <br /><br />
