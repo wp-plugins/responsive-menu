@@ -36,7 +36,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMClickTitle = isset($data['RMClickTitle']) ? $data['RMClickTitle'] : RM_Registry::get( 'defaults', 'RMClickTitle' );
         
-        $RMBkgTran = isset($data['RMBkgTran']) ? $data['RMBkgTran'] : RM_Registry::get( 'defaults', 'RMBkgTran' );
+        $RMBkgTran = isset($data['RMBkgTran']) ? $data['RMBkgTran'] : false;
         
         $RMPos = isset($data['RMPos']) ? $data['RMPos'] : RM_Registry::get( 'defaults', 'RMPos' );
         
