@@ -273,7 +273,8 @@ class RM_CSSModel extends RM_BaseModel {
                 margin: 0px{$important}
             }
                         
-            #responsive-menu .responsive-menu li.current_page_item > a
+            #responsive-menu .responsive-menu li.current_page_item > a,
+            #responsive-menu .responsive-menu li.current_page_item > .appendLink
             {
                 background: $curBkg{$important}
                 color: $curCol{$important}

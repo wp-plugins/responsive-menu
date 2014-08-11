@@ -235,8 +235,14 @@ class RM_JSModel extends RM_BaseModel {
         $js .= " 
             
                 clickLink = '<span class=\"appendLink\">&#9660;</span>';
+                clickedLink = '<span class=\"appendLink\">&#9650;</span>';
+                
                 \$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' ); 
-                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).prepend( clickLink );
+
+                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );
+
+                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );
+
                 
                 \$RMjQuery( '.appendLink' ).on( 'click', function() { 
                 
