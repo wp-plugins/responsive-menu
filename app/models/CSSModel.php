@@ -313,7 +313,6 @@ class RM_CSSModel extends RM_BaseModel {
             { 
                 text-align: center;
                 cursor: pointer; 
-                width: 50px;
                 font-size: {$btnSize}px{$important}
                 display: none;
                 position: $position;
