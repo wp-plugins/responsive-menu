@@ -120,7 +120,7 @@ Alternatively:
 
 == Changelog ==
 
-= 2.0 (6th Aug 2014) =
+= 2.0 (13th Aug 2014) =
 
 *** WE HAVE REACHED OVER 50 CUSTOMISABLE OPTIONS! ***
 
