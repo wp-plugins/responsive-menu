@@ -4,7 +4,7 @@ Donate link: http://www.peterfeatherstone.com/donate/
 Tags: responsive, menu, responsive menu, mobile menu, tablet menu, mobile, tablet, 3 lines, 3 line, three line, three lines
 Requires at least: 3.0.1
 Tested up to: 4.0
-Stable tag: 2
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -120,7 +120,7 @@ Alternatively:
 
 == Changelog ==
 
-= 2.0 (6th Aug 2014) =
+= 2.0 (13th Aug 2014) =
 
 *** WE HAVE REACHED OVER 50 CUSTOMISABLE OPTIONS! ***
 
