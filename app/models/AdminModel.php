@@ -12,7 +12,6 @@ class RM_AdminModel extends RM_BaseModel {
      */
     
     static public function save( $data ) {
-    
         
         // Initialise Variables Correctly
         
@@ -20,7 +19,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMTitle = isset($data['RMTitle']) ? $data['RMTitle'] : RM_Registry::get( 'defaults', 'RMTitle' );
         
-        $RMBreak = isset($data['RMBreak']) ? $data['RMBreak'] : RM_Registry::get( 'defaults', 'RMBreak' );
+        $RMBreak = $data['RMBreak'] ? $data['RMBreak'] : RM_Registry::get( 'defaults', 'RMBreak' );
         
         $RMDepth = isset($data['RMDepth']) ? $data['RMDepth'] : RM_Registry::get( 'defaults', 'RMDepth' );
         
@@ -42,7 +41,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMImage = isset($data['RMImage']) ? $data['RMImage'] : RM_Registry::get( 'defaults', 'RMImage' );
         
-        $RMWidth = isset($data['RMWidth']) ? $data['RMWidth'] : RM_Registry::get( 'defaults', 'RMWidth' );
+        $RMWidth = $data['RMWidth'] ? $data['RMWidth'] : RM_Registry::get( 'defaults', 'RMWidth' );
         
         $RMBkg = isset($data['RMBkg']) ? $data['RMBkg'] : RM_Registry::get( 'defaults', 'RMBkg' );
         
@@ -68,21 +67,21 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMFont =  isset($data['RMFont']) ? $data['RMFont'] : RM_Registry::get( 'defaults', 'RMFont' );
         
-        $RMFontSize = isset($data['RMFontSize']) ? $data['RMFontSize'] : RM_Registry::get( 'defaults', 'RMFontSize' );
+        $RMFontSize = $data['RMFontSize'] ? $data['RMFontSize'] : RM_Registry::get( 'defaults', 'RMFontSize' );
         
-        $RMTitleSize = isset($data['RMTitleSize']) ? $data['RMTitleSize'] : RM_Registry::get( 'defaults', 'RMTitleSize' );
+        $RMTitleSize = $data['RMTitleSize'] ? $data['RMTitleSize'] : RM_Registry::get( 'defaults', 'RMTitleSize' );
         
-        $RMBtnSize = isset($data['RMBtnSize']) ? $data['RMBtnSize'] : RM_Registry::get( 'defaults', 'RMBtnSize' );
+        $RMBtnSize = $data['RMBtnSize'] ? $data['RMBtnSize'] : RM_Registry::get( 'defaults', 'RMBtnSize' );
         
         $RMCurBkg = isset($data['RMCurBkg']) ? $data['RMCurBkg'] : RM_Registry::get( 'defaults', 'RMCurBkg' );
         
         $RMCurCol = isset($data['RMCurCol']) ? $data['RMCurCol'] : RM_Registry::get( 'defaults', 'RMCurCol' );
         
-        $RMAnimSpd = isset($data['RMAnimSpd']) ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
+        $RMAnimSpd = $data['RMAnimSpd'] ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
 
         /* Added in 1.7 */
         
-        $RMTranSpd = isset($data['RMTranSpd']) ? $data['RMTranSpd'] : RM_Registry::get( 'defaults', 'RMTranSpd' );
+        $RMTranSpd = $data['RMTranSpd'] ? $data['RMTranSpd'] : RM_Registry::get( 'defaults', 'RMTranSpd' );
         
         $RMTxtAlign = isset($data['RMTxtAlign']) ? $data['RMTxtAlign'] : RM_Registry::get( 'defaults', 'RMTxtAlign' );
         
@@ -90,7 +89,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMExpand = isset($data['RMExpand']) ? $data['RMExpand'] : RM_Registry::get( 'defaults', 'RMExpand' );
         
-        $RMLinkHeight = isset($data['RMLinkHeight']) ? $data['RMLinkHeight'] : RM_Registry::get( 'defaults', 'RMLinkHeight' );
+        $RMLinkHeight = $data['RMLinkHeight'] ? $data['RMLinkHeight'] : RM_Registry::get( 'defaults', 'RMLinkHeight' );
 
         /* Added in 1.8 */
         
