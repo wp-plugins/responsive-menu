@@ -56,6 +56,19 @@
                 color: green;
             }
             
+            #twitter
+            {
+                height: 25px;
+                width: 25px;
+                float: right;
+                margin: 8px;
+            }
+            
+            #twitter:hover
+            {
+                transform: rotate( 720deg );
+            }
+            
             #RMVersion
             {
                 float: right;
@@ -74,6 +87,14 @@
             {
                 padding: 25px 0px 0px 0px;
                 color: green;
+            }
+            
+            #twitter
+            {
+                -o-transition: 1s all;
+                -moz-transition: 1s all;
+                -webkit-transition: 1s all;
+                transition: 1s all;
             }
             
             @media only screen and ( min-width : 0px ) and ( max-width : 600px ) { 
@@ -141,7 +162,12 @@
             <div id="RMVersion" <?php echo RM_Registry::get( 'config', 'is_beta' ) ? 'class="beta"' : ''; ?>>
                 Version <?php echo RM_Registry::get( 'config', 'current_version' ); ?> 
                 <?php echo RM_Registry::get( 'config', 'is_beta' ) ? 'Beta' : ''; ?>
+                
             </div>
+            
+            <a href="https://www.twitter.com/PlumaPiedra" target="_blank">
+                <img id="twitter" src="<?php echo RM_Registry::get( 'config', 'plugins_base_uri' ); ?>/public/imgs/twitter.png" />
+            </a>
             
             <form action="" method="post">
 
