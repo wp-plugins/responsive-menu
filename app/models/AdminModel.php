@@ -29,9 +29,9 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMCss = isset($data['RMCss']) ? $data['RMCss'] : RM_Registry::get( 'defaults', 'RMCss' );
         
-        $RMLineCol = isset($data['RMLineCol']) ? $data['RMLineCol'] : RM_Registry::get( 'defaults', 'RMLineCol' );
+        $RMLineCol = !empty($data['RMLineCol']) ? $data['RMLineCol'] : RM_Registry::get( 'defaults', 'RMLineCol' );
         
-        $RMClickBkg = isset($data['RMClickBkg']) ? $data['RMClickBkg'] : RM_Registry::get( 'defaults', 'RMClickBkg' );
+        $RMClickBkg = !empty($data['RMClickBkg']) ? $data['RMClickBkg'] : RM_Registry::get( 'defaults', 'RMClickBkg' );
         
         $RMClickTitle = isset($data['RMClickTitle']) ? $data['RMClickTitle'] : RM_Registry::get( 'defaults', 'RMClickTitle' );
         
@@ -43,19 +43,19 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMWidth = $data['RMWidth'] ? $data['RMWidth'] : RM_Registry::get( 'defaults', 'RMWidth' );
         
-        $RMBkg = isset($data['RMBkg']) ? $data['RMBkg'] : RM_Registry::get( 'defaults', 'RMBkg' );
+        $RMBkg = !empty($data['RMBkg']) ? $data['RMBkg'] : RM_Registry::get( 'defaults', 'RMBkg' );
         
-        $RMBkgHov = isset($data['RMBkgHov']) ? $data['RMBkgHov'] : RM_Registry::get( 'defaults', 'RMBkgHov' );
+        $RMBkgHov = !empty($data['RMBkgHov']) ? $data['RMBkgHov'] : RM_Registry::get( 'defaults', 'RMBkgHov' );
         
-        $RMTitleCol = isset($data['RMTitleCol']) ? $data['RMTitleCol'] : RM_Registry::get( 'defaults', 'RMTitleCol' );
+        $RMTitleCol = !empty($data['RMTitleCol']) ? $data['RMTitleCol'] : RM_Registry::get( 'defaults', 'RMTitleCol' );
         
-        $RMTextCol = isset($data['RMTextCol']) ? $data['RMTextCol'] : RM_Registry::get( 'defaults', 'RMTextCol' );
+        $RMTextCol = !empty($data['RMTextCol']) ? $data['RMTextCol'] : RM_Registry::get( 'defaults', 'RMTextCol' );
         
-        $RMBorCol = isset($data['RMBorCol']) ? $data['RMBorCol'] : RM_Registry::get( 'defaults', 'RMBorCol' );
+        $RMBorCol = !empty($data['RMBorCol']) ? $data['RMBorCol'] : RM_Registry::get( 'defaults', 'RMBorCol' );
         
-        $RMTextColHov = isset($data['RMTextColHov']) ? $data['RMTextColHov'] : RM_Registry::get( 'defaults', 'RMTextColHov' );
+        $RMTextColHov = !empty($data['RMTextColHov']) ? $data['RMTextColHov'] : RM_Registry::get( 'defaults', 'RMTextColHov' );
         
-        $RMTitleColHov = isset($data['RMTitleColHov']) ? $data['RMTitleColHov'] : RM_Registry::get( 'defaults', 'RMTitleColHov' );
+        $RMTitleColHov = !empty($data['RMTitleColHov']) ? $data['RMTitleColHov'] : RM_Registry::get( 'defaults', 'RMTitleColHov' );
 
         /* Added in 1.6 */
         
@@ -63,7 +63,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMPushCSS = isset($data['RMPushCSS']) ? $data['RMPushCSS'] : RM_Registry::get( 'defaults', 'RMPushCSS' );
         
-        $RMTitleBkg = isset($data['RMTitleBkg']) ? $data['RMTitleBkg'] : RM_Registry::get( 'defaults', 'RMTitleBkg' );
+        $RMTitleBkg = !empty($data['RMTitleBkg']) ? $data['RMTitleBkg'] : RM_Registry::get( 'defaults', 'RMTitleBkg' );
         
         $RMFont =  isset($data['RMFont']) ? $data['RMFont'] : RM_Registry::get( 'defaults', 'RMFont' );
         
@@ -73,10 +73,10 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMBtnSize = $data['RMBtnSize'] ? $data['RMBtnSize'] : RM_Registry::get( 'defaults', 'RMBtnSize' );
         
-        $RMCurBkg = isset($data['RMCurBkg']) ? $data['RMCurBkg'] : RM_Registry::get( 'defaults', 'RMCurBkg' );
+        $RMCurBkg = !empty($data['RMCurBkg']) ? $data['RMCurBkg'] : RM_Registry::get( 'defaults', 'RMCurBkg' );
         
-        $RMCurCol = isset($data['RMCurCol']) ? $data['RMCurCol'] : RM_Registry::get( 'defaults', 'RMCurCol' );
-        
+        $RMCurCol = !empty($data['RMCurCol']) ? $data['RMCurCol'] : RM_Registry::get( 'defaults', 'RMCurCol' );
+ 
         $RMAnimSpd = $data['RMAnimSpd'] ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
 
         /* Added in 1.7 */
