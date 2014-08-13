@@ -14,10 +14,10 @@
 $config = array( 
     
     
-    'current_version' => 2.1,
+    'current_version' => 2,
     
     
-    'is_beta' => true,
+    'is_beta' => false,
     
     
     'plugins_dir' => plugin_dir_path( __FILE__ ),
