@@ -206,6 +206,8 @@ if( $options['RMIgnParCli'] ) :
 
     $js .= "
 
+        \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).addClass( 'rm-click-disabled' );
+ 
         \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
         
             e.preventDefault();
@@ -408,6 +410,16 @@ $js .= "
         \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
 
         \$RMjQuery( this ).html() == '▲' ? \$RMjQuery( this ).html( '▼' ) : \$RMjQuery( this ).html( '▲' );
+
+        $setHeight
+
+    } );
+    
+    \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
+
+        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+
+        \$RMjQuery( this ).siblings( '.appendLink' ).html() == '▲' ? \$RMjQuery( this ).siblings( '.appendLink' ).html( '▼' ) : \$RMjQuery( this ).siblings( '.appendLink' ).html( '▲' );
 
         $setHeight
 
