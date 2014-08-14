@@ -229,34 +229,65 @@ class RM_JSModel extends RM_BaseModel {
 
             ";
         
-    /* Added 1.7 */
-    if ( !$options['RMExpand'] ) : 
-
-        $clickLink = '<span class=\"appendLink\">&#9660;</span>';
-        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    
-        $js .= "clickLink = '{$clickLink}';";
-    
-        if( $options['RMExpandPar'] ) :
-            
-            $js .= "clickedLink = '{$clickedLink}';";
-
-        else :
-            
-            $js .= "clickedLink = '{$clickLink}';";
+ 
+    /* Added 2.0
+     * 
+     * Bug Fix for Displaying correct arrow positionings
+     * and ensure that the append link is always showing
+     */
+                        
+    if ( !$options['RMExpand'] ) :
         
-        endif;
-                
-                
-                
-                $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' );
+        $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' );";
+        $clickedLink = '<span class=\"appendLink\">&#9660;</span>';  
+        $clickLink = '<span class=\"appendLink\">&#9660;</span>';  
+        
+    else :
+        
+        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
+        $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+        
+    endif;
     
-                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );";
+    /* Added 2.0
+     * 
+     * Bug Fix for Displaying correct arrow positionings
+     * when auto expand current parents option is set
+     */
+    
+    if( $options['RMExpandPar'] ) :
+        
+        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
+        $clickLink = '<span class=\"appendLink\">&#9660;</span>'; 
+        
+    endif;
+    
+    /* Added 2.0
+     * 
+     * Bug Fix for Displaying correct arrow positionings
+     * when both expansion settings are set
+     */
+    
+    if( $options['RMExpandPar'] && $options['RMExpand'] ) :
+        
+        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
+        $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+        
+    endif;
+    
 
-                $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );";
+    
+        $js .= " 
+            
+                clickLink = '{$clickLink}';
+                clickedLink = '{$clickedLink}';
 
-           
-                $js .= "\$RMjQuery( '.appendLink' ).on( 'click', function() { 
+                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );
+
+                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );
+                
+                
+                \$RMjQuery( '.appendLink' ).on( 'click', function() { 
                 
                     \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
 
@@ -274,8 +305,6 @@ class RM_JSModel extends RM_BaseModel {
     
                 } );
                 ";
-
-    endif;
     
      /* Added 1.9 */
     if ( isset( $options['RMClickClose'] ) && $options['RMClickClose'] == 'close' ) : 
