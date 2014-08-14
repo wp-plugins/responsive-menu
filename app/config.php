@@ -241,7 +241,11 @@ $defaults = array(
     'RMHtml' => null,
     
     
-    'RMHtmlLoc' => 'bottom'
+    'RMHtmlLoc' => 'bottom',
+    
+    /* Added in 2.1 */
+    
+    'RMShortcode' => false
     
     
 );

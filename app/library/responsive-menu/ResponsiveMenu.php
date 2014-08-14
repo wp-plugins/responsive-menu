@@ -50,6 +50,7 @@ class ResponsiveMenu {
         RM_CSSController::prepare();
         RM_JSController::prepare();
      
+        RM_Shortcode::prepare();
      
     }
     

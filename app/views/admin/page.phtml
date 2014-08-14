@@ -9,6 +9,7 @@
             h4.divider
             {
                 color: #D44A44;
+                font-size: 12px;
             }
 
             h5
@@ -208,6 +209,41 @@
                 
                 <br /><br />
 
+                <hr />
+                
+                <h3><?php _e( 'Shortcode Support', 'responsive-menu' ); ?></h3>
+                
+                <table>
+                    <tr>
+                        <td>
+
+                            <h4><?php _e( 'Click to use shortcode', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'Tick if you would like to use a shortcode instead of the default behaviour', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMShortcode" 
+                            id="RMShortcode"
+                            value="shortcode"
+                            <?php echo isset( $data['RMShortcode'] ) && $data['RMShortcode'] == 'shortcode' ? ' checked="checked" ' : ''; ?>
+                            />
+
+                        </td>
+                        <td>
+
+                        </td>                
+                    </tr>  
+                    <tr>
+                        <td colspan="2">
+                            <h4 class="divider">
+                                <?php _e( 'Note', 'responsive-menu' ); ?>: 
+                                <?php _e( 'Use shortcode [responsive-menu], currently this is only for those that know about CSS customisation etc. and doesn\'t offer any additional functionality', 'responsive-menu' ); ?>.            
+                            </h4>
+                        </td>
+                    </tr>
+                </table>
+                
                 <hr />
 
                 <h3><?php _e( 'Menu Settings', 'responsive-menu' ); ?></h3>
