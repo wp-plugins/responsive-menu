@@ -44,7 +44,7 @@ class RM_JSController extends RM_BaseController {
     static function addInline() {
         
         
-        echo RM_Registry::get( 'options', 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( RM_JSModel::getJs() ) : RM_JSModel::getJs();
+        echo RM_Registry::get( 'options', 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( RM_JSModel::getJs( RM_Registry::get( 'options' ) ) ) : RM_JSModel::getJs( RM_Registry::get( 'options' ) );
             
         
     }

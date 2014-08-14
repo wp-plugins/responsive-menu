@@ -32,15 +32,14 @@ class RM_JSModel extends RM_BaseModel {
     /**
      * Function to format, create and get the JS itself
      *
-     * @param string $args
+     * @param array $options
      * @return string
      * @added 1.0
      */
     
-    static function getJS( $args = null ) {
-
-        $options = RM_Registry::get( 'options' );
-
+    static function getJS( $options ) {
+        
+        
         $setHeight = $options['RMPos'] == 'fixed' ? '' : " \$RMjQuery( '#responsive-menu' ).css( 'height', \$RMjQuery( document ).height() ); ";
         $breakpoint = empty($options['RMBreak']) ? "600" : $options['RMBreak'];
         
@@ -87,148 +86,32 @@ class RM_JSModel extends RM_BaseModel {
         $slideOverCssRemove = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).removeClass( 'RMPushSlide' ); " : '';
 
         $speed = empty( $options['RMAnimSpd'] ) ? 500 : $options['RMAnimSpd'] * 1000;
+
+/*
+|--------------------------------------------------------------------------
+| Change to X Options
+|--------------------------------------------------------------------------
+|
+| This is where we deal with the JavaScript needed to change the main lines
+| to an X if this option has been set
+|
+*/
         
-        if( $options['RMX'] ) : 
-        
-            $closeX = " \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'none' );
-                        \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'inline' ); ";
-        
-            $showX = " \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'none' );
-                         \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'inline' ); ";        
-        else :
-        
-            $closeX = "";
-            $showX = "";
-        
-        endif;
+if( $options['RMX'] ) : 
+
+    $closeX = " \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'none' );
+                \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'inline' ); ";
+
+    $showX = " \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'none' );
+                 \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'inline' ); ";        
+else :
+
+    $closeX = "";
+    $showX = "";
+
+endif;
             
-        /* Added 2.0 to stop clicks on the main parent items */
-        
-        $parentClick = "";
-        
-        if( $options['RMIgnParCli'] ) :
-            
-            $parentClick = "
-                
-                \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
-                    e.preventDefault();
-                });";
 
-        endif;
-        
-        /* Added 2.0 to automatically expand children links of parents */
-        
-        $expandChildren = "";
-        
-        if( $options['RMExpandPar'] ) :
-            
-            $expandChildren = "
-                
-                \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
-                \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
-                \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
-
-            ";
-                
-        endif;
-        
-        /* Added 2.0 to close menu on page clicks */
-    
-        $clickToClose = $options['RMCliToClo'] ? "\$RMjQuery( document ).on( 'click tap', function( e ) { if( !\$RMjQuery( e.target ).closest( '#responsive-menu, #click-menu' ).length ) { closeRM(); } } );" : "";
-
-        $js = '';
-        
-        if( $args != 'strip_tags' ) : 
-
-            $js .= "<script> ";
-        
-        endif;
-        
-        $js .= "
-
-            var \$RMjQuery = jQuery.noConflict();
-
-            \$RMjQuery( document ).ready( function( ) {
-            
-                $parentClick
-                $clickToClose
-                    
-                var isOpen = false;
-
-                \$RMjQuery( document ).on( 'click', '#click-menu', function() {
-                       
-                    $setHeight
-
-                    if( !isOpen ) {
-
-                         openRM();
-
-                    } else {
-
-                        closeRM();
-
-                    }
-
-                });
-                    
-                function openRM() {
-
-                      $slideOpen  
-                      $sideSlideOpen
-                      $slideOverCss
-                      $slideOver
-                      $showX
-                          
-                      \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
-                      \$RMjQuery( '#responsive-menu' ).addClass( 'RMOpened' );  
-                      
-                      \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
-                          
-                        $setHeight
-    
-                        isOpen = true;
-
-                      } ); 
-                      
-                }
-   
-                function closeRM() {
-
-                        $slideBack
-                        
-                        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"{$neg}{$width}%\" }, $speed, 'linear', function() { 
-                      
-                            $slideRemove
-                            $sideSlideRemove
-                            $slideOverCssRemove
-                            $closeX
-                            \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
-                            \$RMjQuery( '#responsive-menu' ).removeClass( 'RMOpened' );  
-
-                            isOpen = false;
-
-                        } );
-                        
-                }
-                
-                \$RMjQuery( window ).resize( function() { 
-                
-                    $setHeight
-
-                    if( \$RMjQuery( window ).width() > $breakpoint ) { 
-
-                        if( \$RMjQuery( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
-                            
-                            closeRM();
-
-                        }
-
-                    }
-
-                });
-
-            ";
-        
 /*
 |--------------------------------------------------------------------------
 | Menu Expansion Options
@@ -244,74 +127,305 @@ class RM_JSModel extends RM_BaseModel {
 |
 */
                         
+if ( !$options['RMExpand'] ) :
+
+    $clickedLink = '<span class=\"appendLink\">▼</span>';  
+    $clickLink = '<span class=\"appendLink\">▼</span>';  
+
+else :
+
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▲</span>'; 
+
+endif;
+
+if( $options['RMExpandPar'] ) :
+
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▼</span>'; 
+
+endif;
+
+if( $options['RMExpandPar'] && $options['RMExpand'] ) :
+
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▲</span>'; 
+
+endif;
+    
+        
+/*
+|--------------------------------------------------------------------------
+| Initialise Output
+|--------------------------------------------------------------------------
+|
+| Initialise the JavaScript output variable ready for appending
+|
+*/   
+        
+$js = null;
+        
+/*
+|--------------------------------------------------------------------------
+| Strip Tags If Needed
+|--------------------------------------------------------------------------
+|
+| Determine whether to use the <script> tags (when using internal scripts)
+|
+*/       
+
+$js .= $options['RMExternal'] ? '' : '<script>';
+
+/*
+|--------------------------------------------------------------------------
+| Initial Setup
+|--------------------------------------------------------------------------
+|
+| Setup the initial noConflict and document ready checks
+|
+*/   
+
+$js .= "
+
+    var \$RMjQuery = jQuery.noConflict();
+
+    \$RMjQuery( document ).ready( function() {
+    
+";
+
+/*
+|--------------------------------------------------------------------------
+| Stop Main Parent Item Clicks
+|--------------------------------------------------------------------------
+|
+| Stop clicks on the main parent items if option selected
+| Added 2.0
+*/ 
+
+if( $options['RMIgnParCli'] ) :
+
+    $js .= "
+
+        \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).addClass( 'rm-click-disabled' );
  
-    /* Added 2.0
-     * 
-     * Bug Fix for Displaying correct arrow positionings
-     * and ensure that the append link is always showing
-     */
-                        
-    if ( !$options['RMExpand'] ) :
+        \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
         
-        $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' );";
-        $clickedLink = '<span class=\"appendLink\">&#9660;</span>';  
-        $clickLink = '<span class=\"appendLink\">&#9660;</span>';  
-        
-    else :
-        
-        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-        $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
-        
-    endif;
-    
-    /* Added 2.0
-     * 
-     * Bug Fix for Displaying correct arrow positionings
-     * when auto expand current parents option is set
-     */
-    
-    if( $options['RMExpandPar'] ) :
-        
-        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-        $clickLink = '<span class=\"appendLink\">&#9660;</span>'; 
-        
-    endif;
-    
-    /* Added 2.0
-     * 
-     * Bug Fix for Displaying correct arrow positionings
-     * when both expansion settings are set
-     */
-    
-    if( $options['RMExpandPar'] && $options['RMExpand'] ) :
-        
-        $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-        $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
-        
-    endif;
-    
-        $js .= " 
+            e.preventDefault();
             
-                clickLink = '{$clickLink}';
-                clickedLink = '{$clickedLink}';
+        });
+        
+    ";
 
-                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );
+endif;
+   
+/*
+|--------------------------------------------------------------------------
+| Closes the menu on page clicks
+|--------------------------------------------------------------------------
+|
+| Close menu on page clicks if required
+| Added 2.0
+*/ 
 
-                \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );
+if( $options['RMCliToClo'] ) :
+
+    $js .= "
+
+        \$RMjQuery( document ).on( 'click tap', function( e ) { 
+        
+            if( !\$RMjQuery( e.target ).closest( '#responsive-menu, #click-menu' ).length ) { 
+            
+                closeRM(); 
                 
-                
-                \$RMjQuery( '.appendLink' ).on( 'click', function() { 
-                
-                    \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+            } 
+        
+        });
+        
+    ";
 
-                    arrow = \$RMjQuery( this ).html() == '&#9660;' ? '&#9650;' : '&#9660;';
+endif;
 
-                    \$RMjQuery( this ).html( arrow );
 
-                    $setHeight
+ /*
+|--------------------------------------------------------------------------
+| Click Menu Function
+|--------------------------------------------------------------------------
+|
+| This is our Click Handler to determine whether or not to open or close 
+| the menu when the click menu button has been clicked.
+|
+*/
+
+$js .= "
     
-                } );
-                ";
+    var isOpen = false;
+
+    \$RMjQuery( document ).on( 'click', '#click-menu', function() {
+
+        $setHeight
+
+        !isOpen ? openRM() : closeRM();
+
+    });
+
+";
+        
+/*
+|--------------------------------------------------------------------------
+| Menu Open Function
+|--------------------------------------------------------------------------
+|
+| This is the main function that deals with opening the menu and then sets
+| its state to open
+|
+*/
+        
+$js.= "
+                    
+    function openRM() {
+
+        $slideOpen  
+        $sideSlideOpen
+        $slideOverCss
+        $slideOver
+        $showX
+
+        \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
+        \$RMjQuery( '#responsive-menu' ).addClass( 'RMOpened' );  
+
+        \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
+
+          $setHeight
+
+          isOpen = true;
+
+        } ); 
+
+    }
+
+";
+   
+/*
+|--------------------------------------------------------------------------
+| Menu Close Function
+|--------------------------------------------------------------------------
+|
+| This is the main function that deals with Closing the Menu and then sets
+| its state to closed
+|
+*/
+        
+$js .= "
+    
+    function closeRM() {
+
+        $slideBack
+
+        \$RMjQuery( '#responsive-menu' ).animate( { $side: \"{$neg}{$width}%\" }, $speed, 'linear', function() { 
+
+            $slideRemove
+            $sideSlideRemove
+            $slideOverCssRemove
+            $closeX
+            \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
+            \$RMjQuery( '#responsive-menu' ).removeClass( 'RMOpened' );  
+
+            isOpen = false;
+
+        } );
+
+    }
+
+";
+
+/*
+|--------------------------------------------------------------------------
+| Menu Resize Function
+|--------------------------------------------------------------------------
+|
+| This is the main function that deals with resizing the page and is used 
+| to judge whether the menu needs closing once the screen is resized
+|
+*/
+                        
+$js .= "
+    
+    \$RMjQuery( window ).resize( function() { 
+
+        $setHeight
+
+        if( \$RMjQuery( window ).width() > $breakpoint ) { 
+
+            if( \$RMjQuery( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
+
+                closeRM();
+
+            }
+
+        }
+
+    });
+
+";
+        
+
+/*
+|--------------------------------------------------------------------------
+| Add Toggle Buttons
+|--------------------------------------------------------------------------
+|
+| This is the main section that deals with Adding the correct Toggle buttons
+| when needed to the links
+|
+*/
+            
+if( !$options['RMExpand'] )
+    $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' );";
+    
+    
+$js .= " 
+    
+    clickLink = '{$clickLink}';
+    clickedLink = '{$clickedLink}';
+
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );
+
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );
+
+";
+                
+/*
+|--------------------------------------------------------------------------
+| Toggle Buttons Function
+|--------------------------------------------------------------------------
+|
+| This is the function that deals with toggling the toggle buttons
+|
+*/                
+                
+$js .= "   
+    
+    \$RMjQuery( '.appendLink' ).on( 'click', function() { 
+
+        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+
+        \$RMjQuery( this ).html() == '▲' ? \$RMjQuery( this ).html( '▼' ) : \$RMjQuery( this ).html( '▲' );
+
+        $setHeight
+
+    } );
+    
+    \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
+
+        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+
+        \$RMjQuery( this ).siblings( '.appendLink' ).html() == '▲' ? \$RMjQuery( this ).siblings( '.appendLink' ).html( '▼' ) : \$RMjQuery( this ).siblings( '.appendLink' ).html( '▲' );
+
+        $setHeight
+
+    } );
+                
+";
  
 /*
 |--------------------------------------------------------------------------
@@ -319,32 +433,76 @@ class RM_JSModel extends RM_BaseModel {
 |--------------------------------------------------------------------------
 |
 | This is where we set the menu to retract if a link is clicked
+| Added 1.9
 |
 */
                 
-     /* Added 1.9 */
-    if ( isset( $options['RMClickClose'] ) && $options['RMClickClose'] == 'close' ) : 
+if ( isset( $options['RMClickClose'] ) && $options['RMClickClose'] == 'close' ) : 
 
-        $js .= " 
-            \$RMjQuery( '#responsive-menu .responsive-menu li a' ).on( 'click', function() { 
+   $js .= " 
+       \$RMjQuery( '#responsive-menu .responsive-menu li a' ).on( 'click', function() { 
+
+           closeRM();
+
+       } );";
+
+endif;
+
+/*
+|--------------------------------------------------------------------------
+| Expand children links of parents
+|--------------------------------------------------------------------------
+|
+| Section to automatically expand children links of parents if necessary
+| Added 2.0
+|
+*/
+
+if( $options['RMExpandPar'] ) :
             
-                closeRM();
-            
-            } );";
+    $js .= "
 
-    endif;
+        \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+
+    ";
+                
+endif;
+
+/*
+|--------------------------------------------------------------------------
+| Close Tags
+|--------------------------------------------------------------------------
+|
+| This closes the initial document ready call
+|
+*/ 
     
-        $js .= $expandChildren;
-    
-        $js .= "}); ";
+$js .= '}); ';
 
-        if( $args != 'strip_tags' ) : 
+/*
+|--------------------------------------------------------------------------
+| Strip Tags If Needed
+|--------------------------------------------------------------------------
+|
+| Determine whether to use the <script> tags (when using internal scripts)
+|
+*/       
 
-            $js .= "</script> ";
+$js .= $options['RMExternal'] ? '' : '</script>';
+
         
-        endif;
+/*
+|--------------------------------------------------------------------------
+| Return Finish Script
+|--------------------------------------------------------------------------
+|
+| Finally we return the final script back
+|
+*/   
 
-        return $js;
+return $js;
             
         
     }
