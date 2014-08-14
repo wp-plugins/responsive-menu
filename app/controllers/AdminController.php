@@ -78,8 +78,7 @@ class RM_AdminController extends RM_BaseController {
                 
                 RM_FolderModel::create();
             
-            
-                $js = RM_JSModel::getJs( 'strip_tags' );        
+                $js = RM_JSModel::getJs( RM_Registry::get( 'options' ) );        
                 $js = RM_Registry::get( 'options', 'RMMinify') == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js;        
                 RM_JSModel::createJSFile( $js );
             
