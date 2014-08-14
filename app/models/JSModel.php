@@ -304,15 +304,9 @@ class RM_JSModel extends RM_BaseModel {
                 
                     \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
 
-                    if( \$RMjQuery( this ).html() == '&#9660;' ) {
+                    arrow = \$RMjQuery( this ).html() == '&#9660;' ? '&#9650;' : '&#9660;';
 
-                        \$RMjQuery( this ).html( '&#9650;' ); 
-
-                    } else {
-
-                        \$RMjQuery( this ).html( '&#9660;' );
-
-                    }
+                    \$RMjQuery( this ).html( arrow );
 
                     $setHeight
     
