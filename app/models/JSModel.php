@@ -32,7 +32,7 @@ class RM_JSModel extends RM_BaseModel {
     /**
      * Function to format, create and get the JS itself
      *
-     * @param string $args
+     * @param array $options
      * @return string
      * @added 1.0
      */
@@ -129,27 +129,27 @@ endif;
                         
 if ( !$options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9660;</span>';  
-    $clickLink = '<span class=\"appendLink\">&#9660;</span>';  
+    $clickedLink = '<span class=\"appendLink\">▼</span>';  
+    $clickLink = '<span class=\"appendLink\">▼</span>';  
 
 else :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▲</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9660;</span>'; 
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▼</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] && $options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+    $clickedLink = '<span class=\"appendLink\">▲</span>';
+    $clickLink = '<span class=\"appendLink\">▲</span>'; 
 
 endif;
     
