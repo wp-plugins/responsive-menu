@@ -229,6 +229,21 @@ class RM_JSModel extends RM_BaseModel {
 
             ";
         
+/*
+|--------------------------------------------------------------------------
+| Menu Expansion Options
+|--------------------------------------------------------------------------
+|
+| This is where we deal with the array of expansion options, the current
+| combinations are:
+|
+| - Auto Expand Current Parent Items ['RMExpandPar']
+| - Auto Expand Current Parent Items + Auto Expand Sub-Menus ['RMExpandPar'] && ['RMExpand']
+| - Auto Expand Sub-Menus ['RMExpand']
+| - None !['RMExpandPar'] && !['RMExpand']
+|
+*/
+                        
  
     /* Added 2.0
      * 
@@ -275,8 +290,6 @@ class RM_JSModel extends RM_BaseModel {
         
     endif;
     
-
-    
         $js .= " 
             
                 clickLink = '{$clickLink}';
@@ -305,7 +318,16 @@ class RM_JSModel extends RM_BaseModel {
     
                 } );
                 ";
-    
+ 
+/*
+|--------------------------------------------------------------------------
+| Menu Closing Options
+|--------------------------------------------------------------------------
+|
+| This is where we set the menu to retract if a link is clicked
+|
+*/
+                
      /* Added 1.9 */
     if ( isset( $options['RMClickClose'] ) && $options['RMClickClose'] == 'close' ) : 
 
