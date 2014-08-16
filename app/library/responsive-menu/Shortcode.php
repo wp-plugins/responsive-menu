@@ -14,7 +14,7 @@ class RM_Shortcode {
     static function prepare() {
         
         
-        if( RM_Registry::get( 'options', 'RMShortcode' ) )
+        if( ResponsiveMenu::getOption( 'RMShortcode' ) )
             add_shortcode( 'responsive-menu', array( 'RM_HTMLController', 'display' ) );
 
         

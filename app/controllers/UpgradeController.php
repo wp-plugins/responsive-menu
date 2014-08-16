@@ -16,13 +16,13 @@ class RM_UpgradeController extends RM_BaseController {
         if( self::needsUpgrade() ) :
             
 
-            if( RM_Registry::get( 'options', 'RMExternal' ) ) : 
+            if( ResponsiveMenu::getOption( 'RMExternal' ) ) : 
                 
                 
                 RM_FolderModel::create();
             
                 $js = RM_JSModel::getJs();        
-                $js = RM_Registry::get( 'options', 'RMMinify') == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js; 
+                $js = ResponsiveMenu::getOption( 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js; 
                 
                 RM_JSModel::createJSFile( $js );
                 
@@ -38,7 +38,7 @@ class RM_UpgradeController extends RM_BaseController {
             update_option( 'RMVer', RM_Registry::get( 'config', 'current_version' ) );
             
             /* Merge Changes */
-            update_option( 'RMOptions', array_merge( RM_Registry::get( 'defaults' ), get_option( 'RMOptions' ) ) );
+            update_option( 'RMOptions', array_merge( RM_Registry::get( 'defaults' ), ResponsiveMenu::getOptions() ) );
             
             
         endif;

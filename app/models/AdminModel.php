@@ -272,8 +272,6 @@ class RM_AdminModel extends RM_BaseModel {
         update_option( 'RMOptions', $optionsArray );
             
         // And save back to the registry 
-        
-        RM_Registry::set( 'options', $optionsArray );
 
         RM_Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
         
