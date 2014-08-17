@@ -14,7 +14,8 @@ class RM_HTMLController extends RM_BaseController {
     static function prepare() {
         
         
-        add_action( 'wp_footer', array( 'RM_HTMLController', 'display' ) );
+        if( !ResponsiveMenu::getOption( 'RMShortcode' ) )
+            add_action( 'wp_footer', array( 'RM_HTMLController', 'display' ) );
         
         
     }
@@ -27,10 +28,10 @@ class RM_HTMLController extends RM_BaseController {
      * @added 1.0
      */
     
-    static function display() {
+    static function display( $args = null ) {
         
          
-        RM_View::make( 'menu', RM_Registry::get( 'options' ) );
+        RM_View::make( 'menu', ResponsiveMenu::getOptions() );
      
         
     }

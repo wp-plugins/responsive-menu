@@ -112,9 +112,9 @@ class RM_View {
     
     static function additionalContent() { 
         
-        if( RM_Registry::get( 'options', 'RMHtml' ) ) : ?>
+        if( ResponsiveMenu::getOption( 'RMHtml' ) ) : ?>
         
-            <div id="rm-additional-content"><?php echo RM_Registry::get( 'options', 'RMHtml' ); ?></div>
+            <div id="rm-additional-content"><?php echo ResponsiveMenu::getOption( 'RMHtml' ); ?></div>
                                       
    <?php 
    

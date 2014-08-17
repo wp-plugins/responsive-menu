@@ -73,14 +73,13 @@ class RM_AdminController extends RM_BaseController {
             
             RM_AdminModel::save( RM_Input::post() );
         
-            if( RM_Registry::get( 'options', 'RMExternal' ) ) : 
+            if( ResponsiveMenu::getOption( 'RMExternal' ) ) : 
                 
                 
                 RM_FolderModel::create();
             
-            
-                $js = RM_JSModel::getJs( 'strip_tags' );        
-                $js = RM_Registry::get( 'options', 'RMMinify') == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js;        
+                $js = RM_JSModel::getJs( ResponsiveMenu::getOptions()  );        
+                $js = ResponsiveMenu::getOption( 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js;        
                 RM_JSModel::createJSFile( $js );
             
                 
@@ -94,7 +93,7 @@ class RM_AdminController extends RM_BaseController {
         
         endif;    
 
-        RM_View::make( 'admin.page', RM_Registry::get( 'options' ) );
+        RM_View::make( 'admin.page', ResponsiveMenu::getOptions() );
         
         
     }

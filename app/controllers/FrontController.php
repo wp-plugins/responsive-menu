@@ -16,7 +16,7 @@ class RM_FrontController extends RM_BaseController {
         if( !is_admin() ) : 
             
         
-            if( RM_Registry::get( 'options', 'RMCliToClo' ) ) :
+            if( ResponsiveMenu::getOption( 'RMCliToClo' ) ) :
             
                 add_action( 'wp_enqueue_scripts', array( 'RM_FrontController', 'jQueryMobile' ) );
             

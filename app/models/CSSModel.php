@@ -39,7 +39,7 @@ class RM_CSSModel extends RM_BaseModel {
     static function getCSS( $args = null ) {
 
         
-        $options = RM_Registry::get( 'options' );
+        $options = ResponsiveMenu::getOptions();
 
         $important = empty( $options['RMRemImp'] ) ? ' !important;' : ';';
         

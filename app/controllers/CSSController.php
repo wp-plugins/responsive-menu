@@ -14,7 +14,7 @@ class RM_CSSController extends RM_BaseController {
     static function prepare() {
         
         
-        if( RM_Registry::get( 'options', 'RMExternal' ) ) :
+        if( ResponsiveMenu::getOption( 'RMExternal' ) ) :
 
             
             add_action( 'wp_enqueue_scripts', array( 'RM_CSSController', 'addExternal' ) );
@@ -42,7 +42,7 @@ class RM_CSSController extends RM_BaseController {
     static function addInline() {
         
         
-        echo RM_Registry::get( 'options', 'RMMinify' ) == 'minify' ? RM_CSSModel::Minify( RM_CSSModel::getCSS() ) : RM_CSSModel::getCSS(); 
+        echo ResponsiveMenu::getOption( 'RMMinify' ) == 'minify' ? RM_CSSModel::Minify( RM_CSSModel::getCSS() ) : RM_CSSModel::getCSS(); 
         
         
     }

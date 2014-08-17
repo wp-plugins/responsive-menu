@@ -14,7 +14,7 @@
 $config = array( 
     
     
-    'current_version' => 2,
+    'current_version' => 2.1,
     
     
     'is_beta' => false,
@@ -241,7 +241,11 @@ $defaults = array(
     'RMHtml' => null,
     
     
-    'RMHtmlLoc' => 'bottom'
+    'RMHtmlLoc' => 'bottom',
+    
+    /* Added in 2.1 */
+    
+    'RMShortcode' => false
     
     
 );

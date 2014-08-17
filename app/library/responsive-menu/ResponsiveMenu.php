@@ -50,7 +50,45 @@ class ResponsiveMenu {
         RM_CSSController::prepare();
         RM_JSController::prepare();
      
+        RM_Shortcode::prepare();
      
+    }
+    
+  
+    /**
+     * Function to return all options throughout the site, it also
+     * automatically mixes in any default options that don't exist
+     * in the current version
+     *
+     * @return array
+     * @added 2.1
+     */
+    
+    static function getOptions() {
+        
+        return array_merge( (array) RM_Registry::get( 'defaults' ), (array) get_option( 'RMOptions' ) );
+        
+    }
+    
+    
+    /**
+     * Function to return individual options throughout the site, it
+     * automatically returns the default option if a current value
+     * doesn't exist in the current version
+     *
+     * @return array
+     * @added 2.1
+     */
+    
+    static function getOption( $option ) {
+        
+        $options = self::getOptions();
+        
+        if( isset( $options[$option] ) )
+            return $options[$option];
+        
+        return RM_Registry::get( 'defaults', $option );
+        
     }
     
     

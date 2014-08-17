@@ -13,7 +13,7 @@ class RM_BaseController {
     static function inFooter() {
            
         
-        return RM_Registry::get( 'options', 'RMFooter' ) && RM_Registry::get( 'options', 'RMFooter' ) == 'footer' ?  true : false;
+        return ResponsiveMenu::getOption( 'RMFooter' ) && ResponsiveMenu::getOption( 'RMFooter' ) == 'footer' ?  true : false;
         
         
     }

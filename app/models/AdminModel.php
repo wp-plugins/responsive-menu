@@ -133,6 +133,10 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMHtmlLoc = isset( $data['RMHtmlLoc'] ) ? $data['RMHtmlLoc'] : RM_Registry::get( 'defaults', 'RMHtmlLoc' );
         
+        /* Added in 2.1 */
+        
+        $RMShortcode = isset( $data['RMShortcode'] ) ? $data['RMShortcode'] : RM_Registry::get( 'defaults', 'RMShortcode' );
+        
         
         $optionsArray = array(
             
@@ -254,7 +258,11 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMHtml' => self::FilterHtml( $RMHtml ),
             
-            'RMHtmlLoc' => self::Filter( $RMHtmlLoc )
+            'RMHtmlLoc' => self::Filter( $RMHtmlLoc ),
+            
+            /* Added in 2.1 */
+            
+            'RMShortcode' => self::Filter( $RMShortcode )
             
                 
         );
@@ -264,8 +272,6 @@ class RM_AdminModel extends RM_BaseModel {
         update_option( 'RMOptions', $optionsArray );
             
         // And save back to the registry 
-        
-        RM_Registry::set( 'options', $optionsArray );
 
         RM_Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
         
