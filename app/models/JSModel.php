@@ -69,16 +69,51 @@ class RM_JSModel extends RM_BaseModel {
         switch( $options['RMSide']  ) :
             case 'left' : $pushSide = 'left'; $pos = ''; break;
             case 'right' : $pushSide = 'left'; $pos = '-'; break;
-            case 'top' : $pushSide = 'top'; $pos = ''; break;
-            case 'bottom' : $pushSide = 'top'; $pos = '-'; break;
+            case 'top' : $pushSide = 'marginTop'; $pos = ''; break;
+            case 'bottom' : $pushSide = 'marginTop'; $pos = '-'; break;
         endswitch;
 
         $sideSlideOpen = $side == 'right' && empty( $slideOpen ) ? " \$RMjQuery( 'body' ).addClass( 'RMPushOpen' ); " : '';
         $sideSlideRemove =  $side == 'right' && empty( $slideRemove ) ? " \$RMjQuery( 'body' ).removeClass( 'RMPushOpen' ); " : '';
         
-
-        $slideOver = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"{$pos}{$width}%\" }, 500, 'linear' ); " : '';
+/*
+|--------------------------------------------------------------------------
+| Slide Push Animation
+|--------------------------------------------------------------------------
+|
+| This is where we deal with the JavaScript needed to change the main lines
+| to an X if this option has been set
+|
+*/
         
+$slideOver = null;
+      
+if( $options['RMAnim'] == 'push' && !empty( $options['RMPushCSS'] ) ) :
+    
+    if( $options['RMSide'] == 'top' || $options['RMSide'] == 'bottom' ) :
+   
+        $slideOver = "
+        
+            var MenuHeight = \$RMjQuery( '#responsive-menu' ).css( 'height' );
+        
+            \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"{$pos}\" + MenuHeight }, 500, 'linear' );
+
+
+        ";
+        
+    else :
+        
+        $slideOver = "
+        
+            \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"{$pos}{$width}%\" }, 500, 'linear' );
+
+
+        ";
+        
+    endif;
+
+endif;
+    
         $slideOverCss = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).addClass( 'RMPushSlide' ); " : '';
 
         $slideBack = $options['RMAnim'] == 'push' && !empty($options['RMPushCSS']) ? " \$RMjQuery( '$RMPushCSS' ).animate( { $pushSide: \"0\" }, 500, 'linear' ); " : '';
