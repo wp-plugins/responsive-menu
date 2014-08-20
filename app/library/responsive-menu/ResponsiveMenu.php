@@ -66,7 +66,7 @@ class ResponsiveMenu {
     
     static function getOptions() {
         
-        return array_merge( (array) RM_Registry::get( 'defaults' ), (array) get_option( 'RMOptions' ) );
+        return array_merge( RM_Registry::get( 'defaults' ), get_option( 'RMOptions' ) );
         
     }
     

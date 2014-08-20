@@ -100,8 +100,8 @@ class RM_CSSModel extends RM_BaseModel {
         switch( $side ) :
             case 'left' : $pushSide = $side; $pushWidth = $width; $pushPos = 'relative'; break;
             case 'right' : $pushSide = $side; $pushWidth = $width; $pushPos = 'relative'; break;
-            case 'top' : $pushSide = 'top'; $pushWidth = '100'; $pushPos = 'relative'; break;
-            case 'bottom' : $pushSide = 'bottom'; $pushWidth = '-100'; $pushPos = 'relative'; break;
+            case 'top' : $pushSide = 'top'; $pushWidth = '100'; $pushPos = 'absolute'; break;
+            case 'bottom' : $pushSide = 'bottom'; $pushWidth = '-100'; $pushPos = 'absolute'; break;
             default : $pushSide = $side; $pushWidth = $width; break;
         endswitch;
   
