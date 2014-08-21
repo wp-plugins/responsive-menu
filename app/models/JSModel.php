@@ -241,9 +241,19 @@ if( $options['RMIgnParCli'] ) :
 
     $js .= "
 
-        \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).addClass( 'rm-click-disabled' );
- 
-        \$RMjQuery( '#responsive-menu .responsive-menu > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
+        \$RMjQuery( '#responsive-menu ul > li.menu-item-has-children' ).children( 'a' ).addClass( 'rm-click-disabled' );
+
+        \$RMjQuery( '#responsive-menu ul > li.menu-item-has-children' ).children( 'a' ).on( 'click', function( e ) {
+        
+            e.preventDefault();
+            
+        });
+        
+        // Continue Support for wp_page_menu() setups
+        
+        \$RMjQuery( '#responsive-menu ul > li.page_item_has_children' ).children( 'a' ).addClass( 'rm-click-disabled' );
+
+        \$RMjQuery( '#responsive-menu ul > li.page_item_has_children' ).children( 'a' ).on( 'click', function( e ) {
         
             e.preventDefault();
             
@@ -425,17 +435,19 @@ $js .= "
         
     excludeList = '.current-menu-item, .current-menu-ancestor, .current_page_ancestor';
         
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( excludeList ).prepend( clickLink );
-    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children' ).not( excludeList ).prepend( clickLink );
-
-    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current-menu-item' ).prepend( clickedLink );  
-    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current_page_ancestor' ).prepend( clickedLink );
-    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current-menu-ancestor' ).prepend( clickedLink );
+    \$RMjQuery( '#responsive-menu .menu-item-has-children' ).not( excludeList ).prepend( clickLink );
     
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item' ).prepend( clickedLink ); 
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor' ).prepend( clickedLink ); 
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor').prepend( clickedLink );
-
+    \$RMjQuery( '#responsive-menu .page_item_has_children.current-menu-item' ).prepend( clickedLink );  
+    \$RMjQuery( '#responsive-menu .page_item_has_children.current-menu-ancestor' ).prepend( clickedLink );    
+    \$RMjQuery( '#responsive-menu .menu-item-has-children.current-menu-item' ).prepend( clickedLink ); 
+    \$RMjQuery( '#responsive-menu .menu-item-has-children.current-menu-ancestor').prepend( clickedLink );
+    
+    // Continue Support for wp_page_menu() setups
+    
+    \$RMjQuery( '#responsive-menu .page_item_has_children' ).not( excludeList ).prepend( clickLink );
+    \$RMjQuery( '#responsive-menu .menu-item-has-children.current_page_ancestor' ).prepend( clickedLink ); 
+    \$RMjQuery( '#responsive-menu .page_item_has_children.current_page_ancestor' ).prepend( clickedLink );
+    
 ";
                 
 /*
@@ -484,7 +496,7 @@ $js .= "
 if ( isset( $options['RMClickClose'] ) && $options['RMClickClose'] == 'close' ) : 
 
    $js .= " 
-       \$RMjQuery( '#responsive-menu .responsive-menu li a' ).on( 'click', function() { 
+       \$RMjQuery( '#responsive-menu ul li a' ).on( 'click', function() { 
 
            closeRM();
 
@@ -506,13 +518,15 @@ if( $options['RMExpandPar'] ) :
             
     $js .= "
 
-        \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
-        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
-        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
         
-        \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
-        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
-        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
+        // Continue Support for wp_page_menu() setups
+        
+        \$RMjQuery( '#responsive-menu .current_page_ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .current-menu-ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .current-menu-item.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
 
     ";
                 
