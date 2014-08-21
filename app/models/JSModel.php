@@ -415,17 +415,26 @@ $js .= "
 */
             
 if( !$options['RMExpand'] )
-    $js .= "\$RMjQuery( '#responsive-menu .responsive-menu .sub-menu' ).css( 'display', 'none' );";
+    $js .= "\$RMjQuery( '#responsive-menu ul ul' ).css( 'display', 'none' );";
     
     
 $js .= " 
     
     clickLink = '{$clickLink}';
     clickedLink = '{$clickedLink}';
+        
+    excludeList = '.current-menu-item, .current-menu-ancestor, .current_page_ancestor';
+        
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( excludeList ).prepend( clickLink );
+    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children' ).not( excludeList ).prepend( clickLink );
 
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children' ).not( '.current-menu-item, .current-menu-ancestor, .current_page_ancestor' ).prepend( clickLink );
-
-    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item, #responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor, #responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor' ).prepend( clickedLink );
+    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current-menu-item' ).prepend( clickedLink );  
+    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current_page_ancestor' ).prepend( clickedLink );
+    \$RMjQuery( '#responsive-menu .responsive-menu .page_item_has_children.current-menu-ancestor' ).prepend( clickedLink );
+    
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-item' ).prepend( clickedLink ); 
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current_page_ancestor' ).prepend( clickedLink ); 
+    \$RMjQuery( '#responsive-menu .responsive-menu .menu-item-has-children.current-menu-ancestor').prepend( clickedLink );
 
 ";
                 
@@ -442,7 +451,7 @@ $js .= "
     
     \$RMjQuery( '.appendLink' ).on( 'click', function() { 
 
-        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).slideToggle(); 
+        \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).html( \$RMjQuery( this ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
 
@@ -452,7 +461,7 @@ $js .= "
     
     \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
 
-        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).slideToggle(); 
+        \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).siblings( '.appendLink' ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
 
@@ -500,6 +509,10 @@ if( $options['RMExpandPar'] ) :
         \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
         \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
         \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.menu-item-has-children' ).children( 'ul' ).css( 'display', 'block' );
+        
+        \$RMjQuery( '#responsive-menu .responsive-menu .current_page_ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-ancestor.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
+        \$RMjQuery( '#responsive-menu .responsive-menu .current-menu-item.page_item_has_children' ).children( 'ul' ).css( 'display', 'block' );
 
     ";
                 
