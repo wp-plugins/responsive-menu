@@ -442,7 +442,7 @@ $js .= "
     
     \$RMjQuery( '.appendLink' ).on( 'click', function() { 
 
-        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).slideToggle(); 
 
         \$RMjQuery( this ).html( \$RMjQuery( this ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
 
@@ -452,7 +452,7 @@ $js .= "
     
     \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
 
-        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).toggle(); 
+        \$RMjQuery( this ).nextAll( 'ul.sub-menu' ).slideToggle(); 
 
         \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).siblings( '.appendLink' ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
 
