@@ -137,6 +137,12 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMShortcode = isset( $data['RMShortcode'] ) ? $data['RMShortcode'] : RM_Registry::get( 'defaults', 'RMShortcode' );
         
+        /* Added in 2.2 */
+        
+        $RMLineHeight = isset( $data['RMLineHeight'] ) ? $data['RMLineHeight'] : RM_Registry::get( 'defaults', 'RMLineHeight' );
+        
+        $RMLineWidth = isset( $data['RMLineWidth'] ) ? $data['RMLineWidth'] : RM_Registry::get( 'defaults', 'RMLineWidth' );
+        
         
         $optionsArray = array(
             
@@ -262,9 +268,15 @@ class RM_AdminModel extends RM_BaseModel {
             
             /* Added in 2.1 */
             
-            'RMShortcode' => self::Filter( $RMShortcode )
-            
+            'RMShortcode' => self::Filter( $RMShortcode ),
                 
+                
+            /* Added in 2.2 */
+            
+            'RMLineHeight' => intval( $RMLineHeight ),
+            
+            'RMLineWidth' => intval( $RMLineWidth )
+   
         );
 
         // Update Submitted Options 

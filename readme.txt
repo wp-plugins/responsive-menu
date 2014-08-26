@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 55 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 57 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -65,13 +65,15 @@ This is a Highly Customisable Responsive Menu Plugin, with 55 customisable optio
 <li> - Ability to add custom HTML snippet inside the menu</li>
 <li> - Choice of location for custom HTML snippet inside the menu</li>
 <li> - Choice of using shortode or not</li>
+<li> - Ability to change the 3 lines height</li>
+<li> - Ability to change the 3 lines width</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
 <br /><br />
 The plugin is fully responsive if you have the viewport meta tag on your site, using media queries with the widths defined by you. It can be used as a responsive menu, mobile menu, tablet menu or full dedicated menu for your main site.
 <br /><br />
-It requires no shortcodes (although you can use them) or fancy php code to be inserted by yourself making it very easy to install, with 55 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
+It requires no shortcodes (although you can use them) or fancy php code to be inserted by yourself making it very easy to install, with 57 customisable options, you can get it to look exactly as you want it to or leave it with its default values to have it looking amazing in just a matter of seconds.
 <br /><br />
 You have the choice to include the stylesheets and scripts inline to avoid adding any extra HTTP requests to your site or through external stylesheets created by the plug-in. Either way, the code added is extremely small (only a little jQuery and CSS) and there is even an option to minify the output if you wish saving a further 50% on file space.
 <br /><br />
@@ -120,6 +122,13 @@ Alternatively:
 5. Example Custom Front End Expanded Menu
 
 == Changelog ==
+
+= 2.2 (26th Aug 2014) =
+
+* Added option to change 3 lines width
+* Added option to change 3 lines height
+* Sub Menu Animation added to improve smoothness
+* Minor bug fixes
 
 = 2.1 (17th Aug 2014) =
 

@@ -243,9 +243,18 @@ $defaults = array(
     
     'RMHtmlLoc' => 'bottom',
     
+    
     /* Added in 2.1 */
     
-    'RMShortcode' => false
+    'RMShortcode' => false,
+    
+    
+    /* Added in 2.2 */
+    
+    'RMLineHeight' => 5,
+    
+    
+    'RMLineWidth' => 33
     
     
 );

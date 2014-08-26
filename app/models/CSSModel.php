@@ -105,6 +105,12 @@ class RM_CSSModel extends RM_BaseModel {
             default : $pushSide = $side; $pushWidth = $width; break;
         endswitch;
   
+        /* Added 2.2 */
+        
+        $lineHeight = empty( $options['RMLineHeight'] ) ? 6 : $options['RMLineHeight'];
+        $lineWidth = empty( $options['RMLineWidth'] ) ? 33 : $options['RMLineWidth'];
+        
+        
         $css = '';
         
         if( $args != 'strip_tags' ) : 
@@ -395,14 +401,14 @@ class RM_CSSModel extends RM_BaseModel {
             
             #click-menu .threeLines
             {
-                width: 33px{$important}
+                width: {$lineWidth}px{$important}
                 height: 33px{$important}
                 margin: auto{$important}
             }
 
             #click-menu .threeLines .line
             {
-                height: 5px{$important}
+                height: {$lineHeight}px{$important}
                 margin-bottom: 6px{$important}
                 background: $clickCol{$important}
                 width: 100%{$important}

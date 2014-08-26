@@ -695,6 +695,43 @@
                     </td>
                 </tr>
             </table>
+            
+            <hr />
+                
+            <h3><?php _e( '3 Line Settings', 'responsive-menu' ); ?></h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Width', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the width of the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineWidth" 
+                            value="<?php echo isset($data['RMLineWidth']) ? $data['RMLineWidth'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( 'Height', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the height of the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineHeight" 
+                            value="<?php echo isset($data['RMLineHeight']) ? $data['RMLineHeight'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                </tr>
+            </table>
 
             <hr />
 
