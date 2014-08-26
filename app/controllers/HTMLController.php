@@ -30,6 +30,8 @@ class RM_HTMLController extends RM_BaseController {
     
     static function display( $args = null ) {
         
+        /* Unfortunately this messy section is due to shortcodes converting all args to lowercase */
+        
         if( $args ) :
             
             if( $args['rm'] )
