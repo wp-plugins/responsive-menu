@@ -128,6 +128,7 @@ Alternatively:
 * Added option to change 3 lines width
 * Added option to change 3 lines height
 * Sub Menu Animation added to improve smoothness
+* Added shortcode option to change menu (use "RM" argument) eg. [responsive-menu RM="footer-menu"]
 * Minor bug fixes
 
 = 2.1 (17th Aug 2014) =
