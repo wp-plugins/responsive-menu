@@ -154,8 +154,13 @@
 
                 <hr />
 
-                <h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>
-                    
+                <h3><?php _e( 'Meta Tag Check', 'responsive-menu' ); ?></h3>
+                
+                <table>
+
+                    <tr>
+                        <td><h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>
+     
                     <?php if ( $portTag = self::checkViewPortTag() ) : ?>
                     
                         <span class='success'> - <?php _e( 'Below Viewport Meta Tag Found', 'responsive-menu' ); ?></span>
@@ -167,7 +172,9 @@
                     endif; ?>
                     
                 </h4> 
-
+</td>
+                    </tr>
+                    <tr><td>
                 <?php if( $portTag ) : ?>
                 
                     &lt;meta name='viewport' content='<?php echo $portTag; ?>' /&gt;
@@ -177,12 +184,27 @@
                     <span class='error'><?php _e( 'Viewport Meta Tag Not Found', 'responsive-menu' ); ?></span>
                     
                 <?php endif; ?>
-                
+                        </td>
+                    <tr>
+                        <td>
                 <h4><?php _e( 'Recommended Metaport Tag', 'responsive-menu' ); ?></h4>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                 
                 &lt;meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' /&gt;
-                
-                <br /><br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>                            
+                            <h4 class="divider">
+                                <?php _e( 'Note', 'responsive-menu' ); ?>: 
+                                <?php _e( 'This is only a reference guide and is not critical if you are seeing errors', 'responsive-menu' ); ?>.
+                            </h4>
+                        </td>
+                    </tr>
+                </table>
 
                 <hr />
                 
@@ -698,7 +720,7 @@
             
             <hr />
                 
-            <h3><?php _e( '3 Line Settings', 'responsive-menu' ); ?></h3>
+            <h3><?php _e( '3 Line Size Settings', 'responsive-menu' ); ?></h3>
 
             <table>
                 <tr>

@@ -551,7 +551,7 @@ $js .= $options['RMExternal'] ? '' : '</script>';
         
 /*
 |--------------------------------------------------------------------------
-| Return Finish Script
+| Return Finished Script
 |--------------------------------------------------------------------------
 |
 | Finally we return the final script back

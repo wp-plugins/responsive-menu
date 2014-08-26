@@ -36,10 +36,8 @@ class RM_CSSModel extends RM_BaseModel {
      * @added 1.0
      */
     
-    static function getCSS( $args = null ) {
-
+    static function getCSS( $options ) {
         
-        $options = ResponsiveMenu::getOptions();
 
         $important = empty( $options['RMRemImp'] ) ? ' !important;' : ';';
         
@@ -110,14 +108,28 @@ class RM_CSSModel extends RM_BaseModel {
         $lineHeight = empty( $options['RMLineHeight'] ) ? 6 : $options['RMLineHeight'];
         $lineWidth = empty( $options['RMLineWidth'] ) ? 33 : $options['RMLineWidth'];
         
+ /*
+|--------------------------------------------------------------------------
+| Initialise Output
+|--------------------------------------------------------------------------
+|
+| Initialise the JavaScript output variable ready for appending
+|
+*/   
         
-        $css = '';
+$css = null;
         
-        if( $args != 'strip_tags' ) : 
+/*
+|--------------------------------------------------------------------------
+| Strip Tags If Needed
+|--------------------------------------------------------------------------
+|
+| Determine whether to use the <style> tags
+|
+*/       
 
-            $css .= "<style> ";
-        
-        endif;
+$css .= $options['RMExternal'] ? '' : '<style>';       
+
         
         $css .= "
 
@@ -483,15 +495,28 @@ class RM_CSSModel extends RM_BaseModel {
         $css .= " }";
 
         $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: {$pushPos}{$important} left: 0px; } " : '';
-        
-        /* Finally Add The tag at the end only if it's an inline style */
-        if( $args != 'strip_tags' ) : 
+ 
+/*
+|--------------------------------------------------------------------------
+| Strip Tags If Needed
+|--------------------------------------------------------------------------
+|
+| Determine whether to use the <style> tags
+|
+*/       
 
-            $css .= "</style> ";
+$css .= $options['RMExternal'] ? '' : '</style>';
+
+/*
+|--------------------------------------------------------------------------
+| Return Finished Styles
+|--------------------------------------------------------------------------
+|
+| Finally we return the final script back
+|
+*/   
         
-        endif;
-        
-        return $css;
+return $css;
         
         
     }
