@@ -91,7 +91,7 @@ class RM_View {
 
         <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
 
-            <input type="search" name="s" value="" results=5 autosave=responsive-menu placeholder="Search" id="responsiveSearchInput">
+            <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
             <input type="submit" style="display: none;" />
             
         </form>
