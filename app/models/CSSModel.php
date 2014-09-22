@@ -307,6 +307,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
             #responsive-menu .responsive-menu li		
             { 
                 list-style-type: none{$important}
+                position: relative{$important}
             }
 
             #responsive-menu .responsive-menu ul li:last-child	

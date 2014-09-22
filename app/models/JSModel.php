@@ -456,13 +456,52 @@ $js .= "
     
 if( $options['RMAccordion'] && $options['RMAccordion'] == 'accordion' ) :
                 
-    $accordion = " \$RMjQuery( '.responsive-menu ul' ).slideUp(); ";
+    $accordion = " 
+
+    if( \$RMjQuery( this ).closest( 'ul' ).is( '.responsive-menu' ) ) {
+
+        \$RMjQuery( '.responsive-menu ul' ).slideUp();
+
+    }
+
+    ";
 
 else :
         
     $accordion = null;
     
 endif;
+
+/*
+|--------------------------------------------------------------------------
+| Add Sub Menu Arrow Classes
+|--------------------------------------------------------------------------
+|
+| This is the part that adds the correct classes to sub menu arrows
+|
+*/     
+                
+$arrowClass = " 
+
+function RMSwitchArrows() {
+
+    \$RMjQuery( '.appendLink' ).each( function() { 
+
+        if( \$RMjQuery( this ).closest( '.sub-menu' ).is( ':visible' ) ) {
+
+            \$RMjQuery( this ).addClass( 'rm-active' );
+
+        } else {
+
+            \$RMjQuery( this ).addClass( 'rm-inactive' );
+
+        }
+
+    });
+
+}
+
+";
            
 /*
 |--------------------------------------------------------------------------
@@ -475,6 +514,8 @@ endif;
                 
 $js .= "   
     
+    $arrowClass
+    
     \$RMjQuery( '.appendLink' ).on( 'click', function() { 
 
         $accordion
@@ -484,8 +525,10 @@ $js .= "
         \$RMjQuery( this ).html( \$RMjQuery( this ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
 
         $setHeight
+    
+        RMSwitchArrows();
 
-    } );
+    });
     
     \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
 
@@ -497,8 +540,8 @@ $js .= "
 
         $setHeight
 
-    } );
-                
+    }); 
+    
 ";
  
 /*
