@@ -107,6 +107,7 @@ class RM_CSSModel extends RM_BaseModel {
         
         $lineHeight = empty( $options['RMLineHeight'] ) ? 6 : $options['RMLineHeight'];
         $lineWidth = empty( $options['RMLineWidth'] ) ? 33 : $options['RMLineWidth'];
+        $lineMargin = empty( $options['RMLineMargin'] ) ? 6 : $options['RMLineMargin'];
         
  /*
 |--------------------------------------------------------------------------
@@ -421,7 +422,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
             #click-menu .threeLines .line
             {
                 height: {$lineHeight}px{$important}
-                margin-bottom: 6px{$important}
+                margin-bottom: {$lineMargin}px{$important}
                 background: $clickCol{$important}
                 width: 100%{$important}
             }

@@ -143,6 +143,12 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMLineWidth = isset( $data['RMLineWidth'] ) ? $data['RMLineWidth'] : RM_Registry::get( 'defaults', 'RMLineWidth' );
         
+        $RMLineMargin = isset( $data['RMLineMargin'] ) ? $data['RMLineMargin'] : RM_Registry::get( 'defaults', 'RMLineMargin' );
+        
+        $RMClickImgClicked = isset( $data['RMClickImgClicked'] ) ? $data['RMClickImgClicked'] : RM_Registry::get( 'defaults', 'RMClickImgClicked' );
+        
+        $RMAccordion = isset( $data['RMAccordion'] ) ? $data['RMAccordion'] : RM_Registry::get( 'defaults', 'RMAccordion' );
+        
         
         $optionsArray = array(
             
@@ -275,7 +281,14 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMLineHeight' => intval( $RMLineHeight ),
             
-            'RMLineWidth' => intval( $RMLineWidth )
+            'RMLineWidth' => intval( $RMLineWidth ),
+            
+            'RMLineMargin' => intval( $RMLineMargin ),
+             
+            'RMClickImgClicked' => self::Filter( $RMClickImgClicked ),
+            
+            'RMAccordion' => self::Filter( $RMAccordion ),
+            
    
         );
 

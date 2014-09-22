@@ -87,7 +87,7 @@ On the current development list for the next update are the following:
 <ul>
 <li> - German language translation</li>
 <li> - Improvement of "X" animation</li>
-<li> - Option to change expand menu symbol</li>
+<li> - Import/Export Options utlity</li>
 <li> - Advanced shortcode support</li>
 </ul>
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
@@ -123,11 +123,14 @@ Alternatively:
 
 == Changelog ==
 
-= 2.2 (26th Aug 2014) =
+= 2.2 (22nd Sept 2014) =
 
 * Added option to change 3 lines width
 * Added option to change 3 lines height
+* Added option to change 3 lines margin
+* Added option to change the click menu image once clicked
 * Sub Menu Animation added to improve smoothness
+* Accordion sub menu animation option
 * Added shortcode option to change menu (use "RM" argument) eg. [responsive-menu RM="footer-menu"]
 * Minor bug fixes
 

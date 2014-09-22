@@ -124,15 +124,15 @@ endif;
 
 /*
 |--------------------------------------------------------------------------
-| Change to X Options
+| Change to X or Clicked Menu Image Option
 |--------------------------------------------------------------------------
 |
 | This is where we deal with the JavaScript needed to change the main lines
-| to an X if this option has been set
+| to an X or click image if this option has been set
 |
 */
         
-if( $options['RMX'] ) : 
+if( $options['RMX'] || $options['RMClickImgClicked'] ) : 
 
     $closeX = " \$RMjQuery( '#click-menu #RMX' ).css( 'display', 'none' );
                 \$RMjQuery( '#click-menu #RM3Lines' ).css( 'display', 'block' ); ";
@@ -144,8 +144,7 @@ else :
     $closeX = "";
     $showX = "";
 
-endif;
-            
+endif;            
 
 /*
 |--------------------------------------------------------------------------
@@ -448,6 +447,25 @@ $js .= "
                 
 /*
 |--------------------------------------------------------------------------
+| Accordion Animation
+|--------------------------------------------------------------------------
+|
+| This is the part that deals with the accordion animation
+|
+*/     
+    
+if( $options['RMAccordion'] && $options['RMAccordion'] == 'accordion' ) :
+                
+    $accordion = " \$RMjQuery( '.responsive-menu ul' ).slideUp(); ";
+
+else :
+        
+    $accordion = null;
+    
+endif;
+           
+/*
+|--------------------------------------------------------------------------
 | Toggle Buttons Function
 |--------------------------------------------------------------------------
 |
@@ -459,6 +477,8 @@ $js .= "
     
     \$RMjQuery( '.appendLink' ).on( 'click', function() { 
 
+        $accordion
+    
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).html( \$RMjQuery( this ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
@@ -469,6 +489,8 @@ $js .= "
     
     \$RMjQuery( '.rm-click-disabled' ).on( 'click', function() { 
 
+        $accordion
+            
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).siblings( '.appendLink' ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );

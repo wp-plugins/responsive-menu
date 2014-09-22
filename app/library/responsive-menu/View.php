@@ -81,7 +81,6 @@ class RM_View {
     /**
      * Function to format and display the search bar in the main menu
      *
-     * @param  array  $status
      * @return string
      * @added 2.0
      */
@@ -103,9 +102,8 @@ class RM_View {
     
     
     /**
-     * Function to format and display the search bar in the main menu
+     * Function to format and display the additional content in the main menu
      *
-     * @param  array  $status
      * @return string
      * @added 2.0
      */

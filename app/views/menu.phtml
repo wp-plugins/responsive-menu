@@ -69,14 +69,15 @@
 
 <div id="click-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
 
-<?php if( $data['RMX'] ) : ?>
+<?php if( $data['RMX'] || $data['RMClickImgClicked'] ) : ?>
 
-        <div class="threeLines" id="RMX">x</div>
+    <div class="threeLines" id="RMX">
+        <?php echo $data['RMClickImgClicked'] ? '<img class="rm-clicked-img" src="' . $data['RMClickImgClicked'] . '" />' : 'x'; ?>
+    </div>
 
-    <?php endif; ?>
+<?php endif; ?>
 
 <?php if( !$data['RMClickImg'] ) : ?>
-
 
         <div class="threeLines" id="RM3Lines">       
             <div class="line"></div>

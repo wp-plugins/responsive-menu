@@ -254,7 +254,16 @@ $defaults = array(
     'RMLineHeight' => 5,
     
     
-    'RMLineWidth' => 33
+    'RMLineWidth' => 33,
+    
+    
+    'RMLineMargin' => 6,
+    
+    
+    'RMClickImgClicked' => null,
+    
+    
+    'RMAccordion' => false,
     
     
 );

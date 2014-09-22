@@ -320,6 +320,38 @@
 
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+
+                            <h4></h4> 
+
+                            <h5></h5>
+
+
+                        </td>
+                        <td>
+
+                            <h4><?php _e( 'Click Menu Image When Clicked', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'This is the click image button that replaces the 3 lines when clicked. If empty, the 3 lines will be used', 'responsive-menu' ); ?></h5>
+
+                            <input 
+                                type="text" 
+                                id="RMClickImgClicked" 
+                                name="RMClickImgClicked" 
+                                value="<?php echo isset( $data['RMClickImgClicked'] ) ? $data['RMClickImgClicked'] : ''; ?>" 
+                                />
+                            
+                            <input 
+                                type="button" 
+                                id="RMClickHovImgButton" 
+                                value="<?php _e( 'Upload Image', 'responsive-menu' ); ?>" 
+                                class="button RMImageButton" 
+                                for="RMClickImgClicked"
+                                />
+
+                        </td>
+                    </tr>
                     
                     <tr>
                         <td>
@@ -750,6 +782,29 @@
                             name="RMLineHeight" 
                             value="<?php echo isset($data['RMLineHeight']) ? $data['RMLineHeight'] : ''; ?>" 
                             /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Margin', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the margin between the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineMargin" 
+                            value="<?php echo isset($data['RMLineMargin']) ? $data['RMLineMargin'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>
+
+                        <h4></h4> 
+
+                        <h5></h5>
 
                     </td>
                 </tr>
@@ -1298,6 +1353,31 @@
                                 class="numberInput" 
                                 value="<?php echo isset($data['RMTranSpd']) ? $data['RMTranSpd'] : ''; ?>" 
                                 /> <?php _e( 'seconds', 'responsive-menu' ); ?>
+                    
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <h4><?php _e( 'Accordion Animation For Sub-Menus', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'Tick to enable the accordion animation for sub-menu items', 'responsive-menu' ); ?>.</h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMAccordion" 
+                            id="RMAccordion"
+                            value="accordion"
+                            <?php echo isset( $data['RMAccordion'] ) && $data['RMAccordion'] == 'accordion' ? ' checked="checked" ' : ''; ?>
+                            />
+
+                        </td>
+                        <td>
+
+                            <h4></h4> 
+
+                            <h5></h5>
+
                     
                         </td>
                     </tr>
