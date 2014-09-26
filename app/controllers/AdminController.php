@@ -71,13 +71,13 @@ class RM_AdminController extends RM_BaseController {
         if( RM_Input::post( 'RMExport' ) ) :
             
             RM_Export::export();
-            
+
         endif;
-        
+
         if( RM_Input::post( 'RMSubmit' ) || RM_Input::post( 'RMImport' ) ) :
-            
-            $data = RM_Input::post( 'RMImport' ) ? RM_Input::post() : RM_Input::post();
-            
+                    
+            $data = RM_Input::post( 'RMImport' ) ? RM_Import::getData( RM_Input::file( 'RMImportFile' ) ) : RM_Input::post();
+
             RM_AdminModel::save( $data );
         
             if( ResponsiveMenu::getOption( 'RMExternal' ) ) : 

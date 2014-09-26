@@ -145,7 +145,7 @@
                 
             </div>
           
-            <form action="" method="post">
+            <form action="" method="post" enctype="multipart/form-data">
 
                 <h2><?php _e( 'Responsive Menu Options', 'responsive-menu' ); ?></h2>
 
@@ -1441,14 +1441,36 @@
                     name="RMExport" 
                     value="<?php _e( 'Export Options', 'responsive-menu' ); ?>"
                     />
-                
-                <input 
-                    type="submit" 
-                    class="button" 
-                    name="RMImport" 
-                    value="<?php _e( 'Import Options', 'responsive-menu' ); ?>"
-                    />
+                    
+                    <h3>Import Options</h3>
 
+                    <hr />
+
+                    <table>
+
+                        <tr>
+
+                            <td>
+
+                                <input 
+                                    type="file" 
+                                    class="button file" 
+                                    name="RMImportFile" 
+                                    value="<?php _e( 'Import File', 'responsive-menu' ); ?>"
+                                    />
+
+                                <input 
+                                    type="submit" 
+                                    class="button" 
+                                    name="RMImport" 
+                                    value="<?php _e( 'Import Options', 'responsive-menu' ); ?>"
+                                    />
+                            </td>
+
+                        </tr>
+
+                    </table>
+                
             </form>
 
         </div>
