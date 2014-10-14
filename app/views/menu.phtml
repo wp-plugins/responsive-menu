@@ -19,11 +19,11 @@
                      alt="<?php echo $data['RMTitle']; ?>" 
                      title="<?php echo $data['RMTitle']; ?>" />
                 
-            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
-                
+                <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+
                     </a>
-            
-            <?php endif; ?>
+
+                <?php endif; ?>
 
             <?php endif; ?>
 
@@ -35,7 +35,7 @@
                     
             <?php echo $data['RMTitle']; ?>
                 
-            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+            <?php if( isset( $data['RMTitleLink'] ) && $data['RMTitle'] ) : ?>
                     
                 </a>
             
