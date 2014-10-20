@@ -13,12 +13,10 @@ class RM_View {
      * @added 2.0
      */
     
-    static function make( $page, $data ) {
+    static function make( $page, $data ) {  
         
         
-        $page = str_replace( '.', '/', $page );
-        
-        require RM_Registry::get( 'config', 'plugin_base_dir' ) . '/app/views/' . $page . '.phtml';
+        require RM_Registry::get( 'config', 'plugin_base_dir' ) . '/app/views/' . str_replace( '.', '/', $page ) . '.phtml';
         
         
     }
@@ -31,12 +29,11 @@ class RM_View {
      * @added 2.0
      */
     
-    static function checkViewPortTag() {
+    static function checkViewPortTag( $url ) {
 
         
-        if( $metaTags = @get_meta_tags( get_bloginfo( 'url' ) ) ) :
+        if( $metaTags = @get_meta_tags( $url ) ) :
 
-            
             if ( isset( $metaTags['viewport'] ) )
                 return $metaTags['viewport'];
             else 
@@ -90,7 +87,7 @@ class RM_View {
 
         <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
 
-            <input type="search" name="s" value="" placeholder="Search" id="responsiveSearchInput">
+            <input type="search" name="s" value="" placeholder="<?php _e( 'Search', 'responsive-menu' ); ?>" id="responsiveSearchInput">
             <input type="submit" style="display: none;" />
             
         </form>

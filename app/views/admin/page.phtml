@@ -161,7 +161,7 @@
                     <tr>
                         <td><h4><?php _e( 'Viewport Meta Tag Check', 'responsive-menu' ); ?>
      
-                    <?php if ( $portTag = self::checkViewPortTag() ) : ?>
+                    <?php if ( $portTag = self::checkViewPortTag( get_bloginfo( 'url' ) ) ) : ?>
                     
                         <span class='success'> - <?php _e( 'Below Viewport Meta Tag Found', 'responsive-menu' ); ?></span>
                     
