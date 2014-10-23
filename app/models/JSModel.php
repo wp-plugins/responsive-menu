@@ -334,6 +334,7 @@ $js.= "
 
         \$RMjQuery( '#responsive-menu' ).css( 'display', 'block' ); 
         \$RMjQuery( '#responsive-menu' ).addClass( 'RMOpened' );  
+        \$RMjQuery( '#click-menu' ).addClass( 'click-menu-active' );  
 
         \$RMjQuery( '#responsive-menu' ).stop().animate( { $side: \"0\" }, $speed, 'linear', function() { 
 
@@ -371,6 +372,7 @@ $js .= "
             $closeX
             \$RMjQuery( '#responsive-menu' ).css( 'display', 'none' );  
             \$RMjQuery( '#responsive-menu' ).removeClass( 'RMOpened' );  
+            \$RMjQuery( '#click-menu' ).removeClass( 'click-menu-active' ); 
 
             isOpen = false;
 
