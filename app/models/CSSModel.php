@@ -358,6 +358,11 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 line-height: 40px{$important}
             }
 
+            #responsive-menu #responsiveSearchSubmit
+            {
+                display: none{$important}
+            }
+            
             #responsive-menu #responsiveSearchInput
             {
                 width: 91%{$important}

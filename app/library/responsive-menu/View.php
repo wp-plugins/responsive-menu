@@ -92,7 +92,7 @@ class RM_View {
         <form action="<?php echo $action; ?>" id="responsiveSearch" method="get" role="search">
 
             <input type="search" name="s" value="" placeholder="<?php _e( 'Search', 'responsive-menu' ); ?>" id="responsiveSearchInput">
-            <input type="submit" style="display: none;" />
+            <input type="submit" id="responsiveSearchSubmit" />
             
         </form>
                         
