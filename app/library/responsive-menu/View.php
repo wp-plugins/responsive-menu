@@ -82,10 +82,14 @@ class RM_View {
      * @added 2.0
      */
     
-    static function searchBar() { ?>
+    static function searchBar() { 
         
+        /* Added for WPML Compatibility in 2.2
+         * Thanks to miguelcortereal for this */
+        
+        $action = function_exists( 'icl_get_home_url' ) ? icl_get_home_url() : get_home_url(); ?>
 
-        <form action="<?php echo get_site_url(); ?>" id="responsiveSearch" method="get" role="search">
+        <form action="<?php echo $action; ?>" id="responsiveSearch" method="get" role="search">
 
             <input type="search" name="s" value="" placeholder="<?php _e( 'Search', 'responsive-menu' ); ?>" id="responsiveSearchInput">
             <input type="submit" style="display: none;" />
