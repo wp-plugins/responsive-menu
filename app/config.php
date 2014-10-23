@@ -97,7 +97,7 @@ $defaults = array(
     'RMClickTitle' => '',
     
     
-    'RMBkgTran' => 'checked',
+    'RMBkgTran' => false,
     
     
     'RMFont' => '',
