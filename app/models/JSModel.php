@@ -528,6 +528,7 @@ $js .= "
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
+        \$RMjQuery( this ).toggleClass( 'rm-append-active' );
 
         $setHeight
     
@@ -542,7 +543,8 @@ $js .= "
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
         \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
-
+        \$RMjQuery( this ).toggleClass( 'rm-append-active' );
+        
         $setHeight
 
     }); 
