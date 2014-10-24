@@ -160,30 +160,33 @@ endif;
 | - None !['RMExpandPar'] && !['RMExpand']
 |
 */
-                        
+   
+$downArrow = '&#9660;';
+$upArrow = '&#9650;';
+
 if ( !$options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9660;</span>';  
-    $clickLink = '<span class=\"appendLink\">&#9660;</span>';  
+    $clickedLink = '<span class=\"appendLink\">' . $downArrow . '</span>';  
+    $clickLink = '<span class=\"appendLink\">' . $downArrow . '</span>';  
 
 else :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
+    $clickLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9660;</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
+    $clickLink = '<span class=\"appendLink\">' . $downArrow . '</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] && $options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">&#9650;</span>';
-    $clickLink = '<span class=\"appendLink\">&#9650;</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
+    $clickLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>'; 
 
 endif;
     
@@ -524,7 +527,7 @@ $js .= "
     
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
-        \$RMjQuery( this ).html( \$RMjQuery( this ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
+        \$RMjQuery( this ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
 
         $setHeight
     
@@ -538,7 +541,7 @@ $js .= "
             
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
-        \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).siblings( '.appendLink' ).html() == '\u25B2' ? '&#9660;' : '&#9650;' );
+        \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
 
         $setHeight
 
