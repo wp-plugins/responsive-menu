@@ -477,36 +477,6 @@ else :
     
 endif;
 
-/*
-|--------------------------------------------------------------------------
-| Add Sub Menu Arrow Classes
-|--------------------------------------------------------------------------
-|
-| This is the part that adds the correct classes to sub menu arrows
-|
-*/     
-                
-$arrowClass = " 
-
-function RMSwitchArrows() {
-
-    \$RMjQuery( '.appendLink' ).each( function() { 
-
-        if( \$RMjQuery( this ).closest( '.sub-menu' ).is( ':visible' ) ) {
-
-            \$RMjQuery( this ).addClass( 'rm-active' );
-
-        } else {
-
-            \$RMjQuery( this ).addClass( 'rm-inactive' );
-
-        }
-
-    });
-
-}
-
-";
            
 /*
 |--------------------------------------------------------------------------
@@ -519,8 +489,6 @@ function RMSwitchArrows() {
                 
 $js .= "   
     
-    $arrowClass
-    
     \$RMjQuery( '.appendLink' ).on( 'click', function() { 
 
         $accordion
@@ -531,8 +499,6 @@ $js .= "
         \$RMjQuery( this ).toggleClass( 'rm-append-active' );
 
         $setHeight
-    
-        RMSwitchArrows();
 
     });
     
