@@ -466,7 +466,10 @@ if( $options['RMAccordion'] && $options['RMAccordion'] == 'accordion' ) :
     if( \$RMjQuery( this ).closest( 'ul' ).is( '.responsive-menu' ) ) {
 
         \$RMjQuery( '.responsive-menu ul' ).slideUp();
-
+        
+        \$RMjQuery( '.appendLink' ).removeClass( 'rm-append-active' );
+        \$RMjQuery( '.appendLink' ).html( '{$downArrow}' );
+            
     }
 
     ";
