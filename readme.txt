@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 59 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 63 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -69,6 +69,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 59 customisable optio
 <li> - Ability to change the 3 lines width</li>
 <li> - Ability to Export Options</li>
 <li> - Ability to Import Options</li>
+<li> - Ability to set sub menu arrow shape/image Options</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -88,6 +89,7 @@ It also includes the following functionality:
 On the current development list for the next update are the following:
 <ul>
 <li> - German language translation</li>
+<li> - Russian language translation</li>
 <li> - Improvement of "X" animation</li>
 <li> - Advanced shortcode support</li>
 </ul>
@@ -124,13 +126,14 @@ Alternatively:
 
 == Changelog ==
 
-= 2.2 (22nd Sept 2014) =
+= 2.2 (29th Oct 2014) =
 
 * Added Ability to Export Options
 * Added Ability to Import Options
 * Added option to change 3 lines width
 * Added option to change 3 lines height
 * Added option to change 3 lines margin
+* Added option to change sub arrows using HTML shape or Image
 * Added option to change the click menu image once clicked
 * Sub Menu Animation added to improve smoothness
 * Accordion sub menu animation option
