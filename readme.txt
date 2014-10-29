@@ -112,6 +112,8 @@ Alternatively:
 
 == Frequently Asked Questions ==
 
+<a href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/">http://peterfeatherstone.com/wordpress/responsive-menu/faq/</a>
+
 == Screenshots ==
 
 1. Fully customisable Admin Screen
