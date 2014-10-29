@@ -14,7 +14,7 @@
 $config = array( 
     
     
-    'current_version' => 2.2,
+    'current_version' => 2.3,
     
     
     'is_beta' => true,
@@ -264,6 +264,18 @@ $defaults = array(
     
     
     'RMAccordion' => false,
+    
+    
+    'RMArShpA' => '&#9650;',
+    
+    
+    'RMArShpI' => '&#9660;',
+    
+    
+    'RMArImgA' => false,
+    
+    
+    'RMArImgI' => false,
     
     
 );

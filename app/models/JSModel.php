@@ -161,32 +161,33 @@ endif;
 |
 */
    
-$downArrow = '&#9660;';
-$upArrow = '&#9650;';
+$activeArrow = $options['RMArImgA'] ? '<img src="' . $options['RMArImgA'] . '" />' : $options['RMArShpA'];
+$inactiveArrow = $options['RMArImgI'] ? '<img src="' . $options['RMArImgI'] . '" />' : $options['RMArShpI'];
+
 
 if ( !$options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink\">' . $downArrow . '</span>';  
-    $clickLink = '<span class=\"appendLink\">' . $downArrow . '</span>';  
+    $clickedLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>';  
+    $clickLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>';  
 
 else :
 
-    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
-    $clickLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>';
+    $clickLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] ) :
 
-    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
-    $clickLink = '<span class=\"appendLink\">' . $downArrow . '</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>';
+    $clickLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>'; 
 
 endif;
 
 if( $options['RMExpandPar'] && $options['RMExpand'] ) :
 
-    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>';
-    $clickLink = '<span class=\"appendLink rm-append-active\">' . $upArrow . '</span>'; 
+    $clickedLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>';
+    $clickLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>'; 
 
 endif;
     
@@ -468,7 +469,7 @@ if( $options['RMAccordion'] && $options['RMAccordion'] == 'accordion' ) :
         \$RMjQuery( '.responsive-menu ul' ).slideUp();
         
         \$RMjQuery( '.appendLink' ).removeClass( 'rm-append-active' );
-        \$RMjQuery( '.appendLink' ).html( '{$downArrow}' );
+        \$RMjQuery( '.appendLink' ).html( '{$inactiveArrow}' );
             
     }
 
@@ -498,7 +499,7 @@ $js .= "
     
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
-        \$RMjQuery( this ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
+        \$RMjQuery( this ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$inactiveArrow}' : '{$activeArrow}' );
         \$RMjQuery( this ).toggleClass( 'rm-append-active' );
 
         $setHeight
@@ -511,7 +512,7 @@ $js .= "
             
         \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
-        \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$downArrow}' : '{$upArrow}' );
+        \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$inactiveArrow}' : '{$activeArrow}' );
         \$RMjQuery( this ).toggleClass( 'rm-append-active' );
         
         $setHeight

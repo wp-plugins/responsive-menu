@@ -107,7 +107,8 @@ class RM_CSSModel extends RM_BaseModel {
         
         $lineHeight = empty( $options['RMLineHeight'] ) ? 6 : $options['RMLineHeight'];
         $lineWidth = empty( $options['RMLineWidth'] ) ? 33 : $options['RMLineWidth'];
-        $lineMargin = empty( $options['RMLineMargin'] ) ? 6 : $options['RMLineMargin'];
+        $lineMargin = empty( $options['RMLineMargin'] ) ? 6 : $options['RMLineMargin'];        
+        $clickMenuHeight = ( $lineMargin * 2 ) + ( $lineHeight * 3 );
         
  /*
 |--------------------------------------------------------------------------
@@ -341,7 +342,6 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 color: $clickCol;
                 $clickBkg
                 padding: 5px;
-                border-radius: 5px;
                 z-index: 9999;
             }
 
@@ -421,7 +421,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
             #click-menu .threeLines
             {
                 width: {$lineWidth}px{$important}
-                height: 33px{$important}
+                height: {$clickMenuHeight}px{$important}
                 margin: auto{$important}
             }
 
@@ -431,6 +431,11 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 margin-bottom: {$lineMargin}px{$important}
                 background: $clickCol{$important}
                 width: 100%{$important}
+            }
+            
+            #click-menu .threeLines .line.last
+            {
+                margin-bottom: 0px{$important}
             }
 
             @media only screen and ( min-width : 0px ) and ( max-width : {$breakpoint}px ) { 
