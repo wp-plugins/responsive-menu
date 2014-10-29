@@ -112,7 +112,7 @@ Alternatively:
 
 == Frequently Asked Questions ==
 
-<a href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/">http://peterfeatherstone.com/wordpress/responsive-menu/faq/</a>
+<a target="_blank" href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/">http://peterfeatherstone.com/wordpress/responsive-menu/faq/</a>
 
 == Screenshots ==
 
