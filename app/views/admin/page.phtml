@@ -227,14 +227,14 @@
 
                             <h5><?php _e( 'Tick if you would like to use a shortcode instead of the default behaviour', 'responsive-menu' ); ?></h5>
 
-                        <input 
-                            type="checkbox" 
-                            name="RMShortcode" 
-                            id="RMShortcode"
-                            value="shortcode"
-                            <?php echo isset( $data['RMShortcode'] ) && $data['RMShortcode'] == 'shortcode' ? ' checked="checked" ' : ''; ?>
-                            />
-
+                            <input 
+                                type="checkbox" 
+                                name="RMShortcode" 
+                                id="RMShortcode"
+                                value="shortcode"
+                                <?php echo isset( $data['RMShortcode'] ) && $data['RMShortcode'] == 'shortcode' ? ' checked="checked" ' : ''; ?>
+                                /> [responsive-menu]
+                            <br /><br />
                         </td>
                         <td>
 
@@ -242,10 +242,6 @@
                     </tr>  
                     <tr>
                         <td colspan="2">
-                            <h4 class="divider">
-                                <?php _e( 'Note', 'responsive-menu' ); ?>: 
-                                <?php _e( "Use shortcode [responsive-menu] - currently this is only for those that know about CSS customisation etc. and doesn't offer any additional functionality", 'responsive-menu' ); ?>.            
-                            </h4>
                             <?php _e( "For a list of available shortcode options please visit the following page:", 'responsive-menu' ); ?> 
                             <br />
                             <a target="_blank" href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/shortcode/options/">
@@ -253,51 +249,14 @@
                             </a>
                         </td>
                     </tr>
+
+                
                 </table>
                 
- 
-                <h3><?php _e( 'Menu Settings', 'responsive-menu' ); ?></h3>
-
+                <h3><?php _e( 'Click Button Settings', 'responsive-menu' ); ?></h3>
+                 
                 <table>
                     
-                    <tr>
-                        <td>
-
-                            <h4><?php _e( 'Menu Title', 'responsive-menu' ); ?></h4> 
-
-                            <h5><?php _e( 'This is the title at the top of the responsive menu', 'responsive-menu' ); ?></h5>
-
-                            <input 
-                                type="text" 
-                                name="RMTitle" 
-                                value="<?php echo isset($data['RMTitle']) ? $data['RMTitle'] : ''; ?>" 
-                                />
-
-                        </td>
-                        <td>
-
-                            <h4><?php _e( 'Menu Image', 'responsive-menu' ); ?></h4> 
-
-                            <h5><?php _e( 'This is the image that sits next to the responsive menu title. The best size is 32px x 32px', 'responsive-menu' ); ?></h5>
-
-                            <input 
-                                type="text" 
-                                id="RMImage" 
-                                name="RMImage" 
-                                value="<?php echo isset($data['RMImage']) ? $data['RMImage'] : ''; ?>" 
-                                />
-                            
-                            <input 
-                                type="button" 
-                                id="RMImageButton" 
-                                value="<?php _e( 'Upload Image', 'responsive-menu' ); ?>" 
-                                class="button RMImageButton" 
-                                for="RMImage"
-                                />
-
-                        </td>
-                    </tr>
- 
                     <tr>
                         <td>
                             <h4><?php _e( 'Click Button Title', 'responsive-menu' ); ?></h4> 
@@ -335,7 +294,18 @@
                     </tr>
                     <tr>
                         <td>
+                        <h4><?php _e( 'Change click menu to an X on click', 'responsive-menu' ); ?></h4> 
 
+                        <h5>
+                            <?php _e( 'Tick this if you would like the 3 lines to turn into an x once clicked', 'responsive-menu' ); ?>. 
+                        </h5>
+                        <input 
+                            type="checkbox" 
+                            name="RMX" 
+                            id="RMX"
+                            value="rmx"
+                            <?php echo $data['RMX'] == 'rmx' ? ' checked="checked" ' : ''; ?>
+                            />
                         </td>
                         <td>
 
@@ -356,6 +326,164 @@
                                 value="<?php _e( 'Upload Image', 'responsive-menu' ); ?>" 
                                 class="button RMImageButton" 
                                 for="RMClickImgClicked"
+                                />
+
+                        </td>
+                    </tr>
+                    
+
+                                        <tr>
+                    <td>
+                        
+                        <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick this if you would like the click button to remain in the same place when scrolling', 'responsive-menu' ); ?>.</h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMPos" 
+                            id="RMPos"
+                            value="fixed"
+                            <?php echo $data['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
+                            />
+
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </table>
+                
+                       <h3><?php _e( 'Click Button Size Settings', 'responsive-menu' ); ?></h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Width', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the width of the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineWidth" 
+                            value="<?php echo isset($data['RMLineWidth']) ? $data['RMLineWidth'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( 'Height', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the height of the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineHeight" 
+                            value="<?php echo isset($data['RMLineHeight']) ? $data['RMLineHeight'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Margin', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the margin between the individual 3 lines', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMLineMargin" 
+                            value="<?php echo isset($data['RMLineMargin']) ? $data['RMLineMargin'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>
+
+                        <h4></h4> 
+
+                        <h5></h5>
+
+                    </td>
+                </tr>
+            </table>
+
+            <h3><?php _e( 'Click Button Location Settings', 'responsive-menu' ); ?></h3>
+
+            <table>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Top', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the distance from the top of the page in px that the click button will be displayed', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMTop" 
+                            value="<?php echo isset($data['RMTop']) ? $data['RMTop'] : ''; ?>" 
+                            /> <?php _e( 'px', 'responsive-menu' ); ?>
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( 'Right', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the distance from the right of the page in % that the menu will be displayed', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            class="numberInput" 
+                            type="text" 
+                            name="RMRight" 
+                            value="<?php echo isset($data['RMRight']) ? $data['RMRight'] : ''; ?>" 
+                            /> %
+
+                    </td>
+                </tr>
+            </table>
+            
+                <h3><?php _e( 'Menu Settings', 'responsive-menu' ); ?></h3>
+
+                <table>
+                    
+                    <tr>
+                        <td>
+
+                            <h4><?php _e( 'Menu Title', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'This is the title at the top of the responsive menu', 'responsive-menu' ); ?></h5>
+
+                            <input 
+                                type="text" 
+                                name="RMTitle" 
+                                value="<?php echo isset($data['RMTitle']) ? $data['RMTitle'] : ''; ?>" 
+                                />
+
+                        </td>
+                        <td>
+
+                            <h4><?php _e( 'Menu Image', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'This is the image that sits next to the responsive menu title. The best size is 32px x 32px', 'responsive-menu' ); ?></h5>
+
+                            <input 
+                                type="text" 
+                                id="RMImage" 
+                                name="RMImage" 
+                                value="<?php echo isset($data['RMImage']) ? $data['RMImage'] : ''; ?>" 
+                                />
+                            
+                            <input 
+                                type="button" 
+                                id="RMImageButton" 
+                                value="<?php _e( 'Upload Image', 'responsive-menu' ); ?>" 
+                                class="button RMImageButton" 
+                                for="RMImage"
                                 />
 
                         </td>
@@ -475,8 +603,9 @@
                         </td>
                     </tr>
                 </table>
-                
-                
+ 
+
+                <h3><?php _e( 'Menu Advanced Settings', 'responsive-menu' ); ?></h4>
                 
                 <table>
                 <tr>
@@ -593,39 +722,6 @@
                 
                 <tr>
                     <td>
-                        
-                        <h4><?php _e( 'Include CSS/JS as external files', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'Tick if you would like to include CSS and jQuery as external files', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="checkbox" 
-                            name="RMExternal" 
-                            id="RMExternal"
-                            value="external"
-                            <?php echo isset( $data['RMExternal'] ) && $data['RMExternal'] == 'external' ? ' checked="checked" ' : ''; ?>
-                            />
-                    
-                    </td>
-                    <td>
-
-                        <h4><?php _e( 'Include script in footer', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'Tick if you would like to include your jQuery script in footer', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="checkbox" 
-                            name="RMFooter" 
-                            id="RMFooter"
-                            value="footer"
-                            <?php echo isset( $data['RMFooter'] ) && $data['RMFooter'] == 'footer' ? ' checked="checked" ' : ''; ?>
-                            />
-                        
-                    </td>                
-                </tr>  
-                
-                <tr>
-                    <td>
                         <h4><?php _e( 'Click to Close Menu on Link Click', 'responsive-menu' ); ?></h4> 
 
                         <h5><?php _e( 'Tick if you would like to close the menu on each link click, useful for single page sites', 'responsive-menu' ); ?></h5>
@@ -641,22 +737,6 @@
                     
                     </td>
                     <td>
-                        <h4><?php _e( 'Minify output', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'Tick if you would like to minify the script/style output. Saves up to 50% in file size', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="checkbox" 
-                            name="RMMinify" 
-                            id="RMMinify"
-                            value="minify"
-                            <?php echo isset( $data['RMMinify'] ) && $data['RMMinify'] == 'minify' ? ' checked="checked" ' : ''; ?>
-                            />
-                    </td>                
-                </tr>  
-                
-                <tr>
-                    <td>
                         <h4><?php _e( 'Auto Expand Current Parent Items', 'responsive-menu' ); ?></h4> 
 
                         <h5><?php _e( 'Tick if you would like to make the current pages children expanded automatically', 'responsive-menu' ); ?></h5>
@@ -667,6 +747,22 @@
                             id="RMExpandPar"
                             value="expand"
                             <?php echo isset( $data['RMExpandPar'] ) && $data['RMExpandPar'] == 'expand' ? ' checked="checked" ' : ''; ?>
+                            />
+                    </td>                
+                </tr>  
+                
+                <tr>
+                    <td>
+                        <h4><?php _e( 'Auto Expand Sub-Menus', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like sub-menus to be automatically expanded', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMExpand" 
+                            id="RMExpand"
+                            value="expand"
+                            <?php echo isset( $data['RMExpand'] ) && $data['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
                             />
        
                     
@@ -704,23 +800,81 @@
                     </td>
                     <td>
                         
-                        <h4><?php _e( 'Auto Expand Sub-Menus', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Tick if you would like sub-menus to be automatically expanded', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="checkbox" 
-                            name="RMExpand" 
-                            id="RMExpand"
-                            value="expand"
-                            <?php echo isset( $data['RMExpand'] ) && $data['RMExpand'] == 'expand' ? ' checked="checked" ' : ''; ?>
-                            />
 
                     </td>                
                 </tr>  
                 
             </table>
-                
+                 
+            <h3><?php _e( 'Technical Settings', 'responsive-menu' ); ?></h3>
+            
+            <table>
+                <tr>
+                    <td>
+                        
+                        <h4><?php _e( 'Minify output', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to minify the script/style output. Saves up to 50% in file size', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMMinify" 
+                            id="RMMinify"
+                            value="minify"
+                            <?php echo isset( $data['RMMinify'] ) && $data['RMMinify'] == 'minify' ? ' checked="checked" ' : ''; ?>
+                            />
+                        
+                    </td>
+                    <td>
+                       
+                        <h4><?php _e( 'Include script in footer', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to include your jQuery script in footer', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMFooter" 
+                            id="RMFooter"
+                            value="footer"
+                            <?php echo isset( $data['RMFooter'] ) && $data['RMFooter'] == 'footer' ? ' checked="checked" ' : ''; ?>
+                            />
+                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4><?php _e( 'Include CSS/JS as external files', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'Tick if you would like to include CSS and jQuery as external files', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="checkbox" 
+                            name="RMExternal" 
+                            id="RMExternal"
+                            value="external"
+                            <?php echo isset( $data['RMExternal'] ) && $data['RMExternal'] == 'external' ? ' checked="checked" ' : ''; ?>
+                            />
+                    </td>
+                    <td>
+                        <h4><?php _e( 'Remove CSS !important tags', 'responsive-menu' ); ?></h4> 
+
+                        <h5>
+                            <?php _e( 'Tick this if you would like to remove the !important tags from the CSS', 'responsive-menu' ); ?>. 
+                            <?php _e( 'Ticking this will make it easier to over-ride the styles but may make the default settings not display well', 'responsive-menu' ); ?>
+                        </h5>
+                        <input 
+                            type="checkbox" 
+                            name="RMRemImp" 
+                            id="RMRemImp"
+                            value="remove"
+                            <?php echo $data['RMRemImp'] == 'remove' ? ' checked="checked" ' : ''; ?>
+                            />
+                    </td>
+                </tr>
+
+            </table>
+            
             <h3><?php _e( 'Sub Menu Arrow Settings', 'responsive-menu' ); ?></h3>
 
             <table>
@@ -806,104 +960,6 @@
                 </tr>
                 
             </table>
-            
-            
-            <h3><?php _e( 'Location Settings', 'responsive-menu' ); ?></h3>
-
-            <table>
-                <tr>
-                    <td>
-
-                        <h4><?php _e( 'Top', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the distance from the top of the page in px that the menu will be displayed', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            class="numberInput" 
-                            type="text" 
-                            name="RMTop" 
-                            value="<?php echo isset($data['RMTop']) ? $data['RMTop'] : ''; ?>" 
-                            /> <?php _e( 'px', 'responsive-menu' ); ?>
-
-                    </td>
-                    <td>
-
-                        <h4><?php _e( 'Right', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the distance from the right of the page in % that the menu will be displayed', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            class="numberInput" 
-                            type="text" 
-                            name="RMRight" 
-                            value="<?php echo isset($data['RMRight']) ? $data['RMRight'] : ''; ?>" 
-                            /> %
-
-                    </td>
-                </tr>
-            </table>
-            
-            
-                
-            <h3><?php _e( 'Click Button Size Settings', 'responsive-menu' ); ?></h3>
-
-            <table>
-                <tr>
-                    <td>
-
-                        <h4><?php _e( 'Width', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the width of the individual 3 lines', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            class="numberInput" 
-                            type="text" 
-                            name="RMLineWidth" 
-                            value="<?php echo isset($data['RMLineWidth']) ? $data['RMLineWidth'] : ''; ?>" 
-                            /> <?php _e( 'px', 'responsive-menu' ); ?>
-
-                    </td>
-                    <td>
-
-                        <h4><?php _e( 'Height', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the height of the individual 3 lines', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            class="numberInput" 
-                            type="text" 
-                            name="RMLineHeight" 
-                            value="<?php echo isset($data['RMLineHeight']) ? $data['RMLineHeight'] : ''; ?>" 
-                            /> <?php _e( 'px', 'responsive-menu' ); ?>
-
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-
-                        <h4><?php _e( 'Margin', 'responsive-menu' ); ?></h4> 
-
-                        <h5><?php _e( 'This is the margin between the individual 3 lines', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            class="numberInput" 
-                            type="text" 
-                            name="RMLineMargin" 
-                            value="<?php echo isset($data['RMLineMargin']) ? $data['RMLineMargin'] : ''; ?>" 
-                            /> <?php _e( 'px', 'responsive-menu' ); ?>
-
-                    </td>
-                    <td>
-
-                        <h4></h4> 
-
-                        <h5></h5>
-
-                    </td>
-                </tr>
-            </table>
-
-            
 
             <h3><?php _e( 'Colour Settings', 'responsive-menu' ); ?></h3>
 
@@ -921,7 +977,7 @@
 
                         <h4><?php _e( 'Click Button Line & Text Colour', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the colour of the 3 lines and text for the menu button', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the colour of the 3 lines and text for the click button', 'responsive-menu' ); ?></h5>
 
                         <input 
                             type="text" 
@@ -1163,29 +1219,7 @@
             <h3><?php _e( 'Style Settings', 'responsive-menu' ); ?></h3>
         
             <table>
-                <tr>
-                    <td>
-                        
-                        <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'Tick this if you would like the menu button to remain in the same place when scrolling', 'responsive-menu' ); ?></h5>
-
-                        <input 
-                            type="checkbox" 
-                            name="RMPos" 
-                            id="RMPos"
-                            value="fixed"
-                            <?php echo $data['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
-                            />
-
-                    </td>
-                    <td>
-
-                    </td>
-                </tr>
-            </table>
-            
-            <table>
                 <tr>
                     <td>
 
@@ -1287,44 +1321,6 @@
                             class="numberInput" 
                             value="<?php echo isset($data['RMLinkHeight']) ? $data['RMLinkHeight'] : ''; ?>" 
                             /> <?php _e( 'px', 'responsive-menu' ); ?>
-
-                    </td>
-                </tr>
-            </table>
-            
-            <table>
-                <tr>
-                    <td>
-
-                        <h4><?php _e( 'Remove CSS !important tags', 'responsive-menu' ); ?></h4> 
-
-                        <h5>
-                            <?php _e( 'Tick this if you would like to remove the !important tags from the CSS', 'responsive-menu' ); ?>. 
-                            <?php _e( 'Ticking this will make it easier to over-ride the styles but may make the default settings not display well', 'responsive-menu' ); ?>
-                        </h5>
-                        <input 
-                            type="checkbox" 
-                            name="RMRemImp" 
-                            id="RMRemImp"
-                            value="remove"
-                            <?php echo $data['RMRemImp'] == 'remove' ? ' checked="checked" ' : ''; ?>
-                            />
-
-                    </td>
-                    <td>
-                        
-                        <h4><?php _e( 'Change click menu to an x on click', 'responsive-menu' ); ?></h4> 
-
-                        <h5>
-                            <?php _e( 'Tick this if you would like the 3 lines to turn into an x once clicked', 'responsive-menu' ); ?>. 
-                        </h5>
-                        <input 
-                            type="checkbox" 
-                            name="RMX" 
-                            id="RMX"
-                            value="rmx"
-                            <?php echo $data['RMX'] == 'rmx' ? ' checked="checked" ' : ''; ?>
-                            />
 
                     </td>
                 </tr>
