@@ -14,7 +14,7 @@
 $config = array( 
     
     
-    'current_version' => 2.1,
+    'current_version' => 2.2,
     
     
     'is_beta' => false,
@@ -97,7 +97,7 @@ $defaults = array(
     'RMClickTitle' => '',
     
     
-    'RMBkgTran' => 'checked',
+    'RMBkgTran' => false,
     
     
     'RMFont' => '',
@@ -243,9 +243,39 @@ $defaults = array(
     
     'RMHtmlLoc' => 'bottom',
     
+    
     /* Added in 2.1 */
     
-    'RMShortcode' => false
+    'RMShortcode' => false,
+    
+    
+    /* Added in 2.2 */
+    
+    'RMLineHeight' => 5,
+    
+    
+    'RMLineWidth' => 33,
+    
+    
+    'RMLineMargin' => 6,
+    
+    
+    'RMClickImgClicked' => null,
+    
+    
+    'RMAccordion' => false,
+    
+    
+    'RMArShpA' => '&#9650;',
+    
+    
+    'RMArShpI' => '&#9660;',
+    
+    
+    'RMArImgA' => false,
+    
+    
+    'RMArImgI' => false,
     
     
 );

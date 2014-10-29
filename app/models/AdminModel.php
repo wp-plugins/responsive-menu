@@ -137,6 +137,26 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMShortcode = isset( $data['RMShortcode'] ) ? $data['RMShortcode'] : RM_Registry::get( 'defaults', 'RMShortcode' );
         
+        /* Added in 2.2 */
+        
+        $RMLineHeight = isset( $data['RMLineHeight'] ) ? $data['RMLineHeight'] : RM_Registry::get( 'defaults', 'RMLineHeight' );
+        
+        $RMLineWidth = isset( $data['RMLineWidth'] ) ? $data['RMLineWidth'] : RM_Registry::get( 'defaults', 'RMLineWidth' );
+        
+        $RMLineMargin = isset( $data['RMLineMargin'] ) ? $data['RMLineMargin'] : RM_Registry::get( 'defaults', 'RMLineMargin' );
+        
+        $RMClickImgClicked = isset( $data['RMClickImgClicked'] ) ? $data['RMClickImgClicked'] : RM_Registry::get( 'defaults', 'RMClickImgClicked' );
+        
+        $RMAccordion = isset( $data['RMAccordion'] ) ? $data['RMAccordion'] : RM_Registry::get( 'defaults', 'RMAccordion' );
+        
+        $RMArShpA = isset( $data['RMArShpA'] ) ? $data['RMArShpA'] : RM_Registry::get( 'defaults', 'RMArShpA' );
+        
+        $RMArShpI = isset( $data['RMArShpI'] ) ? $data['RMArShpI'] : RM_Registry::get( 'defaults', 'RMArShpI' );
+        
+        $RMArImgA = isset( $data['RMArImgA'] ) ? $data['RMArImgA'] : RM_Registry::get( 'defaults', 'RMArImgA' );
+        
+        $RMArImgI = isset( $data['RMArImgI'] ) ? $data['RMArImgI'] : RM_Registry::get( 'defaults', 'RMArImgI' );
+        
         
         $optionsArray = array(
             
@@ -262,16 +282,36 @@ class RM_AdminModel extends RM_BaseModel {
             
             /* Added in 2.1 */
             
-            'RMShortcode' => self::Filter( $RMShortcode )
-            
+            'RMShortcode' => self::Filter( $RMShortcode ),
                 
+                
+            /* Added in 2.2 */
+            
+            'RMLineHeight' => intval( $RMLineHeight ),
+            
+            'RMLineWidth' => intval( $RMLineWidth ),
+            
+            'RMLineMargin' => intval( $RMLineMargin ),
+             
+            'RMClickImgClicked' => self::Filter( $RMClickImgClicked ),
+            
+            'RMAccordion' => self::Filter( $RMAccordion ),
+            
+            'RMArShpA' => self::Filter( $RMArShpA ),
+            
+            'RMArShpI' => self::Filter( $RMArShpI ),
+            
+            'RMArImgA' => self::Filter( $RMArImgA ),
+            
+            'RMArImgI' => self::Filter( $RMArImgI ),
+
         );
 
         // Update Submitted Options 
         
         update_option( 'RMOptions', $optionsArray );
             
-        // And save back to the registry 
+        // And save the status
 
         RM_Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
         

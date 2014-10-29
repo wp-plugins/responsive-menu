@@ -21,13 +21,13 @@ class RM_UpgradeController extends RM_BaseController {
                 
                 RM_FolderModel::create();
             
-                $js = RM_JSModel::getJs();        
+                $js = RM_JSModel::getJs( ResponsiveMenu::getOptions() );        
                 $js = ResponsiveMenu::getOption( 'RMMinify' ) == 'minify' ? RM_JSModel::Minify( $js ) : $js = $js; 
                 
                 RM_JSModel::createJSFile( $js );
                 
-                $css = RM_CSSModel::getCSS( 'strip_tags' );
-                $css = RM_CSSModel::Minify( $css );
+                $css = RM_CSSModel::getCSS( ResponsiveMenu::getOptions() );
+                $css = ResponsiveMenu::getOption( 'RMMinify' ) == 'minify' ? RM_CSSModel::Minify( $css ) : $css = $css; 
                 
                 RM_CSSModel::createCSSFile( $css );
 
