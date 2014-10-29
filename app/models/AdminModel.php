@@ -149,6 +149,14 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMAccordion = isset( $data['RMAccordion'] ) ? $data['RMAccordion'] : RM_Registry::get( 'defaults', 'RMAccordion' );
         
+        $RMArShpA = isset( $data['RMArShpA'] ) ? $data['RMArShpA'] : RM_Registry::get( 'defaults', 'RMArShpA' );
+        
+        $RMArShpI = isset( $data['RMArShpI'] ) ? $data['RMArShpI'] : RM_Registry::get( 'defaults', 'RMArShpI' );
+        
+        $RMArImgA = isset( $data['RMArImgA'] ) ? $data['RMArImgA'] : RM_Registry::get( 'defaults', 'RMArImgA' );
+        
+        $RMArImgI = isset( $data['RMArImgI'] ) ? $data['RMArImgI'] : RM_Registry::get( 'defaults', 'RMArImgI' );
+        
         
         $optionsArray = array(
             
@@ -289,7 +297,14 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMAccordion' => self::Filter( $RMAccordion ),
             
-   
+            'RMArShpA' => self::Filter( $RMArShpA ),
+            
+            'RMArShpI' => self::Filter( $RMArShpI ),
+            
+            'RMArImgA' => self::Filter( $RMArImgA ),
+            
+            'RMArImgI' => self::Filter( $RMArImgI ),
+
         );
 
         // Update Submitted Options 

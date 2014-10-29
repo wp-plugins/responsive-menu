@@ -17,7 +17,7 @@ $config = array(
     'current_version' => 2.2,
     
     
-    'is_beta' => true,
+    'is_beta' => false,
     
     
     'plugins_dir' => plugin_dir_path( __FILE__ ),
@@ -264,6 +264,18 @@ $defaults = array(
     
     
     'RMAccordion' => false,
+    
+    
+    'RMArShpA' => '&#9650;',
+    
+    
+    'RMArShpI' => '&#9660;',
+    
+    
+    'RMArImgA' => false,
+    
+    
+    'RMArImgI' => false,
     
     
 );
