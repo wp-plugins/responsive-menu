@@ -293,6 +293,8 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 margin: 0px{$important}
             }
                         
+            #responsive-menu .responsive-menu li.current-menu-item > a,
+            #responsive-menu .responsive-menu li.current-menu-item > .appendLink,
             #responsive-menu .responsive-menu li.current_page_item > a,
             #responsive-menu .responsive-menu li.current_page_item > .appendLink
             {
