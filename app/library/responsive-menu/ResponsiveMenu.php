@@ -15,13 +15,13 @@ class ResponsiveMenu {
     public function __construct() {
         
         
-        if( !get_option( 'RMVer' ) )
+        if( !get_option( 'RMVer' ) ) :
                 add_option( 'RMVer', RM_Registry::get( 'config', 'current_version' ) );
-                
+        endif;
         
-        if( !get_option( 'RMOptions' ) )
+        if( !get_option( 'RMOptions' ) ) :
             add_option( 'RMOptions', RM_Registry::get( 'defaults' ) );
-        
+        endif;
         
         RM_Registry::set( 'options', get_option( 'RMOptions' ) );
         RM_Registry::set( 'version', get_option( 'RMVer' ) );
