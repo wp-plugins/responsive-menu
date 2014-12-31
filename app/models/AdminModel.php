@@ -297,9 +297,9 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMAccordion' => self::Filter( $RMAccordion ),
             
-            'RMArShpA' => self::FilterHtml( $RMArShpA ),
+            'RMArShpA' => json_encode( $RMArShpA ),
             
-            'RMArShpI' => self::FilterHtml( $RMArShpI ),
+            'RMArShpI' => json_encode( $RMArShpI ),
             
             'RMArImgA' => self::Filter( $RMArImgA ),
             
