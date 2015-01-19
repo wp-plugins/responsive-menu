@@ -42,10 +42,6 @@ if it becomes a requirement for WordPress.
 It's a bit ugly but it's the best way for compatibility with other plug-ins and 
 all WordPress users.
  
- ****************
- * NOW LETS GO! ***--------------------------->
- ****************
- 
 |--------------------------------------------------------------------------
 | Bootstrap The Application
 |--------------------------------------------------------------------------

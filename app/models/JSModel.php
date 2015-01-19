@@ -161,8 +161,8 @@ endif;
 |
 */
    
-$activeArrow = $options['RMArImgA'] ? '<img src="' . $options['RMArImgA'] . '" />' : $options['RMArShpA'];
-$inactiveArrow = $options['RMArImgI'] ? '<img src="' . $options['RMArImgI'] . '" />' : $options['RMArShpI'];
+$activeArrow = $options['RMArImgA'] ? '<img src="' . $options['RMArImgA'] . '" />' : json_decode( $options['RMArShpA'] );
+$inactiveArrow = $options['RMArImgI'] ? '<img src="' . $options['RMArImgI'] . '" />' : json_decode( $options['RMArShpI'] );
 
 
 if ( !$options['RMExpand'] ) :

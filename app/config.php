@@ -266,10 +266,10 @@ $defaults = array(
     'RMAccordion' => false,
     
     
-    'RMArShpA' => '&#9650;',
+    'RMArShpA' => json_encode( '&#x25B2;' ),
     
     
-    'RMArShpI' => '&#9660;',
+    'RMArShpI' => json_encode( '&#x25BC;' ),
     
     
     'RMArImgA' => false,
