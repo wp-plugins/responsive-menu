@@ -58,7 +58,7 @@
          * Added 19/01/15    
          */
         
-        $cachedKey = 'rm_cached_menu';
+        $cachedKey = 'rm_cached_menu_' . get_current_blog_id();
         $cachedMenu = get_transient( $cachedKey );
         
         if( $cachedMenu === false ) :
@@ -94,30 +94,37 @@
 
 <div id="click-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
 
-<?php if( $data['RMX'] ) : ?>
+<?php if( $data['RMX'] || $data['RMClickImgClicked'] ) : ?>
 
+    <?php if( $data['RMClickImgClicked'] ) : ?>
+    
+        <img id="RMX" src="<?php echo $data['RMClickImgClicked']; ?>" class="click-menu-image" />
+    
+    <?php else : ?>
+    
         <div class="threeLines" id="RMX">x</div>
-
+    
     <?php endif; ?>
+
+<?php endif; ?>
 
 <?php if( !$data['RMClickImg'] ) : ?>
 
-
-        <div class="threeLines" id="RM3Lines">       
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
+    <div class="threeLines" id="RM3Lines">       
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
 
 <?php else : ?>
 
-        <img id="RM3Lines" src="<?php echo $data['RMClickImg']; ?>" class="click-menu-image" />
+    <img id="RM3Lines" src="<?php echo $data['RMClickImg']; ?>" class="click-menu-image" />
 
-    <?php endif; ?>
+<?php endif; ?>
 
 <?php if( $data['RMClickTitle'] ) : ?>
 
-        <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
+    <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
 
 <?php endif; ?>
 

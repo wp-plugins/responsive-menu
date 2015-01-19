@@ -149,14 +149,6 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 -o-box-sizing: content-box{$important}
             }
 
-            #click-menu #RMX {
-
-                display: none;
-                font-size: 24px;
-                line-height: 30px;
-                color: $clickCol{$important}
-            }
-
             .RMPushOpen
             {
                 width: 100%{$important}
@@ -418,6 +410,15 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 color: $txtColH{$important}
                 list-style-type: none{$important}
                 text-decoration: none{$important}
+            }
+            
+            #click-menu #RMX {
+
+                display: none;
+                font-size: 24px;
+                line-height: {$clickMenuHeight}px{$important}
+                height: {$clickMenuHeight}px{$important}
+                color: $clickCol{$important}
             }
             
             #click-menu .threeLines
