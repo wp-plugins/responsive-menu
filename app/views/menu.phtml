@@ -98,7 +98,12 @@
 
     <?php if( $data['RMClickImgClicked'] ) : ?>
     
-        <img id="RMX" src="<?php echo $data['RMClickImgClicked']; ?>" class="click-menu-image" />
+        <img 
+            id="RMX" 
+            src="<?php echo $data['RMClickImgClicked']; ?>" 
+            class="click-menu-image"
+            alt="Responsive Menu Image"
+            title="Responsive Menu Image" />
     
     <?php else : ?>
     
@@ -118,7 +123,12 @@
 
 <?php else : ?>
 
-    <img id="RM3Lines" src="<?php echo $data['RMClickImg']; ?>" class="click-menu-image" />
+    <img 
+        id="RM3Lines" 
+        src="<?php echo $data['RMClickImg']; ?>" 
+        class="click-menu-image"
+        alt="Responsive Menu Clicked Image"
+        title="Responsive Menu Clicked Image" />
 
 <?php endif; ?>
 
