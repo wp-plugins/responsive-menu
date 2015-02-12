@@ -281,9 +281,15 @@ $defaults = array(
     /* Added in 2.3 */
     
     'RMTrigger' => '#click-menu',
-    
+ 
     
     'RMPushBtn' => false,
+    
+    
+    'RMCurBkgHov' => '#43494C',
+    
+    
+    'RMCurColHov' => '#FFFFFF',
     
 );
 

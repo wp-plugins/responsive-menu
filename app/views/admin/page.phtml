@@ -1129,6 +1129,19 @@
 
                     </td>
                     <td>
+                        
+                        <h4><?php _e( 'Current Page Link Background Hover Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the hover background colour of the current page link', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMCurBkgHov" 
+                            id="RMCurBkgHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMCurBkgHov']) ? $data['RMCurBkgHov'] : ''; ?>" 
+                            />
+                        
                     </td>
                 </tr>
             </table>
@@ -1222,6 +1235,17 @@
                     </td>
                     <td>
 
+                        <h4><?php _e( 'Current Page Link Hover Colour', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This is the text hover colour of the current page link', 'responsive-menu' ); ?></h5>
+
+                        <input 
+                            type="text" 
+                            name="RMCurColHov" 
+                            id="RMCurColHov" 
+                            class="colourPicker" 
+                            value="<?php echo isset($data['RMCurColHov']) ? $data['RMCurColHov'] : ''; ?>" 
+                            />
 
 
                     </td>

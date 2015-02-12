@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 65 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 67 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -72,6 +72,8 @@ This is a Highly Customisable Responsive Menu Plugin, with 65 customisable optio
 <li> - Ability to set sub menu arrow shape/image Options</li>
 <li> - Ability to set custom click trigger</li>
 <li> - Ability to push menu button with animation</li>
+<li> - Abilityto change Current Page background hover colour</li>
+<li> - Ability to change Current Page Link hover colour</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -132,6 +134,8 @@ Alternatively:
 
 * Added ability to set custom click menu trigger
 * Added option to push menu button with animation
+* Added option to change Current Page background hover colour
+* Added option to change Current Page Link hover colour
 * Fixed issue with accordion menu not retracting
 * Enabled 0 values for animation speed to in affect remove animation
 * Leveraged WordPress persistent transient caching to significantly increase load speed

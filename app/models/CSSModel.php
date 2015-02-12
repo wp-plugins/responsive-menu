@@ -110,6 +110,11 @@ class RM_CSSModel extends RM_BaseModel {
         $lineMargin = empty( $options['RMLineMargin'] ) ? 6 : $options['RMLineMargin'];        
         $clickMenuHeight = ( $lineMargin * 2 ) + ( $lineHeight * 3 );
         
+        /* Added 2.3 */
+        
+        $curBkgHov = empty( $options['RMCurBkgHov'] ) ? $mainBkg : $options['RMCurBkgHov'];
+        $curColHov = empty( $options['RMCurColHov'] ) ? $txtCol : $options['RMCurColHov'];
+        
  /*
 |--------------------------------------------------------------------------
 | Initialise Output
@@ -292,8 +297,17 @@ $css .= $options['RMExternal'] ? '' : '<style>';
             {
                 background: $curBkg{$important}
                 color: $curCol{$important}
-            }
-                    
+            } 
+                                            
+            #responsive-menu .responsive-menu li.current-menu-item > a:hover,
+            #responsive-menu .responsive-menu li.current-menu-item > .appendLink:hover,
+            #responsive-menu .responsive-menu li.current_page_item > a:hover,
+            #responsive-menu .responsive-menu li.current_page_item > .appendLink:hover
+            {
+                background: $curBkgHov{$important}
+                color: $curColHov{$important}
+            } 
+                                            
             #responsive-menu  .responsive-menu ul
             {
                 margin-left: 0px{$important}

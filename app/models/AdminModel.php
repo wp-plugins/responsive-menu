@@ -163,6 +163,10 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMPushBtn = isset( $data['RMPushBtn'] ) ? $data['RMPushBtn'] : RM_Registry::get( 'defaults', 'RMPushBtn' );  
         
+        $RMCurBkgHov = !empty($data['RMCurBkgHov']) ? $data['RMCurBkgHov'] : RM_Registry::get( 'defaults', 'RMCurBkgHov' );
+        
+        $RMCurColHov = !empty($data['RMCurColHov']) ? $data['RMCurColHov'] : RM_Registry::get( 'defaults', 'RMCurColHov' );
+        
         $optionsArray = array(
             
             // Filter Input Correctly
@@ -317,6 +321,10 @@ class RM_AdminModel extends RM_BaseModel {
             'RMTrigger' => self::Filter( $RMTrigger ),
             
             'RMPushBtn' => self::Filter( $RMPushBtn ),
+            
+            'RMCurBkgHov' => self::Filter( $RMCurBkgHov ),
+            
+            'RMCurColHov' => self::Filter( $RMCurColHov ),
 
             
         );
