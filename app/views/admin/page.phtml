@@ -332,26 +332,37 @@
                     </tr>
                     
 
-                                        <tr>
-                    <td>
-                        
-                        <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
+                    <tr>
+                        <td>
 
-                        <h5><?php _e( 'Tick this if you would like the click button to remain in the same place when scrolling', 'responsive-menu' ); ?>.</h5>
+                            <h4><?php _e( 'Fixed Positioning', 'responsive-menu' ); ?></h4> 
 
-                        <input 
-                            type="checkbox" 
-                            name="RMPos" 
-                            id="RMPos"
-                            value="fixed"
-                            <?php echo $data['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
-                            />
+                            <h5><?php _e( 'Tick this if you would like the click button to remain in the same place when scrolling', 'responsive-menu' ); ?>.</h5>
 
-                    </td>
-                    <td>
+                            <input 
+                                type="checkbox" 
+                                name="RMPos" 
+                                id="RMPos"
+                                value="fixed"
+                                <?php echo $data['RMPos'] == 'fixed' ? ' checked="checked" ' : ''; ?>
+                                />
 
-                    </td>
-                </tr>
+                        </td>
+                        <td>
+
+                            <h4><?php _e( 'Click Trigger', 'responsive-menu' ); ?></h4> 
+
+                            <h5><?php _e( 'You can set a custom ID or class for custom triggers here if you wish.', 'responsive-menu' ); ?>.</h5>
+
+                            <input 
+                                type="text" 
+                                name="RMTrigger" 
+                                id="RMTrigger"
+                                value="<?php echo isset($data['RMTrigger']) ? $data['RMTrigger'] : RM_Registry::get( 'defaults', 'RMTrigger' ); ?>"
+                                />
+
+                        </td>
+                    </tr>
                 </table>
                 
                        <h3><?php _e( 'Click Button Size Settings', 'responsive-menu' ); ?></h3>
@@ -495,11 +506,11 @@
 
                             <h5><?php _e( 'This is the menu that will be used responsively', 'responsive-menu' ); ?>.</h5>
 
-                            <?php if ( count( get_terms( 'nav_menu' ) ) > 0) : ?>
+                            <?php if( ResponsiveMenu::hasMenus() ) : ?>
 
                                 <select name="RM">
 
-                                    <?php foreach( get_terms( 'nav_menu' ) as $menu ) : ?>
+                                    <?php foreach( ResponsiveMenu::getMenus() as $menu ) : ?>
 
                                         <option 
                                             value="<?php echo $menu->slug; ?>"
@@ -516,6 +527,7 @@
                                 <span style="color: red;"><?php _e( "You haven't set up any site menus yet", "responsive-menu" ); ?>.</span>
 
                             <?php endif; ?>  
+                                
                         </td>
                         <td>
                         
@@ -664,7 +676,9 @@
                     
                         <h4><?php _e( 'Menu Width', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the width the menu takes up across the page once expanded', 'responsive-menu' ); ?>. <span class="default"><?php _e( 'default', 'responsive-menu' ); ?>: 75</span></h5>
+                        <h5><?php _e( 'This is the width the menu takes up across the page once expanded', 'responsive-menu' ); ?>. 
+                            <span class="default"><?php _e( 'default', 'responsive-menu' ); ?>: 75</span>
+                        </h5>
 
                         <input 
                             class="numberInput" 
@@ -1460,11 +1474,7 @@
                             <h4><?php _e( 'Accordion Animation For Sub-Menus', 'responsive-menu' ); ?></h4> 
 
                             <h5><?php _e( 'Tick to enable the accordion animation for sub-menu items', 'responsive-menu' ); ?>.</h5>
-                            <h4 class="divider">
-                                <?php _e( 'Note', 'responsive-menu' ); ?>: 
-                                <?php _e( 'This currently only works on the first depth level', 'responsive-menu' ); ?>.
-                            </h4>
-                            
+
                         <input 
                             type="checkbox" 
                             name="RMAccordion" 
@@ -1476,9 +1486,17 @@
                         </td>
                         <td>
 
-                            <h4></h4> 
+                            <h4><?php _e( 'Push button with Animation', 'responsive-menu' ); ?></h4> 
 
-                            <h5></h5>
+                            <h5><?php _e( 'Tick to enable the click button to be pushed with animation', 'responsive-menu' ); ?>.</h5>
+                                                                                    
+                            <input 
+                                type="checkbox" 
+                                name="RMPushBtn" 
+                                id="RMPushBtn"
+                                value="RMPushBtn"
+                                <?php echo isset( $data['RMPushBtn'] ) && $data['RMPushBtn'] == 'RMPushBtn' ? ' checked="checked" ' : ''; ?>
+                                />
 
                     
                         </td>

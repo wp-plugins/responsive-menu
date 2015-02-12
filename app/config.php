@@ -278,6 +278,13 @@ $defaults = array(
     'RMArImgI' => false,
     
     
+    /* Added in 2.3 */
+    
+    'RMTrigger' => '#click-menu',
+    
+    
+    'RMPushBtn' => false,
+    
 );
 
 

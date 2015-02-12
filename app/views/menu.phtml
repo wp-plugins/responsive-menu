@@ -55,26 +55,10 @@
         
         /* 
          * Cache Menu to save Memory/Time 
-         * Added 19/01/15    
+         * Added 19/01/15 v2.3
          */
         
-        $cachedKey = 'rm_cached_menu_' . get_current_blog_id();
-        $cachedMenu = get_transient( $cachedKey );
-        
-        if( $cachedMenu === false ) :
-
-            $cachedMenu = wp_nav_menu( array(
-                'menu' => $data['RM'],
-                'menu_class' => 'responsive-menu',
-                'echo' => false 
-                )
-            );
-
-            set_transient( $cachedKey, $cachedMenu );
-        
-        endif;
-        
-        echo $cachedMenu;
+       echo RM_Transient::getTransientMenu( $data['RM'] );
         
         /* End Caching */
         

@@ -4,7 +4,7 @@ Donate link: http://www.peterfeatherstone.com/donate/
 Tags: responsive, menu, responsive menu, mobile menu, tablet menu, mobile, tablet, 3 lines, 3 line, three line, three lines
 Requires at least: 3.5.0
 Tested up to: 4.1
-Stable tag: 2.2
+Stable tag: 2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 63 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 65 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -70,6 +70,8 @@ This is a Highly Customisable Responsive Menu Plugin, with 63 customisable optio
 <li> - Ability to Export Options</li>
 <li> - Ability to Import Options</li>
 <li> - Ability to set sub menu arrow shape/image Options</li>
+<li> - Ability to set custom click trigger</li>
+<li> - Ability to push menu button with animation</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -83,16 +85,14 @@ You have the choice to include the stylesheets and scripts inline to avoid addin
 It also includes the following functionality:
 <ul>
 <li> - WPML/Polylang Support</li>
+<li> - Transient Caching to serious increase load speed</li>
 <li> - Croatian translation - Massive thanks to <a href="https://www.facebook.com/pages/Neverone-design/490262371018076">Neverone Design</a> for this!</li>
 <li> - Spanish Translation - Massive thanks to Andrew @ <a href="http://www.webhostinghub.com">WebHostingHub</a> for this!</li>
 </ul>
-On the current development list for the next update are the following:
-<ul>
-<li> - German language translation</li>
-<li> - Russian language translation</li>
-<li> - Improvement of "X" animation</li>
-<li> - Advanced shortcode support</li>
-</ul>
+Please see the current development list on the below page:
+
+<a href="http://peterfeatherstone.com/wordpress/responsive-menu/responsive-menu-development-list/">http://peterfeatherstone.com/wordpress/responsive-menu/responsive-menu-development-list/</a>
+
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
 
@@ -127,6 +127,14 @@ Alternatively:
 5. Example Custom Front End Expanded Menu
 
 == Changelog ==
+
+= 2.3 (12th Feb 2015) =
+
+* Added ability to set custom click menu trigger
+* Added option to push menu button with animation
+* Fixed issue with accordion menu not retracting
+* Enabled 0 values for animation speed to in affect remove animation
+* Leveraged WordPress persistent transient caching to significantly increase load speed
 
 = 2.2 (29th Oct 2014) =
 

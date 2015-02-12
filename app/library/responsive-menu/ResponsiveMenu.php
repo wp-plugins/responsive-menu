@@ -91,5 +91,34 @@ class ResponsiveMenu {
         
     }
     
+    /**
+     * Function to return if there are created menus in the system
+     *
+     * @return bool
+     * @added 2.3
+     */
+    
+    static function hasMenus() {
+        
+        if( count( get_terms( 'nav_menu' ) ) > 0 )
+            return true;
+        
+        return false;
+        
+    }
+    
+    /**
+     * Function to return currently created menus in the system
+     *
+     * @return object
+     * @added 2.3
+     */
+    
+    static function getMenus() {
+        
+        return get_terms( 'nav_menu' );
+        
+    }
+    
     
 }

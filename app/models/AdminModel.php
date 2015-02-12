@@ -77,7 +77,7 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMCurCol = !empty($data['RMCurCol']) ? $data['RMCurCol'] : RM_Registry::get( 'defaults', 'RMCurCol' );
  
-        $RMAnimSpd = $data['RMAnimSpd'] ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
+        $RMAnimSpd = $data['RMAnimSpd'] !== false ? $data['RMAnimSpd'] : RM_Registry::get( 'defaults', 'RMAnimSpd' );
 
         /* Added in 1.7 */
         
@@ -157,6 +157,11 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMArImgI = isset( $data['RMArImgI'] ) ? $data['RMArImgI'] : RM_Registry::get( 'defaults', 'RMArImgI' );
         
+        /* Added in 2.3 */
+        
+        $RMTrigger = isset( $data['RMTrigger'] ) && !empty( $data['RMTrigger'] ) ? $data['RMTrigger'] : RM_Registry::get( 'defaults', 'RMTrigger' );  
+        
+        $RMPushBtn = isset( $data['RMPushBtn'] ) ? $data['RMPushBtn'] : RM_Registry::get( 'defaults', 'RMPushBtn' );  
         
         $optionsArray = array(
             
@@ -280,6 +285,7 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMHtmlLoc' => self::Filter( $RMHtmlLoc ),
             
+            
             /* Added in 2.1 */
             
             'RMShortcode' => self::Filter( $RMShortcode ),
@@ -304,13 +310,25 @@ class RM_AdminModel extends RM_BaseModel {
             'RMArImgA' => self::Filter( $RMArImgA ),
             
             'RMArImgI' => self::Filter( $RMArImgI ),
+            
+            
+            /* Added in 2.3 */
+            
+            'RMTrigger' => self::Filter( $RMTrigger ),
+            
+            'RMPushBtn' => self::Filter( $RMPushBtn ),
 
+            
         );
 
         // Update Submitted Options 
         
         update_option( 'RMOptions', $optionsArray );
-            
+        
+        // Clear Transient Menus
+        
+        RM_Transient::clearTransientMenus();
+        
         // And save the status
 
         RM_Status::set( 'updated', __( 'You have successfully updated the Responsive Menu options', 'responsive-menu' ) );
