@@ -72,7 +72,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 67 customisable optio
 <li> - Ability to set sub menu arrow shape/image Options</li>
 <li> - Ability to set custom click trigger</li>
 <li> - Ability to push menu button with animation</li>
-<li> - Abilityto change Current Page background hover colour</li>
+<li> - Ability to change Current Page background hover colour</li>
 <li> - Ability to change Current Page Link hover colour</li>
 <li> - Plus more...</li>
 </ul>
@@ -138,6 +138,7 @@ Alternatively:
 * Added option to change Current Page Link hover colour
 * Fixed issue with accordion menu not retracting
 * Enabled 0 values for animation speed to in affect remove animation
+* Added easy view of Shortcode options in admin
 * Leveraged WordPress persistent transient caching to significantly increase load speed
 
 = 2.2 (29th Oct 2014) =

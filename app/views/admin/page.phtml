@@ -37,11 +37,18 @@
                 background: white;
                 padding-bottom: 15px;
             }
+            
+            table.inner-table
+            {
+                border: 0px;
+                box-shadow: none;
+            }
 
             table td
             {
                 width: 48%;
                 padding-right: 2%;
+                vertical-align: top;
             }
             
             .default
@@ -223,6 +230,9 @@
                     <tr>
                         <td>
 
+                            <table class='inner-table'>
+                                <tr>
+                                    <td>
                             <h4><?php _e( 'Click to use shortcode', 'responsive-menu' ); ?></h4> 
 
                             <h5><?php _e( 'Tick if you would like to use a shortcode instead of the default behaviour', 'responsive-menu' ); ?></h5>
@@ -235,18 +245,53 @@
                                 <?php echo isset( $data['RMShortcode'] ) && $data['RMShortcode'] == 'shortcode' ? ' checked="checked" ' : ''; ?>
                                 /> [responsive-menu]
                             <br /><br />
+                                </td>        
+                            </tr>  
+                            <tr>
+                                <td colspan="2">
+                                    <?php _e( "For a list of available shortcode options please visit the following page:", 'responsive-menu' ); ?> 
+                                    <br />
+                                    <a target="_blank" href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/shortcode/options/">
+                                        http://peterfeatherstone.com/wordpress/responsive-menu/faq/shortcode/options/
+                                    </a>
+                                </td>
+                            </tr>
+                            </table>
                         </td>
                         <td>
+                            
+                            <h4>Available Shortcode Options/Values</h4>
+                            
+                            <table>
+                                <tr>
+                                    <td><strong>Option</strong></td>
+                                    <td><strong>Values</strong></td>
+                                </tr>
+                                
+                                <?php if( ResponsiveMenu::hasMenus() ) : 
+                                    
+                                        $i = 0;
+                                    
+                                        foreach( ResponsiveMenu::getMenus() as $menu ) :
+                                    
+                                            $opt = $i == 0 ? 'RM' : '';
+                                        
+                                            echo '<tr><td>' . $opt . '</td><td>' .$menu->slug . '</td></tr>';
 
-                        </td>                
-                    </tr>  
-                    <tr>
-                        <td colspan="2">
-                            <?php _e( "For a list of available shortcode options please visit the following page:", 'responsive-menu' ); ?> 
-                            <br />
-                            <a target="_blank" href="http://peterfeatherstone.com/wordpress/responsive-menu/faq/shortcode/options/">
-                                http://peterfeatherstone.com/wordpress/responsive-menu/faq/shortcode/options/
-                            </a>
+                                            $i++;
+                                            
+                                        endforeach;
+                                    
+                                    else :
+                                            
+                                            echo '<tr><td colspan="2">Sorry, there are no available options</td></tr>';
+                                        
+                                    endif;
+                                                                
+                                ?>
+                                
+                            </table>
+                            
                         </td>
                     </tr>
 
