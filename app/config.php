@@ -291,6 +291,9 @@ $defaults = array(
     
     'RMCurColHov' => '#FFFFFF',
     
+    
+    'RMWalker' => null,
+    
 );
 
 

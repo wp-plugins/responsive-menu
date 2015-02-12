@@ -74,6 +74,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 67 customisable optio
 <li> - Ability to push menu button with animation</li>
 <li> - Ability to change Current Page background hover colour</li>
 <li> - Ability to change Current Page Link hover colour</li>
+<li> - Ability to provide a custom walker option</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -133,12 +134,14 @@ Alternatively:
 = 2.3 (12th Feb 2015) =
 
 * Added ability to set custom click menu trigger
+* Added ability to set custom walker function - Thanks to Mickael Desgranges for this 
 * Added option to push menu button with animation
 * Added option to change Current Page background hover colour
 * Added option to change Current Page Link hover colour
 * Fixed issue with accordion menu not retracting
 * Enabled 0 values for animation speed to in affect remove animation
 * Added easy view of Shortcode options in admin
+* Added ability to place shortcodes in extra html content - Thanks to Mickael Desgranges for this 
 * Leveraged WordPress persistent transient caching to significantly increase load speed
 
 = 2.2 (29th Oct 2014) =

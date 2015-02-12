@@ -1615,6 +1615,29 @@
                     
                 </table>
                 
+                <h3><?php _e( 'Custom Walker', 'responsive-menu' ); ?></h3>
+        
+                <table>
+                    
+                    <!-- Add by Mkdgs -->
+                    <tr>
+                        <td>    
+                            
+                            <h4><?php _e( 'Specify you own Walker for the menu (wp_nav_menu parameter)', 'responsive-menu' ); ?></h4>
+                            <h5><?php _e( 'For advanced users only - if you don\'t know what you\'re doing please leave alone', 'responsive-menu' ); ?></h5>
+
+                            <input name="RMWalker" type="text"
+                            value="<?php echo isset( $data['RMWalker'] ) ? $data['RMWalker'] : ''; ?>" />
+
+                        </td>
+                        
+                        <td>
+                            
+                        </td>
+                    </tr>
+                    
+                </table>
+                
                 <br /><br />
 
                 <input 

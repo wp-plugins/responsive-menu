@@ -167,6 +167,9 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMCurColHov = !empty($data['RMCurColHov']) ? $data['RMCurColHov'] : RM_Registry::get( 'defaults', 'RMCurColHov' );
         
+         /* Add by MKDGS */
+        $RMWalker = isset( $data['RMWalker'] ) ? $data['RMWalker'] : RM_Registry::get( 'defaults', 'RMWalker' );
+
         $optionsArray = array(
             
             // Filter Input Correctly
@@ -326,6 +329,9 @@ class RM_AdminModel extends RM_BaseModel {
             
             'RMCurColHov' => self::Filter( $RMCurColHov ),
 
+            /* Add by Mkdgs */
+            
+            'RMWalker' => ( class_exists( $RMWalker ) ) ? $RMWalker : '',
             
         );
 

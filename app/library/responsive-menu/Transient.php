@@ -38,9 +38,15 @@ class RM_Transient {
     
     static function createTransientMenu( $name ) {
         
+        $walker = ResponsiveMenu::getOption( 'RMWalker' );
+        
         $cachedMenu = wp_nav_menu( array(
                 'menu' => $name,
                 'menu_class' => 'responsive-menu',
+            
+                /* Add by Mkdgs */
+                'walker' => ( !empty( $walker ) ) ? new $walker : '',
+            
                 'echo' => false 
                 )
             );
