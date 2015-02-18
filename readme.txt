@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 67 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 68 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -75,6 +75,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 67 customisable optio
 <li> - Ability to change Current Page background hover colour</li>
 <li> - Ability to change Current Page Link hover colour</li>
 <li> - Ability to provide a custom walker option</li>
+<li> - Ability to choose to use transient caching or not</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -135,6 +136,7 @@ Alternatively:
 = 2.4 (18th Feb 2015) =
 
 * Added option to turn transient caching off as it causes issues with active link colours etc.
+* Made Menu clear the transient caches and rebuild menu on Menu/Page/Post updates.
 
 = 2.3 (16th Feb 2015) =
 
