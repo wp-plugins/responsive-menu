@@ -1,0 +1,125 @@
+<!-- Added by Responsive Menu Plugin created by Peter Featherstone -->
+
+<div id="responsive-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
+
+    <?php if( $data['RMTitle'] || $data['RMImage'] ) : ?>
+
+        <div id="responsive-menu-title">
+
+            <?php if( $data['RMImage'] ) : ?>
+
+                <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+            
+                    <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
+                        
+                <?php endif; ?>
+                    
+                <img src="<?php echo $data['RMImage']; ?>" 
+                     class="RMImage" 
+                     alt="<?php echo $data['RMTitle']; ?>" 
+                     title="<?php echo $data['RMTitle']; ?>" />
+                
+            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+                
+                    </a>
+            
+            <?php endif; ?>
+
+            <?php endif; ?>
+
+            <?php if( isset( $data['RMTitleLink'] ) && $data['RMTitle'] ) : ?>
+            
+                <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
+                    
+            <?php endif; ?>
+                    
+            <?php echo $data['RMTitle']; ?>
+                
+            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+                    
+                </a>
+            
+            <?php endif; ?>
+            
+        </div>
+    
+    <?php endif;
+
+        if( isset( $data['RMHtml'] ) && $data['RMHtmlLoc'] == 'above' ) :
+            self::additionalContent();
+        endif;
+            
+        if( !$data['RMSearch'] && $data['RMSearchPos'] == 'above' ) :
+            self::searchBar();                
+        endif;
+        
+        /* 
+         * Cache Menu to save Memory/Time 
+         * Added 19/01/15 v2.3
+         */
+        
+       echo RM_Transient::getTransientMenu( $data['RM'] );
+        
+        /* End Caching */
+        
+        if( !$data['RMSearch'] && $data['RMSearchPos'] == 'below' ) :
+            self::searchBar();
+        endif;
+        
+        if( isset( $data['RMHtml'] ) && $data['RMHtmlLoc'] == 'below' ) :
+            self::additionalContent();
+        endif;
+
+    ?>
+    
+</div>
+
+<!-- Added by Responsive Menu Plugin created by Peter Featherstone -->
+
+<div id="click-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?>>
+
+<?php if( $data['RMX'] || $data['RMClickImgClicked'] ) : ?>
+
+    <?php if( $data['RMClickImgClicked'] ) : ?>
+    
+        <img 
+            id="RMX" 
+            src="<?php echo $data['RMClickImgClicked']; ?>" 
+            class="click-menu-image"
+            alt="Responsive Menu Image"
+            title="Responsive Menu Image" />
+    
+    <?php else : ?>
+    
+        <div class="threeLines" id="RMX">x</div>
+    
+    <?php endif; ?>
+
+<?php endif; ?>
+
+<?php if( !$data['RMClickImg'] ) : ?>
+
+    <div class="threeLines" id="RM3Lines">       
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+<?php else : ?>
+
+    <img 
+        id="RM3Lines" 
+        src="<?php echo $data['RMClickImg']; ?>" 
+        class="click-menu-image"
+        alt="Responsive Menu Clicked Image"
+        title="Responsive Menu Clicked Image" />
+
+<?php endif; ?>
+
+<?php if( $data['RMClickTitle'] ) : ?>
+
+    <div id="click-menu-label"><?php echo $data['RMClickTitle']; ?></div>
+
+<?php endif; ?>
+
+</div>
