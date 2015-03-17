@@ -115,6 +115,10 @@ class RM_CSSModel extends RM_BaseModel {
         $curBkgHov = empty( $options['RMCurBkgHov'] ) ? $mainBkg : $options['RMCurBkgHov'];
         $curColHov = empty( $options['RMCurColHov'] ) ? $txtCol : $options['RMCurColHov'];
         
+        /* Added 2.5 */
+        
+        $location = $options['RMLoc'];
+        
  /*
 |--------------------------------------------------------------------------
 | Initialise Output
@@ -344,7 +348,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                 font-size: {$btnSize}px{$important}
                 display: none;
                 position: $position;
-                right: $right%;
+                $location: $right%;
                 top: {$top}px;
                 color: $clickCol;
                 $clickBkg

@@ -82,6 +82,10 @@ class RM_JSModel extends RM_BaseModel {
         
         $speed = $options['RMAnimSpd'] * 1000;
         
+        /* Added 2.5 */
+        
+        $location = $options['RMLoc'];
+        
 /*
 |--------------------------------------------------------------------------
 | Slide Push Animation
@@ -112,7 +116,7 @@ if( $options['RMAnim'] == 'push' ) :
             $slideOver .= "
                 
                 \$RMjQuery( '#click-menu' ).animate( { $pushSide: \"{$pos}\" + MenuHeight }, {$speed}, 'linear' );
-                \$RMjQuery( '#click-menu' ).css( 'right', 'auto' );
+                \$RMjQuery( '#click-menu' ).css( '$location', 'auto' );
                 
                 ";
 
@@ -132,7 +136,7 @@ if( $options['RMAnim'] == 'push' ) :
             $slideOver .= "
 
                 \$RMjQuery( '#click-menu' ).animate( { $pushSide: \"{$pos}{$width}%\" }, {$speed}, 'linear' );
-                \$RMjQuery( '#click-menu' ).css( 'right', 'auto' );
+                \$RMjQuery( '#click-menu' ).css( '{$location}', 'auto' );
 
             ";
 

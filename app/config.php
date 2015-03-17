@@ -297,6 +297,9 @@ $defaults = array(
     /* Added in 2.4 */
     
     'RMUseTran' => null,
+ 
+    
+    'RMLoc' => 'right',
     
 );
 

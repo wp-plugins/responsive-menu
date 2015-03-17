@@ -174,6 +174,8 @@ class RM_AdminModel extends RM_BaseModel {
         
         $RMUseTran = isset( $data['RMUseTran'] ) ? $data['RMUseTran'] : RM_Registry::get( 'defaults', 'RMUseTran' );
         
+        $RMLoc = isset( $data['RMLoc'] ) ? $data['RMLoc'] : RM_Registry::get( 'defaults', 'RMLoc' );
+        
         $optionsArray = array(
             
             // Filter Input Correctly
@@ -340,6 +342,8 @@ class RM_AdminModel extends RM_BaseModel {
             /* Added in 2.4 */
             
             'RMUseTran' => self::Filter( $RMUseTran ),
+            
+            'RMLoc' => self::Filter( $RMLoc ),
             
         );
 

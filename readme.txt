@@ -12,7 +12,7 @@ This is a Highly Customisable Responsive Menu Created By Peter Featherstone
 
 == Description ==
 
-This is a Highly Customisable Responsive Menu Plugin, with 68 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
+This is a Highly Customisable Responsive Menu Plugin, with 69 customisable options for a nice mobile menu or tablet menu experience enabling you to change the: 
 <br />
 <ul>
 <li> - Menu Title</li>
@@ -76,6 +76,7 @@ This is a Highly Customisable Responsive Menu Plugin, with 68 customisable optio
 <li> - Ability to change Current Page Link hover colour</li>
 <li> - Ability to provide a custom walker option</li>
 <li> - Ability to choose to use transient caching or not</li>
+<li> - Ability to choose if menu is shown on left or right of screen</li>
 <li> - Plus more...</li>
 </ul>
 The plugin creates a nice three-lined mobile menu button (or custom image if you choose) that users can click to bring a slide out menu (from the left, right, top or bottom - again your choice), which is easily navigated. A lot nicer and neater than the select drop-down menu alternative.
@@ -132,6 +133,11 @@ Alternatively:
 5. Example Custom Front End Expanded Menu
 
 == Changelog ==
+
+= 2.5 (17th Mar 2015) =
+* Fixed issue with duplicate sub menu arrows
+* Added option to set if menu is shown on left or right
+* Fixed issue with custom sub menu classes
 
 = 2.4 (18th Feb 2015) =
 

@@ -513,16 +513,49 @@
                     </td>
                     <td>
 
-                        <h4><?php _e( 'Right', 'responsive-menu' ); ?></h4> 
+                        <h4><?php _e( 'Left/Right', 'responsive-menu' ); ?></h4> 
 
-                        <h5><?php _e( 'This is the distance from the right of the page in % that the menu will be displayed', 'responsive-menu' ); ?></h5>
+                        <h5><?php _e( 'This is the distance from the right/left of the page (as defined below) in % that the menu will be displayed', 'responsive-menu' ); ?></h5>
 
                         <input 
                             class="numberInput" 
                             type="text" 
                             name="RMRight" 
-                            value="<?php echo isset($data['RMRight']) ? $data['RMRight'] : ''; ?>" 
+                            value="<?php echo isset( $data['RMRight'] ) ? $data['RMRight'] : ''; ?>" 
                             /> %
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                        <h4><?php _e( 'Left/Right Distance', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( 'This defines whether the menu button is shown as a percentage from the left or right', 'responsive-menu' ); ?></h5>
+
+                        <select name="RMLoc">
+
+                            <option 
+                                value="left"
+                                <?php echo 'left' == $data['RMLoc'] ? 'selected="selected">' : '>'; ?>
+                                Left
+                            </option>
+                            
+                            <option 
+                                value="right"
+                                <?php echo 'right' == $data['RMLoc'] ? 'selected="selected">' : '>'; ?>
+                                Right
+                            </option>
+
+                        </select>
+
+                    </td>
+                    <td>
+
+                        <h4><?php _e( '', 'responsive-menu' ); ?></h4> 
+
+                        <h5><?php _e( '', 'responsive-menu' ); ?></h5>
+
 
                     </td>
                 </tr>
