@@ -464,7 +464,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
                     display: block;
                 }
 
-";
+        ";
 
         $css .= $options['RMCss'] ? $options['RMCss'] . " { display: none !important; } " : '';
 
@@ -472,27 +472,27 @@ $css .= $options['RMExternal'] ? '' : '<style>';
 
         $css .= $options['RMAnim'] == 'push' && $options['RMPushCSS'] ? $options['RMPushCSS'] . " { position: {$pushPos}{$important} left: 0px; } " : '';
  
-/*
-|--------------------------------------------------------------------------
-| Strip Tags If Needed
-|--------------------------------------------------------------------------
-|
-| Determine whether to use the <style> tags
-|
-*/       
+        /*
+        |--------------------------------------------------------------------------
+        | Strip Tags If Needed
+        |--------------------------------------------------------------------------
+        |
+        | Determine whether to use the <style> tags
+        |
+        */       
 
-$css .= $options['RMExternal'] ? '' : '</style>';
+        $css .= $options['RMExternal'] ? '' : '</style>';
 
-/*
-|--------------------------------------------------------------------------
-| Return Finished Styles
-|--------------------------------------------------------------------------
-|
-| Finally we return the final script back
-|
-*/   
-        
-return $css;
+        /*
+        |--------------------------------------------------------------------------
+        | Return Finished Styles
+        |--------------------------------------------------------------------------
+        |
+        | Finally we return the final script back
+        |
+        */   
+
+        return $css;
         
         
     }
