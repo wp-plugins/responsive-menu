@@ -138,6 +138,7 @@ Alternatively:
 * Fixed issue with duplicate sub menu arrows
 * Added option to set if menu is shown on left or right
 * Fixed issue with custom sub menu classes
+* Button now compatible with Voiceover
 
 = 2.4 (18th Feb 2015) =
 
