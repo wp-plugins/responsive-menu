@@ -407,6 +407,10 @@ class RM_JSModel extends RM_BaseModel {
         | This is the main function that deals with Closing the Menu and then sets
         | its state to closed
         |
+        | Added by Bhupender
+        | Modified negative width to take directly width of menu instead of '%', 
+        | this works for condition where animation is push and max width of menu is less then %
+        |
         */
 
         $js .= "
@@ -415,7 +419,7 @@ class RM_JSModel extends RM_BaseModel {
 
                 $slideBack
 
-                \$RMjQuery( '#responsive-menu' ).animate( { $side: \"{$neg}{$width}%\" }, $speed, 'linear', function() { 
+                \$RMjQuery( '#responsive-menu' ).animate( { $side: {$neg}\$RMjQuery( '#responsive-menu' ).width() }, $speed, 'linear', function() {
 
                     $slideRemove
                     $sideSlideRemove
@@ -441,6 +445,11 @@ class RM_JSModel extends RM_BaseModel {
         | This is the main function that deals with resizing the page and is used 
         | to judge whether the menu needs closing once the screen is resized
         |
+        |
+        | Added by Bhupender
+        | - Modified negative width to take directly width of menu instead of '%', 
+        |   this works for condition where animation is push and max width of menu is less then %
+
         */
 
         $js .= "
@@ -451,7 +460,7 @@ class RM_JSModel extends RM_BaseModel {
 
                 if( \$RMjQuery( window ).width() > $breakpoint ) { 
 
-                    if( \$RMjQuery( '#responsive-menu' ).css( '$side' ) != '-{$width}%' ) {
+                    if( \$RMjQuery( '#responsive-menu' ).css( '$side' ) != -\$RMjQuery( '#responsive-menu' ).width() ) {
 
                         closeRM();
 

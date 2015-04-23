@@ -143,7 +143,7 @@ $css .= $options['RMExternal'] ? '' : '<style>';
 
         
         $css .= "
-
+            
             #responsive-menu .appendLink, 
             #responsive-menu .responsive-menu li a, 
             #responsive-menu #responsive-menu-title a,

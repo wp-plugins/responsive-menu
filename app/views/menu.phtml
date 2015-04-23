@@ -76,7 +76,12 @@
 
 <!-- Added by Responsive Menu Plugin created by Peter Featherstone -->
 
-<div id="click-menu" <?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?> role="button" aria-label="Responsive Menu Button">
+<div id="click-menu" 
+     class="<?php echo is_admin_bar_showing() ? 'class="admin-bar-showing"' : ''; ?> 
+     <?php echo $data['RMAnim']; ?>"
+     role="button" 
+     aria-label="Responsive Menu Button"
+     >
 
 <?php if( $data['RMX'] || $data['RMClickImgClicked'] ) : ?>
 
