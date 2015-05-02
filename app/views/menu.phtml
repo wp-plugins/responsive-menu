@@ -8,7 +8,7 @@
 
             <?php if( $data['RMImage'] ) : ?>
 
-                <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+                <?php if( isset( $data['RMTitleLink'] ) && !empty( $data['RMTitleLink'] ) ) : ?>
             
                     <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
                         
@@ -19,7 +19,7 @@
                      alt="<?php echo $data['RMTitle']; ?>" 
                      title="<?php echo $data['RMTitle']; ?>" />
                 
-            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+            <?php if( isset( $data['RMTitleLink'] ) && !empty( $data['RMTitleLink'] ) ) : ?>
                 
                     </a>
             
@@ -27,7 +27,7 @@
 
             <?php endif; ?>
 
-            <?php if( isset( $data['RMTitleLink'] ) && $data['RMTitle'] ) : ?>
+            <?php if( isset( $data['RMTitleLink'] ) && !empty( $data['RMTitleLink'] ) ) : ?>
             
                 <a href="<?php echo $data['RMTitleLink']; ?>" target="<?php echo $data['RMTitleLoc']; ?>">
                     
@@ -35,7 +35,7 @@
                     
             <?php echo $data['RMTitle']; ?>
                 
-            <?php if( isset( $data['RMTitleLink'] ) ) : ?>
+            <?php if( isset( $data['RMTitleLink'] ) && !empty( $data['RMTitleLink'] ) ) : ?>
                     
                 </a>
             
