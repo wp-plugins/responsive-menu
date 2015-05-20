@@ -14,7 +14,7 @@
 $config = array( 
     
     
-    'current_version' => 2.4,
+    'current_version' => 2.5,
     
     
     'is_beta' => false,
@@ -297,6 +297,9 @@ $defaults = array(
     /* Added in 2.4 */
     
     'RMUseTran' => null,
+ 
+    
+    'RMLoc' => 'right',
     
 );
 

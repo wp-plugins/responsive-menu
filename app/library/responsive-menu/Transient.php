@@ -50,10 +50,12 @@ class RM_Transient {
     static function createTransientMenu( $name ) {
         
         $walker = ResponsiveMenu::getOption( 'RMWalker' );
+        $depth = ResponsiveMenu::getOption( 'RMDepth' );
         
         $cachedMenu = wp_nav_menu( array(
                 'menu' => $name,
                 'menu_class' => 'responsive-menu',
+                'depth' => $depth,
                 'walker' => ( !empty( $walker ) ) ? new $walker : '', // Add by Mkdgs
                 'echo' => false 
                 )

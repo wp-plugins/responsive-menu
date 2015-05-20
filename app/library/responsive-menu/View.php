@@ -109,17 +109,13 @@ class RM_View {
      * @added 2.0
      */
     
-    static function additionalContent() { 
+    static function additionalContent( $html ) { ?>
         
-        if( ResponsiveMenu::getOption( 'RMHtml' ) ) : ?>
-        
-            <div id="rm-additional-content">
-                <?php echo do_shortcode( ResponsiveMenu::getOption( 'RMHtml' ) ); ?>
-            </div>
+        <div id="rm-additional-content">
+            <?php echo $html; ?>
+        </div>
                                       
     <?php 
-   
-        endif;
    
     }
     
