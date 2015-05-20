@@ -97,7 +97,7 @@ It also includes the following functionality:
 </ul>
 Please see the current development list on the below page:
 
-<a href="http://peterfeatherstone.com/wordpress/responsive-menu/responsive-menu-development-list/">http://peterfeatherstone.com/wordpress/responsive-menu/responsive-menu-development-list/</a>
+<a href="http://peterfeatherstone.com/wordpress/responsive-menu/responsive-menu-development-list/">Development List</a>
 
 If you would like to see any other options added to the plugin or would like to help with translating the plugin into various versions then please email me or place them in a support ticket.
 <br />
@@ -134,12 +134,24 @@ Alternatively:
 
 == Changelog ==
 
-= 2.5 (18th May 2015) =
+= 2.5 (20th May 2015) =
 * Fixed issue with duplicate sub menu arrows
 * Added option to set if menu is shown on left or right
 * Fixed issue with custom sub menu classes
 * Button now compatible with Apple Voiceover
 * Changed "X" close icon to the math symbol "x" - Thanks to patlog for the idea!
+* Added many more shortcode options as below:           
+                     
+    - "title"
+    - "title_link"
+    - "title_open"
+    - "title_img"
+    - "html"
+    - "html_loc"
+    - "search_loc"
+    - "btn_img"
+    - "btn_img_clicked"
+    - "btn_title"
 
 = 2.4 (18th Feb 2015) =
 
