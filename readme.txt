@@ -1,1 +1,1 @@
-Stable tag: 2.6
+Stable tag: 2.4

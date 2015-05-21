@@ -1,6 +1,6 @@
 <?php
 
 /*
-Version: 2.6
+Version: 2.4
 Author: Peter Featherstone
 */
