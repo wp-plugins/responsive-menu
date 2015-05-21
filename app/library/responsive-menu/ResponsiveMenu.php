@@ -120,5 +120,25 @@ class ResponsiveMenu {
         
     }
     
+    /*
+     * Function to return current theme location menus in the system
+     *
+     * @return object
+     * @added 2.6 Mkdgs
+     */
+    static function getMenusLocations() {
+        
+        $menus = get_registered_nav_menus();        
+        $r = array();
+        
+        foreach ( $menus as $location => $description ) {
+              $r[] = $o = new stdClass;
+              $o->location = $location;
+              $o->description = $description;
+        }
+        
+        return $r;
+        
+    }
     
 }
