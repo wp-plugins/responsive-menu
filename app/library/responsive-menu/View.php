@@ -112,7 +112,7 @@ class RM_View {
     static function additionalContent( $html ) { ?>
         
         <div id="rm-additional-content">
-            <?php echo $html; ?>
+            <?php echo do_shortcode( $html ); ?>
         </div>
                                       
     <?php 
