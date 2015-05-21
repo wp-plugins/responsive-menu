@@ -1,1 +1,5 @@
-<?php /* Version: 2.4 */
+<?php
+
+/*
+Plugin Name: Responsive Menu
+Version: 2.4
