@@ -210,12 +210,12 @@ class RM_JSModel extends RM_BaseModel {
 
         $activeArrow = $options['RMArImgA'] ? '<img src="' . $options['RMArImgA'] . '" />' : json_decode( $options['RMArShpA'] );
         $inactiveArrow = $options['RMArImgI'] ? '<img src="' . $options['RMArImgI'] . '" />' : json_decode( $options['RMArShpI'] );
-
+           
 
         if ( !$options['RMExpand'] ) :
 
-            $clickedLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>';  
-            $clickLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>';  
+            $clickedLink = '<span class=\"appendLink rm-append-inactive\">' . $inactiveArrow . '</span>';  
+            $clickLink = '<span class=\"appendLink rm-append-inactive\">' . $inactiveArrow . '</span>';  
 
         else :
 
@@ -227,7 +227,7 @@ class RM_JSModel extends RM_BaseModel {
         if( $options['RMExpandPar'] ) :
 
             $clickedLink = '<span class=\"appendLink rm-append-active\">' . $activeArrow . '</span>';
-            $clickLink = '<span class=\"appendLink\">' . $inactiveArrow . '</span>'; 
+            $clickLink = '<span class=\"appendLink rm-append-inactive\">' . $inactiveArrow . '</span>'; 
 
         endif;
 
@@ -511,9 +511,10 @@ class RM_JSModel extends RM_BaseModel {
         |
         */
 
-        if( $options['RMExpand'] )
+        if( $options['RMExpand'] ) :
             $js .= " \$RMjQuery( '#responsive-menu ul ul' ).css( 'display', 'block' ); ";
-
+        endif;
+        
         $js .= " 
 
             var clickLink = '{$clickLink}';
@@ -590,7 +591,7 @@ class RM_JSModel extends RM_BaseModel {
                 \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
                 \$RMjQuery( this ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$inactiveArrow}' : '{$activeArrow}' );
-                \$RMjQuery( this ).toggleClass( 'rm-append-active' );
+                \$RMjQuery( this ).toggleClass( 'rm-append-active rm-append-inactive' );
 
                 $setHeight
 
@@ -603,11 +604,26 @@ class RM_JSModel extends RM_BaseModel {
                 \$RMjQuery( this ).nextAll( '#responsive-menu ul ul' ).slideToggle(); 
 
                 \$RMjQuery( this ).siblings( '.appendLink' ).html( \$RMjQuery( this ).hasClass( 'rm-append-active' ) ? '{$inactiveArrow}' : '{$activeArrow}' );
-                \$RMjQuery( this ).toggleClass( 'rm-append-active' );
+                \$RMjQuery( this ).toggleClass( 'rm-append-active rm-append-inactive' );
 
                 $setHeight
 
             }); 
+
+        ";
+
+        /*
+        |--------------------------------------------------------------------------
+        | Finally Hide Appropriate Hidden Objects
+        |--------------------------------------------------------------------------
+        |
+        | This is the function that deals with toggling the toggle buttons
+        |
+        */                
+
+        $js .= "   
+
+            \$RMjQuery( '.rm-append-inactive' ).siblings( 'ul' ).css( 'display', 'none' );
 
         ";
 
