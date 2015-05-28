@@ -19,7 +19,7 @@ class RM_Import {
         if( $file['type'] != 'text/xml' )
             return RM_Status::set( 'error', __( 'Incorrect Import File Format', 'responsive-menu' ) );
         
-        if( $file['size'] > 2000 )
+        if( $file['size'] > 500000 )
             return RM_Status::set( 'error', __( 'Import File Too Large', 'responsive-menu' ) );
         
         if( !is_uploaded_file( $file['tmp_name'] ) )
