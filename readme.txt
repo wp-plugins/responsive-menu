@@ -1,5 +1,5 @@
 === Responsive Menu ===
-Contributors: peter.featherstone
+Contributors: ResponsiveMenu
 Donate link: http://responsive.menu/donate/
 Tags: responsive, menu, responsive menu, mobile menu, tablet menu, mobile, tablet, 3 lines, 3 line, three line, three lines
 Requires at least: 3.5.0
@@ -135,11 +135,11 @@ Alternatively:
 
 == Changelog ==
 
-= 2.7 (13th June 2015)
-* Added Navigation Tabs for Admin Pages (thanks to mkdgs for this!)
+= 2.7 (14th June 2015)
+* Added Navigation Tabs for Admin Pages -thanks to mkdgs for this!
 * Bugfixes
 
-= 2.6 (26th May 2015) =
+= 2.6 (26th May 2015)
 * Added Theme Location options - useful for Polylang - Thanks to mkdgs for this
 * Fixed Issue with Auto-Expanding Links
 * Fixed Issue with Data Folders Incorrect Location
