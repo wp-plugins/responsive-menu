@@ -1,5 +1,5 @@
 === Responsive Menu ===
 
 Requires at least: 3.5.0
-Tested up to: 4.2.2
-Stable tag: 2.8.1
+Tested up to: 4.3
+Stable tag: 2.8.2
